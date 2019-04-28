@@ -1,0 +1,26 @@
+{
+  "name": "alif-alif",
+  "version": "1.0.0",
+  "description": "main website of my freelance business",
+  "main": "index.js",
+  "scripts": {
+    "test": "test it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "alif-alif-freelance-website"
+  },
+  "keywords": [
+    "portfolio",
+    "freelance"
+  ],
+  "author": "ht2k9",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "i18n": "^0.8.3",
+    "nodemailer": "^6.1.1"
+  }
+}
