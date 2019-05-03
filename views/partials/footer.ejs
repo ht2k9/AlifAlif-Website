@@ -1,10 +1,14 @@
 	<!-- Footer
 		============================================= -->
-		<footer id="footer" class="dark">
+		<footer id="footer" class="dark" style="background-color: #333;
+    color: #CCC;
+    border-top-color: rgba(0,0,0,0.2);">
 
 			<!-- Copyrights
 			============================================= -->
-			<div id="copyrights">
+			<div id="copyrights" style="background-color: rgba(0,0,0,0.2);
+    color: rgba(255,255,255,0.25);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);">
 
 				<div class="container clearfix">
 
@@ -15,7 +19,7 @@
 						</div>
 
 						<div class="col-md-6 d-flex justify-content-md-end mt-4 mt-md-0">
-							<a href="#" class="mx-1 social-icon si-facebook">
+							<a href="http://facebook.com/alifalifreelance" class="mx-1 social-icon si-facebook">
 								<i class="icon-facebook"></i>
 								<i class="icon-facebook"></i>
 							</a>
@@ -53,7 +57,6 @@
 	<script src="/js/jquery.js"></script>
 	<script src="/js/plugins.js"></script>
 
-	<script src="/js/components/rangeslider.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
@@ -94,56 +97,6 @@
 
 		jQuery('.showcase-feature').hover( function(){
 			showcaseSection( jQuery(this) );
-		});
-
-		$(document).ready( function() {
-
-			var pricingBikes = 1,
-				days = 1,
-				elementbikes = $(".range-slider-bikes"),
-				elementDays = $(".range-slider-days");
-
-			elementbikes.ionRangeSlider({
-				grid: false,
-				step: 1,
-				min: 1,
-				from:1,
-				max: 5,
-				postfix: ' أفراد',
-				onStart: function(data){
-					pricingBikes = data.from;
-				}
-			});
-
-			elementbikes.on( 'change', function(){
-				pricingBikes = $(this).prop('value');
-				calculatePrice( pricingBikes, days );
-			});
-
-			elementDays.ionRangeSlider({
-				grid: false,
-				step: 0,
-				min: 1,
-				from: 19,
-				max: 30,
-				postfix: ' يوم',
-				onStart: function(data){
-					days = data.from;
-				}
-			});
-
-			elementDays.on( 'onStart change', function(){
-				days = $(this).prop('value');
-				calculatePrice( pricingBikes, days );
-			});
-
-			calculatePrice( pricingBikes, days );
-
-			function calculatePrice( bikes, days ) {
-				var pricingValue = ( Number(bikes) * 1 ) * ( Number(days) * 200 );
-				jQuery('.pricing-price').html( '$'+pricingValue );
-			}
-
 		});
 	</script>
 
