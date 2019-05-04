@@ -1,16 +1,15 @@
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-const express = require('express'),
-bodyParser = require('body-parser'),
-compression = require('compression');
+const express = require('express');
+const bodyParser = require('body-parser');
+const compression = require('compression');
 
 const app = express();
 
 app.set('view engine' , 'ejs');
-
+app.use(compression());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(compression());
 
 app.get('/', (req, res) => {
     res.redirect('/בניית-אתרים-לעסקים');
