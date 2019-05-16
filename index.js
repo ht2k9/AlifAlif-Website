@@ -3,6 +3,15 @@ const PORT = process.env.PORT || 8080;
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const nodemailer = require("nodemailer");
+
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'abbasa4696@gmail.com',
+      pass: ''
+    }
+  });
 
 const app = express();
 
@@ -12,16 +21,35 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.redirect('/בניית-אתרים-לעסקים');
+    res.render('home');
+});
+
+app.get('/example/:site', (req, res) => {
+    res.render('examples/'+req.params.site);
+});
+
+app.get('/example/real-estate/:page', (req, res) => {
+    res.render('examples/realestate/'+req.params.page);
 });
 
 app.post('/', (req, res) => {
-    console.log(req.body);
-    res.redirect('/בניית-אתרים-לעסקים');
-});
+      // send mail with defined transport object
+  let mailOptions = {
+    from: 'abbasa4696@gmail.com', // sender address
+    to: "contact@alifalif.co", // list of receivers
+    subject: "New Client Contacted AlifAlif", // Subject line
+    html: `<h2>From: ${req.body.name}</h2>
+                <h3>Contact Information: ${req.body.email}
+                <p>${req.body.subject}</p>`
+  };
 
-app.get('/*-*-*', (req, res) => {
-    res.render('home');
+    transporter.sendMail(mailOptions, (error, info) => {
+        if(error) {console.log(error);}
+        else{
+            console.log("message sent: "+info.messageId);
+            res.redirect('/');
+        }
+    });
 });
 
 app.get('/*', (req, res) => {
