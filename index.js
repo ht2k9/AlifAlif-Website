@@ -3,10 +3,12 @@ const PORT = process.env.PORT || 8080;
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: 'abbasa4696@gmail.com',
       pass: ''
@@ -36,9 +38,9 @@ app.post('/', (req, res) => {
       // send mail with defined transport object
   let mailOptions = {
     from: 'abbasa4696@gmail.com', // sender address
-    to: "contact@alifalif.co", // list of receivers
+    to: 'ahmed_abbas22@hotmail.com', // list of receivers
     subject: "New Client Contacted AlifAlif", // Subject line
-    html: `<h2>From: ${req.body.name}</h2>
+    text: `<h2>From: ${req.body.name}</h2>
                 <h3>Contact Information: ${req.body.email}
                 <p>${req.body.subject}</p>`
   };
