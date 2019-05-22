@@ -34,6 +34,10 @@ app.get('/example/real-estate/:page', (req, res) => {
     res.render('examples/realestate/'+req.params.page);
 });
 
+app.get('/marketing', (req, res) => {
+    res.render('marketing');
+});
+
 app.post('/', (req, res) => {
       // send mail with defined transport object
   let mailOptions = {
