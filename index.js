@@ -52,8 +52,7 @@ app.post('/', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if(error) {console.log(error);}
         else{
-            console.log("message sent: "+info.messageId);
-            res.redirect('/');
+            res.redirect(req.get('referer'));
         }
     });
 });
