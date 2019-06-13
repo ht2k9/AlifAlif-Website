@@ -38,6 +38,14 @@ app.get('/marketing', (req, res) => {
     res.render('marketing');
 });
 
+app.get('/project/:id', (req, res) => {
+    if(req.params.id == 'UWXYHZ'){
+        res.render('project');
+    }else{
+        res.redirect('/fwefwefw');
+    }
+});
+
 app.post('/', (req, res) => {
       // send mail with defined transport object
   let mailOptions = {
