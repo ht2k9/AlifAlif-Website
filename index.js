@@ -3,17 +3,7 @@ const PORT = process.env.PORT || 8080;
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const nodemailer = require('nodemailer');
-
-let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user: 'abbasa4696@gmail.com',
-      pass: ''
-    }
-  });
+const fs = require('fs');
 
 const app = express();
 
@@ -38,30 +28,41 @@ app.get('/marketing', (req, res) => {
     res.render('marketing');
 });
 
-app.get('/project/:id', (req, res) => {
-    if(req.params.id == 'UWXYHZ'){
-        res.render('project');
-    }else{
-        res.redirect('/fwefwefw');
-    }
+app.get('/event', (req, res) => {
+    res.render('computer-event');
 });
+
 
 app.post('/', (req, res) => {
       // send mail with defined transport object
-  let mailOptions = {
-    from: 'abbasa4696@gmail.com', // sender address
-    to: 'ahmed_abbas22@hotmail.com', // list of receivers
-    subject: "New Client Contacted AlifAlif", // Subject line
-    text: `<h2>From: ${req.body.name}</h2>
-                <h3>Contact Information: ${req.body.email}
-                <p>${req.body.subject}</p>`
-  };
+    let data = `From: ${req.body.name}, 
+                Contact Information: ${req.body.email}, 
+                Subject: ${req.body.subject}`;
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if(error) {console.log(error);}
-        else{
-            res.redirect(req.get('referer'));
+    fs.appendFile('websites.txt', data , function (err) {
+        if (err) throw err;
+            
+        res.redirect('/');
+    });
+});
+
+app.post('/register', (req, res) => {
+    // send mail with defined transport object
+  let data = `Name: ${req.body.name} | Phone: ${req.body.phone} $$$`;
+
+  fs.appendFile('courses.txt', data , function (err) {
+      if (err) throw err;
+          
+      res.redirect('/event');
+  });
+});
+
+app.get('/brbmyfriend', (req, res) => {
+    fs.readFile('courses.txt', function read(err, data) {
+        if (err) {
+            throw err;
         }
+        res.render('data', {data: data});
     });
 });
 

@@ -1,0 +1,30 @@
+						<!-- Modal -->
+						<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-body">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title" id="myModalLabel">التسجيل لدورة تعليم الحاسوب</h4>
+										</div>
+										<div class="modal-body">
+											<h5>أترك رقم الهاتف والاسم للتسجيل.</h5>
+                                            <form id="registerForm" class="row" action="/register" method="post">
+                                                <div class="form-process"></div>
+                                                <div class="col-6 form-group">
+                                                    <label>الاسم:</label>
+                                                    <input type="text" name="name" class="form-control required" value="" placeholder="الاسم الكامل">
+                                                </div>
+                                                <div class="col-6 form-group">
+                                                    <label>الهاتف:</label>
+                                                    <input type="number" name="phone" class="form-control required" value="" placeholder="رقم الهاتف">
+                                                </div>
+                                            </form>
+                                        </div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">أغلق</button>
+											<input type="submit" value="أرسل" class="btn btn-primary" form="registerForm">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
