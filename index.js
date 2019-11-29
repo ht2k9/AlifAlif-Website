@@ -16,12 +16,16 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/example/:site', (req, res) => {
-    res.render('examples/'+req.params.site);
+app.get('/example/ecommerce/:page', (req, res) => {
+    res.render('examples/ecommerce/'+req.params.page);
 });
 
 app.get('/example/real-estate/:page', (req, res) => {
     res.render('examples/realestate/'+req.params.page);
+});
+
+app.get('/example/:site', (req, res) => {
+    res.render('examples/'+req.params.site);
 });
 
 app.get('/marketing', (req, res) => {
@@ -32,6 +36,11 @@ app.get('/event', (req, res) => {
     res.render('computer-event');
 });
 
+app.get('/costumer/:id', (req, res) => {
+    if(req.params.id == 'wW58Rrf8'){
+        res.render('inovice');
+    }
+});
 
 app.post('/', (req, res) => {
       // send mail with defined transport object

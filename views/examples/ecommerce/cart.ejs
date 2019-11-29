@@ -1,0 +1,209 @@
+<% include ../../partials/header %>
+<% include head %>
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <div class="table-responsive">
+                <table class="table cart">
+                    <thead>
+                        <tr>
+                            <th class="cart-product-remove">&nbsp;</th>
+                            <th class="cart-product-thumbnail">&nbsp;</th>
+                            <th class="cart-product-name">מוצר</th>
+                            <th class="cart-product-price">מחיר ליחידה</th>
+                            <th class="cart-product-quantity">כמות</th>
+                            <th class="cart-product-subtotal">סך הכל</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cart_item">
+                            <td class="cart-product-remove">
+                                <a href="#" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                            </td>
+
+                            <td class="cart-product-thumbnail">
+                                <a href="#"><img width="64" height="64" src="/images/shop/thumbs/small/dress-3.jpg" alt="Pink Printed Dress"></a>
+                            </td>
+
+                            <td class="cart-product-name">
+                                <a href="#">Pink Printed Dress</a>
+                            </td>
+
+                            <td class="cart-product-price">
+                                <span class="amount">$19.99</span>
+                            </td>
+
+                            <td class="cart-product-quantity">
+                                <div class="quantity clearfix">
+                                    <input type="button" value="-" class="minus">
+                                    <input type="text" name="quantity" value="2" class="qty" />
+                                    <input type="button" value="+" class="plus">
+                                </div>
+                            </td>
+
+                            <td class="cart-product-subtotal">
+                                <span class="amount">$39.98</span>
+                            </td>
+                        </tr>
+                        <tr class="cart_item">
+                            <td class="cart-product-remove">
+                                <a href="#" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                            </td>
+
+                            <td class="cart-product-thumbnail">
+                                <a href="#"><img width="64" height="64" src="/images/shop/thumbs/small/shoes-2.jpg" alt="Checked Canvas Shoes"></a>
+                            </td>
+
+                            <td class="cart-product-name">
+                                <a href="#">Checked Canvas Shoes</a>
+                            </td>
+
+                            <td class="cart-product-price">
+                                <span class="amount">$24.99</span>
+                            </td>
+
+                            <td class="cart-product-quantity">
+                                <div class="quantity clearfix">
+                                    <input type="button" value="-" class="minus">
+                                    <input type="text" name="quantity" value="1" class="qty" />
+                                    <input type="button" value="+" class="plus">
+                                </div>
+                            </td>
+
+                            <td class="cart-product-subtotal">
+                                <span class="amount">$24.99</span>
+                            </td>
+                        </tr>
+                        <tr class="cart_item">
+                            <td class="cart-product-remove">
+                                <a href="#" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                            </td>
+
+                            <td class="cart-product-thumbnail">
+                                <a href="#"><img width="64" height="64" src="/images/shop/thumbs/small/tshirt-2.jpg" alt="Pink Printed Dress"></a>
+                            </td>
+
+                            <td class="cart-product-name">
+                                <a href="#">Blue Men Tshirt</a>
+                            </td>
+
+                            <td class="cart-product-price">
+                                <span class="amount">$13.99</span>
+                            </td>
+
+                            <td class="cart-product-quantity">
+                                <div class="quantity clearfix">
+                                    <input type="button" value="-" class="minus">
+                                    <input type="text" name="quantity" value="3" class="qty" />
+                                    <input type="button" value="+" class="plus">
+                                </div>
+                            </td>
+
+                            <td class="cart-product-subtotal">
+                                <span class="amount">$41.97</span>
+                            </td>
+                        </tr>
+                        <tr class="cart_item">
+                            <td colspan="6">
+                                <div class="row clearfix">
+                                    <div class="col-lg-4 col-4 nopadding">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-7">
+                                                <input type="text" value="" class="sm-form-control" placeholder="Enter Coupon Code.." />
+                                            </div>
+                                            <div class="col-lg-4 col-5">
+                                                <a href="#" class="button button-3d button-black nomargin">החל קופון</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-8 nopadding">
+                                        <a href="#" class="button button-3d nomargin fleft">עדכן עגלת קניות</a>
+                                        <a href="/checkout" class="button button-3d notopmargin fleft">התקדם לנקודת הביקורת</a>
+                                    </div>      
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-6 clearfix">
+                    <h4>חישוב משלוח</h4>
+                    <form>
+                        <div class="col_full">
+                            <select class="sm-form-control">
+                                <option value="AX">צפון</option>
+                                <option value="AF">חיפה</option>
+                                <option value="AL">תל אביב</option>
+                                <option value="DZ">ירושליים</option>
+                                <option value="AD">בר שבע</option>
+                                <option value="AO">השרון</option>
+                                <option value="AI">אילת</option>
+                            </select>
+                        </div>
+                        <div class="col_half">
+                            <input type="text" class="sm-form-control" placeholder="עיר" />
+                        </div>
+
+                        <div class="col_half col_last">
+                            <input type="text" class="sm-form-control" placeholder="מיקוד" />
+                        </div>
+                        <a href="#" class="button button-3d nomargin button-black">עדכון סך הכל</a>
+                    </form>
+                </div>
+
+                <div class="col-lg-6 clearfix">
+                    <h4>סך כל הקניות</h4>
+
+                    <div class="table-responsive">
+                        <table class="table cart">
+                            <tbody>
+                                <tr class="cart_item">
+                                    <td class="cart-product-name">
+                                        <strong>סיכום ביניים של עגלת הקניות</strong>
+                                    </td>
+
+                                    <td class="cart-product-name">
+                                        <span class="amount">$106.94</span>
+                                    </td>
+                                </tr>
+                                <tr class="cart_item">
+                                    <td class="cart-product-name">
+                                        <strong>משלוח</strong>
+                                    </td>
+
+                                    <td class="cart-product-name">
+                                        <span class="amount">משלוח חינם</span>
+                                    </td>
+                                </tr>
+                                <tr class="cart_item">
+                                    <td class="cart-product-name">
+                                        <strong>סך הכל</strong>
+                                    </td>
+
+                                    <td class="cart-product-name">
+                                        <span class="amount color lead"><strong>$106.94</strong></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
+<% include ../../partials/footer %>
+</body>
+</html>
