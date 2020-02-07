@@ -3,6 +3,7 @@ const PORT = process.env.PORT || 8080;
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const events = require('./events.json');
 const fs = require('fs');
 
 const app = express();
@@ -32,8 +33,12 @@ app.get('/marketing', (req, res) => {
     res.render('marketing');
 });
 
-app.get('/event', (req, res) => {
-    res.render('computer-event');
+app.get('/events', (req, res) => {
+    res.render('events', {events: events});
+});
+
+app.get('/events/:index', (req, res) => {
+    res.render('computer-event', events[req.params.index]);
 });
 
 app.get('/costumer/:id', (req, res) => {
@@ -57,12 +62,12 @@ app.post('/', (req, res) => {
 
 app.post('/register', (req, res) => {
     // send mail with defined transport object
-  let data = `Name: ${req.body.name} | Phone: ${req.body.phone} $$$`;
+  let data = `Name: ${req.body.name} | Phone: ${req.body.phone} \n`;
 
   fs.appendFile('courses.txt', data , function (err) {
       if (err) throw err;
           
-      res.redirect('/event');
+      res.redirect('/register-success');
   });
 });
 

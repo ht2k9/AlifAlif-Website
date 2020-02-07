@@ -1,0 +1,79 @@
+<% include partials/header %>
+<link rel="stylesheet" href="/home.css" type="text/css" />
+	<!-- Document Title
+	============================================= -->
+	<title>ألف ألف - دورات تكنولوجية</title>
+
+</head>
+
+<body class="stretched rtl">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<div class="container clearfix">
+				<h1>دورات تكنولوجية</h1>
+				<span>لائحة الدورات المختلفة في ألف ألف</span>
+			</div>
+
+		</section><!-- #page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div id="posts" class="events small-thumbs">
+                        <% for(let i=0; i<events.length; i++){ let event = events[i]; %>   
+                            <div class="entry clearfix">
+                                <div class="entry-image">
+                                    <a href="/events/<%= i %>">
+                                        <img src="images/events/thumbs/<%= event.img %>.jpg" alt="Inventore voluptates velit totam ipsa tenetur">
+                                        <div class="entry-date"><%= event.date[0] %><span><%= event.date[1] %></span></div>
+                                    </a>
+                                </div>
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <h2><a href="/events/<%= i %>"><%= event.title %></a></h2>
+                                    </div>
+                                    <ul class="entry-meta clearfix">
+                                        <li><span class="badge badge-success">التسجيل مفتوح</span></li>
+                                        <li><span class="badge badge-warning">تخفيض 60%</span></li>
+                                        <li><a href="#"><i class="icon-time"></i> 12:00 - 21:00</a></li>
+                                        <li><a href="#"><i class="icon-map-marker2"></i> طمرة, مركز ألف ألف</a></li>
+                                    </ul>
+                                    <div class="entry-content">
+                                        <p><%= event.details[0] %></p>
+                                         <a href="/events/<%= i %>" class="btn btn-danger">معرفة المزيد</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+					</div>
+
+					<!-- Pagination
+					============================================= -->
+					<div class="row mb-3">
+						<div class="col-12">
+							<a href="#" class="btn btn-outline-secondary float-left">&larr; الصفحة التالية</a>
+							<a href="#" class="btn btn-outline-dark float-right">الصفحة السابقة &rarr;</a>
+						</div>
+					</div>
+					<!-- .pager end -->
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+        <% include partials/footer %>
+    </body>
+    </html>    
