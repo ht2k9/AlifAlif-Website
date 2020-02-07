@@ -4,7 +4,7 @@
 								<div class="modal-body">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h4 class="modal-title" id="myModalLabel">التسجيل لدورة تعليم الحاسوب</h4>
+											<h4 class="modal-title" id="myModalLabel">التسجيل لدورة <%= title %></h4>
 										</div>
 										<div class="modal-body">
 											<h5>أترك رقم الهاتف والاسم للتسجيل.</h5>
@@ -17,7 +17,8 @@
                                                 <div class="col-6 form-group">
                                                     <label>الهاتف:</label>
                                                     <input type="number" name="phone" class="form-control required" value="" placeholder="رقم الهاتف">
-                                                </div>
+												</div>
+												<input type="text" hidden="true" name="course" value="<%= title %>">
                                             </form>
                                         </div>
 										<div class="modal-footer">

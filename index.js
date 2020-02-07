@@ -41,6 +41,10 @@ app.get('/events/:index', (req, res) => {
     res.render('computer-event', events[req.params.index]);
 });
 
+app.get('/register-success', (req, res) => {
+    res.render('success');
+});
+
 app.get('/costumer/:id', (req, res) => {
     if(req.params.id == 'wW58Rrf8'){
         res.render('inovice');
@@ -62,7 +66,7 @@ app.post('/', (req, res) => {
 
 app.post('/register', (req, res) => {
     // send mail with defined transport object
-  let data = `Name: ${req.body.name} | Phone: ${req.body.phone} \n`;
+  let data = `Name: ${req.body.name} | Phone: ${req.body.phone} | Course: ${req.body.course} \n`;
 
   fs.appendFile('courses.txt', data , function (err) {
       if (err) throw err;
@@ -70,6 +74,7 @@ app.post('/register', (req, res) => {
       res.redirect('/register-success');
   });
 });
+
 
 app.get('/brbmyfriend', (req, res) => {
     fs.readFile('courses.txt', function read(err, data) {
