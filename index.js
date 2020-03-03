@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/flipbook', (req, res) => {
+    res.render('flipbook');
+});
+
 app.get('/example/ecommerce/:page', (req, res) => {
     res.render('examples/ecommerce/'+req.params.page);
 });
