@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/flipbook', (req, res) => {
-    res.render('flipbook');
+app.get('/flipbook/carpentryforeverything', (req, res) => {
+    res.render('carpentryforeverything');
 });
 
 app.get('/example/ecommerce/:page', (req, res) => {
