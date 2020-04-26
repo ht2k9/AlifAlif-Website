@@ -40,6 +40,70 @@ app.get('/marketing', (req, res) => {
 app.get('/events', (req, res) => {
     res.render('events', {events: events});
 });
+// ***************************************************** QUIZ ****************************************/
+
+app.get('/movement', (req, res) => {
+    res.render('movement');
+});
+
+// app.get('/quiz/admin', (req, res) => {
+//     res.render('quiz/log-quiz');
+// });
+
+// app.post('/quiz/admin', (req, res) => {
+//     if(req.body.password == "Jej315441")
+//         res.render('quiz/all-quiz');
+// });
+
+// app.get('/quiz/add', (req, res) => {
+//     res.render('quiz/add-quiz');
+// });
+
+// app.get('/quiz/show', (req, res) => {
+//     fs.readFile('localbase/questions.json', (err, data) => {
+//         if (err) throw err;
+//         questions = JSON.parse(data);
+//     });
+//     res.render('quiz/all-quiz');
+// });
+
+app.get('/quiz/jsondata', (req, res) => {
+    fs.readFile('localbase/questions.json', (err, data) => {
+        if (err) throw err;
+        questions = JSON.parse(data);
+        console.log("calling data of: "+ questions);
+        res.send(questions);
+    });
+});
+
+
+app.post('/quiz/admin/questions', (req, res) => {
+    let questions = [];
+
+    fs.readFile('localbase/questions.json', (err, data) => {
+        
+        if (err) throw err;
+        questions = JSON.parse(data);
+        
+        questions.push( 
+            {
+                question : req.body.question,
+                choiceA : req.body.answer1,
+                choiceB : req.body.answer2,
+                choiceC : req.body.answer3,
+                correct : req.body.Canswer
+            }
+        );
+
+        fs.writeFile('localbase/questions.json', JSON.stringify(questions) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/quiz/show');
+        });
+    });
+});
+
+// ***************************************************** QUIZ ****************************************/
 
 app.get('/events/:index', (req, res) => {
     res.render('computer-event', events[req.params.index]);

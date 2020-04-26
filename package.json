@@ -21,6 +21,7 @@
     "compression": "^1.7.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "flip-book": "^1.9.7",
     "nodemailer": "^6.1.1"
   }
 }

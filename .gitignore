@@ -1,1 +1,5 @@
 node_modules
+/public/images/quiz
+/views/quiz
+/public/quiz.js
+/public/css/quiz.css
