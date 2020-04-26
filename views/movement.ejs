@@ -30,7 +30,72 @@
 	============================================= -->
 	<title>حركة البناء الحضارية</title>
 
-
+	<style>
+		/* The container */
+		.radioButton {
+			text-align: right;
+		  display: block;
+		  position: relative;
+		  padding-right: 35px;
+		  margin-bottom: 12px;
+		  cursor: pointer;
+		  font-size: 22px;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+		
+		/* Hide the browser's default radio button */
+		.radioButton input {
+		  position: absolute;
+		  opacity: 0;
+		  cursor: pointer;
+		}
+		
+		/* Create a custom radio button */
+		.checkmark {
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  height: 25px;
+		  width: 25px;
+		  background-color: #eee;
+		  border-radius: 50%;
+		}
+		
+		/* On mouse-over, add a grey background color */
+		.radioButton:hover input ~ .checkmark {
+		  background-color: #ccc;
+		}
+		
+		/* When the radio button is checked, add a blue background */
+		.radioButton input:checked ~ .checkmark {
+		  background-color: #2196F3;
+		}
+		
+		/* Create the indicator (the dot/circle - hidden when not checked) */
+		.checkmark:after {
+		  content: "";
+		  position: absolute;
+		  display: none;
+		}
+		
+		/* Show the indicator (dot/circle) when checked */
+		.radioButton input:checked ~ .checkmark:after {
+		  display: block;
+		}
+		
+		/* Style the indicator (dot/circle) */
+		.radioButton .checkmark:after {
+			 top: 9px;
+			right: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: white;
+		}
+	</style>
 </head>
 
 <body class="stretched">
@@ -395,7 +460,7 @@
                 <div id="section-pricing" class="heading-block title-center nobottomborder page-section">
                     <h2>مسابقة رمضان 2020</h2>
                     <span>برعاية حركة البناء الحضارية</span>
-                    <img src="images/movement/logo.png" height="100px">
+                    <img src="images/movement/logo.jpg" style="margin-top: 10px;" height="100px">
                 </div>
                 <div class="pricing-box pricing-extended bottommargin clearfix">
 
@@ -405,12 +470,11 @@
                         </div>
                         <div class="pricing-features">
                             <ul class="iconlist-color clearfix">
-                                <li><i class="icon-users1"></i> لكل بيت يمكن الاشتراك مرة واحدة</li>
+                                <li><i class="icon-users1"></i> لكل شخص يمكن الاشتراك مرة واحدة</li>
                                 <li><i class="icon-facebook"></i> متابعة على الفيسبوك</li>
                                 <li><i class="icon-beaker"></i> كل يوم أحد تبدأ مسابقة جديدة</li>
-                                <li><i class="icon-line-bar-graph"></i> النتائج في اخر الشهر</li>
-                                <li><i class="icon-stopwatch1"></i> كل مسابقة تنتهي في اخر الاسبوع</li>
                                 <li><i class="icon-map-marker1"></i> نتصل بك من خلال المعلومات المدخلة</li>
+                                <li><i class="icon-stopwatch1"></i> كل مسابقة تنتهي يوم الخميس الساعة 12:00 ليلا</li>
                             </ul>
                         </div>
                     </div>
@@ -454,19 +518,60 @@
         
         		<!-- Modal Contact Form
 		============================================= -->
-		<div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModalLabel" aria-hidden="true">
+		<div dir="rtl" class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<div dir="rtl" class="modal-header" style="text-align: right;">
-						<h4 class="modal-title" id="contactFormModalLabel">شارك بالمسابقة</h4>
+					<div class="modal-header" style="text-align: right;">
+						<h4 class="modal-title" id="contactFormModalLabel">مسابقة رمضان 2020 - الأسبوع الأول</h4>
 					</div>
-					<div class="modal-body">
-                        <div id="surveyhero-embed-f0645fbe"></div>
-                        <script src="https://embed-cdn.surveyhero.com/js/user/embed.f0645fbe.js" async></script>
+					<div class="userInfo">
+						<div class="form-group">
+							<input type="text" class="form-control" id="username" placeholder="الاسم الكامل">
+						  </div>
+						  <div class="form-group">
+							<input type="number" class="form-control" id="userphone" placeholder="الهاتف">
+						  </div>
+					</div>
+					<div class="modal-body" style="text-align: right;">
+						<% for(let i=0; i< questions.length; i++) { let q = questions[i]; %>
+							<div class="radioGroup" style = "display:none;">
+								<h2><%= q.question %></h2>
+
+								<label class="radioButton"><h2><%= q.choiceA %></h2>
+								<input value="A" type="radio" checked="checked" name="radio">
+								<span class="checkmark"></span>
+								</label>
+
+								<label class="radioButton"><h2><%= q.choiceB %></h2>
+								<input value="B" type="radio" name="radio">
+								<span class="checkmark"></span>
+								</label>
+								
+								<label class="radioButton"><h2><%= q.choiceC %></h2>
+								<input value="C" type="radio" name="radio">
+								<span class="checkmark"></span>
+								</label>
+
+								<label class="radioButton"><h2><%= q.choiceD %></h2>
+								<input value="D" type="radio" name="radio">
+								<span class="checkmark"></span>
+								</label>
+
+								<input class="correctAnswer" value="<%= q.correct %>" style="display:none;"></span>
+							</div>
+						<% } %>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button class="btn btn-secondary" style="margin-left: 10px;" data-dismiss="modal">اغلاق</button>
+						<button id="nextQ" class="btn btn-primary">التالي</button>
+						<ul id="userTable" style="display: none;">
+							<% for(let j=0; j< users.length; j++){ let user = users[j]; %>
+								<input class="mmm" value="<%= user.phone %>">
+							<% } %>
+						</ul>
 					</div>
+
+
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
@@ -571,7 +676,106 @@
 					RsSnowAddOn(tpj, revapi232);
 
 				if(typeof ExplodingLayersAddOn !== "undefined") ExplodingLayersAddOn(tpj, revapi232);
-			}; /* END OF ON LOAD FUNCTION */
+
+
+				let i = -1; 
+				let Questions = $( ".radioGroup" );
+				let score = 0;			
+
+				$( "#nextQ" ).click(function() {
+					let phones = [];
+
+					for(let i=0; i< $( ".mmm" ).length; i++)
+					{
+						phones.push($( ".mmm" ).eq(i).val());
+					}
+
+					let username = $("#username").val();
+					let userphone = $("#userphone ").val();
+
+					if(username.length < 2){
+						alert("اسم شخصي قصير");
+						return;
+					}	
+					
+					if(hasNumber(username)){
+						alert("اسم شخصي خاطئ");
+						return;
+					}
+
+					if(userphone.length < 7 ){
+						alert("رقم هاتف قصير");
+						return;
+					}
+
+					if(userphone.length > 11 ){
+						alert("رقم هاتف طويل");
+						return;
+					}
+
+					if(phones.includes(userphone)){
+						alert("تم استعمال هذا الرقم");
+						return;
+					}
+
+					  var res = userphone.substring(0, 2);
+					  
+					  if(res == "07" || res == "05"){
+						$(".userInfo").hide();
+
+						let checkAnswer = $('input[name=radio]:checked').val();
+						let correctAnswer = Questions.eq(i).find('.correctAnswer').val();
+
+						if(checkAnswer == correctAnswer)
+							score++;
+						
+						if(i>-1)
+							Questions.eq(i).hide();
+
+						i++;
+
+						if(i == Questions.length){
+							post('/movement', {name: username, phone: userphone, score: score})
+						}
+						else
+							Questions.eq(i).show();
+					  }
+					  else
+					  {
+						alert(res);
+						alert("رقم هاتف خاطئ");
+						return;
+					  }
+				});
+
+			};
+			function post(path, params, method='post') {
+				alert("شكرا على الاشتراك, تم ارسال النتيجة بنجاح");
+
+					// The rest of this code assumes you are not using a library.
+					// It can be made less wordy if you use one.
+					const form = document.createElement('form');
+					form.method = method;
+					form.action = path;
+
+					for (const key in params) {
+						if (params.hasOwnProperty(key)) {
+							const hiddenField = document.createElement('input');
+							hiddenField.type = 'hidden';
+							hiddenField.name = key;
+							hiddenField.value = params[key];
+
+							form.appendChild(hiddenField);
+						}
+					}
+
+					document.body.appendChild(form);
+					form.submit();
+				
+				}
+				function hasNumber(myString) {
+					return /\d/.test(myString);
+				}
 		}()); /* END OF WRAPPING FUNCTION */
 
 	</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="css/quiz.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script type="text/javascript" src="../../localbase/questions.json"></script>
+</head>
+<body>
+   
+    <div class="wrapper">
+        <img src="/images/quiz/door.png" alt="pattern">
+        <div class="container">
+            <div id="start">ابدأ المسابقة</div>
+            <h2 id="title" style="margin: 20px">وشارك بالسحب على خروف العيد</h2>
+            <img id="sheep" src="images/quiz/sheep.png" width="35%" alt="">
+
+            <div id="quiz" style="display: none">
+                <div id="question"></div>
+                <div id="choices">
+                    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                </div>
+                <div id="timer">
+                    <div id="counter"></div>
+                    <div id="btimeGauge"></div>
+                    <div id="timeGauge"></div>
+                </div>
+                <div id="progress"></div>
+            </div>
+            <div id="scoreContainer" style="display: none">
+                <h2>شكراً على الاشتراك</h2>
+                <h3>تابعنا على مواقع التواصل الاجتماعي المختلفة</h3>
+            </div>
+        </div>
+    </div>
+    <div id="bs">
+        <img class="moving_img" id="a" style="left:10%" src="/images/quiz/b1.png">
+        <img class="moving_img" id="b" style="left:30%" src="/images/quiz/b3.png">
+        <img class="moving_img" id="c" style="left:50%" src="/images/quiz/b3.png">
+        <img class="moving_img" id="d" style="left:70%" src="/images/quiz/b4.png">
+        <img class="moving_img" id="e" style="left:90%" src="/images/quiz/b2.png">
+    </div>
+    <script src="/js/jquery.js"></script>
+    <script src="quiz.js"></script>
+
+</body>
+</html>

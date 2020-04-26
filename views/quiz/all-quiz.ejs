@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<style>
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+<body dir="rtl">
+
+<h1>اسئلة المسابقة</h1>
+
+<div class="btn-group">
+  <% for(let i=0; i< questions.length; i++) { let q = questions[i]; %>
+    <div>
+      <button><%= q.question %></button>
+  <% } %>
+  <a href="/quiz/add">+</a>
+</div>
+  <h2>المسجلين</h2>
+  <ul class="btn-group">
+    <% for(let j=0; j< users.length; j++){ let user = users[j]; %>
+      <li> <%= user.phone %> - <%= user.username %> - <%= user.score %> </li>
+    <% } %>
+  </ul>
+</body>
+</html>

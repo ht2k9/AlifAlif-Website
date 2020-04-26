@@ -43,39 +43,61 @@ app.get('/events', (req, res) => {
 // ***************************************************** QUIZ ****************************************/
 
 app.get('/movement', (req, res) => {
-    res.render('movement');
-});
-
-// app.get('/quiz/admin', (req, res) => {
-//     res.render('quiz/log-quiz');
-// });
-
-// app.post('/quiz/admin', (req, res) => {
-//     if(req.body.password == "Jej315441")
-//         res.render('quiz/all-quiz');
-// });
-
-// app.get('/quiz/add', (req, res) => {
-//     res.render('quiz/add-quiz');
-// });
-
-// app.get('/quiz/show', (req, res) => {
-//     fs.readFile('localbase/questions.json', (err, data) => {
-//         if (err) throw err;
-//         questions = JSON.parse(data);
-//     });
-//     res.render('quiz/all-quiz');
-// });
-
-app.get('/quiz/jsondata', (req, res) => {
-    fs.readFile('localbase/questions.json', (err, data) => {
+    fs.readFile('localbase/questions.json', (err, dataQ) => {
         if (err) throw err;
-        questions = JSON.parse(data);
-        console.log("calling data of: "+ questions);
-        res.send(questions);
+        let questions = JSON.parse(dataQ);
+        fs.readFile('localbase/users.json', (err, dataU) => {
+            if (err) throw err;
+            let users = JSON.parse(dataU);
+            res.render('movement', {questions: questions, users:users});
+        });
     });
 });
 
+app.post('/movement', (req, res) => {
+    fs.readFile('localbase/users.json', (err, data) => {
+        
+        if (err) throw err;
+
+        let users = JSON.parse(data);
+        
+        users.push( 
+            {
+                username: req.body.name,
+                phone: req.body.phone,
+                score: req.body.score
+            }
+        );
+
+        fs.writeFile('localbase/users.json', JSON.stringify(users) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/movement');
+        });
+    });
+});
+
+app.get('/quiz/admin', (req, res) => {
+    res.render('quiz/log-quiz');
+});
+
+app.post('/quiz/admin', (req, res) => {
+    if(req.body.password == "Jej315441"){
+        fs.readFile('localbase/questions.json', (err, dataQ) => {
+            if (err) throw err;
+            let questions = JSON.parse(dataQ);
+            fs.readFile('localbase/users.json', (err, dataU) => {
+                if (err) throw err;
+                let users = JSON.parse(dataU);
+                res.render('quiz/all-quiz', {questions: questions, users:users});
+            });
+        });
+    }
+});
+
+app.get('/quiz/add', (req, res) => {
+    res.render('quiz/add-quiz');
+});
 
 app.post('/quiz/admin/questions', (req, res) => {
     let questions = [];
@@ -91,6 +113,7 @@ app.post('/quiz/admin/questions', (req, res) => {
                 choiceA : req.body.answer1,
                 choiceB : req.body.answer2,
                 choiceC : req.body.answer3,
+                choiceD : req.body.answer4,
                 correct : req.body.Canswer
             }
         );
@@ -98,7 +121,7 @@ app.post('/quiz/admin/questions', (req, res) => {
         fs.writeFile('localbase/questions.json', JSON.stringify(questions) , function (err) {
             if (err) throw err;
                 
-            res.redirect('/quiz/show');
+            res.redirect('/quiz/add');
         });
     });
 });
