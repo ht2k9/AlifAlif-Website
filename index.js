@@ -42,7 +42,7 @@ app.get('/events', (req, res) => {
 });
 // ***************************************************** QUIZ ****************************************/
 
-app.get('/movement', (req, res) => {
+app.get('/keyadakadera', (req, res) => {
     fs.readFile('localbase/questions.json', (err, dataQ) => {
         if (err) throw err;
         let questions = JSON.parse(dataQ);
@@ -72,7 +72,7 @@ app.post('/movement', (req, res) => {
         fs.writeFile('localbase/users.json', JSON.stringify(users) , function (err) {
             if (err) throw err;
                 
-            res.redirect('/movement');
+            res.redirect('/keyadakadera');
         });
     });
 });
