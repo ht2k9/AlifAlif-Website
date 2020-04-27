@@ -38,26 +38,26 @@ div {
 <div dir="rtl">
     <form action="/quiz/admin/questions" method="post">
         <label for="question">السؤال</label>
-        <input type="text" id="question" name="question" required>
+        <input type="text" id="question" name="question" required <% if(question != null) { %> value="<%= question.question %>" <% } %>>
 
         <label for="answer1">الجواب الأول</label>
-        <input type="text" id="answer1" name="answer1" required>
+        <input type="text" id="answer1" name="answer1" required <% if(question != null) { %> value="<%= question.choiceA %>" <% } %>>
 
         <label for="answer2">الجواب الثاني</label>
-        <input type="text" id="answer2" name="answer2" required>
+        <input type="text" id="answer2" name="answer2" required <% if(question != null) { %> value="<%= question.choiceB %>" <% } %>>
 
         <label for="answer3">الجواب الثالث</label>
-        <input type="text" id="answer3" name="answer3" required>
+        <input type="text" id="answer3" name="answer3" <% if(question != null) { %> value="<%= question.choiceC %>" <% } %>>
 
         <label for="answer4">الجواب الرابع</label>
-        <input type="text" id="answer4" name="answer4" required>
+        <input type="text" id="answer4" name="answer4" <% if(question != null) { %> value="<%= question.choiceD %>" <% } %>>
 
         <label for="Canswer">الاجابة الصحيحة</label>
         <select id="Canswer" name="Canswer">
-        <option value="A">الجواب الأول</option>
-        <option value="B">الجواب الثاني</option>
-        <option value="C">الجواب الثالث</option>
-        <option value="D">الجواب الرابع</option>
+        <option value="A" <% if(question != null && question.correct == "A") { %> selected <% } %>>الجواب الأول</option>
+        <option value="B" <% if(question != null && question.correct == "B") { %> selected <% } %>>الجواب الثاني</option>
+        <option value="C" <% if(question != null && question.correct == "C") { %> selected <% } %>>الجواب الثالث</option>
+        <option value="D" <% if(question != null && question.correct == "D") { %> selected <% } %>>الجواب الرابع</option>
         </select>
     
         <input type="submit" value="اضف السؤال">

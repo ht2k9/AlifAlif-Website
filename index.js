@@ -89,7 +89,29 @@ app.post('/quiz/admin', (req, res) => {
             fs.readFile('localbase/users.json', (err, dataU) => {
                 if (err) throw err;
                 let users = JSON.parse(dataU);
-                res.render('quiz/all-quiz', {questions: questions, users:users});
+                users.sort(function(a, b){
+                    return parseInt(b.score)-parseInt(a.score);
+                });
+
+                let winners = [];
+                let max = 0;
+
+                for(let i=0; i<users.length; i++){
+                    let val = parseInt(users[i].score);
+
+                    if(val> max){
+                        max = val;
+                    }
+                }
+
+                for(let i=0; i<users.length; i++){
+                    let val = parseInt(users[i].score);
+                    if(val == max){
+                        winners.push(users[i]);
+                    }
+                }
+                
+                res.render('quiz/all-quiz', {questions: questions, users:users, winners: winners});
             });
         });
     }
@@ -99,6 +121,64 @@ app.get('/quiz/add', (req, res) => {
     res.render('quiz/add-quiz');
 });
 
+app.get('/quiz/show/:id', (req, res) => {
+    fs.readFile('localbase/questions.json', (err, data) => {
+        
+        if (err) throw err;
+        questions = JSON.parse(data);
+
+        res.render('quiz/update-quiz', {question:(questions[req.params.id]), id: req.params.id});
+    });
+});
+
+app.post('/quiz/update/:id', (req, res) => {
+    fs.readFile('localbase/questions.json', (err, data) => {
+        
+        if (err) throw err;
+        questions = JSON.parse(data);
+
+        questions[req.params.id] = 
+            {
+                question : req.body.question,
+                choiceA : req.body.answer1,
+                choiceB : req.body.answer2,
+                choiceC : req.body.answer3,
+                choiceD : req.body.answer4,
+                correct : req.body.Canswer
+            }
+        
+            fs.writeFile('localbase/questions.json', JSON.stringify(questions) , function (err) {
+                if (err) throw err;
+                    
+                res.redirect('/quiz/admin');
+            });
+    });
+});
+
+app.get('/quiz/delete/:id', (req, res) => {
+    fs.readFile('localbase/questions.json', (err, data) => {
+        
+        if (err) throw err;
+        questions = JSON.parse(data);
+        
+        questions.splice(req.params.id, 1);
+
+        fs.writeFile('localbase/questions.json', JSON.stringify(questions) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/quiz/admin');
+        });
+    });
+});
+app.get('/quiz/get/users', (req, res) => {
+    fs.readFile('localbase/users.json', (err, data) => {
+        
+        if (err) throw err;
+        users = JSON.parse(data);
+
+        res.send(users);
+    });
+});
 app.post('/quiz/admin/questions', (req, res) => {
     let questions = [];
 
@@ -183,3 +263,7 @@ app.get('/*', (req, res) => {
 app.listen(PORT, ()=>{
     console.log(`listening to localhost:${PORT}`);
 });
+
+function sortNumber(a, b) {
+    return a - b;
+}
