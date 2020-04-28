@@ -22,6 +22,17 @@
   text-align: center;
 }
 
+.number {
+  background-color: blue; /* Green background */
+  border: 1px solid rgb(69, 0, 179); /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 20px; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+  text-align: center;
+}
+
 .btn-group .question:not(:last-child) {
   border-bottom: none; /* Prevent double borders */
 }
@@ -58,7 +69,7 @@ a:hover, a:active {
   <% for(let i=0; i< questions.length; i++) { let q = questions[i]; %>
     <div >
       <div class="pan">
-        <a href="/quiz/show/<%= i %>" class="question"><%= q.question %></a> <a href="/quiz/delete/<%= i %>" class="delete">X</a> 
+        <a class="delete" style="background-color: blue; width: 30px;"><%= i %></a> <a href="/quiz/show/<%= i %>" class="question"><%= q.question %></a> <a href="/quiz/delete/<%= i %>" class="delete">X</a> 
       </div>
 <% } %>
   <a href="/quiz/add">+</a>
