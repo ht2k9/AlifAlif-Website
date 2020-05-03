@@ -40,6 +40,36 @@ app.get('/marketing', (req, res) => {
 app.get('/events', (req, res) => {
     res.render('events', {events: events});
 });
+
+// ***************************************************** Digital Card ****************************************/
+
+app.get('/digitalcard', (req, res) => {
+    res.render('digitalcard/dashboard');
+});
+
+app.get('/digitalcard/show/:id', (req, res) => {
+    res.render('digitalcard/test', {vcard: {}});
+});
+
+app.get('/digitalcard/add', (req, res) => {
+    res.render('digitalcard/new-card', {vcard: {}});
+});
+
+app.post('/digitalcard/add', (req, res) => {
+    res.render('digitalcard/dashboard');
+});
+
+app.post('/digitalcard/update', (req, res) => {
+    res.render('digitalcard/dashboard');
+});
+
+app.post('/digitalcard/delete', (req, res) => {
+    res.render('digitalcard/dashboard');
+});
+
+// ***************************************************** Digital Card ****************************************/
+
+
 // ***************************************************** QUIZ ****************************************/
 
 app.get('/keyadakadera', (req, res) => {
@@ -53,6 +83,15 @@ app.get('/keyadakadera', (req, res) => {
         });
     });
 });
+
+app.get('/quiz/users', (req, res) => {
+    fs.readFile('localbase/users.json', (err, dataU) => {
+        if (err) throw err;
+        let users = JSON.parse(dataU);
+        res.render('movement', {users: users});
+    });
+});
+
 
 app.post('/movement', (req, res) => {
     fs.readFile('localbase/users.json', (err, data) => {

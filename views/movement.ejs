@@ -9,13 +9,8 @@
 	============================================= -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CRaleway:300,400,500,600,700,800,900%Nixie+One:400%7CAnton:400" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 
-	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
@@ -26,544 +21,506 @@
 	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
 	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
 
+	<style>
+	.inputGroup {
+		background-color: #fff;
+		display: block;
+		margin: 10px 0;
+		position: relative;
+		border: 1px solid;
+		border-radius: 30px;
+	}
+	.inputGroup label {
+		padding: 8px 40px 10px 0;
+		width: 100%;
+		display: block;
+		text-align: right;
+		color: #3c454c;
+		cursor: pointer;
+		position: relative;
+		z-index: 2;
+		transition: color 200ms ease-in;
+		overflow: hidden;
+	}
+	.inputGroup label:before {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		content: '';
+		position: absolute;
+		right: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%) scale3d(1, 1, 1);
+		transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		opacity: 0;
+		z-index: -1;
+	}
+	.inputGroup label:after {
+		width: 32px;
+		height: 32px;
+		content: '';
+		border: 2px solid #d1d7dc;
+		background-color: #fff;
+		background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+		background-repeat: no-repeat;
+		background-position: 2px 3px;
+		border-radius: 50%;
+		z-index: 2;
+		position: absolute;
+		right: 5px;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+		transition: all 200ms ease-in;
+	}
+	.inputGroup input:checked ~ label {
+		color: #0059ff;
+	}
+	.inputGroup input:checked ~ label:before {
+		transform: translate(-50%, -50%) scale3d(56, 56, 1);
+		opacity: 1;
+	}
+	.inputGroup input:checked ~ label:after {
+		background-color: #0059ff;
+		border-color: #0059ff;
+	}
+	.inputGroup input {
+		width: 32px;
+		height: 32px;
+		order: 1;
+		z-index: 2;
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+		visibility: hidden;
+	}
+	.form {
+		direction: rtl;
+	}
+
+
+	
+	</style>
 	<!-- Document Title
 	============================================= -->
 	<title>حركة البناء الحضارية</title>
 
-	<style>
-		/* The container */
-		.radioButton {
-			text-align: right;
-		  display: block;
-		  position: relative;
-		  padding-right: 35px;
-		  margin-bottom: 12px;
-		  cursor: pointer;
-		  font-size: 22px;
-		  -webkit-user-select: none;
-		  -moz-user-select: none;
-		  -ms-user-select: none;
-		  user-select: none;
-		}
-		
-		/* Hide the browser's default radio button */
-		.radioButton input {
-		  position: absolute;
-		  opacity: 0;
-		  cursor: pointer;
-		}
-		
-		/* Create a custom radio button */
-		.checkmark {
-		  position: absolute;
-		  top: 0;
-		  right: 0;
-		  height: 25px;
-		  width: 25px;
-		  background-color: #eee;
-		  border-radius: 50%;
-		}
-		
-		/* On mouse-over, add a grey background color */
-		.radioButton:hover input ~ .checkmark {
-		  background-color: #ccc;
-		}
-		
-		/* When the radio button is checked, add a blue background */
-		.radioButton input:checked ~ .checkmark {
-		  background-color: #2196F3;
-		}
-		
-		/* Create the indicator (the dot/circle - hidden when not checked) */
-		.checkmark:after {
-		  content: "";
-		  position: absolute;
-		  display: none;
-		}
-		
-		/* Show the indicator (dot/circle) when checked */
-		.radioButton input:checked ~ .checkmark:after {
-		  display: block;
-		}
-		
-		/* Style the indicator (dot/circle) */
-		.radioButton .checkmark:after {
-			 top: 9px;
-			right: 9px;
-			width: 8px;
-			height: 8px;
-			border-radius: 50%;
-			background: white;
-		}
-	</style>
 </head>
 
 <body class="stretched">
 
 	<!-- Document Wrapper
 	============================================= -->
-	<div id="wrapper" class="clearfix">
-
+	<div id="wrapper" class="">
 
 		<!-- Slider
 		============================================= -->
-		<section id="slider" class="slider-element revslider-wrap clearfix">
+		<section id="slider" class="slider-element revslider-wrap full-screen clearfix">
 
-			<div id="rev_slider_232_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="seasonal-offer" data-source="gallery" style="margin:0px auto;background:#fff;padding:0px;margin-top:0px;margin-bottom:0px;">
-				<!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
-				<div id="rev_slider_232_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8.1">
-					<ul>	<!-- SLIDE  -->
-						<li data-index="rs-605" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+			<div id="rev_slider_430_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="rock-band-music" style="background-color:transparent;padding:0px;">
+				<!-- START REVOLUTION SLIDER 5.2.1 fullscreen mode -->
+				<div id="rev_slider_430_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.2.1">
+					<ul><!-- SLIDE  -->
+						<li data-index="rs-1494" class="dark" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 							<!-- MAIN IMAGE -->
-							<img src="include/rs-plugin/demos/assets/images/transparent.png" data-bgcolor='#fff' style='background:#fff' alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+							<img src="include/rs-plugin/demos/assets/images/bg-muslim.png"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgparallax="5" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
 
+							<!-- BACKGROUND VIDEO LAYER -->
+							<div class="rs-background-video-layer"
+								data-forcerewind="on"
+								data-volume="mute"
+								data-videowidth="100%"
+								data-videoheight="100%"
+								data-videomp4="include/rs-plugin/demos/assets/images/ramadan-loop.mp4"
+								data-videopreload="auto"
+								data-videoloop="loop"
+								data-forceCover="1"
+								data-aspectratio="16:9"
+								data-autoplay="true"
+								data-autoplayonlyfirsttime="false"
+								data-nextslideatend="true"
+					></div>
 							<!-- LAYER NR. 1 -->
-							<div class="tp-caption  bg-light tp-resizeme rs-parallaxlevel-1"
-								 id="slide-605-layer-5"
-								 data-x="center" data-hoffset=""
-								 data-y="bottom" data-voffset=""
-											data-width="['none','none','none','none']"
-								data-height="['none','none','none','none']"
+							<div class="tp-caption tp-shape tp-shapewrapper "
+								 id="slide-1494-layer-1"
+								 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+											data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-transform_idle="o:1;"
 
-								data-type="image"
-								data-responsive_offset="on"
+								 data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="0"
+								data-basealign="slide"
+								data-responsive_offset="off"
+								data-responsive="off"
 
-								data-frames='[{"delay":500,"speed":2000,"frame":"0","from":"y:500px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-
-								style="z-index: 5;"></div>
+								style="z-index: 5;text-transform:left;background-color:rgba(51, 51, 51, 0.50);border-color:rgba(0, 0, 0, 0.50);"> </div>
 
 							<!-- LAYER NR. 2 -->
-							<div class="tp-caption   tp-resizeme rs-parallaxlevel-2"
-								 id="slide-605-layer-1"
-								 data-x="center" data-hoffset=""
-								 data-y="bottom" data-voffset=""
-											data-width="['none','none','none','none']"
-								data-height="['none','none','none','none']"
+							<div class="tp-caption   tp-resizeme"
+								 id="slide-1494-layer-14"
+								 data-x="['center','center','center','center']" data-hoffset="['0','0','-1','0']"
+								 data-y="['middle','middle','middle','middle']" data-voffset="['-120','-120','-270','-189']"
+											data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-transform_idle="o:1;"
 
-								data-type="image"
+								 data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="1000"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":750,"speed":2000,"frame":"0","from":"y:500px;sX:1;sY:1;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 6;"><img src="include/rs-plugin/demos/assets/images/ramadan.jpg" alt="" data-ww="1600px" data-hh="1067px" data-no-retina> </div>
+								style="z-index: 6;text-transform:left;"><img src="include/rs-plugin/demos/assets/images/rockband.png" alt="" width="640" height="250" data-ww="['640px','640px','640px','360px']" data-hh="['250px','250px','250px','141px']" data-no-retina> </div>
 
 							<!-- LAYER NR. 3 -->
-							<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-2"
-								 id="slide-605-layer-14"
-								 data-x="-1099"
-								 data-y="center" data-voffset=""
-											data-width="['1000']"
-								data-height="['1000']"
+							<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
+								 id="slide-1494-layer-5"
+								 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']"
+											data-width="full"
+								data-height="['400','400','600','440']"
+								data-whitespace="nowrap"
+								data-transform_idle="o:1;"
 
-								data-type="shape"
+								 data-transform_in="y:bottom;s:1500;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="1300"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 7;background-color:rgb(255,255,255);"> </div>
+								style="z-index: 7;text-transform:left;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(255, 255, 255, 1.00);"> </div>
 
 							<!-- LAYER NR. 4 -->
-							<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-2"
-								 id="slide-605-layer-13"
-								 data-x="-100"
-								 data-y="center" data-voffset=""
-											data-width="['300']"
-								data-height="['1000']"
+							<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
+								 id="slide-1494-layer-15"
+								 data-x="['center','center','center','center']" data-hoffset="['241','221','441','441']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['74','74','74','74']"
+											data-width="2"
+								data-height="240"
+								data-whitespace="nowrap"
+								data-visibility="['on','on','off','off']"
+								data-transform_idle="o:1;"
 
-								data-type="shape"
+								 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="1300"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 8;background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1.00) 0%, rgba(255,255,255,0.00) 100%, rgba(255,255,255,0) 100%);"> </div>
+								style="z-index: 8;text-transform:left;background-color:rgba(255, 255, 255, 0.15);border-color:rgba(0, 0, 0, 0);"> </div>
 
 							<!-- LAYER NR. 5 -->
-							<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-2"
-								 id="slide-605-layer-16"
-								 data-x="right" data-hoffset="-1099"
-								 data-y="center" data-voffset=""
-											data-width="['1000']"
-								data-height="['1000']"
+							<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
+								 id="slide-1494-layer-17"
+								 data-x="['center','center','center','center']" data-hoffset="['-241','-221','-431','-431']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['73','73','73','73']"
+											data-width="2"
+								data-height="240"
+								data-whitespace="nowrap"
+								data-visibility="['on','on','off','off']"
+								data-transform_idle="o:1;"
 
-								data-type="shape"
+								 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="1300"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 9;background-color:rgb(255,255,255);"> </div>
+								style="z-index: 9;text-transform:left;background-color:rgba(255, 255, 255, 0.15);border-color:rgba(0, 0, 0, 0);"> </div>
 
 							<!-- LAYER NR. 6 -->
-							<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-2"
-								 id="slide-605-layer-15"
-								 data-x="right" data-hoffset="-100"
-								 data-y="center" data-voffset=""
-											data-width="['300']"
-								data-height="['1000']"
+							<div class="tp-caption RockBand-LogoText   tp-resizeme"
+								 id="slide-1494-layer-9"
+								 data-x="['center','center','center','center']" data-hoffset="['-430','-370','-170','0']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['290','290','260','134']"
+											data-fontsize="['25','25','25','20']"
+								data-lineheight="['25','25','25','20']"
+								data-width="['300','240','300','380']"
+								data-height="none"
+								data-whitespace="normal"
+								data-transform_idle="o:1;"
 
-								data-type="shape"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="1750"
+								data-splitin="none"
+								data-splitout="none"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 10;background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);"> </div>
+								style="z-index: 10; min-width: 300px; max-width: 300px; white-space: normal; font-size: 25px; line-height: 25px; font-weight: 400;text-transform:left;">مسابقة الأسبوع 2</div>
 
 							<!-- LAYER NR. 7 -->
-							<div class="tp-caption   tp-resizeme rs-parallaxlevel-3"
-								 id="slide-605-layer-4"
-								 data-x="462"
-								 data-y="355"
-											data-width="['auto']"
-								data-height="['auto']"
+							<div class="tp-caption RockBand-LogoText   tp-resizeme"
+								 id="slide-1494-layer-12"
+								 data-x="['center','center','center','center']" data-hoffset="['-430','-370','-170','-100']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['170','170','140','40']"
+											data-fontsize="['20','20','20','15']"
+								data-lineheight="['30','30','30','25']"
+								data-width="['300','240','300','180']"
+								data-height="none"
+								data-whitespace="normal"
+								data-transform_idle="o:1;"
 
-								data-type="text"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="1900"
+								data-splitin="none"
+								data-splitout="none"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:-200px;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 11; white-space: nowrap; font-size: 160px; line-height: 160px; font-weight: 900; color: #FFF; text-shadow: 0 0px 30px rgba(0,0,0,0.07), 0 10px 14px rgba(0,0,0,0.2); letter-spacing: -10px;font-family:source sans pro;">KAREEM </div>
+								style="z-index: 11; min-width: 300px; max-width: 300px; white-space: normal; font-size: 20px; line-height: 30px; font-weight: 400;text-transform:left;"><span style="background:#000;padding:0 5px;">الأحد صباحاً</span><span style="color:#000;background:#fff;padding:0 5px;">6:00</span><br/>
+					<span>تبدأ المسابقة</span><br/>
+					<span style="opacity:0.5;">3/5/2020</span>
+					 </div>
 
 							<!-- LAYER NR. 8 -->
-							<div class="tp-caption   tp-resizeme rs-parallaxlevel-4"
-								 id="slide-605-layer-2"
-								 data-x="462"
-								 data-y="84"
-											data-width="['none','none','none','none']"
-								data-height="['none','none','none','none']"
+							<div class="tp-caption RockBand-LogoText   tp-resizeme"
+								 id="slide-1494-layer-13"
+								 data-x="['center','center','center','center']" data-hoffset="['-430','-370','-170','100']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['66','66','36','40']"
+											data-fontsize="['20','20','20','15']"
+								data-lineheight="['30','30','30','25']"
+								data-width="['300','240','300','180']"
+								data-height="none"
+								data-whitespace="normal"
+								data-transform_idle="o:1;"
 
-								data-type="image"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="2050"
+								data-splitin="none"
+								data-splitout="none"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":800,"speed":2000,"frame":"0","from":"x:left;y:0px;rZ:-30deg;opacity:1;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 12;"><img src="include/rs-plugin/demos/assets/images/sheep.png" alt="" data-ww="400px" data-hh="350px" data-no-retina> </div>
-
-							<!-- LAYER NR. 9 -->
-							<div class="tp-caption   tp-resizeme rs-parallaxlevel-5"
-								 id="slide-605-layer-3"
-								 data-x="116"
-								 data-y="242"
-											data-width="['auto']"
-								data-height="['auto']"
-
-								data-type="text"
-								data-responsive_offset="on"
-
-								data-frames='[{"delay":1300,"speed":1000,"frame":"0","from":"x:200px;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-
-								style="z-index: 13; white-space: nowrap; font-size: 160px; line-height: 160px; font-weight: 900; color: #FFF; text-shadow: 0 0px 30px rgba(0,0,0,0.07), 0 10px 14px rgba(0,0,0,0.2); letter-spacing: -10px;font-family:source sans pro;">RAMADAN </div>
+								style="z-index: 12; min-width: 300px; max-width: 300px; white-space: normal; font-size: 20px; line-height: 30px; font-weight: 400;text-transform:left;"><span style="background:#000;padding:0 5px;">الجمعة ليلاً</span><span style="color:#000;background:#fff;padding:0 5px;">12:00</span><br/>
+							<span>المسابقة تنتهي</span><br/>
+							<span style="opacity:0.5;">8/5/2020</span>
+							</div>
 
 							<!-- LAYER NR. 10 -->
-							<div class="tp-caption   tp-resizeme rs-parallaxlevel-6"
-								 id="slide-605-layer-6"
-								 data-x="186"
-								 data-y="169"
-											data-width="['none','none','none','none']"
-								data-height="['none','none','none','none']"
+							<a class="tp-caption RockBand-LogoText   tp-resizeme"
+					 			 target="_blank"			 id="slide-1494-layer-8"
+								 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['250','270','500','358']"
+											data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-transform_idle="o:1;"
 
-								data-type="image"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="2200"
+								data-splitin="none"
+								data-splitout="none"
+								data-actions=''
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":1700,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Back.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 14;">
-								<div class="rs-looped rs-rotate"  data-easing="Linear.easeNone" data-startdeg="0" data-enddeg="360" data-speed="30" data-origin="50% 50%"><img src="include/rs-plugin/demos/assets/images/deco2.png" alt="" data-ww="100px" data-hh="100px" data-no-retina> </div></div>
+								style="z-index: 14; white-space: nowrap; font-size: 33px; line-height: 12px; font-weight: 400;font-family:Roboto;text-transform:left; color: orange;">مسابقة نحن نسأل وأنت تجيب  </a>
+
+
+								<a class="tp-caption RockBand-LogoText tp-resizeme"
+											target="_blank"			 id="slide-1494-layer-8"
+											data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+											data-y="['bottom','bottom','bottom','bottom']" data-voffset="['200','220','450','308']"
+													   data-width="none"
+										   data-height="none"
+										   data-whitespace="nowrap"
+										   data-transform_idle="o:1;"
+		   
+											data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+											data-transform_out="opacity:0;s:300;s:300;"
+										   data-start="2200"
+										   data-splitin="none"
+										   data-splitout="none"
+										   data-actions=''
+										   data-basealign="slide"
+										   data-responsive_offset="on"
+		   
+		   
+										   style="color: white; z-index: 14; white-space: nowrap; font-size: 29px; line-height: 12px; font-weight: 800;font-family:Roboto;text-transform:left;text-decoration:underline;">رمضان 2020  </a>
 
 							<!-- LAYER NR. 11 -->
-							<a href="#" data-toggle="modal" data-target="#contactFormModal" class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-9"
-								 id="slide-605-layer-7"
-								 data-x="center" data-hoffset=""
-								 data-y="bottom" data-voffset="70"
-											data-width="['350']"
-								data-height="['350']"
+							<div class="tp-caption   tp-resizeme " data-toggle="modal" data-target="#contactFormModal"
+								 id="slide-1494-layer-6"
+								 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['110','110','350','208']"
+											data-width="['400','380','640','380']"
+								data-height="none"
+								data-whitespace="normal"
+								data-transform_idle="o:1;"
 
-								data-type="shape"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:1000;e:Power3.easeOut;s:1000;e:Power3.easeOut;"
+								data-start="2350"
+								data-splitin="none"
+								data-splitout="none"
+								data-basealign="slide"
 								data-responsive_offset="on"
-								data-easing="easeInOutExpo"
-								data-speed="1250"
-								data-offset="60"
-
-								data-frames='[{"delay":2200,"speed":1000,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;sX:1.1;sY:1.1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(0,0,0);bs:solid;bw:0 0 0 0;"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-								data-blendmode="hard-light"
-
-								style="z-index: 15;background-color:rgb(180,0,17);border-color:rgba(0,0,0,0.5);border-radius:200px 200px 200px 200px;cursor:pointer;"> </a>
+								data-textAlign="['center','center','center','center']"
+								style="z-index: 19; min-width: 300px; max-width: 300px; white-space: normal; font-size: 24px; line-height: 60px; font-weight: 700; color: rgba(255,255,255,1); letter-spacing: px; display: inline-block;font-family:Montserrat;background-color:rgb(247,147,26);border-color:rgba(0,0,0,1);border-radius:30px 30px 30px 30px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none;"> 
+							 	ابدأ المسابقة</div>
 
 							<!-- LAYER NR. 12 -->
-							<div class="tp-caption  tp-no-events   tp-resizeme rs-parallaxlevel-9"
-								 id="slide-605-layer-9"
-								 data-x="center" data-hoffset=""
-								 data-y="620"
-											data-width="['none','none','none','none']"
-								data-height="['none','none','none','none']"
+							<div class="tp-caption RockBand-LogoText   tp-resizeme"
+								 id="slide-1494-layer-10"
+								 data-x="['center','center','center','center']" data-hoffset="['429','370','170','490']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['290','290','260','210']"
+											data-fontsize="['25','25','25','20']"
+								data-lineheight="['25','25','25','20']"
+								data-width="['300','240','300','300']"
+								data-height="none"
+								data-whitespace="normal"
+								data-visibility="['on','on','on','off']"
+								data-transform_idle="o:1;"
 
-								data-type="image"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="2500"
+								data-splitin="none"
+								data-splitout="none"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":2300,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 16;pointer-events:none;"><img src="include/rs-plugin/demos/assets/images/gift.png" alt="" data-ww="80px" data-hh="80px" data-no-retina> </div>
+								style="z-index: 16; min-width: 300px; max-width: 300px; white-space: normal; font-size: 25px; line-height: 25px; font-weight: 400;text-transform:left;">
+								تفاصيل المسابقة </div>
 
 							<!-- LAYER NR. 13 -->
-							<div class="tp-caption  tp-no-events   tp-resizeme rs-parallaxlevel-9"
-								 id="slide-605-layer-10"
-								 data-x="center" data-hoffset=""
-								 data-y="720"
-											data-width="['auto']"
-								data-height="['auto']"
+							<div class="tp-caption RockBand-LogoText   tp-resizeme  Twitter-Content"
+								 id="slide-1494-layer-11"
+								 data-x="['center','center','center','center']" data-hoffset="['430','370','170','490']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['95','95','65','15']"
+											data-width="['300','240','300','300']"
+								data-height="170"
+								data-whitespace="normal"
+								data-visibility="['on','on','on','off']"
+								data-transform_idle="o:1;"
 
-								data-type="text"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="2650"
+								data-splitin="none"
+								data-splitout="none"
+								data-basealign="slide"
 								data-responsive_offset="on"
 
-								data-frames='[{"delay":2400,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
 
-								style="z-index: 17; white-space: nowrap; font-size: 60px; line-height: 60px; font-weight: 900; color: #ffffff; letter-spacing: 0px;font-family:source sans pro;pointer-events:none;">خروف العيد </div>
+								style="z-index: 17; min-width: 300px; max-width: 300px; max-width: 170px; max-width: 170px; white-space: normal; font-size: 15px; line-height: 24px; font-weight: 400;font-family:Roboto;text-transform:right; text-align: right;">
+								<span>لكل شخص يمكن الاشتراك مرة واحدة </span>
+								<br>
+								<span>كل يوم أحد تبدأ مسابقة جديدة</span>
+								<br>
+								<span> كل مسابقة تنتهي يوم الخميس الساعة 12:00 ليلا</span>
+								<br>
+								<span> نتصل بك من خلال المعلومات المدخلة</span>
+								<br>
+								<span>تابعنا على الفيسبوك لاخر الأخبار</span>
+							</div>
 
 							<!-- LAYER NR. 14 -->
-							<div class="tp-caption  tp-no-events   tp-resizeme rs-parallaxlevel-9"
-								 id="slide-605-layer-11"
-								 data-x="center" data-hoffset=""
-								 data-y="790"
-											data-width="['auto']"
-								data-height="['auto']"
-
-								data-type="text"
+							<a class="tp-caption   tp-resizeme"
+					 href="https://www.facebook.com/DMAsDMAs/timeline" target="_blank"			 id="slide-1494-layer-18"
+								 data-x="['center','center','center','center']" data-hoffset="['291','261','30','120']"
+								 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['106','86','70','128']"
+											data-width="40"
+								data-height="40"
+								data-whitespace="normal"
+								data-transform_idle="o:1;"
+								data-padding="0 10px"
+								 data-transform_in="y:50px;opacity:0;s:1000;e:Power3.easeOut;"
+								 data-transform_out="opacity:0;s:300;s:300;"
+								data-start="2800"
+								data-splitin="none"
+								data-splitout="none"
+								data-actions=''
+								data-basealign="slide"
 								data-responsive_offset="on"
+								data-margin="5px"
 
-								data-frames='[{"delay":2500,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
+								style="z-index: 18; min-width: 40px; max-width: 40px; max-width: 40px; max-width: 40px; white-space: normal; font-size: 25px; line-height: 40px; font-weight: 400; color: rgb(83, 163, 255);text-align:center; border: rgb(83, 163, 255) 1px solid; border-radius: 50%; padding: 0 10px !important;"><i class="icon-facebook"></i> </a>
 
-								style="z-index: 18; white-space: nowrap; font-size: 30px; line-height: 40px; font-weight: 300; color: #ffffff; letter-spacing: 5px;font-family:source sans pro;pointer-events:none;">اشترك الان<br/>بالسحب </div>
-
-								<!-- LAYER NR. 15 -->
-							<div class="tp-caption  tp-no-events   tp-resizeme rs-parallaxlevel-9"
-								 id="slide-605-layer-15-1"
-								 data-x="center" data-hoffset=""
-								 data-y="875"
-								data-width="['auto']"
-								data-height="['auto']"
-
-								data-type="text"
-								data-responsive_offset="on"
-
-								data-frames='[{"delay":3000,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['center','center','center','center']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-
-								style="z-index: 21; font-size: 30px; color: #ffffff; pointer-events:none;"><i class="icon-line-arrow-down"></i> </div>
-
-							<!-- LAYER NR. 16 -->
-							<div class="tp-caption   tp-resizeme rs-parallaxlevel-11"
-								 id="slide-605-layer-17"
-								 data-x="717"
-								 data-y="576"
-											data-width="['none','none','none','none']"
-								data-height="['none','none','none','none']"
-
-								data-type="image"
-								data-responsive_offset="on"
-
-								data-frames='[{"delay":1900,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Back.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-
-								style="z-index: 19;">
-								<div class="rs-looped rs-rotate"  data-easing="Linear.easeNone" data-startdeg="0" data-enddeg="-360" data-speed="30" data-origin="50% 50%"><img src="include/rs-plugin/demos/assets/images/deco3.png" alt="" data-ww="60px" data-hh="60px" data-no-retina> </div>
-							</div>
-						</li>
+							</li>
 					</ul>
-					<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-				</div>
+				<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
 			</div><!-- END REVOLUTION SLIDER -->
-
 		</section>
-
-		<!-- Content
-		============================================= -->
-		<section id="content" class="clearfix">
-            <div class="content-wrap">
-
-                <div id="section-pricing" class="heading-block title-center nobottomborder page-section">
-                    <h2>مسابقة رمضان 2020</h2>
-                    <span>برعاية حركة البناء الحضارية</span>
-                    <img src="images/movement/logo.jpeg" style="margin-top: 10px;" height="150px">
-                </div>
-                <div class="pricing-box pricing-extended bottommargin clearfix">
-
-                    <div class="pricing-desc">
-                        <div class="pricing-title">
-                            <h3>تفاصيل المسابقة</h3>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="iconlist-color clearfix">
-                                <li><i class="icon-users1"></i> لكل شخص يمكن الاشتراك مرة واحدة</li>
-                                <li><i class="icon-facebook"></i> متابعة على الفيسبوك</li>
-                                <li><i class="icon-beaker"></i> كل يوم أحد تبدأ مسابقة جديدة</li>
-                                <li><i class="icon-map-marker1"></i> نتصل بك من خلال المعلومات المدخلة</li>
-                                <li><i class="icon-stopwatch1"></i> كل مسابقة تنتهي يوم الخميس الساعة 12:00 ليلا</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pricing-action-area">
-                        <div class="pricing-meta">
-                            خروف
-                        </div>
-                        <div class="pricing-price">
-                            <span class="price-unit"></span>1<span class="price-tenure">أسبوعيا</span>
-                        </div>
-                        <div class="pricing-action">
-                            <a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-3d button-large btn-block nomargin">للاشتراك</a>
-                        </div>
-                    </div>
-
-                </div>
-				<div class="section footer-stick">
-
-					<div class="container clearfix">
-
-						<div id="section-buy" class="heading-block title-center nobottomborder page-section">
-                            <h2>جائزة خروف العيد كل أسبوع, كل ما عليك هو الاجابة عن الأسئلة لفرصة التسجيل بالسحب</h2>
-                            <span>تابعنا على مواقع التواصل الاجتماعي لمعرفة المزيد</span>
-						</div>
-
-						<div class="center">
-
-                            <a href="https://www.facebook.com/%D9%82%D9%8A%D8%A7%D8%AF%D8%A9-%D9%82%D8%A7%D8%AF%D8%B1%D8%A9-%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%AD%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D8%B4%D8%A8%D8%A7%D8%A8%D9%8A%D8%A9-322229255218830/?eid=ARDbZBcjoClUBIFrgOTwUHtKPl-xCvtLbizw5PeBQ7YEKJnKklcheZ0ara8TN-1BCaTZJ1PUlNEzukHB"
-                             data-animate="tada" class="button button-3d button-teal button-xlarge nobottommargin not-animated"><i class="icon-facebook"></i></a>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-        </section><!-- #content end -->
         
         		<!-- Modal Contact Form
 		============================================= -->
-		<div dir="rtl" class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
+		<div dir="rtl" class="modal fade right" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+			<div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
 				<div class="modal-content">
-					<div class="modal-header" style="text-align: right;">
-						<h4 class="modal-title" id="contactFormModalLabel">مسابقة رمضان 2020 - الأسبوع الأول</h4>
-					</div>
+
 					<div class="userInfo">
-						<div class="form-group">
-							<input type="text" class="form-control" id="username" placeholder="الاسم الكامل">
-						  </div>
-						  <div class="form-group">
-							<input type="number" class="form-control" id="userphone" placeholder="الهاتف">
-						  </div>
+						<div class="modal-header" style="background-color: rgb(247, 147, 26); color: white; text-align: right;">
+							<p class="heading">مسابقة الأسبوع 
+								<strong>الثاني</strong>
+							</p>
+						</div>
+						<div class="modal-body" style="text-align: right;">
+							<div class="form-group">
+								<input type="text" class="form-control" id="username" placeholder="الاسم الكامل">
+							  </div>
+							  <div class="form-group">
+								<input type="number" class="form-control" id="userphone" placeholder="الهاتف">
+							  </div>
+						</div>
 					</div>
-					<div class="modal-body" style="text-align: right;">
-						<% for(let i=0; i< questions.length; i++) { let q = questions[i]; %>
-							<div class="radioGroup" style = "display:none;">
-								<h2><%= q.question %></h2>
+					<% for(let i=0; i< questions.length; i++) { let q = questions[i]; %>
+					<div class="form" style = "display:none; text-align: right;">
 
-								<label class="radioButton"><h2><%= q.choiceA %></h2>
-								<input value="A" type="radio" checked="checked" name="radio">
-								<span class="checkmark"></span>
-								</label>
-
-								<label class="radioButton"><h2><%= q.choiceB %></h2>
-								<input value="B" type="radio" name="radio">
-								<span class="checkmark"></span>
-								</label>
-								
-								<label class="radioButton"><h2><%= q.choiceC %></h2>
-								<input value="C" type="radio" name="radio">
-								<span class="checkmark"></span>
-								</label>
-
-								<label class="radioButton"><h2><%= q.choiceD %></h2>
-								<input value="D" type="radio" name="radio">
-								<span class="checkmark"></span>
-								</label>
-
-								<input class="correctAnswer" value="<%= q.correct %>" style="display:none;"></span>
+						<div class="modal-header" style="background-color: rgb(247, 147, 26); color: white;">
+							<p class="heading"><%= i+1 %>)
+								<strong><%= q.question %></strong>
+							</p>
+						</div>
+						<div class="modal-body">
+							<div class="inputGroup">
+								<input value="A" id="radioA<%= i %>"  type="radio" name="radio<%= i %>">
+								<label for="radioA<%= i %>"><%= q.choiceA %></label>
 							</div>
-						<% } %>
+
+							<div class="inputGroup">
+								<input value="B" id="radioB<%= i %>" type="radio"  name="radio<%= i %>">
+								<label for="radioB<%= i %>"><%= q.choiceB %></label>
+							</div>
+
+							<div class="inputGroup">
+								<input value="C" id="radioC<%= i %>" type="radio"  name="radio<%= i %>">
+								<label for="radioC<%= i %>"><%= q.choiceC %></label>
+							</div>
+							<% if(q.choiceD != " ") {%>
+							<div class="inputGroup">
+								<input value="D" id="radioD<%= i %>" type="radio" name="radio<%= i %>">
+								<label for="radioD<%= i %>"><%= q.choiceD %></label>
+							</div>
+							<%}%>
+							<input class="correctAnswer" value="<%= q.correct %>" style="display:none;"></span>
+						</div>
 					</div>
-					<div class="modal-footer">
-						<button class="btn btn-secondary" style="margin-left: 10px;" data-dismiss="modal">اغلاق</button>
-						<button id="nextQ" class="btn btn-primary">التالي</button>
+						<% } %>
+					<div class="modal-footer flex-center">
+						<button id="prevQ" class="btn btn-danger" style="background-color: rgb(247, 147, 26); border-color: rgb(247, 147, 26); margin-left: 10px;">السابق</button>
+						<button id="nextQ" class="btn waves-effect" style="color: rgb(247, 147, 26); border-color: rgb(247, 147, 26);">التالي</button>
 						<ul id="userTable" style="display: none;">
 							<% for(let j=0; j< users.length; j++){ let user = users[j]; %>
 								<input class="mmm" value="<%= user.phone %>">
@@ -612,75 +569,66 @@
 	<script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
 
 	<!-- ADD-ONS JS FILES -->
-	<script>
+	<script type="text/javascript">
+		var revapi117,
+		tpj=jQuery;
+		tpj(document).ready(function() {
+			if(tpj("#rev_slider_430_1").revolution == undefined){
+				revslider_showDoubleJqueryError("#rev_slider_430_1");
+			}else{
+				revapi430 = tpj("#rev_slider_430_1").show().revolution({
+					sliderType:"hero",
+					jsFileLocation:"include/rs-plugin/js/",
+					sliderLayout:"fullscreen",
+					dottedOverlay:"none",
+					delay:9000,
+					navigation: {
+					},
+					responsiveLevels:[1240,1024,778,480],
+					visibilityLevels:[1240,1024,778,480],
+					gridwidth:[1240,1024,778,480],
+					gridheight:[868,768,960,720],
+					lazyType:"none",
+					parallax: {
+						type:"scroll",
+						origo:"slidercenter",
+						speed:400,
+						levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
+						type:"scroll",
+					},
+					shadow:0,
+					spinner:"off",
+					autoHeight:"off",
+					fullScreenAutoWidth:"off",
+					fullScreenAlignForce:"off",
+					fullScreenOffsetContainer: "",
+					fullScreenOffset: "0px",
+					disableProgressBar:"on",
+					hideThumbsOnMobile:"off",
+					hideSliderAtLimit:0,
+					hideCaptionAtLimit:0,
+					hideAllCaptionAtLilmit:0,
+					debugMode:false,
+					fallbacks: {
+						simplifyAll:"off",
+						disableFocusListener:false,
+					}
+				});
+			}
+		
 
-		var revapi232,
-		tpj;
-		(function() {
-			if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad); else onLoad();
+				let i = -1;
+				let questionNum = 0;
+				let Questions = $( ".form" );
+				let selections = [];			
 
-			function onLoad() {
-				if (tpj===undefined) { tpj = jQuery; if("off" == "on") tpj.noConflict();}
-					if(tpj("#rev_slider_232_1").revolution == undefined){
-						revslider_showDoubleJqueryError("#rev_slider_232_1");
-					} else{
-						revapi232 = tpj("#rev_slider_232_1").show().revolution({
-							sliderType:"hero",
-							jsFileLocation:"../include/rs-plugin/js/",
-							sliderLayout:"fullwidth",
-							dottedOverlay:"none",
-							delay:9000,
-							snow: {
-								startSlide: "first",
-								endSlide: "last",
-								maxNum: "200",
-								minSize: "0.1",
-								maxSize: "5",
-								minOpacity: "1",
-								maxOpacity: "1",
-								minSpeed: "100",
-								maxSpeed: "200",
-								minSinus: "1",
-								maxSinus: "200",
-							},
-							navigation: {
-							},
-							visibilityLevels:[1240,1024,778,480],
-							gridwidth:1240,
-							gridheight:1000,
-							lazyType:"none",
-							parallax: {
-								type:"mouse+scroll",
-								origo:"slidercenter",
-								speed:1000,
-							  speedbg:0,
-							  speedls:1000,
-								levels:[2,4,6,8,10,12,14,16,-2,-4,-6,-8,-10,-12,-14,55],
-							},
-							shadow:0,
-							spinner:"spinner3",
-							autoHeight:"off",
-							disableProgressBar:"on",
-							hideThumbsOnMobile:"off",
-							hideSliderAtLimit:0,
-							hideCaptionAtLimit:0,
-							hideAllCaptionAtLilmit:0,
-							debugMode:false,
-							fallbacks: {
-								simplifyAll:"off",
-								disableFocusListener:false,
-							}
-						});
-					}; /* END OF revapi call */
-
-					RsSnowAddOn(tpj, revapi232);
-
-				if(typeof ExplodingLayersAddOn !== "undefined") ExplodingLayersAddOn(tpj, revapi232);
-
-
-				let i = -1; 
-				let Questions = $( ".radioGroup" );
-				let score = 0;			
+				$( "#prevQ" ).click(function() {
+					if(i>0){
+						Questions.eq(i).hide();
+						i--;
+						Questions.eq(i).show();
+					}
+				});
 
 				$( "#nextQ" ).click(function() {
 					let phones = [];
@@ -722,12 +670,6 @@
 					  
 					  if(res == "07" || res == "05"){
 						$(".userInfo").hide();
-
-						let checkAnswer = $('input[name=radio]:checked').val();
-						let correctAnswer = Questions.eq(i).find('.correctAnswer').val();
-
-						if(checkAnswer == correctAnswer)
-							score++;
 						
 						if(i>-1)
 							Questions.eq(i).hide();
@@ -735,7 +677,17 @@
 						i++;
 
 						if(i == Questions.length){
-							post('/movement', {name: username, phone: userphone, score: score})
+							let finalScore = 0;
+							for(let j=0; j<Questions.length; j++){
+								let checkAnswer = $('input[name=radio'+j+']:checked').val();
+								let correctAnswer = Questions.eq(j).find('.correctAnswer').val();
+								console.debug(checkAnswer +"="+correctAnswer);
+
+								if(checkAnswer == correctAnswer)
+									finalScore++;
+
+							}
+							post('/movement', {name: username, phone: userphone, score: finalScore})
 						}
 						else
 							Questions.eq(i).show();
@@ -748,8 +700,13 @@
 					  }
 				});
 
-			};
-			function post(path, params, method='post') {
+				
+
+			});	/*ready*/
+			function hasNumber(myString) {
+					return /\d/.test(myString);
+				}
+				function post(path, params, method='post') {
 				alert("شكرا على الاشتراك, تم ارسال النتيجة بنجاح");
 
 					// The rest of this code assumes you are not using a library.
@@ -773,11 +730,6 @@
 					form.submit();
 				
 				}
-				function hasNumber(myString) {
-					return /\d/.test(myString);
-				}
-		}()); /* END OF WRAPPING FUNCTION */
-
 	</script>
 
 </body>
