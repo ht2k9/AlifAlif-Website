@@ -84,13 +84,22 @@ app.get('/keyadakadera', (req, res) => {
     });
 });
 
-app.get('/quiz/users', (req, res) => {
-    fs.readFile('localbase/users.json', (err, dataU) => {
+app.get('/quiz/get/questions', (req, res) => {
+    fs.readFile('localbase/questions.json', (err, dataU) => {
         if (err) throw err;
-        let users = JSON.parse(dataU);
-        res.render('movement', {users: users});
+        let data_ = JSON.parse(dataU);
+        res.send(data_);
     });
 });
+
+app.get('/quiz/get/user', (req, res) => {
+    fs.readFile('localbase/users.json', (err, dataU) => {
+        if (err) throw err;
+        let data_ = JSON.parse(dataU);
+        res.send(data_);
+    });
+});
+
 
 
 app.post('/movement', (req, res) => {
