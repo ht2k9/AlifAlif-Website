@@ -166,7 +166,7 @@ app.post('/quiz/admin', (req, res) => {
 });
 
 app.get('/quiz/add', (req, res) => {
-    res.render('quiz/add-quiz');
+    res.render('quiz/add-quiz', {question: null});
 });
 
 app.get('/quiz/show/:id', (req, res) => {
