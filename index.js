@@ -48,7 +48,7 @@ app.get('/digitalcard', (req, res) => {
 });
 
 app.get('/digitalcard/show/:id', (req, res) => {
-    res.render('digitalcard/test', {vcard: {}});
+    res.render('digitalcard/vcard', {vcard: {}});
 });
 
 app.get('/digitalcard/add', (req, res) => {

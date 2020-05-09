@@ -3,40 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
     <style>
-        #logo {
-            margin-bottom: 50px;
-        }
-        .wrapper{
-            position: fixed; /* or absolute */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        body{
+            margin: 0;
             text-align: center;
         }
+        footer {
+            padding: 5px;
+            width: 100%;
+            display: flex;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            flex-direction: row;
+            justify-content:flex-start;
+        }
+        .wrapper{
+            padding: 0;
+            z-index: 1;
+            width: 100vw;
+            display: flex;
+            align-items: center;;
+            justify-content: center;
+            flex-direction: column;
+        }
         .container{
+            padding: 10px;
+            margin: 0 auto;
             display: grid;
             grid-template-rows: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 50px;
+        }
+
+        .container img{
+            margin: 0 auto;
+            height: 75px;
+        }
+        .container p{
+            margin: 0 auto;
+            float: none;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+            color: white;
+            padding: 2px 5px;
+            text-shadow: 0px 1px 3px black;
+            text-align: center;
+            display: inline-block;
+        }
+        #myVideo {
+            z-index: -1;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+        }
+        #logo {
+            margin-bottom: 2rem;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
+    <video autoplay muted loop id="myVideo">
+        <source src="/include/rs-plugin/demos/assets/images/ramadan-loop.mp4" type="video/mp4">
+    </video>
         <img id="logo" src="/images/logo.png" alt="logo">
+         
+    <div class="wrapper">
+
         <div class="container">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">
-            <img src="/images/logo.png" alt="">        
+            <a href="http://facebook.com/alifalifreelance">
+                <img src="/images/icons/phone.webp" alt="">
+                <p>054-7077590</p>
+            </a>
+            <a href="http://facebook.com/alifalifreelance">
+                <img src="/images/icons/telephone.png" alt="">
+                <p>054-7077590</p>
+            </a>
+            <a href="http://facebook.com/alifalifreelance">
+                <img src="/images/icons/gallery.webp" alt="">
+                <p>054-7077590</p>
+            </a>
+            <a href="http://facebook.com/alifalifreelance">
+                <img src="/images/icons/facebook.png" alt="">
+                <p>054-7077590</p>
+            </a>
+            <a href="http://facebook.com/alifalifreelance">
+                <img src="/images/icons/instagram.png" alt="">
+                <p>054-7077590</p>
+            </a>
+            <a href="http://facebook.com/alifalifreelance">
+                <img src="/images/icons/waze.png" alt="">
+                <p>054-7077590</p>
+            </a>
+            <a href="http://facebook.com/alifalifreelance">
+                <img src="/images/icons/clock.png" alt="">
+                <p>054-7077590</p>
+            </a>
+            
         </div>
     </div>
+    <footer>
+        <a href="http://facebook.com/alifalifreelance">
+            <img src="/images/icons/home.png" alt="">
+        </a>
+        <a href="http://facebook.com/alifalifreelance">
+            <img src="/images/icons/download.png" alt="">
+        </a>
+        <a href="http://facebook.com/alifalifreelance">
+            <img src="/images/icons/share.png" alt="">
+        </a>
+
+        <a href="http://facebook.com/alifalifreelance" style="margin-left: auto; padding-right: 1rem;">
+            <img src="/images/logo.png" alt="alifalif"  height="50px"> 
+        </a>
+    </footer>
 </body>
 </html>
