@@ -43,12 +43,22 @@ app.get('/events', (req, res) => {
 
 // ***************************************************** Digital Card ****************************************/
 
-app.get('/digitalcard', (req, res) => {
-    res.render('digitalcard/dashboard');
+app.get('/digitalcard/admin', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, dataQ) => {
+        if (err) throw err;
+        let vcards = JSON.parse(dataQ);
+        
+        res.render('quiz/all-quiz', {vcards: vcards});
+    });
 });
 
 app.get('/digitalcard/show/:id', (req, res) => {
-    res.render('digitalcard/vcard', {vcard: {}});
+    fs.readFile('localbase/vcards.json', (err, dataQ) => {
+        if (err) throw err;
+        let vcards = JSON.parse(dataQ);
+        
+        res.render('digitalcard/vcard', {vcard: vcards[req.params.id]});
+    });
 });
 
 app.get('/digitalcard/add', (req, res) => {
@@ -56,19 +66,85 @@ app.get('/digitalcard/add', (req, res) => {
 });
 
 app.post('/digitalcard/add', (req, res) => {
-    res.render('digitalcard/dashboard');
+    fs.readFile('localbase/vcards.json', (err, data) => {
+        
+        if (err) throw err;
+        vcards = JSON.parse(data);
+        vcards.push( 
+            {
+                logo : req.body.question,
+                facebook : req.body.facebook,
+                waze : req.body.waze,
+                instagram : req.body.instagram,
+                whatsapp : req.body.whatsapp,
+                phones : 
+                [
+                    {
+                        title: req.body.title1,
+                        phone: req.body.phone1
+                    },
+                    {
+                        title: req.body.title2,
+                        phone: req.body.phone2
+                    },
+                    {
+                        title: req.body.title3,
+                        phone: req.body.phone3
+                    },
+                ],
+                day1 : {start:req.body.day1s, end: req.body.day1e},
+                day2 : {start:req.body.day2s, end: req.body.day2e},
+                day3 : {start:req.body.day3s, end: req.body.day3e},
+                day4 : {start:req.body.day4s, end: req.body.day4e},
+                day5 : {start:req.body.day5s, end: req.body.day5e},
+                day6 : {start:req.body.day6s, end: req.body.day6e},
+                day7 : {start:req.body.day7s, end: req.body.day7e},
+            }
+        );
+        console.log(vcard);
+
+        fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/digitalcard/add');
+        });
+    });
 });
 
-app.post('/digitalcard/update', (req, res) => {
-    res.render('digitalcard/dashboard');
+app.post('/digitalcard/update/:id', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, data) => {
+            
+        if (err) throw err;
+        vcards = JSON.parse(data);
+
+        vcards[req.params.id] = 
+            {
+
+            }
+        
+            fs.writeFile('localbase/vcards.json', JSON.stringify(questions) , function (err) {
+                if (err) throw err;
+                    
+                res.redirect('/digitalcard/admin');
+            });
+    });
 });
 
-app.post('/digitalcard/delete', (req, res) => {
-    res.render('digitalcard/dashboard');
+app.post('/digitalcard/delete/:id', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, data) => {
+        
+        if (err) throw err;
+        vcards = JSON.parse(data);
+        
+        vcards.splice(req.params.id, 1);
+
+        fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/digitalcard/admin');
+        });
+    });
 });
-
-// ***************************************************** Digital Card ****************************************/
-
 
 // ***************************************************** QUIZ ****************************************/
 

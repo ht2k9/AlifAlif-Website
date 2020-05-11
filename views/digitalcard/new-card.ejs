@@ -26,6 +26,21 @@ input[type=submit] {
   cursor: pointer;
 }
 
+button{
+  display: block;
+  width: auto;
+  font-size: 20px;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1em;
+}
+
 input[type=submit]:hover {
   background-color: rgb(12, 70, 197);
 }
@@ -141,138 +156,75 @@ div {
 
 
 <div dir="rtl">
-    <form action="/quiz/admin/questions" method="post">
-        <ul style=" padding:0; list-style: none; display: flex; flex-direction: column;">
-          <label for="answer4">شعار المحل</label>
-          <input type="file" accept="image/*" onchange="preview_image(event)">
-          <img id="output_image"/>
-        </ul>
+    <form action="/digitalcard/add" method="post" enctype="multipart/form-data">
 
+        <label for="logo">شعار المحل</label>
+        <input type="text" id="logo" name="logo">
 
-        <ul style=" padding:0; list-style: none; display: flex; flex-direction: column;">
-          <label for="answer4">خلفية</label>
-          <input type="file" accept="image/*" onchange="preview_image(event)">
-          <img id="output_image"/>
-        </ul>
+        <label for="bglink">رابط الخلفية</label>
+        <input type="text" id="bglink" name="bglink">
 
-        <label for="question">فيسبوك</label>
-        <input type="text" id="question" name="question" required <% if(vcard != null) { %> value="<%= vcard.question %>" <% } %>>
+        <label for="facebook">فيسبوك</label>
+        <input type="text" id="facebook" name="facebook">
 
-        <label for="answer4">انستاغرام</label>
-        <input type="text" id="answer4" name="answer4" <% if(vcard != null) { %> value="<%= vcard.choiceD %>" <% } %>>
+        <label for="instagram">انستاغرام</label>
+        <input type="text" id="instagram" name="instagram">
 
-        <label for="answer2">ويز</label>
-        <input type="text" id="answer2" name="answer2" required <% if(vcard != null) { %> value="<%= vcard.choiceB %>" <% } %>>
+        <label for="waze">ويز</label>
+        <input type="text" id="waze" name="waze">
 
-        <label for="answer3">ارقام هاتف</label>
-       
-        <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-        <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>         
-          <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-        <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-
-        <label for="answer4">ساعات عمل</label>
+        <label for="whatsapp">واتساب</label>
+        <input type="text" id="whatsapp" name="whatsapp">
         
-        <div class="group">
-          <label class="container">احد
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
+        <div id="phones">
+          <label for="answer3">ارقام هاتف</label>
         </div>
-
-        <div class="group">
-          <label class="container">اثنين
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">ثلاثاء
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">أربعاء
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">خميس
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">جمعة
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">سبت
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>        <div class="group">
+          
+        <button type="button" onclick="addPhone()">+</button>
+        
+        <label>ساعات عمل</label>
+        
+        <% for(let i=1; i<=7; i++){ %>
+          <div class="group">
+            <label class="container"><%= i %>
+              <input type="checkbox" checked="checked">
+              <span class="checkmark"></span>
+            </label>
+            <input type="time" id="day<%= i %>" name="day<%= i %>s" style="width: 100px;">
+            <p>:</p>
+            <input type="time" id="day<%= i %>" name="day<%= i %>e" style="width: 100px;">
+          </div>
+        <% } %>
 
         <input type="submit" value="اضف المصلحة">
     </form>
 </div>
 
 <script>
-       function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+  let phonesCnt = 0;
+  let node = document.getElementById('phones');
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
 
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+          reader.onload = function (e) {
+              $('#blah')
+                  .attr('src', e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+
+  function addPhone(){
+    node.insertAdjacentHTML('beforeend',
+    '<div class="group"> <input type="text" placeholder="عنوان" id="title'+ phonesCnt + '" name="title'+ phonesCnt + '" style="width: 300px;"> <input type="text" id="phone'+ phonesCnt + '" name="phone'+ phonesCnt + '" style="width: 300px;"> </div> ');     
+    phonesCnt++;
+  }
+
+
 </script>
 </body>
 </html>
