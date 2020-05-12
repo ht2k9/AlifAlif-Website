@@ -158,6 +158,9 @@ div {
 <div dir="rtl">
     <form action="/digitalcard/add" method="post">
 
+        <label>اسم المحل</label>
+        <input type="text" name="business" placeholder="الاسم">
+
         <label>شعار المحل</label>
         <input type="text" id="logo" name="logo" placeholder="الرايط">
 
@@ -166,6 +169,7 @@ div {
           <select name="bgtype" style="max-width: 200px;">
             <option value="photo">صورة</option>
             <option value="video">فيديو</option>
+            <option value="fb">من فيسبوك</option>
           </select>
           <input type="text" id="bglink" name="bglink">
         </div>

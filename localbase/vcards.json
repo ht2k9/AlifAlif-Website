@@ -1,1 +1,9 @@
-[]
+[{"business":"תמריצים סוכנות לביטוח", 
+    "logo":"https://scontent.fsdv3-1.fna.fbcdn.net/v/t1.0-9/90511186_2631682173742175_2965859738920681472_n.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=UE_q0b9MZQEAX_zmXVY&_nc_ht=scontent.fsdv3-1.fna&oh=57cb36fc1e77c927c538681a50c7ca35&oe=5EDF5444",
+    "bg":{"link":"https://www.dropbox.com/s/7cqhhysm66ru983/face%20msg%20ad.mp4", "type":"video"},
+        "facebook":{"title":"@tamritzim","link":"https://www.facebook.com/tamritzim"},
+        "waze":{"title":"waze","link":""},
+        "instagram":{"title":"@tamritzim",
+            "link":"https://instagram.com/kamel_abuelhija"},
+            "whatsapp":{"title":"whatsapp","link":"0503344554"},
+            "phones":[{"title": "תמריצים", "number": "0503344554"}],"day1":{"start":"9:00","end":"17:00"},"day2":{"start":"9:00","end":"17:00"},"day3":{"start":"9:00","end":"17:00"},"day4":{"start":"9:00","end":"17:00"},"day5":{"start":"9:00","end":"17:00"},"day6":{"start":"-","end":"-"},"day7":{"start":"9:00","end":"12:00"}}]

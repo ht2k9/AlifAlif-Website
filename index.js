@@ -83,6 +83,7 @@ app.post('/digitalcard/add', (req, res) => {
         vcards = JSON.parse(data);
         vcards.push( 
             {
+                business: req.body.business,
                 logo : req.body.logo,
                 bg: {link: req.body.bglink, title: req.body.bgtype },
                 facebook: {title: req.body.facebook1, link: req.body.facebook2 },
@@ -99,7 +100,6 @@ app.post('/digitalcard/add', (req, res) => {
                 day7 : {start:req.body.days7, end: req.body.daye7},
             }
         );
-        console.log(vcards);
 
         fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
             if (err) throw err;

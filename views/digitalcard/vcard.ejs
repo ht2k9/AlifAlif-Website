@@ -57,7 +57,7 @@
         .background
         {
             z-index: -1;
-            position: fixed;
+            position: absolute;
             right: 0;
             bottom: 0;
             min-width: 100%; 
@@ -70,15 +70,15 @@
 </head>
 <body>
     <% if(vcard.bg.type == 'video') { %> 
-        <video autoplay muted loop class="background">
-            <source src="vcard.bglink" type="video/mp4">
-        </video>
+        <iframe class="background" frameborder="0" height="100%" 
+        src="//www.dailymotion.com/embed/video/<%= vcard.bg.link %>?autoplay=1&mute=1&controls=0&fullscreen=1"
+        allowfullscreen allow="autoplay"></iframe>
     <% } %> 
     <% if(vcard.bg.type == 'photo') { %>
-        <img src="vcard.bglink" alt="" class="background">
+        <img src="<%= vcard.bg.link %>" alt="" class="background">
     <% } %>
 
-    <img id="logo" src="/images/logo.png" alt="logo" >
+    <img id="logo" src="<%= vcard.logo %>" alt="logo" width="100px">
          
     <div class="wrapper">
 
@@ -91,7 +91,7 @@
                     </a>
                 <% } %>
             <% } %>
-            <a href=" https://wa.me/<%= vcard.whatsapp.link %>">
+            <a href="https://wa.me/<%= vcard.whatsapp.link %>">
                 <img src="/images/icons/whatsapp.webp" alt="">
                 <p><%= vcard.whatsapp.title %></p>
             </a>
@@ -115,6 +115,7 @@
         </div>
     </div>
     <footer>
+   
         <a href="http://facebook.com/alifalifreelance">
             <img src="/images/icons/home.png" alt="">
         </a>
