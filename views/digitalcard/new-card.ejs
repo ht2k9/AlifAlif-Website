@@ -26,6 +26,21 @@ input[type=submit] {
   cursor: pointer;
 }
 
+button{
+  display: block;
+  width: auto;
+  font-size: 20px;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1em;
+}
+
 input[type=submit]:hover {
   background-color: rgb(12, 70, 197);
 }
@@ -141,138 +156,104 @@ div {
 
 
 <div dir="rtl">
-    <form action="/quiz/admin/questions" method="post">
-        <ul style=" padding:0; list-style: none; display: flex; flex-direction: column;">
-          <label for="answer4">شعار المحل</label>
-          <input type="file" accept="image/*" onchange="preview_image(event)">
-          <img id="output_image"/>
-        </ul>
+    <form action="/digitalcard/add" method="post">
 
+        <label>شعار المحل</label>
+        <input type="text" id="logo" name="logo" placeholder="الرايط">
 
-        <ul style=" padding:0; list-style: none; display: flex; flex-direction: column;">
-          <label for="answer4">خلفية</label>
-          <input type="file" accept="image/*" onchange="preview_image(event)">
-          <img id="output_image"/>
-        </ul>
-
-        <label for="question">فيسبوك</label>
-        <input type="text" id="question" name="question" required <% if(vcard != null) { %> value="<%= vcard.question %>" <% } %>>
-
-        <label for="answer4">انستاغرام</label>
-        <input type="text" id="answer4" name="answer4" <% if(vcard != null) { %> value="<%= vcard.choiceD %>" <% } %>>
-
-        <label for="answer2">ويز</label>
-        <input type="text" id="answer2" name="answer2" required <% if(vcard != null) { %> value="<%= vcard.choiceB %>" <% } %>>
-
-        <label for="answer3">ارقام هاتف</label>
-       
+        <label>رابط الخلفية</label>
         <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
+          <select name="bgtype" style="max-width: 200px;">
+            <option value="photo">صورة</option>
+            <option value="video">فيديو</option>
+          </select>
+          <input type="text" id="bglink" name="bglink">
         </div>
+
+        <label>فيسبوك</label>
         <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>         
-          <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-        <div class="group">
-          <input type="text" placeholder="عنوان" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <input type="number" id="answer3" name="answer3" style="width: 300px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
+          <input type="text" id="facebook" name="facebook1" placeholder="العنوان" value="@" style="max-width: 200px;">
+          <input type="text" id="facebook" name="facebook2" placeholder="الرابط">
         </div>
 
 
-        <label for="answer4">ساعات عمل</label>
+        <label>انستاغرام</label>
+        <div class="group">
+          <input type="text" id="instagram1" name="instagram1" placeholder="العنوان" value="@" style="max-width: 200px;">
+          <input type="text" id="instagram2" name="instagram2" placeholder="الرابط">
+        </div>
+
+        <label>ويز</label>
+        <div class="group">
+          <input type="text" name="waze1" placeholder="العنوان" value="waze" style="max-width: 200px;">
+          <input type="text" name="waze2" placeholder="الرابط">
+        </div>
+
+        <label>واتساب</label>
+        <div class="group">
+          <input type="text" id="whatsapp1" name="whatsapp1" value="whatsapp" placeholder="العنوان" style="max-width: 200px;">
+          <input type="text" id="whatsapp2" name="whatsapp2" placeholder="الرابط">
+        </div>
+
         
-        <div class="group">
-          <label class="container">احد
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
+        <div id="phones">
+          <label for="answer3">ارقام هاتف</label>
         </div>
+          
+        <button type="button" onclick="addPhone()">+</button>
+        
+        <label>ساعات عمل</label>
+        <button type="button" onclick="autoFill()">ماثل كل الأيام حسب اليوم الأول</button>
+        
+        <% for(let i=1; i<=7; i++){ %>
+          <div class="group">
+            <input type="text" id="days<%= i %>" name="days<%= i %>" style="width: 100px;" placeholder="00:00">
+            <p>:</p>
+            <input type="text" id="daye<%= i %>" name="daye<%= i %>" style="width: 100px;" placeholder="00:00">
+          </div>
+        <% } %>
 
-        <div class="group">
-          <label class="container">اثنين
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">ثلاثاء
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">أربعاء
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">خميس
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">جمعة
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>
-
-        <div class="group">
-          <label class="container">سبت
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-          <p>:</p>
-          <input type="time" id="answer3" name="answer3" style="width: 100px;" <% if(vcard != null) { %> value="<%= vcard.choiceC %>" <% } %>>
-        </div>        <div class="group">
-
+        <input type="hidden" name="phoneCount" id="phoneCount" value="0">
         <input type="submit" value="اضف المصلحة">
     </form>
 </div>
 
 <script>
-       function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+  let phonesCnt = 0;
+  let node = document.getElementById('phones');
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
 
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+          reader.onload = function (e) {
+              $('#blah')
+                  .attr('src', e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+
+  function addPhone(){
+    phonesCnt++;
+    node.insertAdjacentHTML('beforeend',
+    '<div class="group"> <input type="text" placeholder="عنوان" id="title'+ phonesCnt + '" name="title'+ phonesCnt + '" style="width: 300px;"> <input type="text" placeholder="هاتف" id="phone'+ phonesCnt + '" name="phone'+ phonesCnt + '" style="width: 300px;"> </div> ');     
+    document.getElementById('phoneCount').value = phonesCnt;
+  }
+
+  function autoFill(){
+    let dayS = document.getElementById('days1');
+    let dayE = document.getElementById('daye1');
+
+    for(let i=1; i<=7;i++){
+      document.getElementById('days'+i).value = dayS.value;
+      document.getElementById('daye'+i).value = dayE.value;
+    }
+  }
+
+
 </script>
 </body>
 </html>

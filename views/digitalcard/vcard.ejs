@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title><%= vcard.business %></title>
     <style>
         body{
             margin: 0;
@@ -35,6 +35,7 @@
             display: grid;
             grid-template-rows: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1rem;
         }
 
         .container img{
@@ -51,9 +52,10 @@
             padding: 2px 5px;
             text-shadow: 0px 1px 3px black;
             text-align: center;
-            display: inline-block;
+            display: table;
         }
-        #myVideo {
+        .background
+        {
             z-index: -1;
             position: fixed;
             right: 0;
@@ -67,41 +69,47 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop id="myVideo">
-        <source src="/include/rs-plugin/demos/assets/images/ramadan-loop.mp4" type="video/mp4">
-    </video>
-        <img id="logo" src="/images/logo.png" alt="logo">
+    <% if(vcard.bg.type == 'video') { %> 
+        <video autoplay muted loop class="background">
+            <source src="vcard.bglink" type="video/mp4">
+        </video>
+    <% } %> 
+    <% if(vcard.bg.type == 'photo') { %>
+        <img src="vcard.bglink" alt="" class="background">
+    <% } %>
+
+    <img id="logo" src="/images/logo.png" alt="logo" >
          
     <div class="wrapper">
 
         <div class="container">
-            <a href="http://facebook.com/alifalifreelance">
-                <img src="/images/icons/phone.webp" alt="">
-                <p>054-7077590</p>
+            <% for(let i=0; i<=vcard.phones.length; i++){ let phone = vcard.phones[i]; %>
+                <% if(phone != undefined) { %>
+                    <a href="tel:<%= phone.number %>">
+                        <img src="/images/icons/phone.webp" alt="">
+                        <p><%= phone.title %></p>
+                    </a>
+                <% } %>
+            <% } %>
+            <a href=" https://wa.me/15551234567<%= vcard.whatsapp.link %>">
+                <img src="/images/icons/whatsapp.webp" alt="">
+                <p><%= vcard.whatsapp.title %></p>
             </a>
-            <a href="http://facebook.com/alifalifreelance">
-                <img src="/images/icons/telephone.png" alt="">
-                <p>054-7077590</p>
-            </a>
-            <a href="http://facebook.com/alifalifreelance">
-                <img src="/images/icons/gallery.webp" alt="">
-                <p>054-7077590</p>
-            </a>
-            <a href="http://facebook.com/alifalifreelance">
+            <a href="<%= vcard.facebook.link %>">
                 <img src="/images/icons/facebook.png" alt="">
-                <p>054-7077590</p>
+                <p><%= vcard.facebook.title %></p>
             </a>
-            <a href="http://facebook.com/alifalifreelance">
+            <a href="<%= vcard.instagram.link %>">
                 <img src="/images/icons/instagram.png" alt="">
-                <p>054-7077590</p>
+                <p><%= vcard.instagram.title %></p>
             </a>
-            <a href="http://facebook.com/alifalifreelance">
+            <a href="<%= vcard.waze.link %>">
                 <img src="/images/icons/waze.png" alt="">
-                <p>054-7077590</p>
+                <p><%= vcard.waze.title %></p>
             </a>
-            <a href="http://facebook.com/alifalifreelance">
+            <a href="<%= vcard.facebook %>">
                 <img src="/images/icons/clock.png" alt="">
-                <p>054-7077590</p>
+                <p>שעות עבודה</p>
             </a>
             
         </div>
