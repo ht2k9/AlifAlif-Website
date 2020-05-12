@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= vcard.business %></title>
+    <style>
+        body{
+            margin: 0;
+            text-align: center;
+        }
+        footer {
+            padding: 5px;
+            width: 100%;
+            display: flex;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            flex-direction: row;
+            justify-content:flex-start;
+        }
+        .wrapper{
+            padding: 0;
+            z-index: 1;
+            width: 100vw;
+            display: flex;
+            align-items: center;;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .container{
+            padding: 10px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1rem;
+        }
+
+        .container img{
+            margin: 0 auto;
+            height: 75px;
+        }
+        .container p{
+            margin: 0 auto;
+            float: none;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+            color: white;
+            padding: 2px 5px;
+            text-shadow: 0px 1px 3px black;
+            text-align: center;
+            display: table;
+        }
+        .background
+        {
+            z-index: -1;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+        }
+        #logo {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <% if(vcard.bg.type == 'video') { %> 
+        <video autoplay muted loop class="background">
+            <source src="vcard.bglink" type="video/mp4">
+        </video>
+    <% } %> 
+    <% if(vcard.bg.type == 'photo') { %>
+        <img src="vcard.bglink" alt="" class="background">
+    <% } %>
+
+    <img id="logo" src="/images/logo.png" alt="logo" >
+         
+    <div class="wrapper">
+
+        <div class="container">
+            <% for(let i=0; i<=vcard.phones.length; i++){ let phone = vcard.phones[i]; %>
+                <% if(phone != undefined) { %>
+                    <a href="tel:<%= phone.number %>">
+                        <img src="/images/icons/phone.webp" alt="">
+                        <p><%= phone.title %></p>
+                    </a>
+                <% } %>
+            <% } %>
+            <a href=" https://wa.me/15551234567<%= vcard.whatsapp.link %>">
+                <img src="/images/icons/whatsapp.webp" alt="">
+                <p><%= vcard.whatsapp.title %></p>
+            </a>
+            <a href="<%= vcard.facebook.link %>">
+                <img src="/images/icons/facebook.png" alt="">
+                <p><%= vcard.facebook.title %></p>
+            </a>
+            <a href="<%= vcard.instagram.link %>">
+                <img src="/images/icons/instagram.png" alt="">
+                <p><%= vcard.instagram.title %></p>
+            </a>
+            <a href="<%= vcard.waze.link %>">
+                <img src="/images/icons/waze.png" alt="">
+                <p><%= vcard.waze.title %></p>
+            </a>
+            <a href="<%= vcard.facebook %>">
+                <img src="/images/icons/clock.png" alt="">
+                <p>שעות עבודה</p>
+            </a>
+            
+        </div>
+    </div>
+    <footer>
+        <a href="http://facebook.com/alifalifreelance">
+            <img src="/images/icons/home.png" alt="">
+        </a>
+        <a href="http://facebook.com/alifalifreelance">
+            <img src="/images/icons/download.png" alt="">
+        </a>
+        <a href="http://facebook.com/alifalifreelance">
+            <img src="/images/icons/share.png" alt="">
+        </a>
+
+        <a href="http://facebook.com/alifalifreelance" style="margin-left: auto; padding-right: 1rem;">
+            <img src="/images/logo.png" alt="alifalif"  height="50px"> 
+        </a>
+    </footer>
+</body>
+</html>

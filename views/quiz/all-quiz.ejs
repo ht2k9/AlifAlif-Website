@@ -69,7 +69,7 @@ a:hover, a:active {
   <% for(let i=0; i< questions.length; i++) { let q = questions[i]; %>
     <div >
       <div class="pan">
-        <a class="delete" style="background-color: blue; width: 30px;"><%= i %></a> <a href="/quiz/show/<%= i %>" class="question"><%= q.question %></a> <a href="/quiz/delete/<%= i %>" class="delete">X</a> 
+        <a class="delete" style="background-color: blue; width: 30px;"><%= i+1 %></a> <a href="/quiz/show/<%= i %>" class="question"><%= q.question %></a> <a href="/quiz/delete/<%= i %>" class="delete">X</a> 
       </div>
 <% } %>
   <a href="/quiz/add">+</a>

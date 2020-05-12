@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vcard.scss">
+</head>
+<body>
+   <!-- Please ❤ this and follow me if you like it! -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="hidden" id="laptop-wrap" role="main" tabindex="0">
+	<svg id="shadow" xmlns="http://www.w3.org/2000/svg" width="19.445em" height="12.5em" viewBox="0 0 19.445em 12.5em"><filter id="blur" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1" edgeMode="duplicate"/></filter><rect fill="#121212" filter="url(#blur)" width="19.445em" height="12.5em"/></svg>
+
+	<div id="laptop">
+		<div class="surface" id="top">
+			<div class="face" id="top-outside"><img src="https://static.pickjb.com/assets/images/jb-logo-white.svg" /></div>
+			<div class="face" id="top-inside"></div>
+		</div>
+
+		<div class="surface" id="bottom">
+			<div class="face" id="bottom-outside"></div>
+			<div class="side" id="bottom-south"></div>
+			<div class="side" id="bottom-west"></div>
+			<div class="side" id="bottom-north"></div>
+			<div class="side" id="bottom-east"></div>
+			<div class="face" id="bottom-inside"></div>
+		</div>
+	</div>
+
+	<button class="hidden" id="open-lid" type="button">Open Lid</button>
+	<button class="hidden" id="close-lid" type="button">Close Lid</button>
+</main>
+
+<div class="hidden" id="spin360"><h1>A digital recreation of my real-world miniature laptop business cards.</h1> <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 90 90" width="80" height="80"><ellipse fill="#000" stroke="#000" stroke-width="10" opacity=".3" cx="40" cy="40" rx="40" ry="40"/><g fill="none" stroke="#FFF"><g stroke-width="2" opacity=".6" transform="rotate(-7 40 40)"><ellipse cx="40" cy="40" rx="20" ry="40"><animate attributeName="rx" values="40;0;40" keyTimes="0;.5;1" dur="2000ms" calcMode="cubic-bezier(0,.9,1,.9)" fill="freeze" repeatCount="indefinite"/></ellipse><ellipse cx="40" cy="40" rx="40" ry="25"><animate attributeName="ry" values="40;0;40" keyTimes="0;.5;1" begin="-333ms" dur="2000ms" calcMode="cubic-bezier(0,.9,1,.9)" fill="freeze" repeatCount="indefinite"/></ellipse><animateTransform attributeName="transform" type="rotate" values="20 40 40;-20 40 40;20 40 40" keyTimes="0;.5;1" begin="-500ms" dur="5000ms" calcMode="cubic-bezier(0,.9,1,.9)" fill="freeze" repeatCount="indefinite"/></g><ellipse cx="40" cy="40" rx="40" ry="40" stroke-width="3"/></g><text fill="#FFF" font-family="'SF UI Display','SFUIDisplay-Medium','.SFNSDisplay-Medium','SF UI Text','San Francisco','.SFNSText-Medium','.SFNSText','-apple-system-font','BlinkMacSystemFont','.HelveticaNeueDeskInterface-Medium','HelveticaNeue-Medium','Helvetica Neue Medium','HelveticaNeue','Helvetica Neue','Helvetica','Arial',sans-serif" font-weight="500" font-size="26" line-height="1" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" x="43" y="40">360&deg;</text></svg></div>
+</body>
+<script>
+    /* Please ❤ this and follow me if you like it! */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var body = document.getElementsByTagName("body")[0],
+	shadow = document.getElementById("shadow"),
+	laptop = document.getElementById("laptop"),
+	laptopWrap = document.getElementById("laptop-wrap"),
+	topLid = document.getElementById("top"),
+	topInside = document.getElementById("top-inside"),
+	bottomInside = document.getElementById("bottom-inside"),
+	openLid = document.getElementById("open-lid"),
+	closeLid = document.getElementById("close-lid"),
+	spin360 = document.getElementById("spin360"),
+
+	laptopActive = null,
+
+	rotateInit1 = -7, // Initial transform rotateX() value
+	rotateInit2 = 27, // Initial transform rotateY() value
+	rotate1 = 0,
+	rotate2 = 0,
+
+	aOffset1 = 0,
+	bOffset1 = 0,
+	aOffset2 = 0,
+	bOffset2 = 0,
+
+	lidAngle = 0,
+	lidOffset1 = 0,
+	lidOffset2 = 0;
+
+function openLaptop() {
+	laptop.className = "open";
+	topLid.style.transitionDuration = "700ms";
+	openLid.className = "hidden";
+
+	setTimeout(function() {
+		topLid.removeAttribute("style");
+		closeLid.className = "";
+
+		lidAngle = 90;
+	}, 800);
+}
+
+function closeLaptop() {
+	laptop.className = "";
+	topLid.style.transitionDuration = "500ms";
+	closeLid.className = "hidden";
+
+	setTimeout(function() {
+		topLid.removeAttribute("style");
+		openLid.className = "";
+
+		lidAngle = 0;
+	}, 600);
+}
+
+function updateLidAngle(e) {
+	if (e && e.touches && e.touches.length && e.touches.length > 1) {
+		var touchLength = Math.abs(e.touches[1].clientY - e.touches[0].clientY);
+
+		lidAngle = Math.max(Math.min(touchLength - lidOffset1 + lidOffset2, 180), 0);
+
+		laptop.className = "";
+		topLid.style.transition = "none";
+		topLid.style.transform = "rotateX(" + Math.round(lidAngle - 135) + "deg)";
+
+		openLid.className = "hidden";
+		closeLid.className = "hidden";
+	}
+}
+
+// Temporary function while I work on the geometry of the shadow
+function updateShadow(e) {}
+
+function WIPupdateShadow(e) {
+	var ux = (e ? (e.clientX || e.x || e.touches[0].clientX) : 0);
+	var uy = (e ? (e.clientY || e.y || e.touches[0].clientY) : 0);
+
+	rotate1 = (uy - aOffset1 + aOffset2);
+	rotate2 = (ux - bOffset1 + bOffset2);
+
+	// shadow.style.transform = "rotateX(70deg) rotateY(" + Math.round(rotate2 + rotateInit2 % 360) + "deg)";
+
+	// shadow.style.transform = "rotateX(" + Math.round((rotate1 * -1 + rotateInit1) % 360) + "deg) rotateY(" + Math.round(rotate2 + rotateInit2 % 360) + "deg)";
+
+	shadow.style.transform = "rotateX(" + Math.round(Math.max(-90, Math.min(0, (rotate1 * -1 + rotateInit1) % 360))) + "deg) rotateY(" + Math.round(rotate2 + rotateInit2 % 360) + "deg) rotateZ(" + Math.round(Math.max(-90, Math.min(0, (rotate1 * -1 + rotateInit1) % 360))) + "deg)";
+	// rotateX(-40deg) rotateY(18deg) rotateZ(-40deg)
+}
+
+function updateLaptop(e) {
+	var ux = (e ? (e.clientX || e.x || e.touches[0].clientX) : 0);
+	var uy = (e ? (e.clientY || e.y || e.touches[0].clientY) : 0);
+
+	rotate1 = (uy - aOffset1 + aOffset2);
+	rotate2 = (ux - bOffset1 + bOffset2);
+
+	laptop.style.transform = "rotateX(" + Math.round((rotate1 * -1 + rotateInit1) % 360) + "deg) rotateY(" + (Math.round(rotate2 + rotateInit2) % 360) + "deg)";
+}
+
+function hide360spinner() {
+	if (spin360 && spin360 !== null) {
+		spin360.className = "hidden";
+
+		setTimeout(function() {
+			spin360.outerHTML = "";
+			spin360 = null;
+		}, 300);
+	}
+}
+
+// Start animation only when everything is ready
+onload = function() {
+	// Timeouts for controlled/stepped animations
+	setTimeout(function() {
+		spin360.className = "";
+
+		setTimeout(function() {
+			laptopWrap.className = "";
+			openLid.className = "";
+
+			laptopActive = setTimeout(function() {
+				hide360spinner();
+
+				setTimeout(openLaptop, 1500);
+			}, 6000);
+		}, 900);
+	}, 300);
+
+	laptopWrap.onmousedown = laptopWrap.ontouchstart = function(e) {
+		aOffset1 = (e.clientY || e.y || e.touches[0].clientY);
+		bOffset1 = (e.clientX || e.x || e.touches[0].clientX);
+
+		if (e && e.touches && e.touches.length && e.touches.length > 1) {
+			lidOffset1 = Math.abs(e.touches[1].clientY - e.touches[0].clientY);
+			lidOffset2 = lidAngle;
+		}
+
+		body.className = "grabbing";
+
+		hide360spinner();
+		updateShadow(e);
+		updateLaptop(e);
+		updateLidAngle(e);
+
+		if (laptopActive !== null) {
+			clearTimeout(laptopActive);
+			laptopActive = null;
+		}
+
+		laptopWrap.onmouseup = laptopWrap.onmouseout = laptopWrap.ontouchend = laptopWrap.ontouchcancel = function(e) {
+			body.className = "";
+
+			laptopWrap.onmousemove = laptopWrap.ontouchmove = laptopWrap.onmouseup = laptopWrap.onmouseout = laptopWrap.ontouchend = laptopWrap.ontouchcancel = null;
+
+			aOffset2 = rotate1;
+			bOffset2 = rotate2;
+
+			if (e && e.touches && e.touches.length && e.touches.length > 1) {
+				lidOffset2 = lidAngle;
+			}
+		};
+
+		laptopWrap.onmousemove = laptopWrap.ontouchmove = function(e) {
+			if (e && e.touches && e.touches.length && e.touches.length > 1) {
+				updateLidAngle(e);
+			}
+
+			else {
+				updateShadow(e);
+				updateLaptop(e);
+			}
+
+			e.stopPropagation();
+			e.preventDefault();
+			return false;
+		};
+
+		e.preventDefault();
+		return false;
+	};
+
+	openLid.onmousedown = openLid.ontouchstart = function(e) {
+		hide360spinner();
+		openLaptop();
+
+		if (laptopActive !== null) {
+			clearTimeout(laptopActive);
+			laptopActive = null;
+		}
+
+		e.stopPropagation();
+		e.preventDefault();
+		return false;
+	};
+
+	closeLid.onmousedown = closeLid.ontouchstart = function(e) {
+		hide360spinner();
+		closeLaptop();
+
+		if (laptopActive !== null) {
+			clearTimeout(laptopActive);
+			laptopActive = null;
+		}
+
+		e.stopPropagation();
+		e.preventDefault();
+		return false;
+	};
+
+	updateShadow();
+	updateLaptop();
+};
+</script>
+</html>

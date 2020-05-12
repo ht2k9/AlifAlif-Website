@@ -40,6 +40,109 @@ app.get('/marketing', (req, res) => {
 app.get('/events', (req, res) => {
     res.render('events', {events: events});
 });
+
+// ***************************************************** Digital Card ****************************************/
+
+app.get('/digitalcard/admin', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, dataQ) => {
+        if (err) throw err;
+        let vcards = JSON.parse(dataQ);
+        
+        res.render('quiz/all-quiz', {vcards: vcards});
+    });
+});
+
+app.get('/digitalcard/show/:id', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, dataQ) => {
+        if (err) throw err;
+        let vcards = JSON.parse(dataQ);
+        
+        res.render('digitalcard/vcard', {vcard: vcards[req.params.id]});
+    });
+});
+
+app.get('/digitalcard/add', (req, res) => {
+    res.render('digitalcard/new-card', {vcard: {}});
+});
+
+app.post('/digitalcard/add', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, data) => {
+
+        let phoneList = [];
+        for(let i=1; i<req.body.phoneCount; i++){
+            phoneList.push([
+                {
+                    title: req.body['title'+i],
+                    number: req.body['phone'+i]
+                }
+            ]);
+        }
+
+        
+        if (err) throw err;
+        vcards = JSON.parse(data);
+        vcards.push( 
+            {
+                logo : req.body.logo,
+                bg: {link: req.body.bglink, title: req.body.bgtype },
+                facebook: {title: req.body.facebook1, link: req.body.facebook2 },
+                waze: {title: req.body.waze1, link: req.body.waze2 },
+                instagram: {title: req.body.instagram1, link: req.body.instagram2 },
+                whatsapp: {title: req.body.whatsapp1, link: req.body.whatsapp2 },
+                phones : phoneList,
+                day1 : {start:req.body.days1, end: req.body.daye1},
+                day2 : {start:req.body.days2, end: req.body.daye2},
+                day3 : {start:req.body.days3, end: req.body.daye3},
+                day4 : {start:req.body.days4, end: req.body.daye4},
+                day5 : {start:req.body.days5, end: req.body.daye5},
+                day6 : {start:req.body.days6, end: req.body.daye6},
+                day7 : {start:req.body.days7, end: req.body.daye7},
+            }
+        );
+
+        fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/digitalcard/add');
+        });
+    });
+});
+
+app.post('/digitalcard/update/:id', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, data) => {
+            
+        if (err) throw err;
+        vcards = JSON.parse(data);
+
+        vcards[req.params.id] = 
+            {
+
+            }
+        
+            fs.writeFile('localbase/vcards.json', JSON.stringify(questions) , function (err) {
+                if (err) throw err;
+                    
+                res.redirect('/digitalcard/admin');
+            });
+    });
+});
+
+app.post('/digitalcard/delete/:id', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, data) => {
+        
+        if (err) throw err;
+        vcards = JSON.parse(data);
+        
+        vcards.splice(req.params.id, 1);
+
+        fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/digitalcard/admin');
+        });
+    });
+});
+
 // ***************************************************** QUIZ ****************************************/
 
 app.get('/keyadakadera', (req, res) => {
@@ -53,6 +156,24 @@ app.get('/keyadakadera', (req, res) => {
         });
     });
 });
+
+app.get('/quiz/get/questions', (req, res) => {
+    fs.readFile('localbase/questions.json', (err, dataU) => {
+        if (err) throw err;
+        let data_ = JSON.parse(dataU);
+        res.send(data_);
+    });
+});
+
+app.get('/quiz/get/user', (req, res) => {
+    fs.readFile('localbase/users.json', (err, dataU) => {
+        if (err) throw err;
+        let data_ = JSON.parse(dataU);
+        res.send(data_);
+    });
+});
+
+
 
 app.post('/movement', (req, res) => {
     fs.readFile('localbase/users.json', (err, data) => {
@@ -118,7 +239,7 @@ app.post('/quiz/admin', (req, res) => {
 });
 
 app.get('/quiz/add', (req, res) => {
-    res.render('quiz/add-quiz');
+    res.render('quiz/add-quiz', {question: null});
 });
 
 app.get('/quiz/show/:id', (req, res) => {
