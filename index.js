@@ -99,6 +99,7 @@ app.post('/digitalcard/add', (req, res) => {
                 day7 : {start:req.body.days7, end: req.body.daye7},
             }
         );
+        console.log(vcards);
 
         fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
             if (err) throw err;
