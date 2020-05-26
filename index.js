@@ -48,7 +48,7 @@ app.get('/digitalcard/admin', (req, res) => {
         if (err) throw err;
         let vcards = JSON.parse(dataQ);
         
-        res.render('quiz/all-quiz', {vcards: vcards});
+        res.render('digitalcard/dashboard', {vcards: vcards});
     });
 });
 
@@ -62,20 +62,31 @@ app.get('/digitalcard/show/:id', (req, res) => {
 });
 
 app.get('/digitalcard/add', (req, res) => {
-    res.render('digitalcard/new-card', {vcard: {}});
+    res.render('digitalcard/new-card');
+});
+
+app.get('/digitalcard/update/:id', (req, res) => {
+    fs.readFile('localbase/vcards.json', (err, data) => {
+        
+        if (err) throw err;
+        vcards = JSON.parse(data);
+        
+        res.render('digitalcard/edit-card', {vcard: vcards[req.params.id], index: req.params.id });
+
+    });
 });
 
 app.post('/digitalcard/add', (req, res) => {
     fs.readFile('localbase/vcards.json', (err, data) => {
 
         let phoneList = [];
-        for(let i=1; i<req.body.phoneCount; i++){
-            phoneList.push([
+        for(let i=1; i<=req.body.phoneCount; i++){
+            phoneList.push(
                 {
                     title: req.body['title'+i],
                     number: req.body['phone'+i]
                 }
-            ]);
+            );
         }
 
         
@@ -85,7 +96,7 @@ app.post('/digitalcard/add', (req, res) => {
             {
                 business: req.body.business,
                 logo : req.body.logo,
-                bg: {link: req.body.bglink, title: req.body.bgtype },
+                bg: {link: req.body.bglink, type: req.body.bgtype },
                 facebook: {title: req.body.facebook1, link: req.body.facebook2 },
                 waze: {title: req.body.waze1, link: req.body.waze2 },
                 instagram: {title: req.body.instagram1, link: req.body.instagram2 },
@@ -104,7 +115,7 @@ app.post('/digitalcard/add', (req, res) => {
         fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
             if (err) throw err;
                 
-            res.redirect('/digitalcard/add');
+            res.redirect('/digitalcard/admin');
         });
     });
 });
@@ -112,23 +123,48 @@ app.post('/digitalcard/add', (req, res) => {
 app.post('/digitalcard/update/:id', (req, res) => {
     fs.readFile('localbase/vcards.json', (err, data) => {
             
+        let phoneList = [];
+        for(let i=1; i<= req.body.phoneCount; i++){
+            phoneList.push(
+                {
+                    title: req.body['title'+i],
+                    number: req.body['phone'+i]
+                }
+            );
+        }
+
+        console.log(phoneList);
         if (err) throw err;
         vcards = JSON.parse(data);
-
-        vcards[req.params.id] = 
-            {
-
-            }
-        
-            fs.writeFile('localbase/vcards.json', JSON.stringify(questions) , function (err) {
-                if (err) throw err;
-                    
-                res.redirect('/digitalcard/admin');
-            });
+        let vcard =  
+        {
+            business: req.body.business,
+            logo : req.body.logo,
+            bg: {link: req.body.bglink, type: req.body.bgtype },
+            facebook: {title: req.body.facebook1, link: req.body.facebook2 },
+            waze: {title: req.body.waze1, link: req.body.waze2},
+            instagram: {title: req.body.instagram1, link: req.body.instagram2 },
+            whatsapp: {title: req.body.whatsapp1, link: req.body.whatsapp2 },
+            phones : phoneList,
+            day1 : {start:req.body.days1, end: req.body.daye1},
+            day2 : {start:req.body.days2, end: req.body.daye2},
+            day3 : {start:req.body.days3, end: req.body.daye3},
+            day4 : {start:req.body.days4, end: req.body.daye4},
+            day5 : {start:req.body.days5, end: req.body.daye5},
+            day6 : {start:req.body.days6, end: req.body.daye6},
+            day7 : {start:req.body.days7, end: req.body.daye7},
+        };
+        vcards[req.params.id] = vcard;
+        console.log(req.body);
+        fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/digitalcard/admin');
+        });
     });
 });
 
-app.post('/digitalcard/delete/:id', (req, res) => {
+app.get('/digitalcard/delete/:id', (req, res) => {
     fs.readFile('localbase/vcards.json', (err, data) => {
         
         if (err) throw err;

@@ -156,52 +156,58 @@ div {
 
 
 <div dir="rtl">
-    <form action="/digitalcard/add" method="post">
+    <form action="/digitalcard/update/<%= index %>" method="post">
 
         <label>اسم المحل</label>
-        <input type="text" name="business" placeholder="الاسم">
+        <input type="text" name="business" placeholder="الاسم" value="<%= vcard.business %>">
 
         <label>شعار المحل</label>
-        <input type="text" id="logo" name="logo" placeholder="الرايط">
+        <input type="text" id="logo" name="logo" placeholder="الرايط" value="<%= vcard.logo %>">
 
         <label>رابط الخلفية</label>
         <div class="group">
           <select name="bgtype" style="max-width: 200px;">
-            <option value="photo">صورة</option>
-            <option value="video">فيديو</option>
-            <option value="fb">من فيسبوك</option>
+            <option <% if(vcard.bg != null && vcard.bg.type == "photo") {%> selected <%}%> value="photo">صورة</option>
+            <option <% if(vcard.bg != null && vcard.bg.type == "video") {%> selected <%}%> value="video">فيديو</option>
+            <option <% if(vcard.bg != null && vcard.bg.type == "fb") {%> selected <%}%> value="fb">من فيسبوك</option>
           </select>
-          <input type="text" id="bglink" name="bglink">
+          <input type="text" id="bglink" name="bglink"  <% if(vcard.bg != null) {%> value="<%= vcard.bg.link %>" <%}%>>
         </div>
 
         <label>فيسبوك</label>
         <div class="group">
-          <input type="text" id="facebook" name="facebook1" placeholder="العنوان" value="@" style="max-width: 200px;">
-          <input type="text" id="facebook" name="facebook2" placeholder="الرابط">
+          <input type="text" id="facebook" name="facebook1" placeholder="العنوان" style="max-width: 200px;" <% if(vcard.facebook != null) {%> value="<%= vcard.facebook.title %>" <%}%> >
+          <input type="text" id="facebook" name="facebook2" placeholder="الرابط" <% if(vcard.facebook != null) {%> value="<%= vcard.facebook.link %>" <%}%>>
         </div>
 
 
         <label>انستاغرام</label>
         <div class="group">
-          <input type="text" id="instagram1" name="instagram1" placeholder="العنوان" value="@" style="max-width: 200px;">
-          <input type="text" id="instagram2" name="instagram2" placeholder="الرابط">
+          <input type="text" id="instagram1" name="instagram1" placeholder="العنوان" style="max-width: 200px;" <% if(vcard.instagram != null) {%> value="<%= vcard.instagram.title %>" <%}%> >
+          <input type="text" id="instagram2" name="instagram2" placeholder="الرابط" <% if(vcard.instagram != null) {%> value="<%= vcard.instagram.link %>"<%}%>>
         </div>
 
         <label>ويز</label>
         <div class="group">
-          <input type="text" name="waze1" placeholder="العنوان" value="waze" style="max-width: 200px;">
-          <input type="text" name="waze2" placeholder="الرابط">
+          <input type="text" name="waze1" placeholder="العنوان" <% if(vcard.waze != null) {%> value="<%= vcard.waze.title %>" style="max-width: 200px;" <%}%>>
+          <input type="text" name="waze2" placeholder="الرابط" <% if(vcard.waze != null) {%> value="<%= vcard.waze.link %>"<%}%>>
         </div>
 
         <label>واتساب</label>
         <div class="group">
-          <input type="text" id="whatsapp1" name="whatsapp1" value="whatsapp" placeholder="العنوان" style="max-width: 200px;">
-          <input type="text" id="whatsapp2" name="whatsapp2" placeholder="الرابط">
+          <input type="text" id="whatsapp1" name="whatsapp1" <% if(vcard.whatsapp != null) {%> value="<%= vcard.whatsapp.title %>" placeholder="العنوان" style="max-width: 200px;"<%}%>>
+          <input type="text" id="whatsapp2" name="whatsapp2" <% if(vcard.whatsapp != null) {%> value="<%= vcard.whatsapp.link %>" placeholder="الرابط"<%}%>>
         </div>
-
         
         <div id="phones">
           <label for="answer3">ارقام هاتف</label>
+          <% if(vcard.phones.length != 0) {%>
+            <% for(let i=1; i<=vcard.phones.length;i++){ %>
+                <div class="group">
+                    <input type="text" placeholder="عنوان" id="title<%= i %>" name="title<%= i %>" style="width: 300px;" value="<%= vcard.phones[i-1].title %>">
+                    <input type="text" placeholder="هاتف" id="phone<%= i %>" name="phone<%= i %>" style="width: 300px;" value="<%= vcard.phones[i-1].number %>">
+                </div>
+            <% } } %>
         </div>
           
         <button type="button" onclick="addPhone()">+</button>
@@ -211,14 +217,14 @@ div {
         
         <% for(let i=1; i<=7; i++){ %>
           <div class="group">
-            <input type="text" id="days<%= i %>" name="days<%= i %>" style="width: 100px;" placeholder="00:00">
+            <input type="text" id="days<%= i %>" name="days<%= i %>" style="width: 100px;" placeholder="00:00" <% if(vcard['day'+i] != null) {%> value="<%= vcard['day'+i].start %>"<%}%>>
             <p>:</p>
-            <input type="text" id="daye<%= i %>" name="daye<%= i %>" style="width: 100px;" placeholder="00:00">
+            <input type="text" id="daye<%= i %>" name="daye<%= i %>" style="width: 100px;" placeholder="00:00" <% if(vcard['day'+i] != null) {%> value="<%= vcard['day'+i].end %>"<%}%>>
           </div>
         <% } %>
 
-        <input type="hidden" name="phoneCount" id="phoneCount" value="0">
-        <input type="submit" value="اضف المصلحة">
+        <input type="hidden" name="phoneCount" id="phoneCount" value="<%= vcard.phones.length %>">
+        <input type="submit" value="حفظ">
     </form>
 </div>
 
@@ -244,7 +250,7 @@ div {
     phonesCnt++;
     node.insertAdjacentHTML('beforeend',
     '<div class="group"> <input type="text" placeholder="عنوان" id="title'+ phonesCnt + '" name="title'+ phonesCnt + '" style="width: 300px;"> <input type="text" placeholder="هاتف" id="phone'+ phonesCnt + '" name="phone'+ phonesCnt + '" style="width: 300px;"> </div> ');     
-    document.getElementById('phoneCount') = phonesCnt;
+    document.getElementById('phoneCount').value = phonesCnt;
   }
 
   function autoFill(){

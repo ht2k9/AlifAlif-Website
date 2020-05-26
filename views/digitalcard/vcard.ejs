@@ -66,15 +66,53 @@
         #logo {
             margin-bottom: 2rem;
         }
+
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 60%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <% if(vcard.bg.type == 'video') { %> 
+    <% if(vcard.bg != null && vcard.bg.type == 'video') { %> 
         <iframe class="background" frameborder="0" height="100%" 
         src="//www.dailymotion.com/embed/video/<%= vcard.bg.link %>?autoplay=1&mute=1&controls=0&fullscreen=1"
         allowfullscreen allow="autoplay"></iframe>
     <% } %> 
-    <% if(vcard.bg.type == 'photo') { %>
+    <% if(vcard.bg != null && vcard.bg.type == 'photo') { %>
         <img src="<%= vcard.bg.link %>" alt="" class="background">
     <% } %>
 
@@ -83,52 +121,111 @@
     <div class="wrapper">
 
         <div class="container">
-            <% for(let i=0; i<=vcard.phones.length; i++){ let phone = vcard.phones[i]; %>
-                <% if(phone != undefined) { %>
+            <% if(vcard.phones.length != 0) { %>
+                <% for(let i=1; i<=vcard.phones.length; i++){ let phone = vcard.phones[i-1]; %>
                     <a href="tel:<%= phone.number %>">
                         <img src="/images/icons/phone.webp" alt="">
                         <p><%= phone.title %></p>
                     </a>
                 <% } %>
             <% } %>
-            <a href="https://wa.me/<%= vcard.whatsapp.link %>">
-                <img src="/images/icons/whatsapp.webp" alt="">
-                <p><%= vcard.whatsapp.title %></p>
-            </a>
-            <a href="<%= vcard.facebook.link %>">
-                <img src="/images/icons/facebook.png" alt="">
-                <p><%= vcard.facebook.title %></p>
-            </a>
-            <a href="<%= vcard.instagram.link %>">
-                <img src="/images/icons/instagram.png" alt="">
-                <p><%= vcard.instagram.title %></p>
-            </a>
-            <a href="<%= vcard.waze.link %>">
-                <img src="/images/icons/waze.png" alt="">
-                <p><%= vcard.waze.title %></p>
-            </a>
-            <a href="<%= vcard.facebook %>">
-                <img src="/images/icons/clock.png" alt="">
-                <p>שעות עבודה</p>
-            </a>
-            
+            <% if(vcard.whatsapp != null) { %>
+                <a href="https://wa.me/<%= vcard.whatsapp.link %>">
+                    <img src="/images/icons/whatsapp.webp" alt="">
+                    <p><%= vcard.whatsapp.title %></p>
+                </a>
+            <% } %>
+            <% if(vcard.facebook != null) { %>
+                <a href="<%= vcard.facebook.link %>">
+                    <img src="/images/icons/facebook.png" alt="">
+                    <p><%= vcard.facebook.title %></p>
+                </a>
+            <% } %>
+            <% if(vcard.instagram != null) { %>
+                <a href="<%= vcard.instagram.link %>">
+                    <img src="/images/icons/instagram.png" alt="">
+                    <p><%= vcard.instagram.title %></p>
+                </a>
+            <% } %>
+            <% if(vcard.waze != null) { %>
+                <a href="<%= vcard.waze.link %>">
+                    <img src="/images/icons/waze.png" alt="">
+                    <p><%= vcard.waze.title %></p>
+                </a>
+            <% } %>
+                <a id="myBtn">
+                    <img src="/images/icons/clock.png" alt="">
+                    <p>שעות עבודה</p>
+                </a>
         </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" style="direction: rtl;">
+            <span class="close">&times;</span>
+            <table style="width:100%">
+                <tr>
+                  <th>יום</th>
+                  <th>פתיחה</th>
+                  <th>סגירה</th>
+                </tr>
+                <% for(let i=1; i<=7; i++) { %>
+                    <tr>
+                        <td><%= i %></td>
+                        <td><%= vcard['day'+i].start %></td>
+                        <td><%= vcard['day'+i].end %></td>
+                    </tr>
+                <% } %>
+              </table>
+        </div>
+    
     </div>
     <footer>
    
-        <a href="http://facebook.com/alifalifreelance">
+        <a href="http://alifalif.co/marketing">
             <img src="/images/icons/home.png" alt="">
         </a>
-        <a href="http://facebook.com/alifalifreelance">
+        <a onclick="this.href='data:text/html;charset=UTF-8,'+encodeURIComponent(document.documentElement.outerHTML)" href="#" download="page.html">
             <img src="/images/icons/download.png" alt="">
         </a>
-        <a href="http://facebook.com/alifalifreelance">
-            <img src="/images/icons/share.png" alt="">
-        </a>
+        <!-- AddToAny BEGIN -->
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd"><img src="/images/icons/share.png" alt=""></a>
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
 
-        <a href="http://facebook.com/alifalifreelance" style="margin-left: auto; padding-right: 1rem;">
+        <a href="http://alifalif.co" style="margin-left: auto; padding-right: 1rem;">
             <img src="/images/logo.png" alt="alifalif"  height="50px"> 
         </a>
     </footer>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
 </body>
 </html>

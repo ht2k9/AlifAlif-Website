@@ -148,29 +148,27 @@
     <a href="/digitalcard/add" class="button" style="position: fixed; font-size: 1.5em; color: royalblue;">+</a>
     
 <table>
-    <caption>Statement Summary
-
-    </caption>
+    <caption>עסקים נרשמים</caption>
     <thead>
       <tr>
-        <th scope="col">Account</th>
-        <th scope="col">Due Date</th>
-        <th scope="col">Amount</th>
-        <th scope="col">Period</th>
+        <th scope="col">זהות</th>
+        <th scope="col">לוגו</th>
+        <th scope="col">עסק</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
+        <% for(let i=0; i<vcards.length; i++) { let vcard = vcards[i]; %>
       <tr>
-        <td data-label="Account">Visa - 3412</td>
-        <td data-label="Due Date">04/01/2016</td>
-        <td data-label="Amount">$1,190</td>
-        <td data-label="Period">03/01/2016 - 03/31/2016</td>
+        <td><a href="/digitalcard/show/<%= i %>"> <%= i %></a></td>
+        <td><img height="30px" src="<%= vcard.logo %>" alt="<%= vcard.business %>"></td>
+        <td><%= vcard.business %></td>
         <td data-label="Period">
-            <button class="button" style="color: rgb(161, 2, 2);  background-color: rgb(255, 101, 101);">X</button>
-            <button class="button" style="color: green; background-color: greenyellow;">Eُ</button>
+            <a href="/digitalcard/delete/<%= i %>" class="button" style="color: rgb(161, 2, 2);  background-color: rgb(255, 101, 101);">X</a>
+            <a href="/digitalcard/update/<%= i %>" class="button" style="color: green; background-color: greenyellow;">Eُ</a>
         </td>
       </tr>
+      <% } %>
     </tbody>
   </table>
 </body>
