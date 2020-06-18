@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/flickity.css" media="screen">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+        header {
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        header a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        header a:hover {
+            background-color: darkred;
+            color: white;
+        }
+
+        header a.active {
+            background-color: white;
+            color: red;
+        }
+
+        header img{
+            justify-self: flex-end;
+        }
+
+        .wrapper {
+            margin-top: 40%;
+            width: 100vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .background {
+            height: 30vh;
+            position: absolute;
+        }
+
+        .fully {
+            margin-top: 30vh;
+            position: absolute;
+            height: 50px;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+
+        .meal {
+            padding: 10px;
+            transition: 0.3s;
+            counter-increment: meal;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media screen and ( min-width: 768px ) {
+            /* half-width cells for larger devices */
+            .meal { width: 50%; }
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="direction: rtl;">
+    <header>
+        <img src="/images/logo.png" alt="" height="50px">
+        <a>Header</a>
+    </header>
+    <div class="background">
+        <img src="https://www.365daysofbakingandmore.com/wp-content/uploads/2011/02/Lasagna-FEATURE.jpg" alt="" width="100%">
+    </div>
+    <div class="fully">
+    </div>
+    <div class="wrapper ">
+        <div class="meals js-flickity" data-flickity-options='{ "freeScroll": true, "pageDots": false }'>
+            <% for(let i=0; i<5; i++) { %>
+                <div class="meal">
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page242/delicious/assets/img/res02.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <h2><b>فلافل</b></h2>
+                        <p>بندورة خيار خس</p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <script src="/js/flickity.min.js"></script>
+    <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+</html>

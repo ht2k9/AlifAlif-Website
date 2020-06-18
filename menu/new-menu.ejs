@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body{
+    font-size: 1.2em;
+  background-color: #f2f2f2;
+  }
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button{
+  display: block;
+  width: auto;
+  font-size: 20px;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1em;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(12, 70, 197);
+}
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-right: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(89, 133, 255);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  right: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.group input{
+  margin: 5px;
+}
+
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:995px;
+}
+#output_image
+{
+ max-width: 200px;
+ max-height: 200px;
+}
+</style>
+<script type='text/javascript'>
+  function preview_image(event) 
+  {
+   var reader = new FileReader();
+   reader.onload = function()
+   {
+    var output = document.getElementById('output_image');
+    output.src = reader.result;
+   }
+   reader.readAsDataURL(event.target.files[0]);
+  }
+  </script>
+<body>
+
+
+<div dir="rtl">
+    <form action="/digitalcard/add" method="post">
+
+        <label>اسم المحل</label>
+        <input type="text" name="business" placeholder="الاسم">
+
+        <label>شعار المحل</label>
+        <input type="text" id="logo" name="logo" placeholder="الرايط">
+
+        <label>رابط الخلفية</label>
+        <div class="group">
+          <select name="bgtype" style="max-width: 200px;">
+            <option value="photo">صورة</option>
+            <option value="video">فيديو</option>
+            <option value="fb">من فيسبوك</option>
+          </select>
+          <input type="text" id="bglink" name="bglink">
+        </div>
+
+        <label>فيسبوك</label>
+        <div class="group">
+          <input type="text" id="facebook" name="facebook1" placeholder="العنوان" value="@" style="max-width: 200px;">
+          <input type="text" id="facebook" name="facebook2" placeholder="الرابط">
+        </div>
+
+
+        <label>انستاغرام</label>
+        <div class="group">
+          <input type="text" id="instagram1" name="instagram1" placeholder="العنوان" value="@" style="max-width: 200px;">
+          <input type="text" id="instagram2" name="instagram2" placeholder="الرابط">
+        </div>
+
+        <label>ويز</label>
+        <div class="group">
+          <input type="text" name="waze1" placeholder="العنوان" value="waze" style="max-width: 200px;">
+          <input type="text" name="waze2" placeholder="الرابط">
+        </div>
+
+        <label>واتساب</label>
+        <div class="group">
+          <input type="text" id="whatsapp1" name="whatsapp1" value="whatsapp" placeholder="العنوان" style="max-width: 200px;">
+          <input type="text" id="whatsapp2" name="whatsapp2" placeholder="الرابط">
+        </div>
+
+        
+        <div id="phones">
+          <label for="answer3">ارقام هاتف</label>
+        </div>
+          
+        <button type="button" onclick="addPhone()">+</button>
+        
+        <label>ساعات عمل</label>
+        <button type="button" onclick="autoFill()">ماثل كل الأيام حسب اليوم الأول</button>
+        
+        <% for(let i=1; i<=7; i++){ %>
+          <div class="group">
+            <input type="text" id="days<%= i %>" name="days<%= i %>" style="width: 100px;" placeholder="00:00">
+            <p>:</p>
+            <input type="text" id="daye<%= i %>" name="daye<%= i %>" style="width: 100px;" placeholder="00:00">
+          </div>
+        <% } %>
+
+        <input type="hidden" name="phoneCount" id="phoneCount" value="0">
+        <input type="submit" value="اضف المصلحة">
+    </form>
+</div>
+
+<script>
+  let phonesCnt = 0;
+  let node = document.getElementById('phones');
+
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $('#blah')
+                  .attr('src', e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+
+  function addPhone(){
+    phonesCnt++;
+    node.insertAdjacentHTML('beforeend',
+    '<div class="group"> <input type="text" placeholder="عنوان" id="title'+ phonesCnt + '" name="title'+ phonesCnt + '" style="width: 300px;"> <input type="text" placeholder="هاتف" id="phone'+ phonesCnt + '" name="phone'+ phonesCnt + '" style="width: 300px;"> </div> ');     
+    document.getElementById('phoneCount').value = phonesCnt;
+  }
+
+  function autoFill(){
+    let dayS = document.getElementById('days1');
+    let dayE = document.getElementById('daye1');
+
+    for(let i=1; i<=7;i++){
+      document.getElementById('days'+i).value = dayS.value;
+      document.getElementById('daye'+i).value = dayE.value;
+    }
+  }
+
+
+</script>
+</body>
+</html>
