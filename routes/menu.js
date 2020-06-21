@@ -1,6 +1,11 @@
 const express = require('express');
 const fs = require('fs');
+const multer = require("multer");
 const router = express.Router();
+
+const upload = multer({
+    dest: "public/restaurants/menus/"
+});
 
 router.get('/admin', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
@@ -11,60 +16,111 @@ router.get('/admin', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/show/:id', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
         let menus = JSON.parse(data);
         
-        res.render('menu', {menu: menus[req.params.id]});
+        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id});
+    });
+});
+
+router.get('/show/:id/:category', (req, res) => {
+    fs.readFile('localbase/menus.json', (err, data) => {
+        if (err) throw err;
+        let menus = JSON.parse(data);
+        let menu = menus[req.params.id];
+        res.render('menu/foods', {menu: menu, category: menu.categories[req.params.category]});
     });
 });
 
 router.get('/add', (req, res) => {
-    res.render('menu/new-menu', {menu: {}});
+    res.render('menu/new-menu');
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', upload.single('logo'), (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
+        const filePath = req.file.path;
 
-        let phoneList = [];
-        for(let i=1; i<req.body.phoneCount; i++){
-            phoneList.push([
-                {
-                    title: req.body['title'+i],
-                    number: req.body['phone'+i]
-                }
-            ]);
-        }
-
-        
-        if (err) throw err;
         menus = JSON.parse(data);
-        menus.push( 
+        menus.push(
             {
                 business: req.body.business,
-                logo : req.body.logo,
-                bg: {link: req.body.bglink, title: req.body.bgtype },
-                facebook: {title: req.body.facebook1, link: req.body.facebook2 },
-                waze: {title: req.body.waze1, link: req.body.waze2 },
-                instagram: {title: req.body.instagram1, link: req.body.instagram2 },
-                whatsrouter: {title: req.body.whatsrouter1, link: req.body.whatsrouter2 },
-                phones : phoneList,
-                day1 : {start:req.body.days1, end: req.body.daye1},
-                day2 : {start:req.body.days2, end: req.body.daye2},
-                day3 : {start:req.body.days3, end: req.body.daye3},
-                day4 : {start:req.body.days4, end: req.body.daye4},
-                day5 : {start:req.body.days5, end: req.body.daye5},
-                day6 : {start:req.body.days6, end: req.body.daye6},
-                day7 : {start:req.body.days7, end: req.body.daye7},
+                colors: {primary: req.body.primary, secondary: req.body.secondary},
+                categories: [],
+                foods: [],
             }
         );
 
-        fs.writeFile('localbase/menus.json', JSON.stringify(menus) , function (err) {
-            if (err) throw err;
-                
-            res.redirect('/add');
+        fs.rename(filePath, filePath+'.png', () => {
+            menus[menus.length-1].logo = req.file.filename+'.png';
+
+            fs.writeFile('localbase/menus.json', JSON.stringify(menus) , function (err) {
+                if (err) throw err;
+                    
+                res.render('menu/new-menu', {id: menus.length-1});
+            });
+        }); 
+    });
+});
+
+// CATEGORY
+router.post('/category/add', upload.single('catImg'), (req, res) => {
+    fs.readFile('localbase/menus.json', (err, data) => {
+        const filePath = req.file.path;
+
+        menus = JSON.parse(data);
+
+        fs.rename(filePath, filePath+'.png', () => {
+            menus[req.body.id].categories.push(
+                {
+                    title: req.body.catTitle,
+                    icon: req.body.icon,
+                    image: req.file.filename+'.png'
+                }
+            );
+
+            fs.writeFile('localbase/menus.json', JSON.stringify(menus) , function (err) {
+                if (err) throw err;
+                    
+                res.render('menu/new-menu', {id: req.body.id, categories: menus[req.body.id].categories});
+            });
         });
+    });
+});
+
+// Food
+router.post('/food/add', upload.single('foodImg'), (req, res) => {
+    fs.readFile('localbase/menus.json', (err, data) => {
+        const filePath = req.file.path;
+
+        menus = JSON.parse(data);
+
+        fs.rename(filePath, filePath+'.png', () => {
+            menus[req.body.id].foods.push(
+                {
+                    title: req.body.food,
+                    category: req.body.category,
+                    price: req.body.price,
+                    image: req.file.filename+'.png'
+                }
+            );
+
+            fs.writeFile('localbase/menus.json', JSON.stringify(menus) , function (err) {
+                if (err) throw err;
+                    
+                res.render('menu/new-menu', {id: req.body.id, categories: menus[req.body.id].categories});
+            });
+        }); 
+    });
+});
+
+router.get('/update/:id', (req, res) => {
+    fs.readFile('localbase/menus.json', (err, data) => {
+        if (err) throw err;
+        let menus = JSON.parse(data);
+        
+        res.render('menu/new-menu', {id: req.params.id});
     });
 });
 
@@ -75,19 +131,19 @@ router.post('/update/:id', (req, res) => {
         menus = JSON.parse(data);
 
         menus[req.params.id] = 
-            {
+        {
 
-            }
-        
-            fs.writeFile('localbase/menus.json', JSON.stringify(questions) , function (err) {
-                if (err) throw err;
-                    
-                res.redirect('/admin');
-            });
+        }
+    
+        fs.writeFile('localbase/menus.json', JSON.stringify(questions) , function (err) {
+            if (err) throw err;
+                
+            res.redirect('/admin');
+        });
     });
 });
 
-router.post('/delete/:id', (req, res) => {
+router.get('/delete/:id', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         
         if (err) throw err;
@@ -98,7 +154,7 @@ router.post('/delete/:id', (req, res) => {
         fs.writeFile('localbase/menus.json', JSON.stringify(menus) , function (err) {
             if (err) throw err;
                 
-            res.redirect('/admin');
+        res.render('menu/dashboard', {menus: menus});
         });
     });
 });

@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 background: orange;
-	 perspective: 500px;
-	 perspective-origin: center center;
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 500px;
+	perspective-origin: center center;
 }
  #app {
-	 position: relative;
-	 background: green;
+	position: relative;
 	max-width: 700px;
-	 width: 90vw;
-	 height: 90vh;
-	 background-image: linear-gradient(#6139a0 0%, #26163f 100%);
-	 border-radius: 3vmin;
-	 cursor: pointer;
-	 display: flex;
-	 flex-direction: column;
-	 align-items: center;
+	width: 85%;
+	height: 90vh;
+	border-radius: 3vmin;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
  #app:after {
 	 display: block;
@@ -39,9 +36,7 @@
 	 transform: rotateX(-5deg);
 	 box-shadow: 0 0 10vmin black;
 }
- #app:hover .app__bottom_block {
-	 height: 70vmax;
-}
+
  .app__top_block {
 	 flex: 1;
 	 position: relative;
@@ -73,19 +68,16 @@
 	 display: flex;
 	 flex-direction: column;
 	 align-items: center;
-	 overflow: hidden;
+	 overflow: scroll;
 	 transition: 1s linear;
 }
  .from__selection {
 	 flex: 1;
-	 background: orange;
 	 width: 90%;
 	 border-radius: 3vmin 3vmin 0 0;
 	 padding: 2vmin 0;
 	 display: flex;
-	 flex-direction: row;
-	 flex-wrap: wrap;
-	 justify-content: space-around;
+	 flex-direction: column;
 	 align-items: center;
 }
  .selection {
@@ -103,8 +95,10 @@
 	border-radius: 5vmin;
 	box-shadow: 1px 2px;
 }
+#app:hover .app__bottom_block {
+	 height: 70vmax;
+}
  .btn__submit {
-	 background: orange;
 	 width: 100%;
 	 line-height: 10vmin;
 	 text-align: center;
@@ -140,46 +134,62 @@
 }
  
     </style>
-    <title>Document</title>
+    <title><%= menu.colors.business %></title>
 </head>
-<body>
-    <div id="app">
-        <div class="app__top_block"><img src="http://www.mcdonalds.com.hk/content/dam/hongkong/ch/food/menu/093/McDonalds-Fries-093-hero.png" /></div>
-        <div class="app__bottom_block">
-            <div class="bottom_block__form">
-                <div class="from__selection">
-                    <div class="selection" style="background-image: url('/demos/recipes/images/categories/bf.jpg');">
+<body  style="background: <%= menu.colors.secondary %>">
+	<div id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
+		<div class="app__top_block">
+			<img src="/restaurants/menus/<%= menu.logo %>" style="max-width: 200px;"/>
+		</div>
+		<!-- <div class="app__bottom_block" id="buttom">
+			<div class="bottom_block__form">
+				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
+					<% if(menu.categories != undefined) {for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
+						<a href="/menu/show/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/menus/<%= cat.image %>');">
+							<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title %>"></div>
+							<div class="category"><%= cat.title %></div>
+						</a>
+					<% }} %>
+				</div>
+				<div class="btn__submit"></div>
+			</div>
+		</div> -->
+		<div class="app__bottom_block">
+			<div class="bottom_block__form">
+				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
+					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/bf.jpg');">
 						<div class="icon"><img src="/demos/recipes/images/icons/bf.svg" alt="Breakfast"></div>
 						<div class="category">فطور</div>
-					</div>
-                    <div class="selection" style="background-image: url('/demos/recipes/images/categories/lunch.jpg');">
+					</a>
+					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/lunch.jpg');">
 						<div class="icon"><img src="/demos/recipes/images/icons/lunch.svg" alt="Breakfast"></div>
 						<div class="category">غذاء</div>
-					</div>
-					<div class="selection" style="background-image: url('/demos/recipes/images/categories/dinner.jpg');">
+					</a>
+					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/dinner.jpg');">
 						<div class="icon"><img src="/demos/recipes/images/icons/dinner.svg" alt="Breakfast"></div>
 						<div class="category">عشاء</div>
-					</div>
-					<div class="selection" style="background-image: url('/demos/recipes/images/categories/desserts.jpg');">
+					</a>
+					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/desserts.jpg');">
 						<div class="icon"><img src="/demos/recipes/images/icons/desserts.svg" alt="Breakfast"></div>
 						<div class="category">حلويات</div>
-					</div>
-					<div class="selection" style="background-image: url('/demos/recipes/images/categories/veg.jpg');">
+					</a>
+					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/veg.jpg');">
 						<div class="icon"><img src="/demos/recipes/images/icons/vegan.svg" alt="Breakfast"></div>
 						<div class="category">سلطات</div>
-					</div>
-					<div class="selection" style="background-image: url('/demos/recipes/images/categories/seafood.jpg');">
+					</a>
+					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/seafood.jpg');">
 						<div class="icon"><img src="/demos/recipes/images/icons/seafood.svg" alt="Breakfast"></div>
 						<div class="category">أسماك</div>
-					</div>
-					<div class="selection" style="background-image: url('/demos/recipes/images/categories/drinks.jpg');">
+					</a>
+					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/drinks.jpg');">
 						<div class="icon"><img src="/demos/recipes/images/icons/drinks.svg" alt="Breakfast"></div>
 						<div class="category">مشروبات</div>
-					</div>
-                </div>
-                <div class="btn__submit"></div>
-            </div>
-        </div>
-    </div>
+					</a>
+				</div>
+				<div class="btn__submit"></div>
+			</div>
+		</div>
+
+	</div>
 </body>
 </html>

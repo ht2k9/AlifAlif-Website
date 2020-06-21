@@ -244,7 +244,7 @@ div {
     phonesCnt++;
     node.insertAdjacentHTML('beforeend',
     '<div class="group"> <input type="text" placeholder="عنوان" id="title'+ phonesCnt + '" name="title'+ phonesCnt + '" style="width: 300px;"> <input type="text" placeholder="هاتف" id="phone'+ phonesCnt + '" name="phone'+ phonesCnt + '" style="width: 300px;"> </div> ');     
-    document.getElementById('phoneCount') = phonesCnt;
+    document.getElementById('phoneCount').value = phonesCnt;
   }
 
   function autoFill(){

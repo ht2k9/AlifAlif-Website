@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body{
+    font-size: 1.2em;
+  background-color: #f2f2f2;
+  }
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button{
+  display: block;
+  width: auto;
+  font-size: 20px;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1em;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(12, 70, 197);
+}
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-right: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(89, 133, 255);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  right: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.group input{
+  margin: 5px;
+}
+
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:995px;
+}
+#output_image
+{
+ max-width: 200px;
+ max-height: 200px;
+}
+</style>
+<body>
+<div dir="rtl">
+  <a href="/menu/admin" class="button"><button>الخروج</button></a>
+  <form action="/menu/add" method="post" enctype="multipart/form-data">
+    <label>اسم المحل</label>
+    <input type="text" name="business" placeholder="الاسم">
+
+    <label>شعار المحل</label>
+    <div class="group">
+      <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
+      <p><img id="output_image" width="200" /></p>
+    </div>
+
+    <label>الألوان</label>
+    <div class="group">
+      <input type="color" name="primary">
+      <input type="color" name="secondary" value="#ffffff">
+    </div>
+
+    <input type="submit" value="اضف المطعم">
+  </form>
+
+  <% if(typeof id !== 'undefined') { %>
+    <form action="/menu/category/add" method="post" enctype="multipart/form-data">
+      <label for="categories">أصناف</label>
+      <div class="group">
+        <input type="text" placeholder="صنف" id="catTitle" name="catTitle" style="width: 300px;" required> 
+        <div class="group">
+            <input type="file" id="catImg" name="catImg" data-output= "cat_image"  onchange="preview_image(event)" required> 
+            <p><img id="cat_image" width="200"/></p>
+        </div>
+      </div>
+      <div class="group">
+        <div> <img src="/demos/recipes/images/icons/bf.svg" style="width: 50px;" alt=""> فطور</div>
+        <div> <img src="/demos/recipes/images/icons/dinner.svg" style="width: 50px;" alt=""> عشاء</div>
+        <div> <img src="/demos/recipes/images/icons/lunch.svg" style="width: 50px;" alt=""> غذاء</div>
+        <div> <img src="/demos/recipes/images/icons/vegan.svg" style="width: 50px;" alt=""> سلطات</div>
+        <div> <img src="/demos/recipes/images/icons/seafood.svg" style="width: 50px;" alt=""> أسماك</div>
+        <div> <img src="/demos/recipes/images/icons/desserts.svg" style="width: 50px;" alt=""> حلويات</div>
+        <div> <img src="/demos/recipes/images/icons/drinks.svg" style="width: 50px;" alt=""> مشروبات</div>
+      </div>
+      <select id="icon" name="icon" style="max-width: 300px;">
+          <option value="bf">فطور</option>
+          <option value="dinner">عشاء</option>
+          <option value="lunch">غذاء</option>
+          <option value="vegan">سلطات</option>
+          <option value="seafood">أسماك</option>
+          <option value="desserts">حلويات</option>
+          <option value="drinks">مشروبات</option>
+      </select>
+      <input type="hidden" name="id" value="<%= id %>">
+      <input type="submit" value="حفظ" style="width: 50px;">
+    </form>
+  <% } %>
+
+
+
+  <% if(typeof id !== 'undefined' && typeof categories !== 'undefined') { %>
+    <form action="/menu/food/add" method="post" enctype="multipart/form-data">
+      <label for="food">وجبات</label>
+      <div class="group">
+        <input type="text" placeholder="اسم الوجبة" name="food" style="width: 300px;" required>
+        <input type="text" placeholder="السعر" name="price" style="width: 300px;"> 
+        <div class="group">
+            <input type="file" id="foodImg" name="foodImg" data-output= "food_image"  onchange="preview_image(event)"> 
+            <p><img id="food_image" width="200" /></p>
+        </div>
+      </div>
+
+      <label for="categories">الصنف</label>
+      <select id="categories" name="category" style="max-width: 300px;">
+        <% for(let i=0; i<categories.length; i++) { %>
+          <option value="<%= i %>"><%= categories[i].title %></option>
+        <% } %>
+      </select>
+
+      <input type="hidden" name="id" value="<%= id %>">
+      <input type="submit" value="حفظ" style="width: 50px;"> 
+    </form>
+  <% } %>
+</div>
+
+<script>
+  
+  function preview_image(event) 
+  {
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+      let outputID = event.target.getAttribute('data-output');
+      var output = document.getElementById(outputID);
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
+</script>
+</body>
+</html>

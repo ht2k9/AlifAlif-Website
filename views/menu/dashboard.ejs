@@ -146,27 +146,27 @@
             <li><a href="http://alifalif.work/crm/admin/">חשבוניות</a></li>
         </ul>
     </header>
-    <a href="/digitalcard/add" class="button" style="position: fixed; font-size: 1.5em; color: royalblue;">+</a>
+    <a href="/menu/add" class="button" style="position: fixed; font-size: 1.5em; color: royalblue;">+</a>
     
 <table>
     <caption>עסקים נרשמים</caption>
     <thead>
       <tr>
-        <th scope="col">זהות</th>
-        <th scope="col">לוגו</th>
-        <th scope="col">עסק</th>
+        <th scope="col">رقم</th>
+        <th scope="col">لوغو</th>
+        <th scope="col">المصلحة</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-        <% for(let i=0; i<vcards.length; i++) { let vcard = vcards[i]; %>
+        <% for(let i=0; i<menus.length; i++) { let menu = menus[i]; %>
       <tr>
-        <td><a href="/digitalcard/show/<%= i %>"> <%= i %></a></td>
-        <td><img height="30px" src="<%= vcard.logo %>" alt="<%= vcard.business %>"></td>
-        <td><%= vcard.business %></td>
+        <td><a href="/menu/show/<%= i %>"> <%= i %></a></td>
+        <td><img height="30px" src="/restaurants/menus/<%= menu.logo %>" alt="<%= menu.business %>"></td>
+        <td><%= menu.business %></td>
         <td data-label="Period">
-            <a href="/digitalcard/delete/<%= i %>" class="button" style="color: rgb(161, 2, 2);  background-color: rgb(255, 101, 101);">X</a>
-            <a href="/digitalcard/update/<%= i %>" class="button" style="color: green; background-color: greenyellow;">Eُ</a>
+            <a href="/menu/delete/<%= i %>" class="button" style="color: rgb(161, 2, 2);  background-color: rgb(255, 101, 101);">X</a>
+            <a href="/menu/update/<%= i %>" class="button" style="color: green; background-color: greenyellow;">Eُ</a>
         </td>
       </tr>
       <% } %>

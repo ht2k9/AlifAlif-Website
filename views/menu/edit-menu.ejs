@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body{
+    font-size: 1.2em;
+  background-color: #f2f2f2;
+  }
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button{
+  display: block;
+  width: auto;
+  font-size: 20px;
+  background-color: rgb(16, 91, 252);
+  color: white;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1em;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(12, 70, 197);
+}
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-right: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(89, 133, 255);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  right: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.group input{
+  margin: 5px;
+}
+
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:995px;
+}
+#output_image
+{
+ max-width: 200px;
+ max-height: 200px;
+}
+</style>
+<body>
+
+
+<div dir="rtl">
+    <div id="categories">
+      <label for="categories">أصناف</label>
+    </div>
+    <button id="adder" type="button" onclick="addCategory()">+</button>
+
+    <input type="hidden" name="categoryCount" id="categoryCount" value="0">
+    <input type="hidden" name="foodCount" id="foodCount" value="0">
+</div>
+
+<script>
+  let categoryCnt = document.getElementById('categoryCount').value;
+  let foodCnt = document.getElementById('foodCount').value;
+  let categories = document.getElementById('categories');
+  let foods = document.getElementById('foods');
+
+  function addCategory(){
+    categoryCnt++;
+    categories.insertAdjacentHTML('beforeend',
+    '<form action="/menu/category/add" method="post" enctype="multipart/form-data"><div class="group"> <input type="text" placeholder="صنف" id="category'+ categoryCnt + '" name="category'+ categoryCnt + '" style="width: 300px;"> <div class="group">  <input type="file" id="catImg" name="catImg" placeholder="الرايط" data-output= "cat_image"  onchange="preview_image(event)"> <p><img id="cat_image" width="200" /></p> </div></div> </div><input type="submit" value="اضف صنف"> </form>');     
+    document.getElementById('categoryCount').value = categoryCnt;
+    document.getElementById('adder').disabled = true
+  }
+
+  function addFood(){
+    if(categoryCnt == 0){
+      alert("اضف صنف طعام");
+      return;
+    }
+    let cats = [];
+    for(i=1; i<=categoryCnt; i++){
+      cats.push(document.getElementById('category'+i).value );
+    }
+    foodCnt++;
+    foods.insertAdjacentHTML('beforeend',
+    '<div class="group"> <input type="text" placeholder="الوجبة" id="food'+ foodCnt + '" name="food'+ foodCnt + '" style="width: 300px;"> <input type="text" placeholder="الصنف" id="foodCat'+ foodCnt + '" name="foodCat'+ foodCnt + '" style="width: 300px;"> <div class="group"> <input type="file" id="foodImg'+ foodCnt + '" name="foodImg'+ foodCnt + '" placeholder="الرايط" data-output= "food_image'+ foodCnt +'"  onchange="preview_image(event)"> <p><img id="food_image'+ foodCnt +'" width="200" /></p> </div></div> ');     
+    document.getElementById('foodCount').value = foodCnt;
+  }
+  
+  function preview_image(event) 
+  {
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+      let outputID = event.target.getAttribute('data-output');
+      var output = document.getElementById(outputID);
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
+</script>
+</body>
+</html>
