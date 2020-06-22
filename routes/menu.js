@@ -120,7 +120,7 @@ router.get('/update/:id', (req, res) => {
         if (err) throw err;
         let menus = JSON.parse(data);
         
-        res.render('menu/new-menu', {id: req.params.id});
+        res.render('menu/new-menu', {menu: menus[req.params.id], id: req.params.id});
     });
 });
 

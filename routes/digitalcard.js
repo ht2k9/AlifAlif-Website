@@ -1,7 +1,11 @@
 const express = require('express');
 const fs = require('fs');
+const multer = require("multer");
 const router = express.Router();
 
+const upload = multer({
+    dest: "public/vcards/"
+});
 
 router.get('/admin', (req, res) => {
     fs.readFile('localbase/vcards.json', (err, dataQ) => {
@@ -36,8 +40,11 @@ router.get('/update/:id', (req, res) => {
     });
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', upload.single('logo'), (req, res) => {
     fs.readFile('localbase/vcards.json', (err, data) => {
+        if (err) throw err;
+
+        const filePath = req.file.path;
 
         let phoneList = [];
         for(let i=1; i<=req.body.phoneCount; i++){
@@ -49,39 +56,41 @@ router.post('/add', (req, res) => {
             );
         }
 
-        
-        if (err) throw err;
         vcards = JSON.parse(data);
-        vcards.push( 
-            {
-                business: req.body.business,
-                logo : req.body.logo,
-                bg: {link: req.body.bglink, type: req.body.bgtype },
-                facebook: {title: req.body.facebook1, link: req.body.facebook2 },
-                waze: {title: req.body.waze1, link: req.body.waze2 },
-                instagram: {title: req.body.instagram1, link: req.body.instagram2 },
-                whatsrouter: {title: req.body.whatsrouter1, link: req.body.whatsrouter2 },
-                phones : phoneList,
-                day1 : {start:req.body.days1, end: req.body.daye1},
-                day2 : {start:req.body.days2, end: req.body.daye2},
-                day3 : {start:req.body.days3, end: req.body.daye3},
-                day4 : {start:req.body.days4, end: req.body.daye4},
-                day5 : {start:req.body.days5, end: req.body.daye5},
-                day6 : {start:req.body.days6, end: req.body.daye6},
-                day7 : {start:req.body.days7, end: req.body.daye7},
-            }
-        );
 
-        fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
-            if (err) throw err;
-                
-            res.redirect('/admin');
+        fs.rename(filePath, filePath+'.png', () => {
+            vcards.push( 
+                {
+                    business: req.body.business,
+                    logo : req.file.filename+'.png',
+                    bg: {link: req.body.bglink, type: req.body.bgtype },
+                    facebook: {title: req.body.facebook1, link: req.body.facebook2 },
+                    waze: {title: req.body.waze1, link: req.body.waze2 },
+                    instagram: {title: req.body.instagram1, link: req.body.instagram2 },
+                    whatsrouter: {title: req.body.whatsrouter1, link: req.body.whatsrouter2 },
+                    phones : phoneList,
+                    day1 : {start:req.body.days1, end: req.body.daye1},
+                    day2 : {start:req.body.days2, end: req.body.daye2},
+                    day3 : {start:req.body.days3, end: req.body.daye3},
+                    day4 : {start:req.body.days4, end: req.body.daye4},
+                    day5 : {start:req.body.days5, end: req.body.daye5},
+                    day6 : {start:req.body.days6, end: req.body.daye6},
+                    day7 : {start:req.body.days7, end: req.body.daye7},
+                }
+            );
+
+            fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
+                if (err) throw err;
+                    
+                res.redirect('/digitalcard/admin');
+            });
         });
     });
 });
 
-router.post('/update/:id', (req, res) => {
+router.post('/update/:id', upload.single('logo'), (req, res) => {
     fs.readFile('localbase/vcards.json', (err, data) => {
+        const filePath = req.file.path;
             
         let phoneList = [];
         for(let i=1; i<= req.body.phoneCount; i++){
@@ -93,34 +102,36 @@ router.post('/update/:id', (req, res) => {
             );
         }
 
-        console.log(phoneList);
         if (err) throw err;
+
         vcards = JSON.parse(data);
-        let vcard =  
-        {
-            business: req.body.business,
-            logo : req.body.logo,
-            bg: {link: req.body.bglink, type: req.body.bgtype },
-            facebook: {title: req.body.facebook1, link: req.body.facebook2 },
-            waze: {title: req.body.waze1, link: req.body.waze2},
-            instagram: {title: req.body.instagram1, link: req.body.instagram2 },
-            whatsrouter: {title: req.body.whatsrouter1, link: req.body.whatsrouter2 },
-            phones : phoneList,
-            day1 : {start:req.body.days1, end: req.body.daye1},
-            day2 : {start:req.body.days2, end: req.body.daye2},
-            day3 : {start:req.body.days3, end: req.body.daye3},
-            day4 : {start:req.body.days4, end: req.body.daye4},
-            day5 : {start:req.body.days5, end: req.body.daye5},
-            day6 : {start:req.body.days6, end: req.body.daye6},
-            day7 : {start:req.body.days7, end: req.body.daye7},
-        };
-        vcards[req.params.id] = vcard;
-        console.log(req.body);
-        fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
-            if (err) throw err;
-                
-            res.redirect('/admin');
-        });
+        fs.rename(filePath, filePath+'.png', () => {
+                let vcard =  
+                {
+                    business: req.body.business,
+                    logo : req.file.filename+'.png',
+                    bg: {link: req.body.bglink, type: req.body.bgtype },
+                    facebook: {title: req.body.facebook1, link: req.body.facebook2 },
+                    waze: {title: req.body.waze1, link: req.body.waze2},
+                    instagram: {title: req.body.instagram1, link: req.body.instagram2 },
+                    whatsrouter: {title: req.body.whatsrouter1, link: req.body.whatsrouter2 },
+                    phones : phoneList,
+                    day1 : {start:req.body.days1, end: req.body.daye1},
+                    day2 : {start:req.body.days2, end: req.body.daye2},
+                    day3 : {start:req.body.days3, end: req.body.daye3},
+                    day4 : {start:req.body.days4, end: req.body.daye4},
+                    day5 : {start:req.body.days5, end: req.body.daye5},
+                    day6 : {start:req.body.days6, end: req.body.daye6},
+                    day7 : {start:req.body.days7, end: req.body.daye7},
+                };
+                vcards[req.params.id] = vcard;
+
+                fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
+                    if (err) throw err;
+                        
+                    res.redirect('/digitalcard/admin');
+                });
+            });
     });
 });
 
@@ -135,7 +146,7 @@ router.get('/delete/:id', (req, res) => {
         fs.writeFile('localbase/vcards.json', JSON.stringify(vcards) , function (err) {
             if (err) throw err;
                 
-            res.redirect('/admin');
+            res.redirect('/digitalcard/admin');
         });
     });
 });

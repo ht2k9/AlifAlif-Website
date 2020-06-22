@@ -152,17 +152,21 @@ div {
    reader.readAsDataURL(event.target.files[0]);
   }
   </script>
-<body>
+<body> 
 
 
 <div dir="rtl">
-    <form action="/digitalcard/add" method="post">
+      <a href="/digitalcard/admin" class="button"><button>الخروج</button></a>
 
+      <form action="/digitalcard/add" method="post">
         <label>اسم المحل</label>
         <input type="text" name="business" placeholder="الاسم">
 
         <label>شعار المحل</label>
-        <input type="text" id="logo" name="logo" placeholder="الرايط">
+        <div class="group">
+          <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
+          <p><img id="output_image" width="200" /></p>
+        </div>
 
         <label>رابط الخلفية</label>
         <div class="group">
@@ -179,7 +183,6 @@ div {
           <input type="text" id="facebook" name="facebook1" placeholder="العنوان" value="@" style="max-width: 200px;">
           <input type="text" id="facebook" name="facebook2" placeholder="الرابط">
         </div>
-
 
         <label>انستاغرام</label>
         <div class="group">
@@ -226,20 +229,6 @@ div {
   let phonesCnt = document.getElementById('phoneCount').value;
   let node = document.getElementById('phones');
 
-  function readURL(input) {
-      if (input.files && input.files[0]) {
-          var reader = new FileReader();
-
-          reader.onload = function (e) {
-              $('#blah')
-                  .attr('src', e.target.result);
-          };
-
-          reader.readAsDataURL(input.files[0]);
-      }
-  }
-
-
   function addPhone(){
     phonesCnt++;
     node.insertAdjacentHTML('beforeend',
@@ -255,6 +244,18 @@ div {
       document.getElementById('days'+i).value = dayS.value;
       document.getElementById('daye'+i).value = dayE.value;
     }
+  }
+
+  function preview_image(event) 
+  {
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+      let outputID = event.target.getAttribute('data-output');
+      var output = document.getElementById(outputID);
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
   }
 
 

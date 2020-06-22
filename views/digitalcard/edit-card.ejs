@@ -156,13 +156,18 @@ div {
 
 
 <div dir="rtl">
+  <a href="/digitalcard/admin" class="button"><button>الخروج</button></a>
+
     <form action="/digitalcard/update/<%= index %>" method="post">
 
         <label>اسم المحل</label>
-        <input type="text" name="business" placeholder="الاسم" value="<%= vcard.business %>">
+        <input type="text" name="business" placeholder="الاسم" <% if(vcard.business != null) {%> value="<%= vcard.business %>" <%}%> >
 
         <label>شعار المحل</label>
-        <input type="text" id="logo" name="logo" placeholder="الرايط" value="<%= vcard.logo %>">
+        <div class="group">
+          <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
+          <p><img <% if(vcard.logo != null) {%> src="/vcards/<%= vcard.logo %>" <%}%> id="output_image" width="200" /></p>
+        </div>
 
         <label>رابط الخلفية</label>
         <div class="group">
@@ -180,7 +185,6 @@ div {
           <input type="text" id="facebook" name="facebook2" placeholder="الرابط" <% if(vcard.facebook != null) {%> value="<%= vcard.facebook.link %>" <%}%>>
         </div>
 
-
         <label>انستاغرام</label>
         <div class="group">
           <input type="text" id="instagram1" name="instagram1" placeholder="العنوان" style="max-width: 200px;" <% if(vcard.instagram != null) {%> value="<%= vcard.instagram.title %>" <%}%> >
@@ -189,13 +193,13 @@ div {
 
         <label>ويز</label>
         <div class="group">
-          <input type="text" name="waze1" placeholder="العنوان" <% if(vcard.waze != null) {%> value="<%= vcard.waze.title %>" style="max-width: 200px;" <%}%>>
+          <input type="text" name="waze1" placeholder="العنوان" <% if(vcard.waze != null) {%> value="<%= vcard.waze.title %>"  <%}%> style="max-width: 200px;">
           <input type="text" name="waze2" placeholder="الرابط" <% if(vcard.waze != null) {%> value="<%= vcard.waze.link %>"<%}%>>
         </div>
 
         <label>واتساب</label>
         <div class="group">
-          <input type="text" id="whatsapp1" name="whatsapp1" <% if(vcard.whatsapp != null) {%> value="<%= vcard.whatsapp.title %>" placeholder="العنوان" style="max-width: 200px;"<%}%>>
+          <input type="text" id="whatsapp1" name="whatsapp1" <% if(vcard.whatsapp != null) {%> value="<%= vcard.whatsapp.title %>" <%}%> placeholder="العنوان" style="max-width: 200px;">
           <input type="text" id="whatsapp2" name="whatsapp2" <% if(vcard.whatsapp != null) {%> value="<%= vcard.whatsapp.link %>" placeholder="الرابط"<%}%>>
         </div>
         
@@ -232,17 +236,16 @@ div {
   let phonesCnt = document.getElementById('phoneCount').value;
   let node = document.getElementById('phones');
 
-  function readURL(input) {
-      if (input.files && input.files[0]) {
-          var reader = new FileReader();
-
-          reader.onload = function (e) {
-              $('#blah')
-                  .attr('src', e.target.result);
-          };
-
-          reader.readAsDataURL(input.files[0]);
-      }
+  function preview_image(event) 
+  {
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+      let outputID = event.target.getAttribute('data-output');
+      var output = document.getElementById(outputID);
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
   }
 
 
