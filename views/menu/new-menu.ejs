@@ -143,20 +143,21 @@ div {
 <body>
 <div dir="rtl">
   <a href="/menu/admin" class="button"><button>الخروج</button></a>
-  <form action="/menu/add" method="post" enctype="multipart/form-data">
+<form <% if(menu == {}){ %> action="/menu/add" <% } %> <% if(menu != {}) { %>  action="/menu/update" <%}%>
+     method="post" enctype="multipart/form-data">
     <label>اسم المحل</label>
-    <input type="text" name="business" placeholder="الاسم">
+    <input type="text" name="business" placeholder="الاسم" <% if(menu.business != null){ %> value="<%= menu.business %>" <% } %>>
 
     <label>شعار المحل</label>
     <div class="group">
-      <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
-      <p><img id="output_image" width="200" /></p>
+      <input <% if(menu.business != null){ %> value="/restaurants/menus/<%= menu.logo %>" <% } %> type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
+      <p><img <% if(menu.business != null){ %> src="/restaurants/menus/<%= menu.logo %>" <% } %> id="output_image" width="200" /></p>
     </div>
 
     <label>الألوان</label>
     <div class="group">
-      <input type="color" name="primary">
-      <input type="color" name="secondary" value="#ffffff">
+      <input type="color" name="primary" <% if(menu.business != null){ %> value="<%= menu.colors.primary %>" <% } %>>
+      <input type="color" name="secondary" <% if(menu.business != null){ %> value="<%= menu.colors.secondary %>" <% } %>>
     </div>
 
     <input type="submit" value="اضف المطعم">

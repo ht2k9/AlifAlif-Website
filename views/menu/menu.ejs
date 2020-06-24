@@ -93,11 +93,8 @@ body {
     text-align: center;
     margin: 1.5vmin 0;
 	border-radius: 5vmin;
-	box-shadow: 1px 2px;
 }
-#app:hover .app__bottom_block {
-	 height: 70vmax;
-}
+
  .btn__submit {
 	 width: 100%;
 	 line-height: 10vmin;
@@ -137,7 +134,7 @@ body {
     <title><%= menu.colors.business %></title>
 </head>
 <body  style="background: <%= menu.colors.secondary %>">
-	<div id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
+	<div onclick="showMenu()" id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
 		<div class="app__top_block">
 			<img src="/restaurants/menus/<%= menu.logo %>" style="max-width: 200px;"/>
 		</div>
@@ -191,5 +188,18 @@ body {
 		</div>
 
 	</div>
+
+	<script>
+		let isHidden = true;
+
+		function showMenu(){
+			if(isHidden)
+				document.getElementsByClassName('app__bottom_block')[0].style.height = "70vmax";
+			else
+				document.getElementsByClassName("app__bottom_block")[0].style.height = "0";
+
+			isHidden = !isHidden;
+		}
+	</script>
 </body>
 </html>

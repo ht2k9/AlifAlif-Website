@@ -158,7 +158,7 @@ div {
 <div dir="rtl">
   <a href="/digitalcard/admin" class="button"><button>الخروج</button></a>
 
-    <form action="/digitalcard/update/<%= index %>" method="post">
+    <form action="/digitalcard/update/<%= index %>" method="post" enctype="multipart/form-data">
 
         <label>اسم المحل</label>
         <input type="text" name="business" placeholder="الاسم" <% if(vcard.business != null) {%> value="<%= vcard.business %>" <%}%> >

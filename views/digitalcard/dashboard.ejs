@@ -140,8 +140,8 @@
     <header>
         <ul class="horizontal-menu">
             <li><a href="/admin">ראשי</a></li>
-            <li><a href="/digitalcard">כרטיס דיגיטלי</a></li>
-            <li><a href="/menu">مينيو مطاعم</a></li>
+            <li><a href="/digitalcard/admin">כרטיס דיגיטלי</a></li>
+            <li><a href="/menu/admin">مينيو مطاعم</a></li>
             <li><a href="http://alifalif.store/public">شبيك لبيك</a></li>
             <li><a href="http://alifalif.work/crm/admin/">חשבוניות</a></li>
         </ul>
@@ -162,7 +162,7 @@
         <% for(let i=0; i<vcards.length; i++) { let vcard = vcards[i]; %>
       <tr>
         <td><a href="/digitalcard/show/<%= i %>"> <%= i %></a></td>
-        <td><img height="30px" src="<%= vcard.logo %>" alt="<%= vcard.business %>"></td>
+        <td><img height="30px" src="/vcards/<%= vcard.logo %>" alt="<%= vcard.business %>"></td>
         <td><%= vcard.business %></td>
         <td data-label="Period">
             <a href="/digitalcard/delete/<%= i %>" class="button" style="color: rgb(161, 2, 2);  background-color: rgb(255, 101, 101);">X</a>

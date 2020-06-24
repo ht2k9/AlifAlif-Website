@@ -41,6 +41,8 @@ router.get('/update/:id', (req, res) => {
 });
 
 router.post('/add', upload.single('logo'), (req, res) => {
+    console.log(req.body);
+
     fs.readFile('localbase/vcards.json', (err, data) => {
         if (err) throw err;
 
