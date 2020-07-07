@@ -161,9 +161,9 @@
     <tbody>
         <% for(let i=0; i<menus.length; i++) { let menu = menus[i]; %>
       <tr>
-        <td><a href="/menu/show/<%= i %>"> <%= i %></a></td>
-        <td><img height="30px" src="/restaurants/menus/<%= menu.logo %>" alt="<%= menu.business %>"></td>
-        <td><%= menu.business %></td>
+        <td><a href="/menu/show/ar/<%= i %>"> <%= i %></a></td>
+        <td><img height="30px" src="/restaurants/<%= menu.logo %>" alt="<%= menu.business.ar %>"></td>
+        <td><%= menu.business.ar %></td>
         <td data-label="Period">
             <a href="/menu/delete/<%= i %>" class="button" style="color: rgb(161, 2, 2);  background-color: rgb(255, 101, 101);">X</a>
             <a href="/menu/update/<%= i %>" class="button" style="color: green; background-color: greenyellow;">Eُ</a>

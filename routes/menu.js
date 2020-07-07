@@ -4,9 +4,10 @@ const multer = require("multer");
 const router = express.Router();
 
 const upload = multer({
-    dest: "public/restaurants/menus/"
+    dest: "public/restaurants/"
 });
 
+// SHOW
 router.get('/admin', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
@@ -16,36 +17,44 @@ router.get('/admin', (req, res) => {
     });
 });
 
-router.get('/show/:id', (req, res) => {
+router.get('/show/:lang/:id', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
         let menus = JSON.parse(data);
         
-        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id});
+        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: req.params.lang});
     });
 });
 
-router.get('/show/:id/:category', (req, res) => {
+router.get('/show/:lang/:id/:category', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
-        let menus = JSON.parse(data);
-        let menu = menus[req.params.id];
-        res.render('menu/foods', {menu: menu, category: menu.categories[req.params.category]});
+        let menu = JSON.parse(data)[req.params.id];
+
+        let foods = [];
+        menu.foods.forEach(food => {
+            if(food.category == req.params.category){
+                foods.push(food);
+            }
+        });
+
+        res.render('menu/foods', {id: req.params.id, lang: req.params.lang, category: menu.categories[req.params.category], foods: foods, lang: req.params.lang});
     });
 });
 
 router.get('/add', (req, res) => {
-    res.render('menu/new-menu', {menu: {}});
+    res.render('menu/new-menu', {menu: null});
 });
 
+// NEW
 router.post('/add', upload.single('logo'), (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
-        const filePath = req.body.file.path;
+        const filePath = req.file.path;
 
-        menus = JSON.parse(data);
+        let menus = JSON.parse(data);
         menus.push(
             {
-                business: req.body.business,
+                business: {he: req.body.businessHE, ar: req.body.businessAR},
                 colors: {primary: req.body.primary, secondary: req.body.secondary},
                 categories: [],
                 foods: [],
@@ -74,8 +83,6 @@ router.post('/update/:id', upload.single('logo'), (req, res) => {
             {
                 business: req.body.business,
                 colors: {primary: req.body.primary, secondary: req.body.secondary},
-                categories: [],
-                foods: [],
             }
         );
 
@@ -101,7 +108,7 @@ router.post('/category/add', upload.single('catImg'), (req, res) => {
         fs.rename(filePath, filePath+'.png', () => {
             menus[req.body.id].categories.push(
                 {
-                    title: req.body.catTitle,
+                    title: {ar: req.body.catTitleAR, he: req.body.catTitleHE},
                     icon: req.body.icon,
                     image: req.file.filename+'.png'
                 }
@@ -110,23 +117,25 @@ router.post('/category/add', upload.single('catImg'), (req, res) => {
             fs.writeFile('localbase/menus.json', JSON.stringify(menus) , function (err) {
                 if (err) throw err;
                     
-                res.render('menu/new-menu', {id: req.body.id, categories: menus[req.body.id].categories});
+                res.render('menu/new-menu', {id: req.body.id, categories: menus[req.body.id].categories, menu: null});
             });
         });
     });
 });
 
 // Food
+// ADD
 router.post('/food/add', upload.single('foodImg'), (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         const filePath = req.file.path;
 
-        menus = JSON.parse(data);
+        let menus = JSON.parse(data);
 
         fs.rename(filePath, filePath+'.png', () => {
             menus[req.body.id].foods.push(
                 {
-                    title: req.body.food,
+                    title: {ar: req.body.foodAR, he: req.body.foodHE},
+                    description: {ar: req.body.descriptionAR, he: req.body.descriptionHE},
                     category: req.body.category,
                     price: req.body.price,
                     image: req.file.filename+'.png'
@@ -136,7 +145,7 @@ router.post('/food/add', upload.single('foodImg'), (req, res) => {
             fs.writeFile('localbase/menus.json', JSON.stringify(menus) , function (err) {
                 if (err) throw err;
                     
-                res.render('menu/new-menu', {id: req.body.id, categories: menus[req.body.id].categories});
+                res.render('menu/new-menu', {id: req.body.id, categories: menus[req.body.id].categories, menu: null});
             });
         }); 
     });
@@ -147,7 +156,7 @@ router.get('/update/:id', (req, res) => {
         if (err) throw err;
         let menus = JSON.parse(data);
         
-        res.render('menu/new-menu', {menu: menus[req.params.id], id: req.params.id});
+        res.render('menu/new-menu', {menu: menus[req.params.id], id: req.params.id, categories: menus[req.params.id].categories});
     });
 });
 

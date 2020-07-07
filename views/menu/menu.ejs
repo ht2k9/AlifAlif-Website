@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 body {
+	overflow: hidden;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	perspective: 500px;
 	perspective-origin: center center;
+}
+a {
+	text-decoration: none;
 }
  #app {
 	position: relative;
@@ -89,18 +94,32 @@ body {
     width: 92%;
     height: 80px;
     line-height: 8vmin;
-    border: 1px solid gray;
+    border: 1px solid white;
     text-align: center;
     margin: 1.5vmin 0;
 	border-radius: 5vmin;
 }
 
  .btn__submit {
+	 position: absolute;
+	 bottom: 0;
 	 width: 100%;
 	 line-height: 10vmin;
 	 text-align: center;
 	 color: white;
 	 font-size: 3.5vmin;
+}
+.btn {
+	 border: none;
+ 	 color: white;
+	 padding: 0 10px;
+	 text-align: center;
+	 text-decoration: none;
+	 display: inline-block;
+	 font-size: 16px;
+	 margin: 4px 2px;
+	 cursor: pointer;
+	 border-radius: 10px 10px 0 0;
 }
  #inspired {
 	 position: fixed;
@@ -128,75 +147,52 @@ body {
 	color: #FFF;
     padding-left: 10px;
     font-size: 18px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
  
     </style>
     <title><%= menu.colors.business %></title>
 </head>
 <body  style="background: <%= menu.colors.secondary %>">
-	<div onclick="showMenu()" id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
-		<div class="app__top_block">
-			<img src="/restaurants/menus/<%= menu.logo %>" style="max-width: 200px;"/>
+	<div id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
+		<div class="app__top_block"  onclick="showMenu()">
+			<img src="/restaurants/<%= menu.logo %>" style="max-width: 200px;"/>
 		</div>
-		<!-- <div class="app__bottom_block" id="buttom">
+		<div class="app__bottom_block" id="buttom">
 			<div class="bottom_block__form">
 				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
-					<% if(menu.categories != undefined) {for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
-						<a href="/menu/show/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/menus/<%= cat.image %>');">
-							<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title %>"></div>
-							<div class="category"><%= cat.title %></div>
-						</a>
-					<% }} %>
-				</div>
-				<div class="btn__submit"></div>
-			</div>
-		</div> -->
-		<div class="app__bottom_block">
-			<div class="bottom_block__form">
-				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
-					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/bf.jpg');">
-						<div class="icon"><img src="/demos/recipes/images/icons/bf.svg" alt="Breakfast"></div>
-						<div class="category">فطور</div>
-					</a>
-					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/lunch.jpg');">
-						<div class="icon"><img src="/demos/recipes/images/icons/lunch.svg" alt="Breakfast"></div>
-						<div class="category">غذاء</div>
-					</a>
-					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/dinner.jpg');">
-						<div class="icon"><img src="/demos/recipes/images/icons/dinner.svg" alt="Breakfast"></div>
-						<div class="category">عشاء</div>
-					</a>
-					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/desserts.jpg');">
-						<div class="icon"><img src="/demos/recipes/images/icons/desserts.svg" alt="Breakfast"></div>
-						<div class="category">حلويات</div>
-					</a>
-					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/veg.jpg');">
-						<div class="icon"><img src="/demos/recipes/images/icons/vegan.svg" alt="Breakfast"></div>
-						<div class="category">سلطات</div>
-					</a>
-					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/seafood.jpg');">
-						<div class="icon"><img src="/demos/recipes/images/icons/seafood.svg" alt="Breakfast"></div>
-						<div class="category">أسماك</div>
-					</a>
-					<a href="/menu/show/0/0" class="selection" style="background-image: url('/demos/recipes/images/categories/drinks.jpg');">
-						<div class="icon"><img src="/demos/recipes/images/icons/drinks.svg" alt="Breakfast"></div>
-						<div class="category">مشروبات</div>
-					</a>
+					<% for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
+						<% if(lang == 'ar') {%> 
+							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
+								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.ar %>"></div>
+								<div class="category"><%= cat.title.ar %></div>
+							</a>
+						<% } %>
+						<% if(lang == 'he') {%>
+							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
+								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.he %>"></div>
+								<div class="category"><%= cat.title.he %></div>
+							</a>
+						<% } %>
+					<% } %>
 				</div>
 				<div class="btn__submit"></div>
 			</div>
 		</div>
 
 	</div>
-
+	<div class="btn__submit">
+		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'he') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>" >עברית</a>
+		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'ar') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>" >عربي</a>
+	</div>
 	<script>
 		let isHidden = true;
 
 		function showMenu(){
 			if(isHidden)
-				document.getElementsByClassName('app__bottom_block')[0].style.height = "70vmax";
+				document.getElementsByClassName('app__bottom_block')[0].style.height = '70vh';
 			else
-				document.getElementsByClassName("app__bottom_block")[0].style.height = "0";
+				document.getElementsByClassName("app__bottom_block")[0].style.height = '0';
 
 			isHidden = !isHidden;
 		}

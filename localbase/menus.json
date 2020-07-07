@@ -1,3 +1,765 @@
-[{"business":"Alif-Alif","colors":{"primary":"#ef1a3a","secondary":"#ffe701"},
-    "categories":[{"title":"باجيت","image":"eacdcf834c95a6e590bc75d2f67c7c50.png"}],"foods":[{"title":"باجيت","category":"باجيت","price":"25","image":"70f25e7a37bc3d33dae1c2949012d537.png"}],"logo":"8b83c8640cdee0457f497148b5ffdee9.png"},
-        {"business":"ثبثب","colors":{"primary":"#f4ca78","secondary":"#754227"},"categories":[{"title":"باجيت","image":"8c4e2a62d1d27848753c11ca8f09fe48.png"},{"title":"موكباتس","image":"3fe0155a66d5e51f1efcc34b6e05e834.png"},{"title":"باجيت","image":"c1fa4fc31727c52d9a15d68421cd193b.png"},{"title":"سمكة","icon":"seafood","image":"155c54dbb4c256f9cd32be78f0edd235.png"}],"foods":[{"title":"باجيت ابو الورد","category":"0","price":"30","image":"479201fae231380ce5e7c9aac5039ca6.png"}],"logo":"1a3984cbe989c0853e011070780b9497.png"}]
+[
+    {
+      "business": {
+        "he": "גלתריה",
+        "ar": "غلاتيريا"
+      },
+      "colors": {
+        "primary": "#ff8a8a",
+        "secondary": "#ffc16b"
+      },
+      "categories": [
+        {
+          "title": {
+            "ar": "حلويات",
+            "he": "מתוק"
+          },
+          "icon": "desserts",
+          "image": "7a2734baa85385623ceec0732271900f.webp"
+        },
+        {
+          "title": {
+            "ar": "عصائر",
+            "he": "מיצים"
+          },
+          "icon": "juice",
+          "image": "82c946aacf52b0e17f5abd9b76913fa5.webp"
+        },
+        {
+          "title": {
+            "ar": "مشروبات ساخنه",
+            "he": "משקאות חמים"
+          },
+          "icon": "drinks",
+          "image": "9385b988c07f53db3ce6329373609302.webp"
+        },
+        {
+          "title": {
+            "ar": "مشروبات باردة",
+            "he": "משקאות קרים"
+          },
+          "icon": "juice",
+          "image": "b6b500c262c6ba9a8e4ddefc76800a9b.webp"
+        },
+        {
+          "title": {
+            "ar": "سلطات",
+            "he": "סלטים"
+          },
+          "icon": "vegan",
+          "image": "43d1e18b96e9bcebfce08101d52d9016.webp"
+        },
+        {
+          "title": {
+            "ar": "ساندويشات",
+            "he": "כריכים"
+          },
+          "icon": "dinner",
+          "image": "3d1adf84b476794ea9ab9a00d1961164.webp"
+        },
+        {
+          "title": {
+            "ar": "وجبات افطار",
+            "he": "ארוחת בוקר"
+          },
+          "icon": "bf",
+          "image": "66130f78aab22ef04ee31904fe610d23.webp"
+        },
+        {
+          "title": {
+            "ar": "مقبلات",
+            "he": "מתאבן"
+          },
+          "icon": "dinner",
+          "image": "9e2bfcd6019f46bb464fd89086025c6b.webp"
+        },
+        {
+          "title": {
+            "ar": "بيتسا",
+            "he": "פיצה"
+          },
+          "icon": "lunch",
+          "image": "3c9a37e9d18227fb043b2d1eb12c1647.webp"
+        }
+      ],
+      "foods": [
+        {
+          "title": {
+            "ar": "بافل بلجيكي كبير",
+            "he": "פאבל בלגי גדול"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "50",
+          "image": "50060b10f7e0dc1d5a7af3c8f9ef3880.webp"
+        },
+        {
+          "title": {
+            "ar": " بافل بلجيكي 1.5",
+            "he": "פאבל בלגי 1.5"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "35",
+          "image": "01f624cec0efd38f35a325162f3665aa.webp"
+        },
+        {
+          "title": {
+            "ar": "كريب بصحن",
+            "he": "מנת קרפ"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "35",
+          "image": "f59038168934dc477bb2f607aedcfd3e.webp"
+        },
+        {
+          "title": {
+            "ar": "بستا كريب",
+            "he": "פסטה קרפ"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "40",
+          "image": "e5ab83704f1aaaff37031d63747a2834.webp"
+        },
+        {
+          "title": {
+            "ar": "فوتوشيني كريب ",
+            "he": "קרפ פוטושיני"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "40",
+          "image": "4a3a2f16ac0d7c42cc208260815a8a6a.webp"
+        },
+        {
+          "title": {
+            "ar": "كعكة ساخنة",
+            "he": "עוגה חמה"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "40",
+          "image": "8d2eda741c27cf34fc25d7cf230a485a.webp"
+        },
+        {
+          "title": {
+            "ar": "لوتوس بارد ",
+            "he": "לוטוס קר"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "40",
+          "image": "05ef986f1d34293e78f9acc7d8928109.webp"
+        },
+        {
+          "title": {
+            "ar": "لوتوس ساخن",
+            "he": "לוטוס חם"
+          },
+          "description": {
+            "ar": "بوظة + كريمة +פינוקים",
+            "he": "גלידה + שמנת + פינוקים"
+          },
+          "category": "0",
+          "price": "40",
+          "image": "21076caeb8b5ac476e24352158a19cb2.webp"
+        },
+        {
+          "title": {
+            "ar": "كريب كرتونه",
+            "he": "קרפ בקרטון"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "0",
+          "price": "15 + כל תוספת 2",
+          "image": "895dbe00423b2c5cd14d314f10b5c590.webp"
+        },
+        {
+          "title": {
+            "ar": "بنكيك كدوريم",
+            "he": "פנקייק קדורים"
+          },
+          "description": {
+            "ar": "اسأل النادل",
+            "he": "שאלה למלצר"
+          },
+          "category": "0",
+          "price": " ",
+          "image": "52b1981253c9366aacb6f9e612b73b3e.webp"
+        },
+        {
+          "title": {
+            "ar": "فخفخينا",
+            "he": "פכפכינה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "15",
+          "image": "b285eb49023eef9dfe89252791b8952f.webp"
+        },
+        {
+          "title": {
+            "ar": "فخفخينا اكسترا",
+            "he": "פכפכינה אקסטרה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "20",
+          "image": "eaf1ccaaf2d15d18f3d6cbab1b3bdf28.webp"
+        },
+        {
+          "title": {
+            "ar": "ميلك شيك",
+            "he": "מילקשייק"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "23",
+          "image": "cb7b197da80c0a8cce0d2732c8fce10b.webp"
+        },
+        {
+          "title": {
+            "ar": "ميلك شيك اكسترا",
+            "he": "מילקשייק"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "28",
+          "image": "8b6f52680ee8a9519a26125daf1c075d.webp"
+        },
+        {
+          "title": {
+            "ar": "ليمونادا",
+            "he": "לימונדה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "15",
+          "image": "lemonade.webp"
+        },
+        {
+          "title": {
+            "ar": "ليمونادا اكسترا",
+            "he": "לימונדה אקסטרה"
+          },
+          "description": {
+            "ar": "ليمون + نعنع",
+            "he": "לימון + נענע"
+          },
+          "category": "1",
+          "price": "35",
+          "image": "2b7925780a992fdf717eb0bdca7ce8c1.webp"
+        },
+        {
+          "title": {
+            "ar": "يوجرت",
+            "he": "יוגורט"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "20",
+          "image": "d4716c8eff207fd61b4b78cc0a8aa3e6.webp"
+        },
+        {
+          "title": {
+            "ar": "يوجرت اكسترا",
+            "he": "יוגורט אקסטרה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "25",
+          "image": "ac227666728854f9ad878a5ffc5971dd.webp"
+        },
+        {
+          "title": {
+            "ar": "ايس كوفي",
+            "he": "אייס קפה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "10",
+          "image": "54addef228bfc5b479fdf7ce5329d763.webp"
+        },
+        {
+          "title": {
+            "ar": "بسفلورا",
+            "he": "בספלורה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "10",
+          "image": "c3956a1b57e8f0b5cee41aa20dfa71e3.webp"
+        },
+        {
+          "title": {
+            "ar": " مرعنين توت نعنع",
+            "he": "מרענן תות נענע"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "1",
+          "price": "20",
+          "image": "1ca9b1614b8fb797f086577907a04313.webp"
+        },
+        {
+          "title": {
+            "ar": "اسبريسو عادي",
+            "he": "אספרסו רגיל"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "7",
+          "image": "6e46e24a5583b01a72be89a8061db093.webp"
+        },
+        {
+          "title": {
+            "ar": "اسبريسو كفول",
+            "he": "אספרסו כפול"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "9",
+          "image": "8f824e7bc22d4d69eeabb906b0a22790.webp"
+        },
+        {
+          "title": {
+            "ar": "هفوخ",
+            "he": "הפוך"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "12 / 15",
+          "image": "9a533da1851f3a1f593f1d80b4021307.webp"
+        },
+        {
+          "title": {
+            "ar": "نسكافي",
+            "he": "נסקפה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "10 / 13",
+          "image": "a8b2df37ee9c2ff48146a4c5de9f13db.webp"
+        },
+        {
+          "title": {
+            "ar": "سحلب",
+            "he": "סחלב"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "15 / 20",
+          "image": "8c22c5277c36d3dd04684af60b8e0f23.webp"
+        },
+        {
+          "title": {
+            "ar": "شوكو",
+            "he": "שוקו"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "15 / 20",
+          "image": "7005977f15b5e8c9b7573bb31d7a8f45.webp"
+        },
+        {
+          "title": {
+            "ar": "شوكلاطة",
+            "he": "שוקולד"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "15 / 20",
+          "image": "f07b41acacbae76dc9670260f1c3797b.webp"
+        },
+        {
+          "title": {
+            "ar": "شاي",
+            "he": "תה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "2",
+          "price": "7 / 10",
+          "image": "9260174f26b21dc1b01826e0810213c1.webp"
+        },
+        {
+          "title": {
+            "ar": "كولا, فانتا, سبرايت",
+            "he": "קולה, פנטה, ספרייט"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "3",
+          "price": "7",
+          "image": "5a7be4e6f2d463e5a264cb5c79d91ecc.webp"
+        },
+        {
+          "title": {
+            "ar": "سودا",
+            "he": "סודה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "3",
+          "price": "6",
+          "image": "6a66a7ebc9d9b092db10893770bfc594.webp"
+        },
+        {
+          "title": {
+            "ar": "عصائر",
+            "he": "מיצים"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "3",
+          "price": "6",
+          "image": "0475a8b1a300d2a5ca14aad5abaa341c.webp"
+        },
+        {
+          "title": {
+            "ar": "ماء ",
+            "he": "מים"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "3",
+          "price": "6",
+          "image": "acf910f57ce1521656c6c2151e11bdfb.webp"
+        },
+        {
+          "title": {
+            "ar": "تبولة",
+            "he": "תבולה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "4",
+          "price": "30",
+          "image": "3fd72820837d64398b6585b9e8a34838.webp"
+        },
+        {
+          "title": {
+            "ar": "حلومي",
+            "he": "חלומי"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "4",
+          "price": "40",
+          "image": "02377278386135f668a06198daa23af2.webp"
+        },
+        {
+          "title": {
+            "ar": "فتوش",
+            "he": "פתוש"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "4",
+          "price": "35",
+          "image": "d1e97c5686ef9958eb86b342ba3a2f77.webp"
+        },
+        {
+          "title": {
+            "ar": "فطر ساخن",
+            "he": "פטריות חם"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "4",
+          "price": "40",
+          "image": "f62bafbb911e090a5172933f70e1eb5a.webp"
+        },
+        {
+          "title": {
+            "ar": "سلطة توست",
+            "he": "סלט טוסט"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "4",
+          "price": "40",
+          "image": "0289b0b483a87849302bacd3fa69732a.webp"
+        },
+        {
+          "title": {
+            "ar": "سلطة سيزر",
+            "he": "סיזר סלט"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "4",
+          "price": "35",
+          "image": "7bbfb307b3246b19a69eccbe20c517c9.webp"
+        },
+        {
+          "title": {
+            "ar": "عجة",
+            "he": "חביתה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "5",
+          "price": "25",
+          "image": "5372d42539ffdd7e103704fc7358c790.webp"
+        },
+        {
+          "title": {
+            "ar": "تونة",
+            "he": "טונה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "5",
+          "price": "25",
+          "image": "1b2c322770e2998378a47733f5040cf8.webp"
+        },
+        {
+          "title": {
+            "ar": "حلومي",
+            "he": "חלומי"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "5",
+          "price": "25",
+          "image": "2a386c0ad278fed13b9e7245ff0cbac7.webp"
+        },
+        {
+          "title": {
+            "ar": "صدر دجاج",
+            "he": "חזה עוף"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "5",
+          "price": "30",
+          "image": "f22ebb397e163d485a6cf165eeec3f55.webp"
+        },
+        {
+          "title": {
+            "ar": "شنيتسل",
+            "he": "שניצל"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "5",
+          "price": "30",
+          "image": "c24a08c5e98a174e38e2b42a6e65d67f.webp"
+        },
+        {
+          "title": {
+            "ar": "برجيت مدخن + جبنة",
+            "he": "פרגית מעושן + גבינות"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "5",
+          "price": "30",
+          "image": "2317c8d6bca57e96f067c75c72f52682.webp"
+        },
+        {
+          "title": {
+            "ar": "بيتسا صغير",
+            "he": "פיצה קטנה"
+          },
+          "description": {
+            "ar": "موزريلا +5 / ببروني +5 / برجيت مدخن +15",
+            "he": "מוצרלה +5 / פפרוני +5 / בירגיט מעושן +15"
+          },
+          "category": "8",
+          "price": "30",
+          "image": "da34c5f4c755c6c1ad743f34dcfeb46c.webp"
+        },
+        {
+          "title": {
+            "ar": "بيتسا كبير",
+            "he": "פיצה גדולה"
+          },
+          "description": {
+            "ar": "موزريلا +5 / ببروني +5 / برجيت مدخن +15",
+            "he": "מוצרלה +5 / פפרוני +5 / בירגיט מעושן +15"
+          },
+          "category": "8",
+          "price": "45",
+          "image": "0293d432b8dc75079231bb2035172108.webp"
+        },
+        {
+          "title": {
+            "ar": "معجنات",
+            "he": "מאפים"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "7",
+          "price": "15",
+          "image": "dc0025db24b3ca91e76de3d44ae0b572.webp"
+        },
+        {
+          "title": {
+            "ar": "كبة",
+            "he": "קובה"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "7",
+          "price": "15",
+          "image": "daacfe5f47e6270a7f3ffc9c480ec0e3.webp"
+        },
+        {
+          "title": {
+            "ar": "سيجار",
+            "he": "סיגריות"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "7",
+          "price": "15",
+          "image": "07ff90eaf7069eee965a2b459a9fa753.webp"
+        },
+        {
+          "title": {
+            "ar": "شيبس",
+            "he": "צ'יפס"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "7",
+          "price": "15",
+          "image": "2c3bd17d97642104d913029ac9b874c5.webp"
+        },
+        {
+          "title": {
+            "ar": "بستليم",
+            "he": "פסטלים"
+          },
+          "description": {
+            "ar": "",
+            "he": ""
+          },
+          "category": "7",
+          "price": "15",
+          "image": "e271f53ed85972112e1bb4c4b2e9c65b.webp"
+        }
+      ],
+      "logo": "6ee906b2a6278a2be4c4caa0840ca659.webp"
+    }
+  ]

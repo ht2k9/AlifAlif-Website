@@ -143,31 +143,37 @@ div {
 <body>
 <div dir="rtl">
   <a href="/menu/admin" class="button"><button>الخروج</button></a>
-<form <% if(menu == {}){ %> action="/menu/add" <% } %> <% if(menu != {}) { %>  action="/menu/update" <%}%>
-     method="post" enctype="multipart/form-data">
-    <label>اسم المحل</label>
-    <input type="text" name="business" placeholder="الاسم" <% if(menu.business != null){ %> value="<%= menu.business %>" <% } %>>
+  <% if(typeof id == 'undefined' && typeof categories == 'undefined') { %>
+    <form <% if(menu == null){ %> action="/menu/add" <% } %> 
+      <% if(menu != {}) { %>  action="/menu/update" <%}%>
+      method="post" enctype="multipart/form-data">
+      <label>اسم المحل</label>
+      <div class="group">
+        <input type="text" name="businessAR" placeholder="الاسم" <% if(menu != null){ %> value="<%= menu.business.ar %>" <% } %>>
+        <input type="text" name="businessHE" placeholder="עברית" <% if(menu != null){ %> value="<%= menu.business.he %>" <% } %>>
+      </div>
 
-    <label>شعار المحل</label>
-    <div class="group">
-      <input <% if(menu.business != null){ %> value="/restaurants/menus/<%= menu.logo %>" <% } %> type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
-      <p><img <% if(menu.business != null){ %> src="/restaurants/menus/<%= menu.logo %>" <% } %> id="output_image" width="200" /></p>
-    </div>
+      <label>شعار المحل</label>
+      <div class="group">
+        <input <% if(menu != null){ %> value="/restaurants/<%= menu.logo %>" <% } %> type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
+        <p><img <% if(menu != null){ %> src="/restaurants/<%= menu.logo %>" <% } %> id="output_image" width="200" /></p>
+      </div>
 
-    <label>الألوان</label>
-    <div class="group">
-      <input type="color" name="primary" <% if(menu.business != null){ %> value="<%= menu.colors.primary %>" <% } %>>
-      <input type="color" name="secondary" <% if(menu.business != null){ %> value="<%= menu.colors.secondary %>" <% } %>>
-    </div>
+      <label>الألوان</label>
+      <div class="group">
+        <input type="color" name="primary" <% if(menu != null){ %> value="<%= menu.colors.primary %>" <% } %>>
+        <input type="color" name="secondary" <% if(menu != null){ %> value="<%= menu.colors.secondary %>" <% } %>>
+      </div>
 
-    <input type="submit" value="اضف المطعم">
-  </form>
-
+      <input type="submit" value="اضف المطعم">
+    </form>
+  <% } %>
   <% if(typeof id !== 'undefined') { %>
     <form action="/menu/category/add" method="post" enctype="multipart/form-data">
       <label for="categories">أصناف</label>
       <div class="group">
-        <input type="text" placeholder="صنف" id="catTitle" name="catTitle" style="width: 300px;" required> 
+        <input type="text" placeholder="اسم الصنف" id="catTitle" name="catTitleAR" style="width: 300px;" required> 
+        <input type="text" placeholder="עברית" id="catTitle" name="catTitleHE" style="width: 300px;" required>
         <div class="group">
             <input type="file" id="catImg" name="catImg" data-output= "cat_image"  onchange="preview_image(event)" required> 
             <p><img id="cat_image" width="200"/></p>
@@ -180,8 +186,11 @@ div {
         <div> <img src="/demos/recipes/images/icons/vegan.svg" style="width: 50px;" alt=""> سلطات</div>
         <div> <img src="/demos/recipes/images/icons/seafood.svg" style="width: 50px;" alt=""> أسماك</div>
         <div> <img src="/demos/recipes/images/icons/desserts.svg" style="width: 50px;" alt=""> حلويات</div>
-        <div> <img src="/demos/recipes/images/icons/drinks.svg" style="width: 50px;" alt=""> مشروبات</div>
+        <div> <img src="/demos/recipes/images/icons/drinks.svg" style="width: 50px;" alt=""> ساخن</div>
+        <div> <img src="/demos/recipes/images/icons/juice.svg" style="width: 50px;" alt=""> بارد</div>
       </div>
+
+
       <select id="icon" name="icon" style="max-width: 300px;">
           <option value="bf">فطور</option>
           <option value="dinner">عشاء</option>
@@ -189,31 +198,45 @@ div {
           <option value="vegan">سلطات</option>
           <option value="seafood">أسماك</option>
           <option value="desserts">حلويات</option>
-          <option value="drinks">مشروبات</option>
+          <option value="drinks">ساخن</option>
+          <option value="juice">بارد</option>
       </select>
       <input type="hidden" name="id" value="<%= id %>">
       <input type="submit" value="حفظ" style="width: 50px;">
     </form>
   <% } %>
 
+  <br>
+  <br>
 
 
   <% if(typeof id !== 'undefined' && typeof categories !== 'undefined') { %>
     <form action="/menu/food/add" method="post" enctype="multipart/form-data">
       <label for="food">وجبات</label>
       <div class="group">
-        <input type="text" placeholder="اسم الوجبة" name="food" style="width: 300px;" required>
-        <input type="text" placeholder="السعر" name="price" style="width: 300px;"> 
-        <div class="group">
-            <input type="file" id="foodImg" name="foodImg" data-output= "food_image"  onchange="preview_image(event)"> 
-            <p><img id="food_image" width="200" /></p>
-        </div>
+        <input type="text" placeholder="اسم الوجبة" name="foodAR" style="width: 300px;" required>
+        <input type="text" placeholder="עברית" name="foodHE" style="width: 300px;" required>
+      </div>
+
+      <div class="group">
+        <input type="file" id="foodImg" name="foodImg" data-output= "food_image"  onchange="preview_image(event)" required> 
+        <p><img id="food_image" width="200" /></p>
+      </div>
+
+      <div class="group">
+        <input type="text" placeholder="السعر" name="price" style="width: 300px;" required> 
+      </div>
+
+      <label for="categories">وصف</label>
+      <div class="group">
+        <input type="text" placeholder="وصف عن الوجبة" name="descriptionAR" style="width: 300px;">
+        <input type="text" placeholder="עברית" name="descriptionHE" style="width: 300px;">
       </div>
 
       <label for="categories">الصنف</label>
       <select id="categories" name="category" style="max-width: 300px;">
         <% for(let i=0; i<categories.length; i++) { %>
-          <option value="<%= i %>"><%= categories[i].title %></option>
+          <option value="<%= i %>"><%= categories[i].title.ar %></option>
         <% } %>
       </select>
 

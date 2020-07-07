@@ -24,10 +24,16 @@
 	<link rel="stylesheet" href="/css/fonts.css" type="text/css" /> <!-- Theme Font -->
 	<link rel="stylesheet" href="/recipes.css" type="text/css" /> <!-- Theme Custom CSS -->
 
+	<style>
+		.card-body {
+			padding: 0;
+		}
+	</style>
+
 	<!-- Document Title
 	============================================= -->
-	<title>All Recipes - Recipes | Canvas</title>
-
+	<% if(lang == 'ar') {%> <title><%= category.title.ar %></title> <% } %>
+	<% if(lang == 'he') {%> <title><%= category.title.he %></title> <% } %>
 </head>
 
 <body class="stretched">
@@ -36,7 +42,6 @@
 	============================================= -->
 	<div id="wrapper" class="clearfix">
 
-
 		<!-- Page Title
 		============================================= -->
 		<section id="page-title" class="page-title-parallax page-title-dark" style="background: #111 url('/demos/recipes/images/recipes-bg.jpg') center center / cover; padding: 100px 0;" data-0="background-position:0px -200px;" data-400="background-position:0px -100px;">
@@ -44,8 +49,8 @@
 			<div class="container clearfix">
 				<div class="row">
 					<div class="col-md-7">
-						<h1 class="nott mb-5" data-animate="zoomIn">Recipes</h1>
-						<span data-animate="zoomIn" data-delay="300" class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga debitis deleniti dolores cupiditate quia reiciendis, obcaecati facere. Amet et enim itaque sapiente. Culpa, incidunt, eveniet.</span>
+						<% if(lang == 'ar') {%> <h1 class="nott mb-5" data-animate="zoomIn"><%= category.title.ar %></h1> <% } %>
+						<% if(lang == 'he') {%> <h1 class="nott mb-5" data-animate="zoomIn"><%= category.title.he %></h1> <% } %>
 					</div>
 				</div>
 			</div>
@@ -62,188 +67,37 @@
 					<div class="row no-gutters clearfix">
 						<div class="col-lg-9 border-right-0 bg-white">
 							<div class="row no-gutters">
+								<% for(let i=0; i<foods.length; i++){ let food = foods[i] %>
+									<!-- Item 1 -->
+									<div class="col-sm-4 col-6">
+										<div class="card">
+											<div class="card-body">
+												<img src="/restaurants/<%= food.image %>" alt="اكل">
+												<% if(lang == 'ar') {%>
+													<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+														<p class="card-author"><a href="#"><%= category.title.ar %></a></p>
+														<span class="badge badge-primary bgcolor">₪ <%= food.price %></span>
+													</div>
+													
+													<h3 class="card-title"><a href="" class="stretched-link"><%= food.title.ar %></a></h3>
+													<h5 class="card-date"><i class="icon-line2-info"></i> <%= food.description.ar %></h5>
+												<% } %>
 
-								<!-- Item 1 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-											<img src="/demos/recipes/images/popular/1.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Gunther Beard</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.6</span>
+												<% if(lang == 'he') {%>
+													<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+														<p class="card-author"><a href="#"><%= category.title.he %></a></p>
+														<span class="badge badge-primary bgcolor">₪ <%= food.price %></span>
+													</div>
+													
+													<h3 class="card-title"><a href="" class="stretched-link"><%= food.title.he %></a></h3>
+													<h5 class="card-date"><i class="icon-line2-info"></i> <%= food.description.he %></h5>
+												<% } %>
 											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Green Goddess Avocado Hummus</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Dec 26, 2019</h5>
 										</div>
 									</div>
-								</div>
-
-								<!-- Item 2 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/2.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Chauffina Carr</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.9</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Strawberry Kiwi Healthy Bowl</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Dec 1, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 3 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/3.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Eric Widget </a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.3</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Rustic Sweet Treat</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Nov 20, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 4 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/4.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Quiche Hollandaise</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.5</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">A Delicious Homemade Breakfast</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Oct 2, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 5 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/5.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Norman Gordon</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.5</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Pumpkin Bars with Cream Cheese Frosting</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Sep 18, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 6 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/6.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Druid Wensleydale</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.0</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">The Best Homemade Pizza Recipes</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Sep 7, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 7 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/7.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Bailey Wonger</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.5</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Baked Salmon with Sweet-Potatoes</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Aug 12, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 8 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/8.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Pelican Steve</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.2</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">A Kollam Grilled Cheese with Vegetables</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Aug 8, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 9 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/9.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Malcolm Function</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.3</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Garden Veggie Delux Pizza</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Jul 26, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 10 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/10.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Dianne Ameter</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.5</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Spinach Artichoke Dip Pasta with Chicken</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>Jun 15, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 11 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/11.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Weir Doe</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.4</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Quick Black Pepper Pork Lunch</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>May 11, 2019</h5>
-										</div>
-									</div>
-								</div>
-
-								<!-- Item 12 -->
-								<div class="col-sm-4 col-6">
-									<div class="card">
-										<div class="card-body">
-										<img src="/demos/recipes/images/popular/12.png" alt="image">
-											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-												<p class="card-author">By <a href="#">Niles Peppertrout</a></p>
-												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.0</span>
-											</div>
-											<h3 class="card-title"><a href="recipe-single.html" class="stretched-link">Afternoon Plates of Pasta</a></h3>
-											<h5 class="card-date"><i class="icon-line2-calendar"></i>May 4, 2019</h5>
-										</div>
-									</div>
-								</div>
+								<% } %>
 								<div class="col-12 d-flex justify-content-end p-4">
-									<a href="#" class="button button-circle m-0 tright"><span>Next</span><i class="icon-angle-right"></i></a>
+									<a href="/menu/show/<%= lang %>/<%= id %>" class="button button-circle m-0 tright"><i class="icon-angle-left"></i></a>
 								</div>
 							</div>
 						</div>
@@ -257,7 +111,7 @@
 
 	<!-- Go To Top
 	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
+	<div class="icon-angle-up"></div>
 
 	<!-- External JavaScripts
 	============================================= -->
