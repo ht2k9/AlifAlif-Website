@@ -7,26 +7,22 @@
 
 	<!-- Stylesheets
 	============================================= -->
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="/style.css" type="text/css" />
-	<link rel="stylesheet" href="/css/dark.css" type="text/css" />
 
 	<link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="/css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
 
 	<link rel="stylesheet" href="/css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!--  Recipes Demo Specific Stylesheet -->
-	<link rel="stylesheet" href="/css/colors.php?color=267DF4" type="text/css" /> <!-- Theme Color -->
-	<link rel="stylesheet" href="/css/fonts.css" type="text/css" /> <!-- Theme Font -->
 	<link rel="stylesheet" href="/recipes.css" type="text/css" /> <!-- Theme Custom CSS -->
 
 	<style>
 		.card-body {
 			padding: 0;
+		}
+		.icon-line2-info:before {
+			content: "\e08b";
 		}
 	</style>
 
@@ -44,7 +40,7 @@
 
 		<!-- Page Title
 		============================================= -->
-		<section id="page-title" class="page-title-parallax page-title-dark" style="background: #111 url('/demos/recipes/images/recipes-bg.jpg') center center / cover; padding: 100px 0;" data-0="background-position:0px -200px;" data-400="background-position:0px -100px;">
+		<section id="page-title" class="page-title-parallax page-title-dark" style="background: #111 url('/restaurants/<%= category.image %>') center center / cover; padding: 100px 0;" data-0="background-position:0px -200px;" data-400="background-position:0px -100px;">
 
 			<div class="container clearfix">
 				<div class="row">
