@@ -43,7 +43,7 @@
 	<% if(lang == 'he') {%> <title><%= category.title.he %></title> <% } %>
 </head>
 
-<body class="stretched dark">
+<body class="stretched dark no-transition">
 
 	<!-- Document Wrapper
 	============================================= -->
@@ -66,11 +66,11 @@
 
 		<!-- Content
 		============================================= -->
-		<section id="content" style="overflow: inherit;">
+		<section id="content" style="overflow: inherit;" class="dark">
 
-			<div class="content-wrap p-0">
+			<div class="content-wrap p-0 dark">
 
-				<div class="recipe-itmes bg-dark">
+				<div class="recipe-itmes">
 					<div class="row no-gutters clearfix">
 						<div class="col-lg-9 border-right-0 bg-white">
 							<div class="row no-gutters">
@@ -79,9 +79,9 @@
 									<div class="col-sm-4 col-6">
 										<div class="card">
 											<div class="card-body">
-												<a href="/restaurants/<%= food.image %>" data-lightbox="image" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.ar %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px;'><%= food.description.ar %></p>"><img src="/restaurants/<%= food.image %>" alt="food Image"></a>
+												<% if(lang == 'ar') { %>
+													<a href="/restaurants/<%= food.image %>" data-lightbox="image" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.ar %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.ar %></p>"><img src="/restaurants/<%= food.image %>" alt="food Image"></a>
 
-												<% if(lang == 'ar') {%>
 													<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
 														<p class="card-author"><a href="#"><%= category.title.ar %></a></p>
 														<span class="badge badge-primary bgcolor">₪ <%= food.price %></span>
@@ -89,9 +89,10 @@
 													
 													<h3 class="card-title"><%= food.title.ar %></h3>
 													<h5 class="card-date"><i class="icon-line2-info"></i> <%= food.description.ar %></h5>
-												<% } %>
+													
+												<% } if(lang == 'he') { %>
+													<a href="/restaurants/<%= food.image %>" data-lightbox="image" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.he %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.he %></p>"><img src="/restaurants/<%= food.image %>" alt="food Image"></a>
 
-												<% if(lang == 'he') {%>
 													<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
 														<p class="card-author"><a href="#"><%= category.title.he %></a></p>
 														<span class="badge badge-primary bgcolor">₪ <%= food.price %></span>
