@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 body {
+	margin: 0;
+	padding: 0;
 	overflow: hidden;
 	height: 100vh;
 	display: flex;
@@ -104,9 +106,9 @@ a {
 
  .btn__submit {
 	 position: absolute;
-	 bottom: 0;
-	 width: 100%;
-	 line-height: 10vmin;
+	 right: 0;
+	 top: 0;
+	 line-height: 5vmin;
 	 text-align: center;
 	 color: white;
 	 font-size: 3.5vmin;
@@ -114,14 +116,15 @@ a {
 .btn {
 	 border: none;
  	 color: white;
-	 padding: 0 10px;
+	 padding: 5pt 30pt;
+	 vertical-align: middle;
 	 text-align: center;
 	 text-decoration: none;
 	 display: inline-block;
 	 font-size: 16px;
 	 margin: 4px 2px;
 	 cursor: pointer;
-	 border-radius: 10px 10px 0 0;
+	 border-radius: 10px 10px 10px 10px;
 }
  #inspired {
 	 position: fixed;
@@ -151,11 +154,47 @@ a {
     font-size: 18px;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+.link{
+	position: absolute;
+	top: 0;
+	z-index: 1;	
+	height: wrap;
+	width: wrap;	
+	align-items: center;
+	border-radius: 10pt;
+}
+#link-3{
+	background-image: linear-gradient(to bottom, #382f00 40%, #085f1e)
+}
+#link-4{
+	background-image: linear-gradient(to bottom, #085f1e, #382f00)
+}
+.b_link{
+	background-color: inherit;
+	padding: 3pt 8pt 3pt 8pt;
+	color: white;
+	font-size: 14pt;
+	font-weight: bold;
+	border-radius: 10pt;
+	padding-left: 8pt;
+	padding-bottom: 20pt;
+	padding-right: 8pt;
+	text-align: center;
+	line-height: 30pt;
+	display: inline-block;
+}
  
     </style>
     <title><%= menu.colors.business %></title>
 </head>
 <body  style="background: <%= menu.colors.secondary %>">
+	<% if (id == 3) { %>
+		<div class="link" id="link-3"><a class="b_link" href="/menu/show/<%= lang %>/<%= 7-id %>">פרסטו</a></div>
+	<% } %>	
+	<% if (id == 4) { %>
+		<div class="link" id="link-4"><a class="b_link" href="/menu/show/<%= lang %>/<%= 7-id %>">מסעדה</a></div>
+	<% } %>
+	
 	<div id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
 		<div class="app__top_block"  onclick="showMenu()">
 			<img src="/restaurants/<%= menu.logo %>" style="max-width: 200px;"/>
@@ -164,13 +203,13 @@ a {
 			<div class="bottom_block__form">
 				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
 					<% for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
-						<% if(lang == 'ar') {%> 
+						<% if(lang == 'ar') { %> 
 							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
 								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.ar %>"></div>
 								<div class="category"><%= cat.title.ar %></div>
 							</a>
 						<% } %>
-						<% if(lang == 'he') {%>
+						<% if(lang == 'he') { %>
 							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
 								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.he %>"></div>
 								<div class="category"><%= cat.title.he %></div>
@@ -184,10 +223,15 @@ a {
 
 	</div>
 	<div class="btn__submit">
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'he') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>" >עברית</a>
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'ar') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>" >عربي</a>
+		<% if(lang == 'ar') { %>
+		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'he') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
+		<% } %>
+		<% if(lang == 'he') { %>
+		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'ar') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
+		<% } %>
 	</div>
 	<script>
+
 		let isHidden = true;
 
 		function showMenu(){
@@ -196,7 +240,6 @@ a {
 			}
 			else
 				document.getElementsByClassName("app__bottom_block")[0].style.marginBottom = '-70vh';
-
 			isHidden = !isHidden;
 		}
 	</script>

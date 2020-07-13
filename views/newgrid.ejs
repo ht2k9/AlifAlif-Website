@@ -1,0 +1,105 @@
+<% include partials/header %>
+<link rel="stylesheet" href="/home.css" type="text/css" />
+	<!-- Document Title
+	============================================= -->
+	<title>אלף-אלף קידום בניית אתרים באינטרנט</title>
+<style>
+	.grid-item{
+		margin: 8pt;
+		height: 120pt;
+		width: 240pt;
+		text-align: center !important;
+		display: flex;
+  		justify-content: center;
+  		align-items: center;
+		border: lightblue 5pt solid;
+		background-color: lightblue;
+	}
+	.grid-item:hover{
+		background-color:palegoldenrod;
+	}
+	.link-text{
+		flex: 0 0 120pt;
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 36pt;
+		font-weight: bold;
+	}
+</style>
+</head>
+
+<body class="stretched rtl no-transition">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-body text-center">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="myModalLabel">אודות</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						</div>
+						<div class="modal-body">
+							<a href="tel:0547077590" class="nobottommargin">054-7077-590</a>
+							<p class="nobottommargin">contact@alifalif.co</p>
+							<a href="" class="nobottommargin">www.facebook.com/alifalifreelance</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="sticky-style-2">
+
+			<div class="container clearfix">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo" class="divcenter">
+					<a href="/" class="standard-logo"><img class="divcenter" src="images/logo.png" style="padding: 10px 0;" alt="אלף"></a>
+				</div><!-- #logo end -->
+
+			</div>
+
+			<div id="header-wrap">
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav id="primary-menu" class="style-2 center">
+
+					<div class="container clearfix">
+
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+						<ul>
+							<li class="current"><a href="#" data-href="#header"><div>ראשי</div></a></li>
+							<li><a href="#section-service" class="smooth-goto"><div>שירות</div></a></li>
+							<li><a href="#section-portfolio" class="smooth-goto"><div>עבודה</div></a></li>
+							<li><a href="#section-testimonials" class="smooth-goto"><div>עדויות</div></a></li>
+							<li><a href="#section-help" class="smooth-goto"><div>צור קשר</div></a></li>
+						</ul>
+
+					</div>
+
+				</nav><!-- #primary-menu end -->
+				<div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+			</div>
+
+		</header><!-- #header end -->
+		<center>
+		<table>
+			<tr>
+			<td><a href="/digitalcard/admin"><div class="grid-item" style="border-radius: 20pt 50pt;"><span class="link-text">כרטיס דיגיטלי</span></div></a></td>
+			<td><a href="/menu/admin"><div class="grid-item" style="border-radius: 50pt 20pt;"><span class="link-text">مينيو مطاعم</span></div></a></td>
+		</tr>
+		<tr>
+			<td><a href="http://alifalif.store/public"><div class="grid-item" style="border-radius: 50pt 20pt;"><span class="link-text">شبيك لبيك</span></div></a></td>
+			<td><a href="http://alifalif.work/crm/admin/"><div class="grid-item" style="border-radius: 20pt 50pt;"><span class="link-text">חשבוניות</span></div></a></td>
+		</tr>
+		</table>
+		</center>
+<% include partials/footer %>

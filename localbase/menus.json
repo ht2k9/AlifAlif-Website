@@ -1,1 +1,3415 @@
-[{"business":{"he":"גלתריה","ar":"غلاتيريا"},"colors":{"primary":"#ff8a8a","secondary":"#ffc16b"},"categories":[{"title":{"ar":"حلويات","he":"מתוק"},"icon":"desserts","image":"7a2734baa85385623ceec0732271900f.png"},{"title":{"ar":"عصائر","he":"מיצים"},"icon":"juice","image":"82c946aacf52b0e17f5abd9b76913fa5.png"},{"title":{"ar":"مشروبات ساخنه","he":"משקאות חמים"},"icon":"drinks","image":"9385b988c07f53db3ce6329373609302.png"},{"title":{"ar":"مشروبات باردة","he":"משקאות קרים"},"icon":"juice","image":"b6b500c262c6ba9a8e4ddefc76800a9b.png"},{"title":{"ar":"سلطات","he":"סלטים"},"icon":"vegan","image":"43d1e18b96e9bcebfce08101d52d9016.png"},{"title":{"ar":"ساندويشات","he":"כריכים"},"icon":"dinner","image":"3d1adf84b476794ea9ab9a00d1961164.png"},{"title":{"ar":"وجبات افطار","he":"ארוחת בוקר"},"icon":"bf","image":"66130f78aab22ef04ee31904fe610d23.png"},{"title":{"ar":"مقبلات","he":"מתאבן"},"icon":"dinner","image":"9e2bfcd6019f46bb464fd89086025c6b.png"},{"title":{"ar":"بيتسا","he":"פיצה"},"icon":"lunch","image":"3c9a37e9d18227fb043b2d1eb12c1647.png"}],"foods":[{"title":{"ar":"بافل بلجيكي كبير","he":"פאבל בלגי גדול"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"50","image":"50060b10f7e0dc1d5a7af3c8f9ef3880.png"},{"title":{"ar":" بافل بلجيكي 1.5","he":"פאבל בלגי 1.5"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"35","image":"01f624cec0efd38f35a325162f3665aa.png"},{"title":{"ar":"كريب بصحن","he":"מנת קרפ"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"35","image":"f59038168934dc477bb2f607aedcfd3e.png"},{"title":{"ar":"بستا كريب","he":"פסטה קרפ"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"40","image":"e5ab83704f1aaaff37031d63747a2834.png"},{"title":{"ar":"فوتوشيني كريب ","he":"קרפ פוטושיני"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"40","image":"4a3a2f16ac0d7c42cc208260815a8a6a.png"},{"title":{"ar":"كعكة ساخنة","he":"עוגה חמה"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"40","image":"8d2eda741c27cf34fc25d7cf230a485a.png"},{"title":{"ar":"لوتوس بارد ","he":"לוטוס קר"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"40","image":"05ef986f1d34293e78f9acc7d8928109.png"},{"title":{"ar":"لوتوس ساخن","he":"לוטוס חם"},"description":{"ar":"بوظة + كريمة +פינוקים","he":"גלידה + שמנת + פינוקים"},"category":"0","price":"40","image":"21076caeb8b5ac476e24352158a19cb2.png"},{"title":{"ar":"كريب كرتونه","he":"קרפ בקרטון"},"description":{"ar":"","he":""},"category":"0","price":"15 + כל תוספת 2","image":"895dbe00423b2c5cd14d314f10b5c590.png"},{"title":{"ar":"بنكيك كدوريم","he":"פנקייק קדורים"},"description":{"ar":"اسأل النادل","he":"שאלה למלצר"},"category":"0","price":" ","image":"52b1981253c9366aacb6f9e612b73b3e.png"},{"title":{"ar":"فخفخينا","he":"פכפכינה"},"description":{"ar":"","he":""},"category":"1","price":"15","image":"b285eb49023eef9dfe89252791b8952f.png"},{"title":{"ar":"فخفخينا اكسترا","he":"פכפכינה אקסטרה"},"description":{"ar":"","he":""},"category":"1","price":"20","image":"eaf1ccaaf2d15d18f3d6cbab1b3bdf28.png"},{"title":{"ar":"ميلك شيك","he":"מילקשייק"},"description":{"ar":"","he":""},"category":"1","price":"23","image":"cb7b197da80c0a8cce0d2732c8fce10b.png"},{"title":{"ar":"ميلك شيك اكسترا","he":"מילקשייק"},"description":{"ar":"","he":""},"category":"1","price":"28","image":"8b6f52680ee8a9519a26125daf1c075d.png"},{"title":{"ar":"ليمونادا","he":"לימונדה"},"description":{"ar":"","he":""},"category":"1","price":"15","image":"lemonade.png"},{"title":{"ar":"ليمونادا اكسترا","he":"לימונדה אקסטרה"},"description":{"ar":"ليمون + نعنع","he":"לימון + נענע"},"category":"1","price":"35","image":"2b7925780a992fdf717eb0bdca7ce8c1.png"},{"title":{"ar":"يوجرت","he":"יוגורט"},"description":{"ar":"","he":""},"category":"1","price":"20","image":"d4716c8eff207fd61b4b78cc0a8aa3e6.png"},{"title":{"ar":"يوجرت اكسترا","he":"יוגורט אקסטרה"},"description":{"ar":"","he":""},"category":"1","price":"25","image":"ac227666728854f9ad878a5ffc5971dd.png"},{"title":{"ar":"ايس كوفي","he":"אייס קפה"},"description":{"ar":"","he":""},"category":"1","price":"10","image":"54addef228bfc5b479fdf7ce5329d763.png"},{"title":{"ar":"بسفلورا","he":"בספלורה"},"description":{"ar":"","he":""},"category":"1","price":"10","image":"c3956a1b57e8f0b5cee41aa20dfa71e3.png"},{"title":{"ar":" مرعنين توت نعنع","he":"מרענן תות נענע"},"description":{"ar":"","he":""},"category":"1","price":"20","image":"1ca9b1614b8fb797f086577907a04313.png"},{"title":{"ar":"اسبريسو عادي","he":"אספרסו רגיל"},"description":{"ar":"","he":""},"category":"2","price":"7","image":"6e46e24a5583b01a72be89a8061db093.png"},{"title":{"ar":"اسبريسو كفول","he":"אספרסו כפול"},"description":{"ar":"","he":""},"category":"2","price":"9","image":"8f824e7bc22d4d69eeabb906b0a22790.png"},{"title":{"ar":"هفوخ","he":"הפוך"},"description":{"ar":"","he":""},"category":"2","price":"12 / 15","image":"9a533da1851f3a1f593f1d80b4021307.png"},{"title":{"ar":"نسكافي","he":"נסקפה"},"description":{"ar":"","he":""},"category":"2","price":"10 / 13","image":"a8b2df37ee9c2ff48146a4c5de9f13db.png"},{"title":{"ar":"سحلب","he":"סחלב"},"description":{"ar":"","he":""},"category":"2","price":"15 / 20","image":"8c22c5277c36d3dd04684af60b8e0f23.png"},{"title":{"ar":"شوكو","he":"שוקו"},"description":{"ar":"","he":""},"category":"2","price":"15 / 20","image":"7005977f15b5e8c9b7573bb31d7a8f45.png"},{"title":{"ar":"شوكلاطة","he":"שוקולד"},"description":{"ar":"","he":""},"category":"2","price":"15 / 20","image":"f07b41acacbae76dc9670260f1c3797b.png"},{"title":{"ar":"شاي","he":"תה"},"description":{"ar":"","he":""},"category":"2","price":"7 / 10","image":"9260174f26b21dc1b01826e0810213c1.png"},{"title":{"ar":"كولا, فانتا, سبرايت","he":"קולה, פנטה, ספרייט"},"description":{"ar":"","he":""},"category":"3","price":"7","image":"5a7be4e6f2d463e5a264cb5c79d91ecc.png"},{"title":{"ar":"سودا","he":"סודה"},"description":{"ar":"","he":""},"category":"3","price":"6","image":"6a66a7ebc9d9b092db10893770bfc594.png"},{"title":{"ar":"عصائر","he":"מיצים"},"description":{"ar":"","he":""},"category":"3","price":"6","image":"0475a8b1a300d2a5ca14aad5abaa341c.png"},{"title":{"ar":"ماء ","he":"מים"},"description":{"ar":"","he":""},"category":"3","price":"6","image":"acf910f57ce1521656c6c2151e11bdfb.png"},{"title":{"ar":"تبولة","he":"תבולה"},"description":{"ar":"","he":""},"category":"4","price":"30","image":"3fd72820837d64398b6585b9e8a34838.png"},{"title":{"ar":"حلومي","he":"חלומי"},"description":{"ar":"","he":""},"category":"4","price":"40","image":"02377278386135f668a06198daa23af2.png"},{"title":{"ar":"فتوش","he":"פתוש"},"description":{"ar":"","he":""},"category":"4","price":"35","image":"d1e97c5686ef9958eb86b342ba3a2f77.png"},{"title":{"ar":"فطر ساخن","he":"פטריות חם"},"description":{"ar":"","he":""},"category":"4","price":"40","image":"f62bafbb911e090a5172933f70e1eb5a.png"},{"title":{"ar":"سلطة توست","he":"סלט טוסט"},"description":{"ar":"","he":""},"category":"4","price":"40","image":"0289b0b483a87849302bacd3fa69732a.png"},{"title":{"ar":"سلطة سيزر","he":"סיזר סלט"},"description":{"ar":"","he":""},"category":"4","price":"35","image":"7bbfb307b3246b19a69eccbe20c517c9.png"},{"title":{"ar":"عجة","he":"חביתה"},"description":{"ar":"","he":""},"category":"5","price":"25","image":"5372d42539ffdd7e103704fc7358c790.png"},{"title":{"ar":"تونة","he":"טונה"},"description":{"ar":"","he":""},"category":"5","price":"25","image":"tuna.png"},{"title":{"ar":"حلومي","he":"חלומי"},"description":{"ar":"","he":""},"category":"5","price":"25","image":"2a386c0ad278fed13b9e7245ff0cbac7.png"},{"title":{"ar":"صدر دجاج","he":"חזה עוף"},"description":{"ar":"","he":""},"category":"5","price":"30","image":"f22ebb397e163d485a6cf165eeec3f55.png"},{"title":{"ar":"شنيتسل","he":"שניצל"},"description":{"ar":"","he":""},"category":"5","price":"30","image":"schintzel.png"},{"title":{"ar":"برجيت مدخن + جبنة","he":"פרגית מעושן + גבינות"},"description":{"ar":"","he":""},"category":"5","price":"30","image":"toastBaguette.png"},{"title":{"ar":"بيتسا صغير","he":"פיצה קטנה"},"description":{"ar":"موزريلا +5 / ببروني +5 / برجيت مدخن +15","he":"מוצרלה +5 / פפרוני +5 / בירגיט מעושן +15"},"category":"8","price":"30","image":"da34c5f4c755c6c1ad743f34dcfeb46c.png"},{"title":{"ar":"بيتسا كبير","he":"פיצה גדולה"},"description":{"ar":"موزريلا +5 / ببروني +5 / برجيت مدخن +15","he":"מוצרלה +5 / פפרוני +5 / בירגיט מעושן +15"},"category":"8","price":"45","image":"0293d432b8dc75079231bb2035172108.png"},{"title":{"ar":"معجنات","he":"מאפים"},"description":{"ar":"","he":""},"category":"7","price":"15","image":"dc0025db24b3ca91e76de3d44ae0b572.png"},{"title":{"ar":"كبة","he":"קובה"},"description":{"ar":"","he":""},"category":"7","price":"15","image":"daacfe5f47e6270a7f3ffc9c480ec0e3.png"},{"title":{"ar":"سيجار","he":"סיגריות"},"description":{"ar":"","he":""},"category":"7","price":"15","image":"07ff90eaf7069eee965a2b459a9fa753.png"},{"title":{"ar":"شيبس","he":"צ'יפס"},"description":{"ar":"","he":""},"category":"7","price":"15","image":"2c3bd17d97642104d913029ac9b874c5.png"},{"title":{"ar":"بستليم","he":"פסטלים"},"description":{"ar":"","he":""},"category":"7","price":"15","image":"e271f53ed85972112e1bb4c4b2e9c65b.png"},{"title":{"ar":"فردي: الشرب (ساخن / بارد)","he":"יחיד: שתייה (חמה / קרה)"},"description":{"ar":"عجة + سلطة + بيتا / بيتا> أبيض + زعتر> جبنة كريمة> تونة> مربى الأفوكادو","he":"חביתה+ סלט+ פיתה / פיטה> לבנה+ זעתר> גבינת שמנת> טונה> אבוקדו ריבת"},"category":"6","price":" ","image":"f91298b7a57caf993284def776fa44d3.png"},{"title":{"ar":"شخصان: مشروب (حار / بارد)","he":"זוגי: שתייה (חמה / קרה)"},"description":{"ar":"عجة + سلطة + وبيتا بيتا> أبيض + زعتر> جبنة كريمة> تونة> مربى أفوكادو","he":"חביתה+ סלט+ פיתה פיטה> לבנה+ זעתר> גבינת שמנת> טונה> אבוקדו ריבת"},"category":"6","price":" ","image":"4fcef2c989e8e0896cb1b36f7cafdab3.png"}],"logo":"6ee906b2a6278a2be4c4caa0840ca659.png"},{"business":{"he":"אלמאס","ar":"الماس"},"colors":{"primary":"#ce9700","secondary":"#403200"},"categories":[{"title":{"ar":"سلطات ساخنه","he":"סלטים חמים"},"icon":"vegan","image":"649edb92863b2d63f69669eec50f674b.png"},{"title":{"ar":"من البحر","he":"מהים"},"icon":"seafood","image":"8adf1b0c15396cb89e8401251465968c.png"},{"title":{"ar":"فواكه بحر","he":"פירות ים"},"icon":"seafood","image":"3c639c82490f32082f3e1b736476b035.png"},{"title":{"ar":"وجبات لحوم رئيسيه ","he":"ארוחות עיקריות מבשר"},"icon":"lunch","image":"77d4755317e249b574da0a2d6cdffccd.png"},{"title":{"ar":"خاص من الطابون","he":"במיוחד מטאבון"},"icon":"dinner","image":"881fb08cbecfff9a7b533cbd9a185d54.png"},{"title":{"ar":"سلطات","he":"סלטים"},"icon":"vegan","image":"9574eeb135dac66ae2a51bff25a2a6b4.png"},{"title":{"ar":"ايطاليانو","he":"איטליאנו"},"icon":"dinner","image":"0133b7371fe7f02a2911c04e4f6cc48a.png"}],"foods":[{"title":{"ar":"سلطة دجاج","he":"סלט עוף"},"description":{"ar":"شرائح دجاج مقليه مع فلفل الوان وملفوف ابيض وفقع شمفنيون ونودلز مع صلصه سيلان خوخ وتشيلي.","he":"רצועות עוף מטוגנות עם פלפל צבעוני, כרוב לבן, שימפיון ואטריות עם אפרסק ורוטב צ'יליאני."},"category":"0","price":"55","image":"8e07611ef89df62e864683032fb0853b.png"},{"title":{"ar":"سلطة انتريكوت","he":"סלט אנטריקוט"},"description":{"ar":"شرائح انتريكوت مع فلفل الوان وملفوف ابيض وفقع شمينيون نودلز مع صلصة التشيلي سيلان وترياكي.","he":"פרוסות אינטרקוט עם פלפל צבעוני וכרוב לבן, אטריות שמפניה רימון עם רוטב צ'יליאני, נזלת וטריאקי."},"category":"0","price":"65","image":"32aa1a41d2563c85ffb388c30f763ed1.png"},{"title":{"ar":"سلطه الحلومي","he":"סלט חלומי"},"description":{"ar":"مكعبات جبنة حلومي مقليه مع فطر وبندوره شيري وجوز مع صلصه خوخ سيلان وتشيلي . مقدمه على سلطة خضار..","he":"קוביות חלומי מטוגנות עם פטריות, עגבניות שרי, אגוז, ציילון ורוטב צ'ילי. מבוא לסלט ירקות .."},"category":"0","price":"55","image":"f407eb76eb415f5ed2e2be32d5c87e38.png"},{"title":{"ar":"سمك اجاج","he":"אג'ג 'פיש"},"description":{"ar":"مقليه او مشويه مع صوص ثوم وحامض","he":"מטוגן או בגריל עם שום ורוטב חמוץ"},"category":"1","price":" ","image":"77a2b180cfa8fe027c30d94ae7b3261f.png"},{"title":{"ar":"فيليه اجاج","he":"פילה אג'ג"},"description":{"ar":"مقليه او مشويه مع صوص ثوم وحامض","he":"מטוגן או בגריל עם שום ורוטב חמוץ"},"category":"1","price":" ","image":"961e89e33e422ac28327d0ab408356ee.png"},{"title":{"ar":"سمك لبراك","he":"דג לברק"},"description":{"ar":"مقليه او مشويه مع صوص ثوم وحامض","he":"מטוגן או בגריל עם שום ורוטב חמוץ"},"category":"1","price":" ","image":"4bfe029e345dd3f65c9f2f48da814424.png"},{"title":{"ar":"فيليه لبراك","he":"פילה לברק"},"description":{"ar":"مقليه او مشويه مع صوص ثوم وحامض","he":"מטוגן או בגריל עם שום ורוטב חמוץ"},"category":"1","price":" ","image":"7d43c7eb5672017914902681069ea91a.png"},{"title":{"ar":"ستيك سلمون","he":"סטייק סלמון"},"description":{"ar":"مقليه او مشويه مع صوص ثوم وحامض","he":"מטוגן או בגריל עם שום ורוטב חמוץ"},"category":"1","price":" ","image":"0b1fa83c68be0a9dfcdcf19ab59810ec.png"},{"title":{"ar":"فواكه بحر","he":"פירות ים"},"description":{"ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.","he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."},"category":"2","price":" ","image":"351950326a8a8e7bcf9f4766ea24db4c.png"},{"title":{"ar":"قريدس","he":"שרימפ"},"description":{"ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.","he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."},"category":"2","price":" ","image":"f034592e77cfb86161294454a5f176b2.png"},{"title":{"ar":"كلماري","he":"קלמארי"},"description":{"ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.","he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."},"category":"2","price":" ","image":"9070a6ca16bf7863b2d2b9a0cb2f742f.png"},{"title":{"ar":"صدف","he":"צדף"},"description":{"ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.","he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."},"category":"2","price":" ","image":"03de9ff710fc7b229f86f45e8b585b80.png"},{"title":{"ar":"روس كلماري","he":"ראשי קלמארי"},"description":{"ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.","he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."},"category":"2","price":" ","image":"7b74ced317fda21278ffde97067ede4a.png"},{"title":{"ar":"ميكس الماس فواكه بحر زوجيه","he":"מיקס אלמאס פירות ים זוגי"},"description":{"ar":"مقدمه مع قريدس ،كلماري ،روس كلماري ،صدف. مقلي /مطبوخ.","he":"הקדמה עם שרימפס, קלמרי, רוס קלמארי, צדף. מטוגן / מבושל"},"category":"2","price":" ","image":"b054cd18f87c320cab22c8c956f12fef.png"},{"title":{"ar":"قريدس كلماري مقلي","he":"שרימפס קלמרי מטוגן"},"description":{"ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.","he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."},"category":"2","price":" ","image":"8da936f6fe5a8deec9e96df374376a3b.png"},{"title":{"ar":"انتريكوت الماس","he":"אנטריקוט אלמאס"},"description":{"ar":"مشوي على الفحم مقدم مع بطاطا مشويه وصوص مع فطر.","he":"פחם בגריל מוגש עם תפוח אדמה בגריל ורוטב עם פטריות."},"category":"3","price":" ","image":"bab201d1da1eabfcc66f09ca2c5787ed.png"},{"title":{"ar":"فيليه عجل","he":"פילה עגל"},"description":{"ar":"مشوي على الفحم مقدم على بطاطا مهروسه مع وصوص مع فطر.","he":"פחם בגריל מוגש על פירה עם רוטב עם פטריות."},"category":"3","price":" ","image":"717e71868072923280c7faf22019eafc.png"},{"title":{"ar":"ضلاع خروف","he":"צלעות טלה"},"description":{"ar":"مشوي على الفحم مقدم مع خضار مشوي وصوص ترياكي.","he":"פחם בגריל מוגש עם ירקות בגריל ורוטב טריאקי."},"category":"3","price":" ","image":"a791bbb30fc6bb0a7778badeafe9ce1b.png"},{"title":{"ar":"ستيك برجيت - 280 غرام","he":"סטייק ברגט"},"description":{"ar":"مشوي على الفحم مقدم مع خضار مشوي وصوص ليمون","he":"פחם בגריל מוגש עם ירקות בגריל ורוטב לימון."},"category":"3","price":" ","image":"2dafb29ac1c904a6457782b778db63a6.png"},{"title":{"ar":"صدر دجاج - 250 غرام","he":"חזה עוף - 250 גרם"},"description":{"ar":"مشوي على الفحم مقدم مع خضار مشويه مع صوص ثوم وحامض او كريما بالشمينت.","he":"בגריל על פחם מוגש עם ירקות בגריל עם רוטב שום ולימון או גבינת שמנת."},"category":"3","price":" ","image":"a962f9ceddc9d71a0a291f05f9a247b8.png"},{"title":{"ar":"كباب حلبي","he":"קבב חלבי"},"description":{"ar":"مشوي على الفحم مقدم مع رز بيتي وطحينه على جنب.","he":"פחם בגריל מוגש עם אורז ביתי וקמח מצד אחד."},"category":"3","price":"80","image":"6ee5d8ff60bf15ba7b355de2a812bad7.png"},{"title":{"ar":"مشكل الماس - شخص واحد","he":"מיקס אלמאס - אישי"},"description":{"ar":"مشوي على الفحم ومقدم مع ارز وخضار على الفحم ..","he":"פחם בגריל והוגש עם אורז וירקות על פחם"},"category":"3","price":" ","image":"1114110c6d17e90e849cc1163c6bc540.png"},{"title":{"ar":"مشكل لحوم لشخصين","he":"מיקס בשר לשניים"},"description":{"ar":"ضلاع خروف/كباب/ستيك برجيت/فيله/انتربكوت. مشوي على الفحم مقدم مع تشكيلة خضار مشويه ..","he":"צלעות כבש / קבב / סטייק ברגט / פילילה / אינטרפוט. פחם בגריל מוגש עם מגוון ירקות בגריל."},"category":"3","price":" ","image":"d458b6b9d14d7a037687ca7aed10d5c0.png"},{"title":{"ar":"مشكل لحوم ل٤ اشخاص","he":"מיקס בשר ל -4 אנשים"},"description":{"ar":"ضلاع خروف/كباب/ستيك برجيت/ فيليه/انتريكوت. مشوي على الفحم مقدم مع تشكيلة خضار .","he":"צלעות כבש / קבב / סטייק בורגט / פילה / אנטריקוט. פחם בגריל מוגש עם מגוון ירקות."},"category":"3","price":" ","image":"860b0e0e7cf7291832b3ae24dc8144d8.png"},{"title":{"ar":"شنيتسل للاولاد","he":"שניצלים לילדים"},"description":{"ar":"مقدمه مع بطاطا مقليه","he":"מגישים עם צ'יפס"},"category":"3","price":" ","image":"040e61ab7550612fb621914711093a26.png"},{"title":{"ar":"تورتيا ..كباب /دجاج","he":"טורטייה... קבב / עוף"},"description":{"ar":"مقدمه مع شرائح بندوره وخس وبصل احمر . طينه وخردل وصوص تشيلي.","he":"מגישים עם פרוסות עגבנייה, חסה ובצל אדום. רוטב בוץ, חרדל וצ'ילי."},"category":"3","price":" ","image":"918a64883bf9d2937e6b48d88550fb7a.png"},{"title":{"ar":"كتف خروف","he":"כתף כבש"},"description":{"ar":"مقدم مع ارز ولبن مطبوخ","he":"מוגש עם אורז וחלב מבושל"},"category":"4","price":" ","image":"85062e1ee9f7f20684601d9d3047797b.png"},{"title":{"ar":"رقبة خروف","he":"צוואר כבש"},"description":{"ar":"مقدمه مع ارز ولبن مطبوخ","he":"מגישים עם אורז וחלב מבושל"},"category":"4","price":" ","image":"22e4425cbdf406d3328ced89dc46c95b.png"},{"title":{"ar":" موز خروف","he":"בננות כבש"},"description":{"ar":"مقدم مع ارز ولبن مطبوخ","he":"מוגש עם אורז וחלב מבושל"},"category":"4","price":" ","image":"ca3edb6069e88b075550b976c22bfd95.png"},{"title":{"ar":" طاجن قدر خروف","he":"טלה בקדר"},"description":{"ar":"مقدم مع ارز ولبن مطبوخ","he":"מוגש עם אורז וחלב מבושל"},"category":"4","price":" ","image":"0b3140434d1e6b4c3f000e6bedf2cc1a.png"},{"title":{"ar":" منسف خروف","he":"בלוף טלה"},"description":{"ar":"مقدم مع ارز ولبن مطبوخ","he":"מוגש עם אורז וחלב מבושל"},"category":"4","price":" ","image":"0b109e6a0237baa8b7e379b8106dc02f.png"},{"title":{"ar":"طاجن قريدس","he":"תבשיל שרימפס"},"description":{"ar":"مقدم مع ارز","he":"מוגש עם אורז"},"category":"4","price":" ","image":"663284d72a6ef7ea1266d92e145d9db0.png"},{"title":{"ar":"تبولة لبنانية","he":"לבנון טבולה"},"description":{"ar":"بقدونس, نعنع, بصل أخضر, خيار, بندورة, كمون, ملح, زيت زيتون, حامض طبيعي.","he":"פטרוזיליה, נענע, בצל ירוק, מלפפון, עגבניה, כמון, מלח, שמן זית, חומצה טבעית."},"category":"5","price":" ","image":"010b3978eba799acd45c3413c9e0bca4.png"},{"title":{"ar":"فتوش سوري","he":"פתאוס סורי"},"description":{"ar":"بندورة, خيار, نعنع, خبز مقلي, جبنة عربية, سماق, زعتر بري, زيت زيتون, حامض طبيعي.","he":"עגבנייה, מלפפון, נענע, לחם מטוגן, גבינה ערבית, סומאק, טימין בר, שמן זית, חומצה טבעית."},"category":"5","price":" ","image":"e7049abaceb808778af793afb3a2631c.png"},{"title":{"ar":"جرجير مصري","he":"ארוגולה מצרית"},"description":{"ar":"أوراق جرجير مع جامبا أحمر وبصل أحمر, شرائح تفاح, سماق, ملح, زيت زيتون وحامض طبيعي.","he":"עלי ארוגולה עם ג'מבו אדום ובצל אדום, פרוסות תפוחים, סומאק, מלח, שמן זית ולימון טבעי."},"category":"5","price":" ","image":"aefe92845a938bebfe7d2a235eb11610.png"},{"title":{"ar":"سلطة الريحان الأندولوسية","he":"סלט בזיליקום אינדונזי"},"description":{"ar":"أوراق خضراء مع أوراق الريحان, جبنة عربية, تفاح أخضر, زبيب مجفف, مرينادا ليمون.","he":"עלים ירוקים עם עלי בזיליקום, גבינה ערבית, תפוח ירוק, צימוקים מיובשים, חריף לימון."},"category":"5","price":" ","image":"863a14ed365554ecc09bdb35570ee152.png"},{"title":{"ar":"سباغيتي فيني ليفورنو","he":"ספגטי ויני ליוורנו"},"description":{"ar":"مقدم مع كريما وفقع شمبينيون وجبنه موتسارت مع ورق ريحان..","he":"מוגש עם שמנת, שמפיניון, גבינת מוצרט ונייר בזיליקום."},"category":"6","price":" ","image":"d87d72a6fed3b7b5ef31208d8b926c45.png"},{"title":{"ar":"فيتوتشيني ميلانو","he":"פטוצ'ינו מילאנו"},"description":{"ar":"مقدم مع كريم شمينت وصلصة بندوره وزعتر بري","he":"מוגש בשילוב שמנת, רוטב עגבניות וטימין בר"},"category":"6","price":" ","image":"f91f42dc7b7fd61c6fd183fb1c8fc0cf.png"},{"title":{"ar":"ربيولي فيرونا اجبان","he":"גבינת רביולי ורונה"},"description":{"ar":"مقدم مع كريم شمينت وشمفنيون وصنوبر مع سماق وزعتر بري","he":"מוגש עם שמיט קרם, שימפיוניון וצנוברים עם סומאץ 'וטימין בר"},"category":"6","price":" ","image":"4789a9ce03df1b730bb5045612bab3db.png"},{"title":{"ar":"ربيولي تورونتو بطاطا","he":"רביולי טורונטו פרייז"},"description":{"ar":"مقدم مع كرمه الشمينت وبيستو ورق ريحان..","he":"מוצג עם עלי גפן ועלי בזיליקום פסטו .."},"category":"6","price":" ","image":"0d1d8af14afe16376ab74c73adb7f5c5.png"},{"title":{"ar":"فيتوتشيني فينيسيا","he":"פטוצ'יני ונציה"},"description":{"ar":"مقدم مع فواكه بحر وكريمه بالشمينت ورق ريحان بندوه شيري وزعتر بري.","he":"מוגש עם פירות ים ושמנת עם בזיליקום, עלה בזיליקום, בנדו דובדבן ותימין בר."},"category":"6","price":" ","image":"912f64dde667034c1d8ca564a55ee147.png"},{"title":{"ar":"قدرة دجاج بالكريمة","he":"מכולת עוף קרם"},"description":{"ar":"كريمه شمينت ، صلصه بندورة مع ريحان وجوز، كريمه مع ريحان ،كريما مع فطر.","he":"קרם של שמינט, רוטב עגבניות עם בזיליקום ואגוזים, שמנת עם בזיליקום, שמנת עם פטריות"},"category":"6","price":" ","image":"a53c59c391229c219ffb29aa604a59ba.png"},{"title":{"ar":"قدره بطاطا","he":"תפוח אדמה מבושל"},"description":{"ar":"مقدمه مع بطاطا عاديه وبطاطا حلوه مع فطر بالكريما وجبنة الموتسارت","he":"מגישים עם צ'יפס רגיל ובטטה עם פטריות שמנת וגבינת מוצרלה"},"category":"6","price":" ","image":"6c514a2e7ee662772085476438dc070a.png"},{"title":{"ar":"سباجيتي اولا","he":"ספגטי אולא"},"description":{"ar":"مقدم مع صلصه بندوره او صلصة شمينت مع بيستو","he":"מוגש עם רוטב עגבניות או רוטב מרקם עם פסטו"},"category":"6","price":" ","image":"158d6a0edc4e664720e6965fd7cd091e.png"}],"logo":"9bb2f5a39d78964e259fe33deadba663.png"}]
+[
+    {
+       "business":{
+          "he":"גלתריה",
+          "ar":"غلاتيريا"
+       },
+       "colors":{
+          "primary":"#ff8a8a",
+          "secondary":"#ffc16b"
+       },
+       "categories":[
+          {
+             "title":{
+                "ar":"حلويات",
+                "he":"מתוק"
+             },
+             "icon":"desserts",
+             "image":"7a2734baa85385623ceec0732271900f.png"
+          },
+          {
+             "title":{
+                "ar":"عصائر",
+                "he":"מיצים"
+             },
+             "icon":"juice",
+             "image":"82c946aacf52b0e17f5abd9b76913fa5.png"
+          },
+          {
+             "title":{
+                "ar":"مشروبات ساخنه",
+                "he":"משקאות חמים"
+             },
+             "icon":"drinks",
+             "image":"9385b988c07f53db3ce6329373609302.png"
+          },
+          {
+             "title":{
+                "ar":"مشروبات باردة",
+                "he":"משקאות קרים"
+             },
+             "icon":"juice",
+             "image":"b6b500c262c6ba9a8e4ddefc76800a9b.png"
+          },
+          {
+             "title":{
+                "ar":"سلطات",
+                "he":"סלטים"
+             },
+             "icon":"vegan",
+             "image":"43d1e18b96e9bcebfce08101d52d9016.png"
+          },
+          {
+             "title":{
+                "ar":"ساندويشات",
+                "he":"כריכים"
+             },
+             "icon":"dinner",
+             "image":"3d1adf84b476794ea9ab9a00d1961164.png"
+          },
+          {
+             "title":{
+                "ar":"وجبات افطار",
+                "he":"ארוחת בוקר"
+             },
+             "icon":"bf",
+             "image":"66130f78aab22ef04ee31904fe610d23.png"
+          },
+          {
+             "title":{
+                "ar":"مقبلات",
+                "he":"מתאבן"
+             },
+             "icon":"dinner",
+             "image":"9e2bfcd6019f46bb464fd89086025c6b.png"
+          },
+          {
+             "title":{
+                "ar":"بيتسا",
+                "he":"פיצה"
+             },
+             "icon":"lunch",
+             "image":"3c9a37e9d18227fb043b2d1eb12c1647.png"
+          }
+       ],
+       "foods":[
+          {
+             "title":{
+                "ar":"بافل بلجيكي كبير",
+                "he":"פאבל בלגי גדול"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"50",
+             "image":"50060b10f7e0dc1d5a7af3c8f9ef3880.png"
+          },
+          {
+             "title":{
+                "ar":" بافل بلجيكي 1.5",
+                "he":"פאבל בלגי 1.5"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"35",
+             "image":"01f624cec0efd38f35a325162f3665aa.png"
+          },
+          {
+             "title":{
+                "ar":"كريب بصحن",
+                "he":"מנת קרפ"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"35",
+             "image":"f59038168934dc477bb2f607aedcfd3e.png"
+          },
+          {
+             "title":{
+                "ar":"بستا كريب",
+                "he":"פסטה קרפ"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"40",
+             "image":"e5ab83704f1aaaff37031d63747a2834.png"
+          },
+          {
+             "title":{
+                "ar":"فوتوشيني كريب ",
+                "he":"קרפ פוטושיני"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"40",
+             "image":"4a3a2f16ac0d7c42cc208260815a8a6a.png"
+          },
+          {
+             "title":{
+                "ar":"كعكة ساخنة",
+                "he":"עוגה חמה"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"40",
+             "image":"8d2eda741c27cf34fc25d7cf230a485a.png"
+          },
+          {
+             "title":{
+                "ar":"لوتوس بارد ",
+                "he":"לוטוס קר"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"40",
+             "image":"05ef986f1d34293e78f9acc7d8928109.png"
+          },
+          {
+             "title":{
+                "ar":"لوتوس ساخن",
+                "he":"לוטוס חם"
+             },
+             "description":{
+                "ar":"بوظة + كريمة +פינוקים",
+                "he":"גלידה + שמנת + פינוקים"
+             },
+             "category":"0",
+             "price":"40",
+             "image":"21076caeb8b5ac476e24352158a19cb2.png"
+          },
+          {
+             "title":{
+                "ar":"كريب كرتونه",
+                "he":"קרפ בקרטון"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"0",
+             "price":"15 + כל תוספת 2",
+             "image":"895dbe00423b2c5cd14d314f10b5c590.png"
+          },
+          {
+             "title":{
+                "ar":"بنكيك كدوريم",
+                "he":"פנקייק קדורים"
+             },
+             "description":{
+                "ar":"اسأل النادل",
+                "he":"שאלה למלצר"
+             },
+             "category":"0",
+             "price":" ",
+             "image":"52b1981253c9366aacb6f9e612b73b3e.png"
+          },
+          {
+             "title":{
+                "ar":"فخفخينا",
+                "he":"פכפכינה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"15",
+             "image":"b285eb49023eef9dfe89252791b8952f.png"
+          },
+          {
+             "title":{
+                "ar":"فخفخينا اكسترا",
+                "he":"פכפכינה אקסטרה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"20",
+             "image":"eaf1ccaaf2d15d18f3d6cbab1b3bdf28.png"
+          },
+          {
+             "title":{
+                "ar":"ميلك شيك",
+                "he":"מילקשייק"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"23",
+             "image":"cb7b197da80c0a8cce0d2732c8fce10b.png"
+          },
+          {
+             "title":{
+                "ar":"ميلك شيك اكسترا",
+                "he":"מילקשייק"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"28",
+             "image":"8b6f52680ee8a9519a26125daf1c075d.png"
+          },
+          {
+             "title":{
+                "ar":"ليمونادا",
+                "he":"לימונדה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"15",
+             "image":"lemonade.png"
+          },
+          {
+             "title":{
+                "ar":"ليمونادا اكسترا",
+                "he":"לימונדה אקסטרה"
+             },
+             "description":{
+                "ar":"ليمون + نعنع",
+                "he":"לימון + נענע"
+             },
+             "category":"1",
+             "price":"35",
+             "image":"2b7925780a992fdf717eb0bdca7ce8c1.png"
+          },
+          {
+             "title":{
+                "ar":"يوجرت",
+                "he":"יוגורט"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"20",
+             "image":"d4716c8eff207fd61b4b78cc0a8aa3e6.png"
+          },
+          {
+             "title":{
+                "ar":"يوجرت اكسترا",
+                "he":"יוגורט אקסטרה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"25",
+             "image":"ac227666728854f9ad878a5ffc5971dd.png"
+          },
+          {
+             "title":{
+                "ar":"ايس كوفي",
+                "he":"אייס קפה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"10",
+             "image":"54addef228bfc5b479fdf7ce5329d763.png"
+          },
+          {
+             "title":{
+                "ar":"بسفلورا",
+                "he":"בספלורה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"10",
+             "image":"c3956a1b57e8f0b5cee41aa20dfa71e3.png"
+          },
+          {
+             "title":{
+                "ar":" مرعنين توت نعنع",
+                "he":"מרענן תות נענע"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"1",
+             "price":"20",
+             "image":"1ca9b1614b8fb797f086577907a04313.png"
+          },
+          {
+             "title":{
+                "ar":"اسبريسو عادي",
+                "he":"אספרסו רגיל"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"7",
+             "image":"6e46e24a5583b01a72be89a8061db093.png"
+          },
+          {
+             "title":{
+                "ar":"اسبريسو كفول",
+                "he":"אספרסו כפול"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"9",
+             "image":"8f824e7bc22d4d69eeabb906b0a22790.png"
+          },
+          {
+             "title":{
+                "ar":"هفوخ",
+                "he":"הפוך"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"12 / 15",
+             "image":"9a533da1851f3a1f593f1d80b4021307.png"
+          },
+          {
+             "title":{
+                "ar":"نسكافي",
+                "he":"נסקפה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"10 / 13",
+             "image":"a8b2df37ee9c2ff48146a4c5de9f13db.png"
+          },
+          {
+             "title":{
+                "ar":"سحلب",
+                "he":"סחלב"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"15 / 20",
+             "image":"8c22c5277c36d3dd04684af60b8e0f23.png"
+          },
+          {
+             "title":{
+                "ar":"شوكو",
+                "he":"שוקו"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"15 / 20",
+             "image":"7005977f15b5e8c9b7573bb31d7a8f45.png"
+          },
+          {
+             "title":{
+                "ar":"شوكلاطة",
+                "he":"שוקולד"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"15 / 20",
+             "image":"f07b41acacbae76dc9670260f1c3797b.png"
+          },
+          {
+             "title":{
+                "ar":"شاي",
+                "he":"תה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"7 / 10",
+             "image":"9260174f26b21dc1b01826e0810213c1.png"
+          },
+          {
+             "title":{
+                "ar":"كولا, فانتا, سبرايت",
+                "he":"קולה, פנטה, ספרייט"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"3",
+             "price":"7",
+             "image":"5a7be4e6f2d463e5a264cb5c79d91ecc.png"
+          },
+          {
+             "title":{
+                "ar":"سودا",
+                "he":"סודה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"3",
+             "price":"6",
+             "image":"6a66a7ebc9d9b092db10893770bfc594.png"
+          },
+          {
+             "title":{
+                "ar":"عصائر",
+                "he":"מיצים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"3",
+             "price":"6",
+             "image":"0475a8b1a300d2a5ca14aad5abaa341c.png"
+          },
+          {
+             "title":{
+                "ar":"ماء ",
+                "he":"מים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"3",
+             "price":"6",
+             "image":"acf910f57ce1521656c6c2151e11bdfb.png"
+          },
+          {
+             "title":{
+                "ar":"تبولة",
+                "he":"תבולה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"30",
+             "image":"3fd72820837d64398b6585b9e8a34838.png"
+          },
+          {
+             "title":{
+                "ar":"حلومي",
+                "he":"חלומי"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"40",
+             "image":"02377278386135f668a06198daa23af2.png"
+          },
+          {
+             "title":{
+                "ar":"فتوش",
+                "he":"פתוש"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"35",
+             "image":"d1e97c5686ef9958eb86b342ba3a2f77.png"
+          },
+          {
+             "title":{
+                "ar":"فطر ساخن",
+                "he":"פטריות חם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"40",
+             "image":"f62bafbb911e090a5172933f70e1eb5a.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة توست",
+                "he":"סלט טוסט"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"40",
+             "image":"0289b0b483a87849302bacd3fa69732a.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة سيزر",
+                "he":"סיזר סלט"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"35",
+             "image":"7bbfb307b3246b19a69eccbe20c517c9.png"
+          },
+          {
+             "title":{
+                "ar":"عجة",
+                "he":"חביתה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"25",
+             "image":"5372d42539ffdd7e103704fc7358c790.png"
+          },
+          {
+             "title":{
+                "ar":"تونة",
+                "he":"טונה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"25",
+             "image":"tuna.png"
+          },
+          {
+             "title":{
+                "ar":"حلومي",
+                "he":"חלומי"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"25",
+             "image":"2a386c0ad278fed13b9e7245ff0cbac7.png"
+          },
+          {
+             "title":{
+                "ar":"صدر دجاج",
+                "he":"חזה עוף"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"30",
+             "image":"f22ebb397e163d485a6cf165eeec3f55.png"
+          },
+          {
+             "title":{
+                "ar":"شنيتسل",
+                "he":"שניצל"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"30",
+             "image":"schintzel.png"
+          },
+          {
+             "title":{
+                "ar":"برجيت مدخن + جبنة",
+                "he":"פרגית מעושן + גבינות"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"30",
+             "image":"toastBaguette.png"
+          },
+          {
+             "title":{
+                "ar":"بيتسا صغير",
+                "he":"פיצה קטנה"
+             },
+             "description":{
+                "ar":"موزريلا +5 / ببروني +5 / برجيت مدخن +15",
+                "he":"מוצרלה +5 / פפרוני +5 / בירגיט מעושן +15"
+             },
+             "category":"8",
+             "price":"30",
+             "image":"da34c5f4c755c6c1ad743f34dcfeb46c.png"
+          },
+          {
+             "title":{
+                "ar":"بيتسا كبير",
+                "he":"פיצה גדולה"
+             },
+             "description":{
+                "ar":"موزريلا +5 / ببروني +5 / برجيت مدخن +15",
+                "he":"מוצרלה +5 / פפרוני +5 / בירגיט מעושן +15"
+             },
+             "category":"8",
+             "price":"45",
+             "image":"0293d432b8dc75079231bb2035172108.png"
+          },
+          {
+             "title":{
+                "ar":"معجنات",
+                "he":"מאפים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"15",
+             "image":"dc0025db24b3ca91e76de3d44ae0b572.png"
+          },
+          {
+             "title":{
+                "ar":"كبة",
+                "he":"קובה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"15",
+             "image":"daacfe5f47e6270a7f3ffc9c480ec0e3.png"
+          },
+          {
+             "title":{
+                "ar":"سيجار",
+                "he":"סיגריות"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"15",
+             "image":"07ff90eaf7069eee965a2b459a9fa753.png"
+          },
+          {
+             "title":{
+                "ar":"شيبس",
+                "he":"צ'יפס"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"15",
+             "image":"2c3bd17d97642104d913029ac9b874c5.png"
+          },
+          {
+             "title":{
+                "ar":"بستليم",
+                "he":"פסטלים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"15",
+             "image":"e271f53ed85972112e1bb4c4b2e9c65b.png"
+          },
+          {
+             "title":{
+                "ar":"فردي: الشرب (ساخن / بارد)",
+                "he":"יחיד: שתייה (חמה / קרה)"
+             },
+             "description":{
+                "ar":"عجة + سلطة + بيتا / بيتا> أبيض + زعتر> جبنة كريمة> تونة> مربى الأفوكادو",
+                "he":"חביתה+ סלט+ פיתה / פיטה> לבנה+ זעתר> גבינת שמנת> טונה> אבוקדו ריבת"
+             },
+             "category":"6",
+             "price":" ",
+             "image":"f91298b7a57caf993284def776fa44d3.png"
+          },
+          {
+             "title":{
+                "ar":"شخصان: مشروب (حار / بارد)",
+                "he":"זוגי: שתייה (חמה / קרה)"
+             },
+             "description":{
+                "ar":"عجة + سلطة + وبيتا بيتا> أبيض + زعتر> جبنة كريمة> تونة> مربى أفوكادو",
+                "he":"חביתה+ סלט+ פיתה פיטה> לבנה+ זעתר> גבינת שמנת> טונה> אבוקדו ריבת"
+             },
+             "category":"6",
+             "price":" ",
+             "image":"4fcef2c989e8e0896cb1b36f7cafdab3.png"
+          }
+       ],
+       "logo":"6ee906b2a6278a2be4c4caa0840ca659.png"
+    },
+    {
+       "business":{
+          "he":"אלמאס",
+          "ar":"الماس"
+       },
+       "colors":{
+          "primary":"#000000",
+          "secondary":"#000000"
+       },
+       "categories":[
+          {
+             "title":{
+                "ar":"سلطات ساخنه",
+                "he":"סלטים חמים"
+             },
+             "icon":"vegan",
+             "image":"649edb92863b2d63f69669eec50f674b.png"
+          },
+          {
+             "title":{
+                "ar":"من البحر",
+                "he":"מהים"
+             },
+             "icon":"seafood",
+             "image":"8adf1b0c15396cb89e8401251465968c.png"
+          },
+          {
+             "title":{
+                "ar":"فواكه بحر",
+                "he":"פירות ים"
+             },
+             "icon":"seafood",
+             "image":"3c639c82490f32082f3e1b736476b035.png"
+          },
+          {
+             "title":{
+                "ar":"وجبات لحوم رئيسيه ",
+                "he":"ארוחות עיקריות מבשר"
+             },
+             "icon":"lunch",
+             "image":"77d4755317e249b574da0a2d6cdffccd.png"
+          },
+          {
+             "title":{
+                "ar":"خاص من الطابون",
+                "he":"במיוחד מטאבון"
+             },
+             "icon":"dinner",
+             "image":"881fb08cbecfff9a7b533cbd9a185d54.png"
+          },
+          {
+             "title":{
+                "ar":"سلطات",
+                "he":"סלטים"
+             },
+             "icon":"vegan",
+             "image":"9574eeb135dac66ae2a51bff25a2a6b4.png"
+          },
+          {
+             "title":{
+                "ar":"ايطاليانو",
+                "he":"איטליאנו"
+             },
+             "icon":"dinner",
+             "image":"0133b7371fe7f02a2911c04e4f6cc48a.png"
+          }
+       ],
+       "foods":[
+          {
+             "title":{
+                "ar":"سلطة دجاج",
+                "he":"סלט עוף"
+             },
+             "description":{
+                "ar":"شرائح دجاج مقليه مع فلفل الوان وملفوف ابيض وفقع شمفنيون ونودلز مع صلصه سيلان خوخ وتشيلي.",
+                "he":"רצועות עוף מטוגנות עם פלפל צבעוני, כרוב לבן, שימפיון ואטריות עם אפרסק ורוטב צ'יליאני."
+             },
+             "category":"0",
+             "price":"55",
+             "image":"8e07611ef89df62e864683032fb0853b.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة انتريكوت",
+                "he":"סלט אנטריקוט"
+             },
+             "description":{
+                "ar":"شرائح انتريكوت مع فلفل الوان وملفوف ابيض وفقع شمينيون نودلز مع صلصة التشيلي سيلان وترياكي.",
+                "he":"פרוסות אינטרקוט עם פלפל צבעוני וכרוב לבן, אטריות שמפניה רימון עם רוטב צ'יליאני, נזלת וטריאקי."
+             },
+             "category":"0",
+             "price":"65",
+             "image":"32aa1a41d2563c85ffb388c30f763ed1.png"
+          },
+          {
+             "title":{
+                "ar":"سلطه الحلومي",
+                "he":"סלט חלומי"
+             },
+             "description":{
+                "ar":"مكعبات جبنة حلومي مقليه مع فطر وبندوره شيري وجوز مع صلصه خوخ سيلان وتشيلي . مقدمه على سلطة خضار..",
+                "he":"קוביות חלומי מטוגנות עם פטריות, עגבניות שרי, אגוז, ציילון ורוטב צ'ילי. מבוא לסלט ירקות .."
+             },
+             "category":"0",
+             "price":"55",
+             "image":"f407eb76eb415f5ed2e2be32d5c87e38.png"
+          },
+          {
+             "title":{
+                "ar":"سمك اجاج",
+                "he":"אג'ג 'פיש"
+             },
+             "description":{
+                "ar":"مقليه او مشويه مع صوص ثوم وحامض",
+                "he":"מטוגן או בגריל עם שום ורוטב חמוץ"
+             },
+             "category":"1",
+             "price":" ",
+             "image":"77a2b180cfa8fe027c30d94ae7b3261f.png"
+          },
+          {
+             "title":{
+                "ar":"فيليه اجاج",
+                "he":"פילה אג'ג"
+             },
+             "description":{
+                "ar":"مقليه او مشويه مع صوص ثوم وحامض",
+                "he":"מטוגן או בגריל עם שום ורוטב חמוץ"
+             },
+             "category":"1",
+             "price":" ",
+             "image":"961e89e33e422ac28327d0ab408356ee.png"
+          },
+          {
+             "title":{
+                "ar":"سمك لبراك",
+                "he":"דג לברק"
+             },
+             "description":{
+                "ar":"مقليه او مشويه مع صوص ثوم وحامض",
+                "he":"מטוגן או בגריל עם שום ורוטב חמוץ"
+             },
+             "category":"1",
+             "price":" ",
+             "image":"4bfe029e345dd3f65c9f2f48da814424.png"
+          },
+          {
+             "title":{
+                "ar":"فيليه لبراك",
+                "he":"פילה לברק"
+             },
+             "description":{
+                "ar":"مقليه او مشويه مع صوص ثوم وحامض",
+                "he":"מטוגן או בגריל עם שום ורוטב חמוץ"
+             },
+             "category":"1",
+             "price":" ",
+             "image":"7d43c7eb5672017914902681069ea91a.png"
+          },
+          {
+             "title":{
+                "ar":"ستيك سلمون",
+                "he":"סטייק סלמון"
+             },
+             "description":{
+                "ar":"مقليه او مشويه مع صوص ثوم وحامض",
+                "he":"מטוגן או בגריל עם שום ורוטב חמוץ"
+             },
+             "category":"1",
+             "price":" ",
+             "image":"0b1fa83c68be0a9dfcdcf19ab59810ec.png"
+          },
+          {
+             "title":{
+                "ar":"فواكه بحر",
+                "he":"פירות ים"
+             },
+             "description":{
+                "ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.",
+                "he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."
+             },
+             "category":"2",
+             "price":" ",
+             "image":"351950326a8a8e7bcf9f4766ea24db4c.png"
+          },
+          {
+             "title":{
+                "ar":"قريدس",
+                "he":"שרימפ"
+             },
+             "description":{
+                "ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.",
+                "he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."
+             },
+             "category":"2",
+             "price":" ",
+             "image":"f034592e77cfb86161294454a5f176b2.png"
+          },
+          {
+             "title":{
+                "ar":"كلماري",
+                "he":"קלמארי"
+             },
+             "description":{
+                "ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.",
+                "he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."
+             },
+             "category":"2",
+             "price":" ",
+             "image":"9070a6ca16bf7863b2d2b9a0cb2f742f.png"
+          },
+          {
+             "title":{
+                "ar":"صدف",
+                "he":"צדף"
+             },
+             "description":{
+                "ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.",
+                "he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."
+             },
+             "category":"2",
+             "price":" ",
+             "image":"03de9ff710fc7b229f86f45e8b585b80.png"
+          },
+          {
+             "title":{
+                "ar":"روس كلماري",
+                "he":"ראשי קלמארי"
+             },
+             "description":{
+                "ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.",
+                "he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."
+             },
+             "category":"2",
+             "price":" ",
+             "image":"7b74ced317fda21278ffde97067ede4a.png"
+          },
+          {
+             "title":{
+                "ar":"ميكس الماس فواكه بحر زوجيه",
+                "he":"מיקס אלמאס פירות ים זוגי"
+             },
+             "description":{
+                "ar":"مقدمه مع قريدس ،كلماري ،روس كلماري ،صدف. مقلي /مطبوخ.",
+                "he":"הקדמה עם שרימפס, קלמרי, רוס קלמארי, צדף. מטוגן / מבושל"
+             },
+             "category":"2",
+             "price":" ",
+             "image":"b054cd18f87c320cab22c8c956f12fef.png"
+          },
+          {
+             "title":{
+                "ar":"قريدس كلماري مقلي",
+                "he":"שרימפס קלמרי מטוגן"
+             },
+             "description":{
+                "ar":"مقدمه مقليه / مطبوخه حسب الطلب.. كريم الشمينت /صوص الثوم واليمون.",
+                "he":"מטוגן / מבושל לפי הזמנה. שימנט שמנת / רוטב שום ולימון."
+             },
+             "category":"2",
+             "price":" ",
+             "image":"8da936f6fe5a8deec9e96df374376a3b.png"
+          },
+          {
+             "title":{
+                "ar":"انتريكوت الماس",
+                "he":"אנטריקוט אלמאס"
+             },
+             "description":{
+                "ar":"مشوي على الفحم مقدم مع بطاطا مشويه وصوص مع فطر.",
+                "he":"פחם בגריל מוגש עם תפוח אדמה בגריל ורוטב עם פטריות."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"bab201d1da1eabfcc66f09ca2c5787ed.png"
+          },
+          {
+             "title":{
+                "ar":"فيليه عجل",
+                "he":"פילה עגל"
+             },
+             "description":{
+                "ar":"مشوي على الفحم مقدم على بطاطا مهروسه مع وصوص مع فطر.",
+                "he":"פחם בגריל מוגש על פירה עם רוטב עם פטריות."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"717e71868072923280c7faf22019eafc.png"
+          },
+          {
+             "title":{
+                "ar":"ضلاع خروف",
+                "he":"צלעות טלה"
+             },
+             "description":{
+                "ar":"مشوي على الفحم مقدم مع خضار مشوي وصوص ترياكي.",
+                "he":"פחם בגריל מוגש עם ירקות בגריל ורוטב טריאקי."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"a791bbb30fc6bb0a7778badeafe9ce1b.png"
+          },
+          {
+             "title":{
+                "ar":"ستيك برجيت - 280 غرام",
+                "he":"סטייק ברגט"
+             },
+             "description":{
+                "ar":"مشوي على الفحم مقدم مع خضار مشوي وصوص ليمون",
+                "he":"פחם בגריל מוגש עם ירקות בגריל ורוטב לימון."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"2dafb29ac1c904a6457782b778db63a6.png"
+          },
+          {
+             "title":{
+                "ar":"صدر دجاج - 250 غرام",
+                "he":"חזה עוף - 250 גרם"
+             },
+             "description":{
+                "ar":"مشوي على الفحم مقدم مع خضار مشويه مع صوص ثوم وحامض او كريما بالشمينت.",
+                "he":"בגריל על פחם מוגש עם ירקות בגריל עם רוטב שום ולימון או גבינת שמנת."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"a962f9ceddc9d71a0a291f05f9a247b8.png"
+          },
+          {
+             "title":{
+                "ar":"كباب حلبي",
+                "he":"קבב חלבי"
+             },
+             "description":{
+                "ar":"مشوي على الفحم مقدم مع رز بيتي وطحينه على جنب.",
+                "he":"פחם בגריל מוגש עם אורז ביתי וקמח מצד אחד."
+             },
+             "category":"3",
+             "price":"80",
+             "image":"6ee5d8ff60bf15ba7b355de2a812bad7.png"
+          },
+          {
+             "title":{
+                "ar":"مشكل الماس - شخص واحد",
+                "he":"מיקס אלמאס - אישי"
+             },
+             "description":{
+                "ar":"مشوي على الفحم ومقدم مع ارز وخضار على الفحم ..",
+                "he":"פחם בגריל והוגש עם אורז וירקות על פחם"
+             },
+             "category":"3",
+             "price":" ",
+             "image":"1114110c6d17e90e849cc1163c6bc540.png"
+          },
+          {
+             "title":{
+                "ar":"مشكل لحوم لشخصين",
+                "he":"מיקס בשר לשניים"
+             },
+             "description":{
+                "ar":"ضلاع خروف/كباب/ستيك برجيت/فيله/انتربكوت. مشوي على الفحم مقدم مع تشكيلة خضار مشويه ..",
+                "he":"צלעות כבש / קבב / סטייק ברגט / פילילה / אינטרפוט. פחם בגריל מוגש עם מגוון ירקות בגריל."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"d458b6b9d14d7a037687ca7aed10d5c0.png"
+          },
+          {
+             "title":{
+                "ar":"مشكل لحوم ل٤ اشخاص",
+                "he":"מיקס בשר ל -4 אנשים"
+             },
+             "description":{
+                "ar":"ضلاع خروف/كباب/ستيك برجيت/ فيليه/انتريكوت. مشوي على الفحم مقدم مع تشكيلة خضار .",
+                "he":"צלעות כבש / קבב / סטייק בורגט / פילה / אנטריקוט. פחם בגריל מוגש עם מגוון ירקות."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"860b0e0e7cf7291832b3ae24dc8144d8.png"
+          },
+          {
+             "title":{
+                "ar":"شنيتسل للاولاد",
+                "he":"שניצלים לילדים"
+             },
+             "description":{
+                "ar":"مقدمه مع بطاطا مقليه",
+                "he":"מגישים עם צ'יפס"
+             },
+             "category":"5",
+             "price":" ",
+             "image":"040e61ab7550612fb621914711093a26.png"
+          },
+          {
+             "title":{
+                "ar":"تورتيا ..كباب /دجاج",
+                "he":"טורטייה... קבב / עוף"
+             },
+             "description":{
+                "ar":"مقدمه مع شرائح بندوره وخس وبصل احمر . طينه وخردل وصوص تشيلي.",
+                "he":"מגישים עם פרוסות עגבנייה, חסה ובצל אדום. רוטב בוץ, חרדל וצ'ילי."
+             },
+             "category":"3",
+             "price":" ",
+             "image":"918a64883bf9d2937e6b48d88550fb7a.png"
+          },
+          {
+             "title":{
+                "ar":"كتف خروف",
+                "he":"כתף כבש"
+             },
+             "description":{
+                "ar":"مقدم مع ارز ولبن مطبوخ",
+                "he":"מוגש עם אורז וחלב מבושל"
+             },
+             "category":"4",
+             "price":" ",
+             "image":"85062e1ee9f7f20684601d9d3047797b.png"
+          },
+          {
+             "title":{
+                "ar":"رقبة خروف",
+                "he":"צוואר כבש"
+             },
+             "description":{
+                "ar":"مقدمه مع ارز ولبن مطبوخ",
+                "he":"מגישים עם אורז וחלב מבושל"
+             },
+             "category":"4",
+             "price":" ",
+             "image":"22e4425cbdf406d3328ced89dc46c95b.png"
+          },
+          {
+             "title":{
+                "ar":" موز خروف",
+                "he":"בננות כבש"
+             },
+             "description":{
+                "ar":"مقدم مع ارز ولبن مطبوخ",
+                "he":"מוגש עם אורז וחלב מבושל"
+             },
+             "category":"4",
+             "price":" ",
+             "image":"ca3edb6069e88b075550b976c22bfd95.png"
+          },
+          {
+             "title":{
+                "ar":" طاجن قدر خروف",
+                "he":"טלה בקדר"
+             },
+             "description":{
+                "ar":"مقدم مع ارز ولبن مطبوخ",
+                "he":"מוגש עם אורז וחלב מבושל"
+             },
+             "category":"4",
+             "price":" ",
+             "image":"0b3140434d1e6b4c3f000e6bedf2cc1a.png"
+          },
+          {
+             "title":{
+                "ar":" منسف خروف",
+                "he":"בלוף טלה"
+             },
+             "description":{
+                "ar":"مقدم مع ارز ولبن مطبوخ",
+                "he":"מוגש עם אורז וחלב מבושל"
+             },
+             "category":"4",
+             "price":" ",
+             "image":"0b109e6a0237baa8b7e379b8106dc02f.png"
+          },
+          {
+             "title":{
+                "ar":"طاجن قريدس",
+                "he":"תבשיל שרימפס"
+             },
+             "description":{
+                "ar":"مقدم مع ارز",
+                "he":"מוגש עם אורז"
+             },
+             "category":"4",
+             "price":" ",
+             "image":"663284d72a6ef7ea1266d92e145d9db0.png"
+          },
+          {
+             "title":{
+                "ar":"تبولة لبنانية",
+                "he":"לבנון טבולה"
+             },
+             "description":{
+                "ar":"بقدونس, نعنع, بصل أخضر, خيار, بندورة, كمون, ملح, زيت زيتون, حامض طبيعي.",
+                "he":"פטרוזיליה, נענע, בצל ירוק, מלפפון, עגבניה, כמון, מלח, שמן זית, חומצה טבעית."
+             },
+             "category":"5",
+             "price":" ",
+             "image":"010b3978eba799acd45c3413c9e0bca4.png"
+          },
+          {
+             "title":{
+                "ar":"فتوش سوري",
+                "he":"פתאוס סורי"
+             },
+             "description":{
+                "ar":"بندورة, خيار, نعنع, خبز مقلي, جبنة عربية, سماق, زعتر بري, زيت زيتون, حامض طبيعي.",
+                "he":"עגבנייה, מלפפון, נענע, לחם מטוגן, גבינה ערבית, סומאק, טימין בר, שמן זית, חומצה טבעית."
+             },
+             "category":"5",
+             "price":" ",
+             "image":"e7049abaceb808778af793afb3a2631c.png"
+          },
+          {
+             "title":{
+                "ar":"جرجير مصري",
+                "he":"ארוגולה מצרית"
+             },
+             "description":{
+                "ar":"أوراق جرجير مع جامبا أحمر وبصل أحمر, شرائح تفاح, سماق, ملح, زيت زيتون وحامض طبيعي.",
+                "he":"עלי ארוגולה עם ג'מבו אדום ובצל אדום, פרוסות תפוחים, סומאק, מלח, שמן זית ולימון טבעי."
+             },
+             "category":"5",
+             "price":" ",
+             "image":"aefe92845a938bebfe7d2a235eb11610.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة الريحان الأندولوسية",
+                "he":"סלט בזיליקום אינדונזי"
+             },
+             "description":{
+                "ar":"أوراق خضراء مع أوراق الريحان, جبنة عربية, تفاح أخضر, زبيب مجفف, مرينادا ليمون.",
+                "he":"עלים ירוקים עם עלי בזיליקום, גבינה ערבית, תפוח ירוק, צימוקים מיובשים, חריף לימון."
+             },
+             "category":"5",
+             "price":" ",
+             "image":"863a14ed365554ecc09bdb35570ee152.png"
+          },
+          {
+             "title":{
+                "ar":"سباغيتي فيني ليفورنو",
+                "he":"ספגטי ויני ליוורנו"
+             },
+             "description":{
+                "ar":"مقدم مع كريما وفقع شمبينيون وجبنه موتسارت مع ورق ريحان..",
+                "he":"מוגש עם שמנת, שמפיניון, גבינת מוצרט ונייר בזיליקום."
+             },
+             "category":"6",
+             "price":" ",
+             "image":"d87d72a6fed3b7b5ef31208d8b926c45.png"
+          },
+          {
+             "title":{
+                "ar":"فيتوتشيني ميلانو",
+                "he":"פטוצ'ינו מילאנו"
+             },
+             "description":{
+                "ar":"مقدم مع كريم شمينت وصلصة بندوره وزعتر بري",
+                "he":"מוגש בשילוב שמנת, רוטב עגבניות וטימין בר"
+             },
+             "category":"6",
+             "price":" ",
+             "image":"f91f42dc7b7fd61c6fd183fb1c8fc0cf.png"
+          },
+          {
+             "title":{
+                "ar":"ربيولي فيرونا اجبان",
+                "he":"גבינת רביולי ורונה"
+             },
+             "description":{
+                "ar":"مقدم مع كريم شمينت وشمفنيون وصنوبر مع سماق وزعتر بري",
+                "he":"מוגש עם שמיט קרם, שימפיוניון וצנוברים עם סומאץ 'וטימין בר"
+             },
+             "category":"6",
+             "price":" ",
+             "image":"4789a9ce03df1b730bb5045612bab3db.png"
+          },
+          {
+             "title":{
+                "ar":"ربيولي تورونتو بطاطا",
+                "he":"רביולי טורונטו פרייז"
+             },
+             "description":{
+                "ar":"مقدم مع كرمه الشمينت وبيستو ورق ريحان..",
+                "he":"מוצג עם עלי גפן ועלי בזיליקום פסטו .."
+             },
+             "category":"6",
+             "price":" ",
+             "image":"0d1d8af14afe16376ab74c73adb7f5c5.png"
+          },
+          {
+             "title":{
+                "ar":"فيتوتشيني فينيسيا",
+                "he":"פטוצ'יני ונציה"
+             },
+             "description":{
+                "ar":"مقدم مع فواكه بحر وكريمه بالشمينت ورق ريحان بندوه شيري وزعتر بري.",
+                "he":"מוגש עם פירות ים ושמנת עם בזיליקום, עלה בזיליקום, בנדו דובדבן ותימין בר."
+             },
+             "category":"6",
+             "price":" ",
+             "image":"912f64dde667034c1d8ca564a55ee147.png"
+          },
+          {
+             "title":{
+                "ar":"قدرة دجاج بالكريمة",
+                "he":"מכולת עוף קרם"
+             },
+             "description":{
+                "ar":"كريمه شمينت ، صلصه بندورة مع ريحان وجوز، كريمه مع ريحان ،كريما مع فطر.",
+                "he":"קרם של שמינט, רוטב עגבניות עם בזיליקום ואגוזים, שמנת עם בזיליקום, שמנת עם פטריות"
+             },
+             "category":"6",
+             "price":" ",
+             "image":"a53c59c391229c219ffb29aa604a59ba.png"
+          },
+          {
+             "title":{
+                "ar":"قدره بطاطا",
+                "he":"תפוח אדמה מבושל"
+             },
+             "description":{
+                "ar":"مقدمه مع بطاطا عاديه وبطاطا حلوه مع فطر بالكريما وجبنة الموتسارت",
+                "he":"מגישים עם צ'יפס רגיל ובטטה עם פטריות שמנת וגבינת מוצרלה"
+             },
+             "category":"6",
+             "price":" ",
+             "image":"6c514a2e7ee662772085476438dc070a.png"
+          },
+          {
+             "title":{
+                "ar":"سباجيتي اولا",
+                "he":"ספגטי אולא"
+             },
+             "description":{
+                "ar":"مقدم مع صلصه بندوره او صلصة شمينت مع بيستو",
+                "he":"מוגש עם רוטב עגבניות או רוטב מרקם עם פסטו"
+             },
+             "category":"6",
+             "price":" ",
+             "image":"158d6a0edc4e664720e6965fd7cd091e.png"
+          }
+       ],
+       "logo":"9bb2f5a39d78964e259fe33deadba663.png"
+    },
+    {
+       "business":{
+          "he":"סולת בורגר",
+          "ar":"سولت برجر"
+       },
+       "colors":{
+          "primary":"#ed1b24",
+          "secondary":"#000000"
+       },
+       "categories":[
+          {
+             "title":{
+                "ar":"وجبة أولى",
+                "he":"ארוחה ראשונה"
+             },
+             "icon":"lunch",
+             "image":"436fe12a69f609051b5456d012c2a645.png"
+          },
+          {
+             "title":{
+                "ar":"وجباتنا المميزة",
+                "he":"ארוחות מיוחדות"
+             },
+             "icon":"lunch",
+             "image":"49c4461dc4e6da33bf1f7d7aee952321.png"
+          },
+          {
+             "title":{
+                "ar":"الوجبات الرئيسية",
+                "he":"ארוחות עיקריות"
+             },
+             "icon":"lunch",
+             "image":"2067896d1fa2d6776d587ff785b273c3.png"
+          },
+          {
+             "title":{
+                "ar":"سولت كلاسيك",
+                "he":"סולט קלאסי"
+             },
+             "icon":"lunch",
+             "image":"2bb9ff79366f712042d1aedfffd659f9.png"
+          },
+          {
+             "title":{
+                "ar":"جراند برجر",
+                "he":"גראנד בורגר"
+             },
+             "icon":"dinner",
+             "image":"c56f44e60dd9d1eb3ecead3f3e426bc1.png"
+          },
+          {
+             "title":{
+                "ar":"وجبات أولاد",
+                "he":"ארוחות ילדים"
+             },
+             "icon":"bf",
+             "image":"57369a6bb42e41d42053fe3848724984.png"
+          },
+          {
+             "title":{
+                "ar":"سلطات",
+                "he":"סלטים"
+             },
+             "icon":"vegan",
+             "image":"f320a9c517e0a5b739ae7eca0b7712c7.png"
+          },
+          {
+             "title":{
+                "ar":"اضافات على البرجر",
+                "he":"תוספות על הבורגר"
+             },
+             "icon":"vegan",
+             "image":"0057afde390a4179d209204f08133409.png"
+          },
+          {
+             "title":{
+                "ar":"اضافات",
+                "he":"תוספות"
+             },
+             "icon":"vegan",
+             "image":"cb6eb1cba892e1e20075a20a842e53e0.png"
+          }
+       ],
+       "foods":[  
+          {
+            "title":{
+               "ar":"اصابع موتسريلا",
+               "he":"אצבעות מוצרלה"
+            },
+            "description":{
+               "ar":"",
+               "he":""
+            },
+            "category":"0",
+            "price":"24",
+            "image":"da056b03fe2da3d9ced455d0c9ae58a8.png"
+         },
+          {
+             "title":{
+                "ar":"شيبس لافا",
+                "he":"צ'יפס לבה"
+             },
+             "description":{
+                "ar":"تشيبس | ناتشوز | بهار سولت | هاليينيو | جبنة",
+                "he":"צ'יפס נאצ'וס מלח תבלינים חלפניו גבינה"
+             },
+             "category":"0",
+             "price":"24",
+             "image":"42b7b0c6e3bd562e1bb58037d35fb2e8.png"
+          },
+          {
+             "title":{
+                "ar":"شيبس امستردام",
+                "he":"צ'יפס אמסטרדם"
+             },
+             "description":{
+                "ar":"تشيبس | تشيمتشوري | بهار سولت | لحمة ديكارني | جبنة | افوكادو | صدر اوز",
+                "he":"צ'יפס צ'ימיצ'ורי מלח תבלינים בשר קרטזי גבינה אבוקדו עוז שוחרר"
+             },
+             "category":"0",
+             "price":"34",
+             "image":"b8326d8070ca74aa72d8a331f7a8e34b.png"
+          },
+          {
+             "title":{
+                "ar":"تاكو مكسيكي بالدجاج",
+                "he":"טאקו מקסיקני עם עוף"
+             },
+             "description":{
+                "ar":"قطع دجاج | صلصة تشيلي | صلصة افوكادو",
+                "he":"נגיסי עוף רוטב צ'ילי רוטב אבוקדו"
+             },
+             "category":"0",
+             "price":"24",
+             "image":"f8e186813d2334400ef1e0978fd85a92.png"
+          },
+          {
+            "title":{
+               "ar":"ناجتس",
+               "he":"נאגטס"
+            },
+            "description":{
+               "ar":"فيليه دجاج  مغطى بالأرز المقرمش | صوص تشيلي",
+               "he":"פילה עוף מכוסה באורז פריך רוטב צ'ילי"
+            },
+            "category":"0",
+            "price":"24",
+            "image":"087993886b4edfd44c191399e3bea6f4.png"
+         },
+          {
+            "title":{
+               "ar":"جنحان دجاج",
+               "he":"כנפי עוף"
+            },
+            "description":{
+               "ar":"جنحان دجاج بصوص تشيلي",
+               "he":"כנפי עוף עם רוטב צ'ילי"
+            },
+            "category":"0",
+            "price":"24",
+            "image":"8ab3e9b8eed528b4285a648c194dc7ff.png"
+         },
+         {
+            "title":{
+               "ar":"تشيز بوتيتوس",
+               "he":"גבינת תפוחי אדמה"
+            },
+            "description":{
+               "ar":"كريات البيري | جبنة | فقغ | صوص تشيلي",
+               "he":"קרית אל-ברי גבינה פשוט לחץ רוטב צ'ילי"
+            },
+            "category":"0",
+            "price":"24",
+            "image":"7e354eb81f8ec189303d6ee7dfeedf9f.png"
+         },
+          {
+             "title":{
+                "ar":"جوسي لوسي",
+                "he":"גוסי לוסי"
+             },
+             "description":{
+                "ar":"خس | بندورة | خيار مكبوس | بصل | مربى بصل | ابرة ايلولي سبراتشي | برغر جوسي محشي بالجبن",
+                "he":"חסה עגבנייה אפשרות לחוצה בצלים ריבת בצל מחט אלולי שפרחי המבורגר עסיסי ממולא בגבינה"
+             },
+             "category":"1",
+             "price":"54",
+             "image":"403b47db8b165058c05cdda20b7dcf37.png"
+          },
+          {
+            "title":{
+               "ar":"سبايسي سولت برغر",
+               "he":"סולט בורגר פיקנטי 220"
+            },
+            "description":{
+               "ar":"خس | بندورة | خيار مكبوس | بصل | حالبينيو | جبنة تشيدر | ابرة سيراتشي",
+               "he":"חסה עגבנייה אפשרות לחוצה בצלים ריבת בצל מחט אלולי שפרחי המבורגר עסיסי ממולא בגבינה"
+            },
+            "category":"1",
+            "price":"48",
+            "image":"20173181c59f0b9f5e4b88274f5face2.png"
+         },
+         {
+            "title":{
+               "ar":"دابل انجوس",
+               "he":"אנגוס כפול"
+            },
+            "description":{
+               "ar":"خس | بندورة | خيار مكبوس | بصل | شرائح انجوس | 2 برغر 110 | صدر اوز",
+               "he":"חסה עגבנייה אפשרות לחוצה בצלים ערכת שבבים של אנגוס 2 המבורגר 110 | עוז שוחרר"
+            },
+            "category":"1",
+            "price":"60",
+            "image":"a97a649ce81fd8653f653666f87fe316.png"
+         },
+         {
+            "title":{
+               "ar":"فلوريدا انجوس",
+               "he":"פלורידה אנגוס"
+            },
+            "description":{
+               "ar":"2 برغر انجوس | صدر اوز | تشيميتشوري | خس | بندورة | خيار مكبوس | بصل | أناناس",
+               "he":"2 אנגוס בורגר עוז שוחרר צ'ימיצ'ורי חסה עגבנייה אפשרות לחוצה בצלים אננס"
+            },
+            "category":"1",
+            "price":"60",
+            "image":"1aeda445bd98196850881fd44de2eeeb.png"
+         },
+         {
+            "title":{
+               "ar":"دو سولت برغر",
+               "he":"דו סולט בורגר"
+            },
+            "description":{
+               "ar":"2 برغر خس | بندورة | خيار مكبوس | بصل | ميكس جبنة",
+               "he":"2 המבורגר חסה עגבנייה אפשרות לחוצה בצלים מערבבים גבינה"
+            },
+            "category":"1",
+            "price":"60",
+            "image":"88cd4051b162d9de87434d76af4d34f5.png"
+         },
+         {
+            "title":{
+               "ar":"جوس لايفر",
+               "he":"גוס ליבר"
+            },
+            "description":{
+               "ar":"برغر 220 | خس | بندورة | خيار مكبوس | بصل | ميكس جبنة",
+               "he":"בורגר 220 | חסה עגבנייה אפשרות לחוצה בצלים מערבבים גבינה"
+            },
+            "category":"1",
+            "price":"60",
+            "image":"00bd0339330988c7c53949261b37d434.png"
+         },
+          {
+             "title":{
+                "ar":"بيوند برجر نباتي",
+                "he":"פייונד בורגר טבעוני"
+             },
+             "description":{
+                "ar":"مع مشروب السعر 57",
+                "he":"עם משקה מחיר 57"
+             },
+             "category":"3",
+             "price":"45",
+             "image":"d59604c432c48334706e7c4eee15c169.png"
+          },
+          {
+             "title":{
+                "ar":"سولت برجر 160",
+                "he":"סולט בורגר 160"
+             },
+             "description":{
+                "ar":"مع مشروب السعر 57",
+                "he":"עם משקה מחיר 57"
+             },
+             "category":"3",
+             "price":"29",
+             "image":"d117e6a8f18a2aa324302f631f65c848.png"
+          },
+          {
+             "title":{
+                "ar":"سولت برجر 220",
+                "he":"סולט בורגר 220"
+             },
+             "description":{
+                "ar":"مع مشروب السعر 50",
+                "he":"עם משקה מחיר 50"
+             },
+             "category":"3",
+             "price":"38",
+             "image":"323a3877f7e40ac09eb52b0838b8e654.png"
+          },
+          {
+             "title":{
+                "ar":"تشيكن برجر",
+                "he":"המבורגר עוף"
+             },
+             "description":{
+                "ar":"مع مشروب السعر 41",
+                "he":"עם משקה מחיר 41"
+             },
+             "category":"3",
+             "price":"29",
+             "image":"de2db006a5161cf24cd097d908e59099.png"
+          },
+          {
+             "title":{
+                "ar":"بيانكا انتريكوت",
+                "he":"אנטריקוט ביאנקה"
+             },
+             "description":{
+                "ar":"خبربيانكا | يولي خردل | تشيميتشوري | خيار مكبوس | بصل أحمر | بصل مطبوخ | لحمة انتريكوت | افوكادو",
+                "he":"ביאנקה יולי חרדל צ'ימיצ'ורי אפשרות לחוצה בצל אדום בצל מבושל בשר אנטריקוט אבוקדו"
+             },
+             "category":"2",
+             "price":"43",
+             "image":"06c4edb3521abc7713f713e87d397343.png"
+          },
+          {
+             "title":{
+                "ar":"بيانكا مكسيكانو",
+                "he":"ביאנקה מקסיקנו"
+             },
+             "description":{
+                "ar":"صدر دجاج | تشيميتشوري | خيار مكبوس | بصل احمر | خس | افوكادو",
+                "he":"חזה עוף צ'ימיצ'ורי מלפפון לחוצה בצל אדום חסה אבוקדו"
+             },
+             "category":"2",
+             "price":"38",
+             "image":"80fa5ab0a7bba51d0812a98d73875bcc.png"
+          },
+          {
+             "title":{
+                "ar":"صدر دجاج بالتشيميتشوري",
+                "he":"חזה עוף צ'ימיצ'ורי"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"39",
+             "image":"b661413d873390c329a4a62163bb87a2.png"
+          },
+          {
+             "title":{
+                "ar":"فاهيتا مكسيكانو",
+                "he":"פג'יטה מקסיקנו"
+             },
+             "description":{
+                "ar":"توريتا | فيليه دجاج | بصل | تشيميتشوري | افوكادو",
+                "he":"טוררטה פילה עוף בצלים צ'ימיצ'ורי אבוקדו"
+             },
+             "category":"2",
+             "price":"38",
+             "image":"c7e2c932f76245ef6eeac3b7c13ea7a7.png"
+          },
+          {
+             "title":{
+                "ar":"فاهيتا امريكانو",
+                "he":"פג'יטה אמריקנו"
+             },
+             "description":{
+                "ar":"تورتيا | افوكادو | بصل | شرائح انتريكوت | تشيميتشوري",
+                "he":"טורטיה אבוקדו בצלים פרוסות אנטריקוט צ'ימיצ'ורי"
+             },
+             "category":"2",
+             "price":"42",
+             "image":"03d996eacb6e2d55381f0ebd95478dd0.png"
+          },
+          {
+            "title":{
+               "ar":"سلطة دجاج",
+               "he":"סלט עוף"
+            },
+            "description":{
+               "ar":"",
+               "he":""
+            },
+            "category":"6",
+            "price":"39",
+            "image":"4614f2b1536b2eb3351741b126102f08.png"
+         },
+          {
+             "title":{
+                "ar":"سلطة حلومي",
+                "he":"סלט חלומי"
+             },
+             "description":{
+                "ar":"خس | شيري | خيار | بصل احمر | بندورة | جزر | زيتون اسود | جبنة حلومي مقرمشة",
+                "he":"חסה מלפפון בצל אדום עגבנייה איים זיתים שחורים גבינות חלומי קראנצ'יות"
+             },
+             "category":"6",
+             "price":"39",
+             "image":"a3dd9ef27217eb6a69282548a652e97f.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة القيصر",
+                "he":"סיזר סלט"
+             },
+             "description":{
+                "ar":"خس | بصل احمر | خيار | جبنة برميزان | خبز مقرمش | قطع دجاج مشوية | فيتغريد قيصر",
+                "he":"חסה בצל אדום מלפפון מלגבינת פרמזן לחם פריך חתיכות עוף בגריל קיסר ציוץ"
+             },
+             "category":"6",
+             "price":"39",
+             "image":"b6adc7b192602fdc17d2c79f5696bb27.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة مفتول",
+                "he":"סלט מפתול"
+             },
+             "description":{
+                "ar":"خس | بندورة | شيري | بصل | جزر | فقع | مفتول | قطع دجاج مشوية",
+                "he":"חסה עגבנייה דובדבן בצלים איים תקוע | מאצ'ו חתיכות עוף בגריל"
+             },
+             "category":"6",
+             "price":"45",
+             "image":"0fcec8d6e52fd3baf29fbd16d84bbd36.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة يونانية",
+                "he":"סלט יווני"
+             },
+             "description":{
+                "ar":"خس | بندورة مفطعة | شيري مقطعة | زيتون اسود | جزر | خيار | جبنة بلغارية | مكسرات",
+                "he":"חסה עגבנייה מגורדת שרי קצוצה זיתים שחורים איים מלפפון גבינה בולגרית אֱגוֹזִים"
+             },
+             "category":"6",
+             "price":"35",
+             "image":"de5e3990d0de001326990be2a0dc080c.png"
+          },
+          {
+             "title":{
+                "ar":"ستيك انتريكوت ",
+                "he":"סטייק אנטריקוט"
+             },
+             "description":{
+                "ar":"500 غرام | مقدم مع خيار مشوي",
+                "he":"500 גרם | מוגש עם מלפפון בגריל"
+             },
+             "category":"2",
+             "price":"95",
+             "image":"a1cfd88906e3db0d12d2e0606780a2e0.png"
+          },
+          {
+            "title":{
+               "ar":"تريو برجر 480",
+               "he":"בורגר משולש 480"
+            },
+            "description":{
+               "ar":"3 برجر 160 | 2 اضافات | لحمنياه | خس | بندورة | خيار مكبوس | بصل احمر",
+               "he":"4 המבורגר 160 | 3 תוספות לחמניה חסה עגבנייה מלפפון לחוצה בצל אדום"
+            },
+            "category":"4",
+            "price":"75",
+            "image":"355e9aa7c0a98e541b9f8326be77547b.png"
+         },
+         {
+            "title":{
+               "ar":"كوادرو برجر 640",
+               "he":"המבורגר מרובע 640"
+            },
+            "description":{
+               "ar":"4 برجر 160 | 2 اضافات | لحمنياه | خس | بندورة | خيار مكبوس | بصل احمر",
+               "he":"4 המבורגר 160 | 2 תוספות לחמניה חסה עגבנייה מלפפון לחוצה בצל אדום"
+            },
+            "category":"4",
+            "price":"90",
+            "image":"f62ffac0f182d3deabe7040bb9406fc5.png"
+         },
+         {
+            "title":{
+               "ar":"بيغ بين برجر 800",
+               "he":"ביג בין"
+            },
+            "description":{
+               "ar":"5 برجر 160 | 2 اضافات | لحمنياه | خس | بندورة | خيار مكبوس | بصل احمر",
+               "he":"4 המבורגר 160 | 5 תוספות לחמניה חסה עגבנייה מלפפון לחוצה בצל אדום"
+            },
+            "category":"4",
+            "price":"99",
+            "image":"f5d6b2aafda218d7ddd512ec741adc1b.png"
+         },
+          {
+             "title":{
+                "ar":"برج خليفة",
+                "he":"מגדל כליפה"
+             },
+             "description":{
+                "ar":"لحمنياة | خس | بندورة | خيار  مكبوس | بصل احمر",
+                "he":"לחמניה חסה עגבנייה אפשרות לחוצה בצל אדום"
+             },
+             "category":"4",
+             "price":"119",
+             "image":"8f697bbbf3c1d714eebdcf37fb09276e.png"
+          },
+          {
+             "title":{
+                "ar":"برجر اولاد",
+                "he":"בורגר ילדים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"25",
+             "image":"949d4d8093b77784e7eff20f8cf8b849.png"
+          },
+          {
+             "title":{
+                "ar":"صدر دجاج اولاد",
+                "he":"חזה עוף לילדים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"25",
+             "image":"673c66b015ef0e15f86d2eba3450e7bf.png"
+          },
+          {
+             "title":{
+                "ar":"شنيتسلونيم",
+                "he":"שניצלונים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"5",
+             "price":"25",
+             "image":"60cd74026d2564c92cb4788b40d50ae6.png"
+          },
+          {
+             "title":{
+                "ar":"صدر اوز",
+                "he":"חזה אווז"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"5",
+             "image":"dbf1a6da6be19827fdc1c5e8db99ac00.png"
+          },
+          {
+             "title":{
+                "ar":"بصل مقلي",
+                "he":"בצל מטוגן"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"5",
+             "image":"277898e8ed9089b87bdeef098a89cc7c.png"
+          },
+          {
+             "title":{
+                "ar":"هالبينو",
+                "he":"הלבינו"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"5",
+             "image":"b546ef1d1ce0e02e7743592a4aee25e9.png"
+          },
+          {
+             "title":{
+                "ar":"مربى البصل",
+                "he":"ריבת בצל"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"8",
+             "image":"ed70e3f41de138c435ed6aa562ffec70.png"
+          },
+          {
+             "title":{
+                "ar":"جبنة جاودا",
+                "he":"גבינת גאודה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"5",
+             "image":"f18c051e7cd341e6465e66bc2f6720c8.png"
+          },
+          {
+             "title":{
+                "ar":"جاودا بيستو",
+                "he":"גאודה פסטו"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"8",
+             "image":"828d0d9c562847e5dbda994d65fb7f18.png"
+          },
+          {
+             "title":{
+                "ar":"فطر",
+                "he":"פטריות"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"5",
+             "image":"40cd38c4eaae7add4b55d3d12141953b.png"
+          },
+          {
+             "title":{
+                "ar":"نار ودخان",
+                "he":"אש ועשן"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"8",
+             "image":"8eb54cc9ba6eb2a61bf3f2a097005656.png"
+          },
+          {
+             "title":{
+                "ar":"بيض",
+                "he":"ביצה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"3",
+             "image":"4b8599a3b3214b3ae5c6913244ba29af.png"
+          },
+          {
+             "title":{
+                "ar":"انجوس",
+                "he":"אנגוס"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"10",
+             "image":"1af35b630775356a4fc859e49ee98e44.png"
+          },
+          {
+             "title":{
+                "ar":"صوص الجبنة",
+                "he":"רוטב גבינה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"10",
+             "image":"a0dd0339ae8953e270cfd538f7850ec7.png"
+          },
+          {
+             "title":{
+                "ar":"اناناس",
+                "he":"אננס"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"3",
+             "image":"c8405793c9b4d417ef346c9850b93883.png"
+          },
+          {
+             "title":{
+                "ar":"شيبس صغير",
+                "he":"צ'יפס"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"5",
+             "image":"7cdc7fe9927998c54521370e5393f27e.png"
+          },
+          {
+             "title":{
+                "ar":"شيبس كبير",
+                "he":"צ'יפס גדול"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"10",
+             "image":"450300778643aac8404363c30c1df3ae.png"
+          },
+          {
+             "title":{
+                "ar":"حلقات بصل صغير",
+                "he":"טבעות בצל קטן"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"8",
+             "image":"9360f6d24eebd95a6d9e7ee8c7761685.png"
+          },
+          {
+             "title":{
+                "ar":"حلقات بصل كبير",
+                "he":"טבעות בצל גדול"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"16",
+             "image":"953656695e8f0d6487a46617648eac11.png"
+          },
+          {
+             "title":{
+                "ar":"كريات بطاطا صغير",
+                "he":"כדורי תפוחי אדמה קטן"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"8",
+             "image":"18e83a9fee5f14764dc504a1d9643a87.png"
+          },
+          {
+             "title":{
+                "ar":"كريات بطاطا كبير",
+                "he":"כדורי תפוחי אדמה גדול"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"16",
+             "image":"dc100436fd84f84a45a4a596076b8f6f.png"
+          },
+          {
+             "title":{
+                "ar":"هوم فرايز صغير",
+                "he":"צ'יפס ביתי קטן"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"9",
+             "image":"a4480a0214abe95030fd310622ffca7a.png"
+          },
+          {
+             "title":{
+                "ar":"هوم فرايز كبير",
+                "he":"צ'יפס ביתי גדול"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"18",
+             "image":"a322dcb13dfb2e02b4f411c655134d14.png"
+          },
+          {
+             "title":{
+                "ar":"بوتيتو",
+                "he":"פוטיטו"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"8",
+             "image":"885340e75f74f4d5228dc67df893f911.png"
+          }
+       ],
+       "logo":"78f80ad5d2999cee9368f7d43c7c3c47.png"
+    },
+    {
+       "business":{
+          "he":"אלגארדן",
+          "ar":"الجاردن"
+       },
+       "colors":{
+          "primary":"#183d00",
+          "secondary":"#382f00"
+       },
+       "categories":[
+          {
+             "title":{
+                "ar":"قائمة بيسترو",
+                "he":"תפריט ביסטרו"
+             },
+             "icon":"vegan",
+             "image":"521f1e71371d08f955a528c330df82ed.png"
+          },
+          {
+             "title":{
+                "ar":"مسليات",
+                "he":"נשנושים"
+             },
+             "icon":"lunch",
+             "image":"ea9f257dd6ba30fec15541f684de37a1.png"
+          },
+          {
+             "title":{
+                "ar":"وجبات بيسترو",
+                "he":"מנות פיסטרו"
+             },
+             "icon":"lunch",
+             "image":"af613f6b0ec5d04d7e21577cf621c201.png"
+          }
+       ],
+       "foods":[
+          {
+             "title":{
+                "ar":"سلطة حلومي ساخنة",
+                "he":"סלטים מיוחדים"
+             },
+             "description":{
+                "ar":"طماطم شيري ، خس ، فلفل مشوي ، ريحان ، ثوم ، زيت زيتون ، عصير ليمون ، جبنة حالمة مع فطر",
+                "he":"עגבנית שירי , חסה , פלפל קלוי , ריחאן, שום , שמן זית מיץ לימון , גבינת חלומי מוקפיצת עם פטריות"
+             },
+             "category":"0",
+             "price":"55",
+             "image":"41c8557ec2d207cc325c749081b789c6.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة سيزر",
+                "he":"סיזאר סלט"
+             },
+             "description":{
+                "ar":"خس ، جزر ، مشروم سوتيه ، طماطم وشيري صدر دجاج على النار مع صلصة وينجارد",
+                "he":"חסה , גזר , פטריות מוקפצות , עגבנית שירי  חזה עוף על האש , עם רוטב וינגרד"
+             },
+             "category":"0",
+             "price":"55",
+             "image":"d7513e60ba6263f1cfd3b427d72af67e.png"
+          },
+          {
+             "title":{
+                "ar":"موكبتس انتريكوت",
+                "he":"מוקפץ אנטרקות"
+             },
+             "description":{
+                "ar":"جزر ، ملفوف أبيض ، بصل بنفسجي ، جامبا الوان ، فاجيو ,  انتريكوت مع صلصة الصويا",
+                "he":"גזר , כרוב לבן , בצל סגול , גמבה צבעים ,  רצעות אנטרקות ואגיו עם רוטב סויא"
+             },
+             "category":"0",
+             "price":"65",
+             "image":"8d10e3be9fea9ada87ecc7442a314453.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة سلمون",
+                "he":"סלמון סלט"
+             },
+             "description":{
+                "ar":"جرجير ، ريحان ، مكسرات ، شرائح سلمون مدخن ، صلصة كروم",
+                "he":"רוקט , ריחאן , אגוזים  , רצעות סלמון מעושן , רוטב וינגרד"
+             },
+             "category":"0",
+             "price":"؟",
+             "image":"580ebe58e0545f52e68493a68f515e9e.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة الفطر الحار مع المأكولات البحرية",
+                "he":"סלט פטריות חם עם פירות ים"
+             },
+             "description":{
+                "ar":"مشروم مقلي ، محار ، كاليماري ، جمبري مع الجرجير وزيت الزيتون والثوم وعصير الليمون",
+                "he":"פטריות מוקפצות , צדפות , קלמרי , שרימפס עם רוקט , שום שמן זית מיץ לימון"
+             },
+             "category":"0",
+             "price":"65",
+             "image":"09861f6d0902d4da89d9d0ebc2784991.png"
+          },
+          {
+             "title":{
+                "ar":"سلطة يونانية",
+                "he":"סלט יוני"
+             },
+             "description":{
+                "ar":"خس ، طماطم ، خيار ، بصل بنفسجي ، جبن بلغاري",
+                "he":"חסה , עגבניה , מלפפון , בצל סגול , עם גבינה בולגרית"
+             },
+             "category":"0",
+             "price":"؟",
+             "image":"40e8e2f5d8a3537d9928111b1f9320c8.png"
+          },
+          {
+             "title":{
+                "ar":"بلاطة مقالي",
+                "he":"פלאטת מטוגנים"
+             },
+             "description":{
+                "ar":"كوبا ، شنيتسل ، مقلي ، نقطة",
+                "he":"קובה , שניצלונים , מטוגנים , צייפס"
+             },
+             "category":"1",
+             "price":"55",
+             "image":"0e06a71d7233dc876a584df49bcce7a0.png"
+          },
+          {
+             "title":{
+                "ar":"بلاطة الجبن",
+                "he":"פלאטת גבינות"
+             },
+             "description":{
+                "ar":"الجبن الأصفر ، الجبن الحالم ، الجبن العربي ، الجبن الكريمي ، جبن الماعز",
+                "he":"גבינה צהובה , גבינה חלומי , גבינה ערבית , גבינת שמנת , גבינת עזיים"
+             },
+             "category":"1",
+             "price":"55",
+             "image":"da17c6d5e65269c15544d9419ca3bf4e.png"
+          },
+          {
+             "title":{
+                "ar":"طبق مأكولات بحرية",
+                "he":"פלטת פירות ים"
+             },
+             "description":{
+                "ar":"الروبيان / الحبار / الحبار الرؤوس",
+                "he":"שרימפס / קלמארי / ראשי קלמארי"
+             },
+             "category":"1",
+             "price":"99",
+             "image":"7d3344e6f5e6b67cad0ebc84acf6b999.png"
+          },
+          {
+             "title":{
+                "ar":"همبرجر مع بطاطس مقلية + مشروب",
+                "he":"המפורגר עם צייפס + שתיה"
+             },
+             "description":{
+                "ar":"جبنة اضافية 8₪",
+                "he":"תוספת גבינה ₪8"
+             },
+             "category":"2",
+             "price":"49",
+             "image":"8f26481d564c9f05f6f69c3248acd5dc.png"
+          },
+          {
+             "title":{
+                "ar":"تورتيلا الدجاج",
+                "he":"טורטיה עוף"
+             },
+             "description":{
+                "ar":"شرائح دجاج تورتيلا مع بطاطا مقلية + مشروبات",
+                "he":"טורטיה רצעות עוף עם צייפס + שתיה"
+             },
+             "category":"2",
+             "price":"43",
+             "image":"a12cbb0530ffd2c1895f339774b779ce.png"
+          },
+          {
+             "title":{
+                "ar":"تورتيلا إنترتكوت",
+                "he":"טורטיה אנטריקוט"
+             },
+             "description":{
+                "ar":"شرائح تورتيلا مع بطاطس مقلية + مشروب 49 شيكل",
+                "he":"טורטיה רצעות אנטרקות עם צייפס + שתיה 49₪"
+             },
+             "category":"2",
+             "price":"49",
+             "image":"dee34d4f6a68a26a49d99b2735dbc14c.png"
+          },
+          {
+             "title":{
+                "ar":"بيسترو إيطالي",
+                "he":"פיסטרו איטלקי"
+             },
+             "description":{
+                "ar":"صلصات للاختيار || الفريدو ، كريم الفطر ، الورد ، الطماطم ، بولونيز",
+                "he":"|| רוטבים לבחירה || אלפרידו , שמנת פטריות , רוזה , עגבניות , פלונז"
+             },
+             "category":"2",
+             "price":"59",
+             "image":"51599a9f6c45c97fa833a9fa4c622b07.png"
+          },
+          {
+             "title":{
+                "ar":"רביולי גבינה",
+                "he":"رافيولي الجبنة"
+             },
+             "description":{
+                "ar":"صلصات للاختيار || الفريدو ، كريم الفطر ، الورد ، الطماطم ، بولونيز",
+                "he":"רוטבים לבחירה || אלפרידו , שמנת פטריות , רוזה , עגבניות , פלונז"
+             },
+             "category":"2",
+             "price":"59",
+             "image":"1095752b09c6e81132c0660277513fd8.png"
+          },
+          {
+             "title":{
+                "ar":"رافيولي باستا",
+                "he":"רביולי בטטה"
+             },
+             "description":{
+                "ar":"صلصات للاختيار || الفريدو ، كريم الفطر ، الورد ، الطماطم ، بولونيز",
+                "he":"רוטבים לבחירה || אלפרידו , שמנת פטריות , רוזה , עגבניות , פלונז"
+             },
+             "category":"2",
+             "price":"59",
+             "image":"2de4a77b0c88441488d4db2243d7fb64.png"
+          },
+          {
+             "title":{
+                "ar":"פינה",
+                "he":"بينا"
+             },
+             "description":{
+                "ar":"صلصات للاختيار || الفريدو ، كريم الفطر ، الورد ، الطماطم ، بولونيز",
+                "he":"רטבים לבחירה || אלפרדו, קרם פטריות, רוז, עגבנייה, בולונז"
+             },
+             "category":"2",
+             "price":"59",
+             "image":"a06d6d8231c8ec5bea7fb04035bd6c52.png"
+          },
+          {
+             "title":{
+                "ar":"فوتشيني",
+                "he":"פתוציני"
+             },
+             "description":{
+                "ar":"صلصات للاختيار || الفريدو ، كريم الفطر ، الورد ، الطماطم ، بولونيز",
+                "he":"רטבים לבחירה || אלפרדו, קרם פטריות, רוז, עגבנייה, בולונז"
+             },
+             "category":"2",
+             "price":"59",
+             "image":"d329f2f413066b6cb2e615e981c9a413.png"
+          },
+          {
+             "title":{
+                "ar":"قطع شتينتسل مع تشيبس",
+                "he":"שניצלונים עם צייפס"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"?",
+             "image":"739275022a617a2166f5cd4cbef9859e.png"
+          }
+       ],
+       "logo":"dbf68d85e8fbbf2df8566f597193005f.png"
+    },
+    {
+       "business":{
+          "he":"אלגארדן",
+          "ar":"الجاردن"
+       },
+       "colors":{
+          "primary":"#3d2d00",
+          "secondary":"#005214"
+       },
+       "categories":[
+          {
+             "title":{
+                "ar":"مقبلات",
+                "he":"מנות ראשנות"
+             },
+             "icon":"dinner",
+             "image":"b3a511e77e9ee189e42bb00abedc554f.png"
+          },
+          {
+             "title":{
+                "ar":"الاطباق الرئيسية",
+                "he":"מנות עיקריות"
+             },
+             "icon":"lunch",
+             "image":"bc0b028aef35e48b259a60e12459c02a.png"
+          },
+          {
+             "title":{
+                "ar":"لحوم",
+                "he":"בשרים"
+             },
+             "icon":"lunch",
+             "image":"04367fc93580b85c24c70c0e4d82b591.png"
+          },
+          {
+             "title":{
+                "ar":"من البحر",
+                "he":"מהים"
+             },
+             "icon":"seafood",
+             "image":"3a37c466031f2fa96302b3340b3f3a57.png"
+          },
+          {
+             "title":{
+                "ar":"الحلويات",
+                "he":"קינוחים"
+             },
+             "icon":"desserts",
+             "image":"9857d57ebb7f4a0a05e98c020ee95555.png"
+          },
+          {
+             "title":{
+                "ar":"مشروبات الجاردن الصيفية",
+                "he":"משקאות קיץ הגרדן"
+             },
+             "icon":"juice",
+             "image":"2fe1143f02dbab09d091daa5f8524e6d.png"
+          },
+          {
+             "title":{
+                "ar":"مشروبات باردة",
+                "he":"שתיה קרה"
+             },
+             "icon":"juice",
+             "image":"427580591abdcea573d094bdc080078f.png"
+          },
+          {
+             "title":{
+                "ar":"مشروبات ساخنة",
+                "he":"משקאות חמים"
+             },
+             "icon":"drinks",
+             "image":"bf5230fe2e0422704751a7e8df32bb00.png"
+          },
+          {
+             "title":{
+                "ar":"ارجيلة",
+                "he":"נרגילות"
+             },
+             "icon":"dinner",
+             "image":"8a714bbbb84b2336357492bd63e4bf10.png"
+          }
+       ],
+       "foods":[
+          {
+             "title":{
+                "ar":"فطر محشي",
+                "he":"פטריות ממולאות"
+             },
+             "description":{
+                "ar":"مليئة الجوز روكفورد مع صلصة كريم الفطر في الفرن",
+                "he":"מומלא עם גם רוקפורד וי אגוזי המלך עם רוטב שמנת פטריות בתנור"
+             },
+             "category":"0",
+             "price":"39",
+             "image":"1bcf9a9f4685ce2dfae33022de4fc7f0.png"
+          },
+          {
+             "title":{
+                "ar":"لفائف الباذنجان",
+                "he":"גלילי חצילים"
+             },
+             "description":{
+                "ar":"مخبوز بخثارة جبنة بيضاء + صفراء في الفرن",
+                "he":"אפוים במלוי גבינה לבנה + צהובה מוקרם בתנור"
+             },
+             "category":"0",
+             "price":"34",
+             "image":"9b9074110b047de4e0483cbcd8f1a342.png"
+          },
+          {
+             "title":{
+                "ar":"كبة مقلية",
+                "he":"קובה מטוגנת"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"0",
+             "price":"24",
+             "image":"6af41de5c8a22700ba2f1a9f314bec47.png"
+          },
+          {
+             "title":{
+                "ar":"كبة جاردن",
+                "he":"קובה גרדן"
+             },
+             "description":{
+                "ar":"كبة غير مطبوخ (نية) مع لحم مفروم + جوز",
+                "he":"קובה לא מבושלת עם בשר טחון + צנובר"
+             },
+             "category":"0",
+             "price":"34",
+             "image":"8dd18ac9156cb82071dc92c1337a1ef1.png"
+          },
+          {
+             "title":{
+                "ar":"رقبة خروف",
+                "he":"צוור טלה"
+             },
+             "description":{
+                "ar":"محشوة بالأرز مع بركة على الجانب (وجبة زوجية)",
+                "he":"מומלא באורז עם פריכה בצד (מנה זוגית)"
+             },
+             "category":"1",
+             "price":"299",
+             "image":"7164b3ea323c4159613fb176515dc6c9.png"
+          },
+          {
+             "title":{
+                "ar":"كتف خروف",
+                "he":"כתף טלה"
+             },
+             "description":{
+                "ar":"كتف غنم محشي مع أرز مقرمش على جانب (عائلي)",
+                "he":"כתף טלה מומלא עם אורז פריכה בצד (משפחתי)"
+             },
+             "category":"1",
+             "price":"140",
+             "image":"c03833ba0cbd13740f8f3f0d215a2c44.png"
+          },
+          {
+             "title":{
+                "ar":"منسف كبش",
+                "he":"מנסף כבש"
+             },
+             "description":{
+                "ar":"كرات لحم  كبش مع أرز",
+                "he":"כדורי בשר כבש עם אורז וי פריכה"
+             },
+             "category":"1",
+             "price":"125",
+             "image":"30c7301cbbbcdead18965cec434974a1.png"
+          },
+          {
+             "title":{
+                "ar":"منسف عجل",
+                "he":"מנסף עגל"
+             },
+             "description":{
+                "ar":"كرات لحم العجل مع الأرز",
+                "he":"כדורי בשר עגל עם אורז וי פריכה"
+             },
+             "category":"1",
+             "price":"110",
+             "image":"e9faf03e07dd736810be86e19aec43cd.png"
+          },
+          {
+             "title":{
+                "ar":"فخذ كبش",
+                "he":"ירך כבש"
+             },
+             "description":{
+                "ar":"فخذ كبش مع يخنة على الجانب",
+                "he":"ירך כבש עם פריכה בצד"
+             },
+             "category":"1",
+             "price":"130",
+             "image":"4796599ad6b99c1ac580fc9aa5b26508.png"
+          },
+          {
+             "title":{
+                "ar":"دجاج محشي",
+                "he":"פרגיות ממלאות"
+             },
+             "description":{
+                "ar":"دجاج محشي أرز + مقرمش على الجانب",
+                "he":"פרגית ממולאת עם אורז + פריכה בצד"
+             },
+             "category":"1",
+             "price":"89",
+             "image":"e320f1b5cd2fbe0cc1815edc13fbc74c.png"
+          },
+          {
+             "title":{
+                "ar":"شريحة انتركوت 400 غ",
+                "he":"נתח אנטריקוט 400 גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"120",
+             "image":"01dddc3009ff3b8387faf80f9b2c619a.png"
+          },
+          {
+             "title":{
+                "ar":"شريحة فيليه 300 غ",
+                "he":"נתח פילה 300 גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"120",
+             "image":"ccb8c6d1c4c06c980805888a4d995588.png"
+          },
+          {
+             "title":{
+                "ar":"ستيك روسيني 400 غرام",
+                "he":"סטייק רוסיני גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"155",
+             "image":"8f3db91585bbdfe36d513852019ab6b3.png"
+          },
+          {
+             "title":{
+                "ar":"لحم ضأن",
+                "he":"צלע טלה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"155",
+             "image":"88526324727b418ebd4077a8b131d7a8.png"
+          },
+          {
+             "title":{
+                "ar":"كبد أوز مع صلصه الرمان",
+                "he":"כבד אווז עם רוטב רומנים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"155",
+             "image":"9a4b7f7a9fecd493b336acf7fa6c1745.png"
+          },
+          {
+             "title":{
+                "ar":"قطع الإوز 300 غ على خلاصة الأناناس",
+                "he":"נתחים אווז 300 גרם על מצט אננס"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"145",
+             "image":"1fc15d8b0566e4ea6330441cc4bd0a7b.png"
+          },
+          {
+             "title":{
+                "ar":"ستيك مشوي مزدوج",
+                "he":"סטייק שטו זוגי"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"؟",
+             "image":"9e947f9e4816114ecdcb7b302cca823e.png"
+          },
+          {
+             "title":{
+                "ar":"فيليه لحم بقر 700 غ",
+                "he":"פילה בקר 700 גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"240",
+             "image":"8a93cc6eb048d73723ceac521478999a.png"
+          },
+          {
+             "title":{
+                "ar":"أضلاعه خروف مزخرفة 400 غ",
+                "he":"צלעות טלה מקושטות 400 גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"125",
+             "image":"61fc02906cf6ec6579e070e65805077f.png"
+          },
+          {
+             "title":{
+                "ar":"أسياخ الضأن 300 غ",
+                "he":"שפודי כבש 300 גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"110",
+             "image":"1a66e16933d9d9651973d51af4196ece.png"
+          },
+          {
+             "title":{
+                "ar":"أسياخ الكباب 300 غ",
+                "he":"שפודי קבב 300 גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"79",
+             "image":"1ff5bfd12a4f47402607cba3a22d5783.png"
+          },
+          {
+             "title":{
+                "ar":"أسياخ برجيت 300 غ",
+                "he":"שיפודי פרגיות 300 גרם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"79",
+             "image":"29af440a5beb603f5f6ca641378b2161.png"
+          },
+          {
+             "title":{
+                "ar":"نصف دجاجة كاملة بالعظم",
+                "he":"חצי עוף שלם עם עצמות"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"79",
+             "image":"0d380f85655546c8a8f11fafd84293b4.png"
+          },
+          {
+             "title":{
+                "ar":"صدر دجاج على النار",
+                "he":"חזה עוף על האש"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"69",
+             "image":"c1960d64918ea8374d5637555e170f17.png"
+          },
+          {
+             "title":{
+                "ar":"مشكل لحوم",
+                "he":"מיקס בשרים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"89 לסועיד",
+             "image":"ca38a96a0fa605d947806d170abf24d7.png"
+          },
+          {
+             "title":{
+                "ar":"شريحة شنيتسل",
+                "he":"סטייק שניצל"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"2",
+             "price":"69",
+             "image":"606660eadffc17747c1a251b105ca171.png"
+          },
+          {
+             "title":{
+                "ar":"سمك دنيس",
+                "he":"דג דניס"
+             },
+             "description":{
+                "ar":"على النار / مقلي / في الفرن",
+                "he":"על האש / מטוגן / בתנור"
+             },
+             "category":"3",
+             "price":"115",
+             "image":"1615323ef8b2a45bb87821d444b135ec.png"
+          },
+          {
+             "title":{
+                "ar":"سمك لبراك",
+                "he":"דג לברק"
+             },
+             "description":{
+                "ar":"على النار / مقلي / في الفرن",
+                "he":"על האש / מטוגן / בתנור"
+             },
+             "category":"3",
+             "price":"115",
+             "image":"cb68d7292a382ddbf86d9d844087d934.png"
+          },
+          {
+             "title":{
+                "ar":"سمك السلمون فيليه",
+                "he":"פילה סלמון"
+             },
+             "description":{
+                "ar":"على النار / في الفرن",
+                "he":"על האש / בתנור"
+             },
+             "category":"3",
+             "price":"110",
+             "image":"27038d50bcc02969f46aba040076125b.png"
+          },
+          {
+             "title":{
+                "ar":"سمك خاص",
+                "he":"דג מיוחד"
+             },
+             "description":{
+                "ar":"أسماك محشوة بالمأكولات البحرية المصنوعة في الفرن",
+                "he":"דג ממולא פירות ים עשוי בתנור"
+             },
+             "category":"3",
+             "price":"145",
+             "image":"8db040ab404044cb918a153516b5b220.png"
+          },
+          {
+             "title":{
+                "ar":"سمكة اليوم الخاصة",
+                "he":"ספישל דגים של היום , תשאל את המלצר"
+             },
+             "description":{
+                "ar":"اسأل النادل",
+                "he":" תשאל את המלצר"
+             },
+             "category":"3",
+             "price":"145",
+             "image":"56e93fe0acce6c3927df00aa8296c9cc.png"
+          },
+          {
+             "title":{
+                "ar":"شريمبس",
+                "he":"שרימפס"
+             },
+             "description":{
+                "ar":"على النار / مقلي / في الصلصة",
+                "he":"על האש / מטוגן / ברוטב"
+             },
+             "category":"3",
+             "price":"110",
+             "image":"0db0e42382838ba7385a19359802d901.png"
+          },
+          {
+             "title":{
+                "ar":"كلماري",
+                "he":"קלמארי"
+             },
+             "description":{
+                "ar":"مقلي / في صلصة",
+                "he":"מטוגן / ברוטב"
+             },
+             "category":"3",
+             "price":"105",
+             "image":"d4946b5302667772a260f8e48622bb4e.png"
+          },
+          {
+             "title":{
+                "ar":"صدف",
+                "he":"צדפות"
+             },
+             "description":{
+                "ar":"في صلصة الليمون والثوم",
+                "he":"ברוטב שום לימון"
+             },
+             "category":"3",
+             "price":"85",
+             "image":"2d241b01c1060f4fe95ad24fd216f89c.png"
+          },
+          {
+             "title":{
+                "ar":"كاليمارى محشي بسلمون",
+                "he":"קלמרי במילוי סלמון"
+             },
+             "description":{
+                "ar":"مع صلصة كريمة الليمون والنعناع",
+                "he":"עם רוטב שמנת לימון נענע"
+             },
+             "category":"3",
+             "price":"125",
+             "image":"b862a44304380e0c559b598d0acb32b2.png"
+          },
+          {
+             "title":{
+                "ar":"مشكل المأكولات البحرية",
+                "he":"מיקס פירות ים"
+             },
+             "description":{
+                "ar":"من اختيارك",
+                "he":"לפי הבחירה"
+             },
+             "category":"3",
+             "price":"115",
+             "image":"6f195ba4bf4264bb4fa3ea5edcca10a0.png"
+          },
+          {
+             "title":{
+                "ar":"وافل بلجيكي مزدوج مع كرتين آيس كريم",
+                "he":"וופל בלגי זוגי עם 2 כדורי גלידה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"48",
+             "image":"793edb36aafc221cf7fcd72c0c9d55ef.png"
+          },
+          {
+             "title":{
+                "ar":"حلوى الشوكولاتة مع ملعقتين من الآيس كريم",
+                "he":"פאדג שוקולד עם 2 כדורי גלידה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"38",
+             "image":"af0a12ddbd9477f4b98574d2ef1ff90a.png"
+          },
+          {
+             "title":{
+                "ar":"سوفلي الشوكولاته",
+                "he":"סופלה שוקולד"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"38",
+             "image":"1908bc3de3ca3d0d9f69d9af5e308db9.png"
+          },
+          {
+             "title":{
+                "ar":"حليب كرميل",
+                "he":"ריבת חלב"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"34",
+             "image":"3e68d7cbf83dba4112c3068401426b21.png"
+          },
+          {
+             "title":{
+                "ar":"كاساتا",
+                "he":"קסטה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"34",
+             "image":"bb51dd4a1d0c3ce73998628ed8ae11c1.png"
+          },
+          {
+             "title":{
+                "ar":"سبيشال كعك يومي, اسال النادل",
+                "he":"מבחר עגות של היום תשאל את המלצר"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"4",
+             "price":"??",
+             "image":"23364e928609ba16c3829e201462a83b.png"
+          },
+          {
+             "title":{
+                "ar":"كوكتيل الجاردن",
+                "he":"קוקטייל גרדן"
+             },
+             "description":{
+                "ar":"فراولة / موز / تمر",
+                "he":"תות / בננה / תמרים"
+             },
+             "category":"5",
+             "price":"20",
+             "image":"fd4d626e6eaaeb1b998c55a14a141ecf.png"
+          },
+          {
+             "title":{
+                "ar":"شيك فروت",
+                "he":"שייק פירות"
+             },
+             "description":{
+                "ar":"مانجا / أناناس / فراولة / موز / بطيخ على أساس حليب / الماء / البرتقال",
+                "he":"מנגה / אננס / תות / בננה / אבטיח על בסיס / חלב / מים / תפוזים"
+             },
+             "category":"5",
+             "price":"20",
+             "image":"3e62627f054f516a88d7f49bfec70084.png"
+          },
+          {
+             "title":{
+                "ar":"اللبن المخفوق",
+                "he":"מילקשייק"
+             },
+             "description":{
+                "ar":"فانيليا / بازوكا / شوكولا",
+                "he":"וניל / בזוקה / שוקולד"
+             },
+             "category":"5",
+             "price":"20",
+             "image":"01ab4419467f9741815301512a0ddf17.png"
+          },
+          {
+             "title":{
+                "ar":"طبيعي من الشجرة",
+                "he":"טבעי מהעץ"
+             },
+             "description":{
+                "ar":"تفاح / برتقال / جزر",
+                "he":"תפוחים / תפוזים / גזר"
+             },
+             "category":"5",
+             "price":"11",
+             "image":"6e49c5105c07ddba148d142aed330314.png"
+          },
+          {
+             "title":{
+                "ar":"كوكا / كولا زيرو / فانتا / سبرايت",
+                "he":"קולה / קולה זירו / פאנטה / ספרייט"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"6",
+             "price":"11",
+             "image":"50fc642c4ade12cd92b972de902c4f1a.png"
+          },
+          {
+             "title":{
+                "ar":"عنب / توت بانانا",
+                "he":"ענבים / תות בננה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"6",
+             "price":"8",
+             "image":"d1a3daf860a7ec45c50fe71c72b1a50d.png"
+          },
+          {
+             "title":{
+                "ar":"مياه معدنية",
+                "he":"מים מינרלים"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"6",
+             "price":"10",
+             "image":"aec4a8e391a047e8a032c42e750b9a23.png"
+          },
+          {
+             "title":{
+                "ar":"سودا",
+                "he":"סודה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"6",
+             "price":"7",
+             "image":"17a3211673bab45a93a33dd0212ca765.png"
+          },
+          {
+             "title":{
+                "ar":"كابتشينو",
+                "he":"קפוצינו"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"12 / 14",
+             "image":"ded9f51d26f4776ce28ddbbdc4cffe0d.png"
+          },
+          {
+             "title":{
+                "ar":"نسكافيه مع حليب",
+                "he":"נס על בסיס חלב"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"12",
+             "image":"c1c2399e399cfa2cf06efa2442d6aef8.png"
+          },
+          {
+             "title":{
+                "ar":"شوكولاتة بالحليب",
+                "he":"שוקו על בסיס חלב"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"12",
+             "image":"1949249815ffcda48c382ef31df5d246.png"
+          },
+          {
+             "title":{
+                "ar":"إسبرسو",
+                "he":"אספרסו"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"7 / 9",
+             "image":"e926b5ff361f1a7d27a78b142ffc4c44.png"
+          },
+          {
+             "title":{
+                "ar":"سحلب ساخن",
+                "he":"סחלב חם"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"14",
+             "image":"9ff5543568cc1e958cb5c2bee5b464f1.png"
+          },
+          {
+             "title":{
+                "ar":"شوكولاتة",
+                "he":"שוקולטה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"14",
+             "image":"216f2ab584216f69ab7824f7ae8ed820.png"
+          },
+          {
+             "title":{
+                "ar":"اسبرسو فرنسي",
+                "he":"פרינץ אספרסו"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"7",
+             "price":"14",
+             "image":"acc10676f0d7a4ec613d76c866c86f2f.png"
+          },
+          {
+             "title":{
+                "ar":"تفاحتين نخلة",
+                "he":"תפוח נכלה"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"35",
+             "image":"c3be0edfb4efbc407781053b64548a0e.png"
+          },
+          {
+             "title":{
+                "ar":"خلطة الجاردن",
+                "he":"מיקס הגארדן"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"30",
+             "image":"56cb7a16bdfb7553d89fd76f13b5d44f.png"
+          },
+          {
+             "title":{
+                "ar":"لمون نعنع",
+                "he":"לימונענע"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"30",
+             "image":"03efa33533b8ba11fa4062c8312d8c2a.png"
+          },
+          {
+             "title":{
+                "ar":"بلوبيري",
+                "he":"בלובירי"
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"30",
+             "image":"78e88e401cadf09006875fda08141238.png"
+          },
+          {
+             "title":{
+                "ar":"ارجيلة فريش",
+                "he":"اضافة "
+             },
+             "description":{
+                "ar":"",
+                "he":""
+             },
+             "category":"8",
+             "price":"اضافة 7",
+             "image":"caf5d0b45b441a7b15aadbb2695c059e.png"
+          }
+       ],
+       "logo":"51aa82052c07b07ec1b404819150f055.png"
+    }
+ ]

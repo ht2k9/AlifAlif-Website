@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const multer = require("multer");
 const router = express.Router();
+const isVisible = true;
 
 const upload = multer({
     dest: "public/restaurants/"
@@ -30,8 +31,7 @@ router.get('/show/:lang/:id', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
         let menus = JSON.parse(data);
-        
-        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: req.params.lang});
+        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: req.params.lang, isVisible: isVisible});
     });
 });
 
