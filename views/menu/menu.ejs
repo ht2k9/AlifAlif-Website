@@ -114,17 +114,17 @@ a {
 	 font-size: 3.5vmin;
 }
 .btn {
-	 border: none;
- 	 color: white;
-	 padding: 5pt 30pt;
-	 vertical-align: middle;
-	 text-align: center;
-	 text-decoration: none;
-	 display: inline-block;
-	 font-size: 16px;
-	 margin: 4px 2px;
-	 cursor: pointer;
-	 border-radius: 10px 10px 10px 10px;
+	border: solid 2px #bc9548;
+    color: white;
+    padding: 5pt 30pt;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0px;
+    cursor: pointer;
+    border-radius: 10px 0px 0px 10px;
 }
  #inspired {
 	 position: fixed;
@@ -204,30 +204,31 @@ a {
 				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
 					<% for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
 						<% if(lang == 'ar') { %> 
-							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
-								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.ar %>"></div>
-								<div class="category"><%= cat.title.ar %></div>
+							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="<% if(id == '1') { %> border-color: #ffbe42; <% } %> background-image: url('/restaurants/<%= cat.image %>');">
+								<div style="<% if(id == '1') { %>     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+									radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%); <% } %>"  class="icon" ><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.ar %>"></div>
+								<div class="category" style="<% if(id == '1') { %> color: #ffcd6e <% } %>"><%= cat.title.ar %></div>
 							</a>
 						<% } %>
 						<% if(lang == 'he') { %>
-							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
-								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.he %>"></div>
-								<div class="category"><%= cat.title.he %></div>
+							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="<% if(id == '1') { %> border-color: #ffbe42; <% } %> background-image: url('/restaurants/<%= cat.image %>');">
+								<div style="<% if(id == '1') { %>     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+									radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%); <% } %>"  class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.he %>"></div>
+								<div class="category" style="<% if(id == '1') { %> color: #ffcd6e <% } %>"><%= cat.title.he %></div>
 							</a>
 						<% } %>
 					<% } %>
 				</div>
-				<div class="btn__submit"></div>
 			</div>
 		</div>
 
 	</div>
 	<div class="btn__submit">
 		<% if(lang == 'ar') { %>
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'he') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
+		<a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
 		<% } %>
 		<% if(lang == 'he') { %>
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'ar') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
+		<a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
 		<% } %>
 	</div>
 	<script>
