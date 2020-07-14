@@ -45,6 +45,22 @@ app.get('/events', (req, res) => {
     res.render('events', {events: events});
 });
 
+app.get('/login', (req, res) => {
+    res.render('admin_login');
+});
+app.post('/login', (req, res) => {
+    let user = req.body.user;
+    let pass = req.body.password;
+    if(user == "admin" && pass == "12345")
+        res.redirect("/menu/admin");
+    else
+        res.render('admin_login');
+});
+
+app.get('/newgrid', (req, res) => {
+    res.render('newgrid');
+});
+
 // ************************************** Digital Card **************************************/
 app.use('/digitalcard', digitalcard);
 
