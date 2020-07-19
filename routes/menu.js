@@ -18,11 +18,7 @@ router.get('/admin', (req, res) => {
 });
 
 router.get('/show/:id', (req, res) => {
-    fs.readFile('localbase/menus.json', (err, data) => {
-        if (err) throw err;
-        let menus = JSON.parse(data);
-        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: 'ar'});
-    });
+    res.redirect('/menu/show/ar/'+req.params.id);
 });
 
 router.get('/show/:lang/:id', (req, res) => {
