@@ -171,12 +171,16 @@ div {
 
         <label>رابط الخلفية</label>
         <div class="group">
-          <select name="bgtype" style="max-width: 200px;">
+          <select id="select1" name="bgtype" onchange="selectChanged()" style="max-width: 200px;">
             <option <% if(vcard.bg != null && vcard.bg.type == "photo") {%> selected <%}%> value="photo">صورة</option>
             <option <% if(vcard.bg != null && vcard.bg.type == "video") {%> selected <%}%> value="video">فيديو</option>
             <option <% if(vcard.bg != null && vcard.bg.type == "fb") {%> selected <%}%> value="fb">من فيسبوك</option>
           </select>
-          <input type="text" id="bglink" name="bglink"  <% if(vcard.bg != null) {%> value="<%= vcard.bg.link %>" <%}%>>
+          <input type="text" id="bglink" name="bglink" style="display: inline-block;" <% if(vcard.bg != null) {%> value="<%= vcard.bg.link %>" <%}%>>
+          <div id="in_file" class="group" style="display: none;">
+            <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_bgimage"  onchange="preview_image(event)" accept="image/*" required>
+            <p><img id="output_bgimage" width="200" /></p>
+          </div>
         </div>
 
         <label>فيسبوك</label>
@@ -235,6 +239,18 @@ div {
 <script>
   let phonesCnt = document.getElementById('phoneCount').value;
   let node = document.getElementById('phones');
+
+  function selectChanged(){
+    let s = document.getElementById('select1');
+    if(s.value == 'photo'){
+      document.getElementById('bglink').style.display = "none";
+      document.getElementById('in_file').style.display = "inline-block";
+    }
+    else{
+      document.getElementById('bglink').style.display = "inline-block";
+      document.getElementById('in_file').style.display = "none";
+    }
+  }
 
   function preview_image(event) 
   {

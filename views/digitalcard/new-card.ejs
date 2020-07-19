@@ -167,16 +167,22 @@ div {
           <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
           <p><img id="output_image" width="200" /></p>
         </div>
-
+        
         <label>رابط الخلفية</label>
+        
         <div class="group">
-          <select name="bgtype" style="max-width: 200px;">
+          <select id="select1" name="bgtype" onchange="selectChanged()" style="max-width: 200px;">
             <option value="photo">صورة</option>
             <option value="video">فيديو</option>
             <option value="fb">من فيسبوك</option>
           </select>
-          <input type="text" id="bglink" name="bglink">
-        </div>
+            </div>    
+          <input type="text" id="bglink" name="bglink" style="display: none;">
+          <div id="in_file" class="group" style="display: inline-block;">
+            <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_bgimage"  onchange="preview_image(event)" accept="image/*" required>
+            <p><img id="output_bgimage" width="200" /></p>
+          </div>
+  
 
         <label>فيسبوك</label>
         <div class="group">
@@ -228,6 +234,18 @@ div {
 <script>
   let phonesCnt = document.getElementById('phoneCount').value;
   let node = document.getElementById('phones');
+
+  function selectChanged(){
+    let s = document.getElementById('select1');
+    if(s.value == 'photo'){
+      document.getElementById('bglink').style.display = "none";
+      document.getElementById('in_file').style.display = "inline-block";
+    }
+    else{
+      document.getElementById('bglink').style.display = "inline-block";
+      document.getElementById('in_file').style.display = "none";
+    }
+  }
 
   function addPhone(){
     phonesCnt++;
