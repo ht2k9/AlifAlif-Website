@@ -149,52 +149,16 @@ a {
 }
 
 .category {
-	color: #FFF;
-    padding-left: 10px;
-    font-size: 18px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 22px;
+	font-weight: bold;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-.link{
-	position: absolute;
-	top: 0;
-	z-index: 1;	
-	height: wrap;
-	width: wrap;	
-	align-items: center;
-	border-radius: 10pt;
-}
-#link-3{
-	background-image: linear-gradient(to bottom, #382f00 40%, #085f1e)
-}
-#link-4{
-	background-image: linear-gradient(to bottom, #085f1e, #382f00)
-}
-.b_link{
-	background-color: inherit;
-	padding: 3pt 8pt 3pt 8pt;
-	color: white;
-	font-size: 14pt;
-	font-weight: bold;
-	border-radius: 10pt;
-	padding-left: 8pt;
-	padding-bottom: 20pt;
-	padding-right: 8pt;
-	text-align: center;
-	line-height: 30pt;
-	display: inline-block;
-}
- 
     </style>
     <title><%= menu.colors.business %></title>
 </head>
 <body  style="background: <%= menu.colors.secondary %>">
-	<% if (id == 3) { %>
-		<div class="link" id="link-3"><a class="b_link" href="/menu/show/<%= lang %>/<%= 7-id %>">פרסטו</a></div>
-	<% } %>	
-	<% if (id == 4) { %>
-		<div class="link" id="link-4"><a class="b_link" href="/menu/show/<%= lang %>/<%= 7-id %>">מסעדה</a></div>
-	<% } %>
-	
 	<div id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
 		<div class="app__top_block"  onclick="showMenu()">
 			<img src="/restaurants/<%= menu.logo %>" style="max-width: 200px;"/>
@@ -204,15 +168,15 @@ a {
 				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
 					<% for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
 						<% if(lang == 'ar') { %> 
-							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
+							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>'); border-width: 5px; border-color: <% if(id != 1) { %> <%= menu.colors.primary%> <% } if(id == 1) { %> #eecd80 <% } %>;">
 								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.ar %>"></div>
-								<div class="category"><%= cat.title.ar %></div>
+								<div class="category" style="color: <% if(id == 4) { %> <%= menu.colors.secondary%> <% } if(id == 0 || id == 2 || id == 3) { %> <%= menu.colors.primary%> <% } if(id == 1){ %> #eecd80 <% } %>;"><%= cat.title.ar %></div>
 							</a>
 						<% } %>
 						<% if(lang == 'he') { %>
-							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
+							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>'); border-width: 5px; border-color: <% if(id != 1) { %> <%= menu.colors.primary%> <% } if(id == 1) { %> #eecd80 <% } %>;">
 								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.he %>"></div>
-								<div class="category"><%= cat.title.he %></div>
+								<div class="category" style="color: <% if(id == 4) { %> <%= menu.colors.secondary%> <% } if(id == 0 || id == 2 || id == 3) { %> <%= menu.colors.primary%> <% } if(id == 1){ %> #eecd80 <% } %>;"><%= cat.title.he %></div>
 							</a>
 						<% } %>
 					<% } %>
@@ -224,10 +188,10 @@ a {
 	</div>
 	<div class="btn__submit">
 		<% if(lang == 'ar') { %>
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'he') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
+		<a style="<% if(id == 1) { %> background-color: #eecd80; color:black !important;<% } %>; <% if(id != 1) { %> background: <%= menu.colors.primary %> <% } %>; <% if(lang == 'he') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>" id="b_lang">עברית</a><br/>
 		<% } %>
 		<% if(lang == 'he') { %>
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'ar') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
+		<a style="<% if(id == 1) { %> background-color: #eecd80; color:black !important;<% } %>; <% if(id != 1) { %> background: <%= menu.colors.primary %> <% } %>; <% if(lang == 'ar') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>" id="b_lang">عربي</a>
 		<% } %>
 	</div>
 	<script>
@@ -243,5 +207,6 @@ a {
 			isHidden = !isHidden;
 		}
 	</script>
+	<% if(isVisible) { %> <script>setTimeout(showMenu, 150);</script> <% isVisible = false; } %>
 </body>
 </html>

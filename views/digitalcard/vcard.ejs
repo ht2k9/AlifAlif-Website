@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title><%= vcard.business %></title>
     <style>
         body{
             margin: 0;
             text-align: center;
+            background-color: cornflowerblue;
         }
         footer {
             padding: 5px;
@@ -28,6 +29,10 @@
             align-items: center;;
             justify-content: center;
             flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .container{
             padding: 10px;
@@ -41,6 +46,7 @@
         .container img{
             margin: 0 auto;
             height: 75px;
+            border-radius: 50%;
         }
         .container p{
             margin: 0 auto;
@@ -104,6 +110,28 @@
         text-decoration: none;
         cursor: pointer;
         }
+        
+    @-webkit-keyframes glow {
+    to {
+        border-color: gold;
+        -webkit-box-shadow: 0 0 30px rgb(174, 0, 255);
+        -moz-box-shadow: 0 0 30px rgb(0, 183, 255);
+        box-shadow: 0 0 50px gold;
+    }
+}
+
+.container img:hover {
+    background-color: gold;
+    border: 1px solid transparent;
+    -webkit-animation: glow 0.5s infinite alternate;  
+    -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+    -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
+    transition: border 1.0s linear, box-shadow 1.0s linear; 
+}
+.tesst{
+    height: 100px;
+    width: 80px;
+}
     </style>
 </head>
 <body>
@@ -116,45 +144,45 @@
         <img src="<%= vcard.bg.link %>" alt="" class="background">
     <% } %>
 
-    <img id="logo" src="/vcards/<%= vcard.logo %>" alt="logo" width="100px">
+    <img id="logo" src="/vcards/<%= vcard.logo %>" alt="logo" width="100px" style="position: absolute; top:15%; left:50%; transform: translate(-50%, -50%);">
          
     <div class="wrapper">
 
         <div class="container">
             <% if(vcard.phones.length != 0) { %>
                 <% for(let i=1; i<=vcard.phones.length; i++){ let phone = vcard.phones[i-1]; %>
-                    <a href="tel:<%= phone.number %>">
-                        <img src="/images/icons/phone.webp" alt="">
+                <a class="tesst" href="tel:<%= phone.number %>">
+                        <img src="/images/icons/phone2.png" alt="">
                         <p><%= phone.title %></p>
-                    </a>
+                </a>
                 <% } %>
             <% } %>
             <% if(vcard.whatsapp != null) { %>
-                <a href="https://wa.me/<%= vcard.whatsapp.link %>">
-                    <img src="/images/icons/whatsapp.webp" alt="">
+                <a class="tesst" href="https://wa.me/<%= vcard.whatsapp.link %>">
+                    <img src="/images/icons/whatsapp2.png" alt="">
                     <p><%= vcard.whatsapp.title %></p>
                 </a>
             <% } %>
             <% if(vcard.facebook != null) { %>
-                <a href="<%= vcard.facebook.link %>">
-                    <img src="/images/icons/facebook.png" alt="">
+                <a class="tesst" href="<%= vcard.facebook.link %>">
+                    <img src="/images/icons/facebook2.png" alt="">
                     <p><%= vcard.facebook.title %></p>
                 </a>
             <% } %>
             <% if(vcard.instagram != null) { %>
-                <a href="<%= vcard.instagram.link %>">
-                    <img src="/images/icons/instagram.png" alt="">
+                <a class="tesst" href="<%= vcard.instagram.link %>">
+                    <img src="/images/icons/instagram2.png" alt="">
                     <p><%= vcard.instagram.title %></p>
                 </a>
             <% } %>
             <% if(vcard.waze != null) { %>
-                <a href="<%= vcard.waze.link %>">
-                    <img src="/images/icons/waze.png" alt="">
+                <a class="tesst" href="<%= vcard.waze.link %>">
+                    <img src="/images/icons/waze2.png" alt="">
                     <p><%= vcard.waze.title %></p>
                 </a>
             <% } %>
-                <a id="myBtn">
-                    <img src="/images/icons/clock.png" alt="">
+                <a class="tesst" id="myBtn">
+                    <img src="/images/icons/clock2.png" alt="">
                     <p>שעות עבודה</p>
                 </a>
         </div>
