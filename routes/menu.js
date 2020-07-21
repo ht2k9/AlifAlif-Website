@@ -2,7 +2,6 @@ const express = require('express');
 const fs = require('fs');
 const multer = require("multer");
 const router = express.Router();
-const isVisible = true;
 
 const upload = multer({
     dest: "public/restaurants/"
@@ -31,8 +30,22 @@ router.get('/show/:lang/:id', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
         let menus = JSON.parse(data);
-        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: req.params.lang, isVisible: isVisible});
+        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: req.params.lang, isVisible: false});
     });
+});
+
+router.post('/show/:lang/:id', (req, res) => {
+    fs.readFile('localbase/menus.json', (err, data) => {
+        if (err) throw err;
+        let menus = JSON.parse(data);
+        res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: req.params.lang, isVisible: true});
+    });
+});
+
+router.post('/cart/add', (req, res) => {
+    req.app.locals.cart.push(req.body.cartitem);
+    res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+    res.redirect('back');
 });
 
 router.get('/show/:lang/:id/:category', (req, res) => {
@@ -47,13 +60,14 @@ router.get('/show/:lang/:id/:category', (req, res) => {
             }
         });
 
-        res.render('menu/foods', {id: req.params.id, lang: req.params.lang, category: menu.categories[req.params.category], foods: foods, lang: req.params.lang});
+        res.render('menu/foods', {id: req.params.id, lang: req.params.lang, category: menu.categories[req.params.category], foods: foods, lang: req.params.lang, darkmode: menu.darkmode});
     });
 });
 
 router.get('/add', (req, res) => {
     res.render('menu/new-menu', {menu: null});
 });
+
 
 // NEW
 router.post('/add', upload.single('logo'), (req, res) => {
@@ -65,6 +79,7 @@ router.post('/add', upload.single('logo'), (req, res) => {
             {
                 business: {he: req.body.businessHE, ar: req.body.businessAR},
                 colors: {primary: req.body.primary, secondary: req.body.secondary},
+                darkmode: req.body.darkmode,
                 categories: [],
                 foods: [],
             }

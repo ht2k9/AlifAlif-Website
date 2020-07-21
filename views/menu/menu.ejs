@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/custom_cart.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 body {
 	margin: 0;
@@ -114,17 +116,18 @@ a {
 	 font-size: 3.5vmin;
 }
 .btn {
-	 border: none;
- 	 color: white;
-	 padding: 5pt 30pt;
-	 vertical-align: middle;
-	 text-align: center;
-	 text-decoration: none;
-	 display: inline-block;
-	 font-size: 16px;
-	 margin: 4px 2px;
-	 cursor: pointer;
-	 border-radius: 10px 10px 10px 10px;
+	border: solid 2px #bc9548;
+    color: white;
+    padding: 5pt 30pt;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0px;
+    cursor: pointer;
+	border-radius: 10px 0px 0px 10px;
+	float:right;
 }
  #inspired {
 	 position: fixed;
@@ -188,13 +191,6 @@ a {
     <title><%= menu.colors.business %></title>
 </head>
 <body  style="background: <%= menu.colors.secondary %>">
-	<% if (id == 3) { %>
-		<div class="link" id="link-3"><a class="b_link" href="/menu/show/<%= lang %>/<%= 7-id %>">פרסטו</a></div>
-	<% } %>	
-	<% if (id == 4) { %>
-		<div class="link" id="link-4"><a class="b_link" href="/menu/show/<%= lang %>/<%= 7-id %>">מסעדה</a></div>
-	<% } %>
-	
 	<div id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
 		<div class="app__top_block"  onclick="showMenu()">
 			<img src="/restaurants/<%= menu.logo %>" style="max-width: 200px;"/>
@@ -222,15 +218,26 @@ a {
 		</div>
 
 	</div>
+	
+	
 	<div class="btn__submit">
-		<% if(lang == 'ar') { %>
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'he') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
+        <% if(lang == 'ar') { %>
+        <a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %> <%= menu.colors.primary %>; <% if(id != '1') { %> border-color: <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
+        <% } %>
+        <% if(lang == 'he') { %>
+        <a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %> <% if(id != '1') { %> border-color: <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
 		<% } %>
-		<% if(lang == 'he') { %>
-		<a style="background: <%= menu.colors.primary %>; <% if(lang == 'ar') { %> color:  <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
-		<% } %>
-	</div>
+		<%- include cart %>
+    </div>
+
 	<script>
+
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 
 		let isHidden = true;
 
