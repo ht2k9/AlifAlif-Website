@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
     <title><%= vcard.business %></title>
     <style>
         body{
-            background:linear-gradient(to bottom right, <%= vcard.colors.primary %>, <%= vcard.colors.secondary %>); 
-            background-attachment: fixed;
+            margin: 0;
+            text-align: center;
+            background-color: cornflowerblue;
         }
         footer {
             padding: 5px;
@@ -51,7 +51,7 @@
         .container p{
             margin: 0 auto;
             float: none;
-            font-size: 12pt;
+            font-size: 12px;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 5px;
             color: white;
@@ -112,15 +112,17 @@
         }
         
     @-webkit-keyframes glow {
-
-        to {
-            
-            box-shadow: 0 0 50pt <%= vcard.colors.secondary %>;
-        }
+    to {
+        border-color: gold;
+        -webkit-box-shadow: 0 0 30px rgb(174, 0, 255);
+        -moz-box-shadow: 0 0 30px rgb(0, 183, 255);
+        box-shadow: 0 0 50px gold;
     }
+}
 
 .container img:hover {
-    background: radial-gradient(<%= vcard.colors.secondary %>, <%= vcard.colors.primary %>);
+    background-color: gold;
+    border: 1px solid transparent;
     -webkit-animation: glow 0.5s infinite alternate;  
     -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
     -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
@@ -150,7 +152,7 @@
             <% if(vcard.phones.length != 0) { %>
                 <% for(let i=1; i<=vcard.phones.length; i++){ let phone = vcard.phones[i-1]; %>
                 <a class="tesst" href="tel:<%= phone.number %>">
-                        <img src="/images/icons/phone3.png" alt="">
+                        <img src="/images/icons/phone2.png" alt="">
                         <p><%= phone.title %></p>
                 </a>
                 <% } %>
@@ -163,19 +165,19 @@
             <% } %>
             <% if(vcard.facebook != null) { %>
                 <a class="tesst" href="<%= vcard.facebook.link %>">
-                    <img src="/images/icons/facebook3.png" alt="">
+                    <img src="/images/icons/facebook2.png" alt="">
                     <p><%= vcard.facebook.title %></p>
                 </a>
             <% } %>
             <% if(vcard.instagram != null) { %>
                 <a class="tesst" href="<%= vcard.instagram.link %>">
-                    <img src="/images/icons/instagram3.png" alt="">
+                    <img src="/images/icons/instagram2.png" alt="">
                     <p><%= vcard.instagram.title %></p>
                 </a>
             <% } %>
             <% if(vcard.waze != null) { %>
                 <a class="tesst" href="<%= vcard.waze.link %>">
-                    <img src="/images/icons/waze3.png" alt="">
+                    <img src="/images/icons/waze2.png" alt="">
                     <p><%= vcard.waze.title %></p>
                 </a>
             <% } %>
