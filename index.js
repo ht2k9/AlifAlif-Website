@@ -11,6 +11,9 @@ const menu = require('./routes/menu.js');
 const quiz = require('./routes/quiz.js');
 
 const app = express();
+app.locals = {
+    cart: []
+};
 
 app.set('view engine' , 'ejs');
 app.use(compression());
