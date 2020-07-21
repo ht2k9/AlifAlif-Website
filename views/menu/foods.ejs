@@ -11,8 +11,6 @@
 	<link rel="stylesheet" href="/style.css" type="text/css" />
 	<link rel="stylesheet" href="/dark.css" type="text/css" />
 
-	<link rel="stylesheet" href="/css/custom_cart.css" type="text/css" />
-
 	<link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="/css/responsive.css" type="text/css" />
 	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
@@ -76,15 +74,6 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 		}
-		.video-preview-container{
-			position: relative;
-			width: 100%;
-		}
-		.video-preview{
-			width: 100%;
-			height: auto;
-		}
-
 	</style>
 
 	<!-- Document Title
@@ -95,11 +84,12 @@
 
 <body class="stretched dark no-transition" 
 <% if(id == 1 || id == 2) { %> style="background-color: #111 !important;"<% } %>
+
 >
 
 	<!-- Document Wrapper
 	============================================= -->
-	<div id="wrapper" class="clearfix"  <% if(darkmode == "true") { %> style="background-color: #111 !important;" <% } %>>
+	<div id="wrapper" class="clearfix">
 
 		<!-- Page Title
 		============================================= -->
@@ -119,6 +109,7 @@
 		<!-- Content
 		============================================= -->
 		<section id="content" style="overflow: inherit;" class="dark">
+
 			<div class="content-wrap p-0 dark">
 
 				<div class="recipe-itmes">
@@ -241,15 +232,6 @@
 		</section><!-- #content end -->
 
 	</div><!-- #wrapper end -->
-
-<script>
-window.addEventListener("load",function() {
-    setTimeout(function(){
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-    }, 0);
-});
-</script>
 
 	<!-- Go To Top
 	============================================= -->

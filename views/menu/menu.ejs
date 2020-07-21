@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/css/custom_cart.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 body {
 	margin: 0;
@@ -190,8 +188,6 @@ a {
 		</div>
 
 	</div>
-	
-	
 	<div class="btn__submit">
 		<% if(lang == 'ar') { %>
 		<a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %> <%= menu.colors.primary %>; <% if(id != '1') { %> border-color: <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
@@ -201,13 +197,6 @@ a {
 		<% } %>
 	</div>
 	<script>
-
-window.addEventListener("load",function() {
-    setTimeout(function(){
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-    }, 0);
-});
 
 		let isHidden = true;
 
