@@ -29,6 +29,10 @@
             align-items: center;;
             justify-content: center;
             flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .container{
             padding: 10px;
@@ -43,7 +47,6 @@
             margin: 0 auto;
             height: 75px;
             border-radius: 50%;
-           
         }
         .container p{
             margin: 0 auto;
@@ -109,6 +112,7 @@
         }
         
     @-webkit-keyframes glow {
+
         to {
             
             box-shadow: 0 0 50pt <%= vcard.colors.secondary %>;
@@ -138,7 +142,7 @@
         <img src="<%= vcard.bg.link %>" alt="" class="background">
     <% } %>
 
-    <img id="logo" src="/vcards/<%= vcard.logo %>" alt="logo" width="100px">
+    <img id="logo" src="/vcards/<%= vcard.logo %>" alt="logo" width="100px" style="position: absolute; top:15%; left:50%; transform: translate(-50%, -50%);">
          
     <div class="wrapper">
 
@@ -148,12 +152,12 @@
                 <a class="tesst" href="tel:<%= phone.number %>">
                         <img src="/images/icons/phone3.png" alt="">
                         <p><%= phone.title %></p>
-                    </a>
+                </a>
                 <% } %>
             <% } %>
             <% if(vcard.whatsapp != null) { %>
-                <a href="https://wa.me/<%= vcard.whatsapp.link %>">
-                    <img src="/images/icons/whatsapp.webp" alt="">
+                <a class="tesst" href="https://wa.me/<%= vcard.whatsapp.link %>">
+                    <img src="/images/icons/whatsapp2.png" alt="">
                     <p><%= vcard.whatsapp.title %></p>
                 </a>
             <% } %>
@@ -175,8 +179,8 @@
                     <p><%= vcard.waze.title %></p>
                 </a>
             <% } %>
-                <a id="myBtn">
-                    <img src="/images/icons/clock.png" alt="">
+                <a class="tesst" id="myBtn">
+                    <img src="/images/icons/clock2.png" alt="">
                     <p>שעות עבודה</p>
                 </a>
         </div>

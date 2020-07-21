@@ -19,6 +19,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/recipes.css" type="text/css" /> <!-- Theme Custom CSS -->
 
 	<style>
@@ -37,8 +38,16 @@
 		.badge {
 			font-size: 100%;
 		}
-		#white-text{
-			color: white;
+		.note{
+			direction: rtl;
+			margin: 1vmin;
+			position: relative;
+			width: 100%;
+			font-style: italic;
+			text-align: center;
+			font-weight: bold;
+			font-family: 'Times New Roman', Times, serif;
+			font-size: 20px;
 		}
 		.drinks-no-pics{			
 			padding: 10px;
@@ -63,7 +72,7 @@
 			position: absolute;
 			height: 6em;
 			width: 6em;
-			top: 50%;
+			top: 28%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 		}
@@ -85,7 +94,7 @@
 </head>
 
 <body class="stretched dark no-transition" 
-<% if(darkmode == "true") { %> style="background-color: #111 !important;"<% } %>
+<% if(id == 1 || id == 2) { %> style="background-color: #111 !important;"<% } %>
 >
 
 	<!-- Document Wrapper
@@ -113,8 +122,8 @@
 			<div class="content-wrap p-0 dark">
 
 				<div class="recipe-itmes">
-					<div class="row no-gutters clearfix"  <% if(darkmode == "true") { %> style="background-color: #111 !important;" <% } %>>
-					<div class="col-lg-9 border-right-0 bg-white" <% if(darkmode == "true") { %> style="background-color: #111 !important; border: #111" <% } %>>
+					<div class="row no-gutters clearfix"  <% if(id == 1 || id == 2) { %> style="background-color: #111 !important;" <% } %>>
+					<div class="col-lg-9 border-right-0 bg-white" <% if(id == 1 || id == 2) { %> style="background-color: #111 !important; border: #111" <% } %>>
 						<% if(!(id == 1 && category.title.ar == 'مشروبات الماس')) { %>
 							<div class="row no-gutters" >
 								<% let food; for(let i=0; i<foods.length; i++){ food = foods[i] %>
@@ -124,40 +133,65 @@
 											<div class="card-body">
 												<% if(lang == 'ar') { %>
 													<% if(id == 1 && food.category == 4 && (food.title.ar == 'رقبة خروف' || food.title.ar == 'موزة خروف' || food.title.ar == 'فخارة الماس' || food.title.ar == 'كباب الماس')) { %>
-														<a href="/restaurants/<%= food.video %>" data-lightbox="iframe" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.ar %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.ar %></p>"><div class="video-preview-container"><img class="video-preview" src="/restaurants/<%= food.image %>" alt="food Image"><img class="play-icon" src="/restaurants/play-icon.png"></div></a>
+														<a href="/restaurants/<%= food.video %>" data-lightbox="iframe" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.ar %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.ar %></p>"><img class="play-icon" src="/restaurants/play-icon.png"><img src="/restaurants/<%= food.image %>" alt="food Image"></a>
 														<% } else { %>
 														<a href="/restaurants/<%= food.image %>" data-lightbox="image" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.ar %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.ar %></p>"><img src="/restaurants/<%= food.image %>" alt="food Image"></a>
 														<% } %>
 													<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-														<p class="card-author"><a href="#"><span <% if(darkmode == "true") { %>  id="darktheme-text" <% } %>><%= category.title.ar %></span></a></p>
+														<p class="card-author"><a href="#"><span <% if(id == 1 || id == 2) { %>  id="darktheme-text" <% } %>><%= category.title.ar %></span></a></p>
 														<span class="badge badge-primary bgcolor">₪ <%= food.price %></span>
 													</div>
-													<h3 class="card-title" style="text-align: center; direction: rtl;" <% if(darkmode == "true") { %>  id="darktheme-text" <% } %>><%= food.title.ar %></h3>
-													<h5 class="card-date" style="text-align: right; direction: rtl;" <% if(darkmode == "true") { %>  id="darktheme-text" <% } %>> <% if(food.description.ar != '') { %> <i class="icon-line2-info"></i> <%= food.description.ar %> <% } %> <% if(id == 2 && (food.category == 1 || food.category == 2)) { %> </br> يشمل تشيبس <% } %></h5>
-													<br/><div style="direction: rtl; text-align: center;"><form action="/menu/cart/add" method="POST"><input name="cartitem" type="text" value="<%= food.title.ar %>" hidden>
-														<input style="margin-right: 1rem; font-size: 12pt; font-weight: bold; border-color: #009de0; background-color: #009de0; border-radius: 30%;" type="submit" value="إضافة"></form></div>
+													<h3 class="card-title" style="text-align: center; direction: rtl;" <% if(id == 1 || id == 2) { %>  id="darktheme-text" <% } %>><%= food.title.ar %></h3>
+													<h5 class="card-date" style="text-align: right; direction: rtl;" <% if(id == 1 || id == 2) { %>  id="darktheme-text" <% } %>> <% if(food.description.ar != '') { %> <i class="icon-line2-info"></i> <%= food.description.ar %> <% } %> </h5>
+													
 												<% } if(lang == 'he') { %>
 													<% if(id == 1 && food.category == 4 && (food.title.ar == 'رقبة خروف' || food.title.ar == 'موزة خروف' || food.title.ar == 'فخارة الماس' || food.title.ar == 'كباب الماس')) { %>
-														<a href="/restaurants/<%= food.video %>" data-lightbox="iframe" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.he %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.he %></p>"><div class="video-preview-container"><img class="video-preview" src="/restaurants/<%= food.image %>" alt="food Image"><img class="play-icon" src="/restaurants/play-icon.png"></div></a>
+														<a href="/restaurants/<%= food.video %>" data-lightbox="iframe" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.he %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.he %></p>"><img class="play-icon" src="/restaurants/play-icon.png"><img src="/restaurants/<%= food.image %>" alt="food Image"></a>
 														<% } else { %>
 														<a href="/restaurants/<%= food.image %>" data-lightbox="image" title="<h2 style='color: white; margin-bottom: 14px;'> <%= food.title.he %></h2> <span style='float:left;' class='badge badge-primary bgcolor'>₪<%= food.price %></span> <p style='font-size: 20px; line-height: 20px;'><%= food.description.he %></p>"><img src="/restaurants/<%= food.image %>" alt="food Image"></a>
 														<% } %>
 													<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
-														<p class="card-author"><a href="#"><span  <% if(darkmode == "true") { %>  id="darktheme-text" <% } %>><%= category.title.he %></span></a></p>
+														<p class="card-author"><a href="#"><span  <% if(id == 1 || id == 2) { %>  id="darktheme-text" <% } %>><%= category.title.he %></span></a></p>
 														<span class="badge badge-primary bgcolor">₪ <%= food.price %></span>
 													</div>
 													
-													<h3 class="card-title" style="text-align: center; direction: rtl;" <% if(darkmode == "true") { %>  id="darktheme-text" <% } %>><%= food.title.he %></h3>
-													<h5 class="card-date" style="text-align: right; direction: rtl;" <% if(darkmode == "true") { %>  id="darktheme-text" <% } %>> <% if(food.description.he != '') { %> <i class="icon-line2-info"></i> <%= food.description.he %> <% } %> <% if(id == 2 && (food.category == 1 || food.category == 2)) { %> </br> כולל צ'יפס <% } %></h5>
-													<br/><div style="direction: rtl; text-align: center;"><form action="/menu/cart/add" method="POST"><input name="cartitem" type="text" value="<%= food.title.he %>" hidden>
-														<input style="margin-right: 1rem; font-size: 12pt; font-weight: bold; border-color: #009de0; background-color: #009de0; border-radius: 30%;" type="submit" value="הוספה"> </form></div>
-													<% } %>
+													<h3 class="card-title" style="text-align: center; direction: rtl;" <% if(id == 1 || id == 2) { %>  id="darktheme-text" <% } %>><%= food.title.he %></h3>
+													<h5 class="card-date" style="text-align: right; direction: rtl;" <% if(id == 1 || id == 2) { %>  id="darktheme-text" <% } %>> <% if(food.description.he != '') { %> <i class="icon-line2-info"></i> <%= food.description.he %> <% } %> </h5>
+												<% } %>
 											</div>
 										</div>
 									</div>
 								<% } %>
-								<div class="col-12 d-flex justify-content-end p-4">
-									<a href="/menu/show/<%= lang %>/<%= id %>" class="button button-circle m-0 tright"><i class="icon-angle-left"></i></a>
+								<% if(id == 4 && food.category == 2) { %>
+									<% if(lang == 'ar') { %>
+										<p class="note"><i class="icon-line2-info"></i> جميع الوجبات تشمل الللبن المطبوخ + السلطات + السلطات البيتيه</p>
+									<% } %>
+									<% if(lang == 'he') { %>
+										<p class="note"><i class="icon-line2-info"></i> כל הארוחות כוללות יוגורט מבושל + סלטים + סלטים ביתיים</p>
+									<% } %>
+								<% } %>	
+								<% if(id == 4 && food.category == 3) { %>
+									<% if(lang == 'ar') { %>
+										<p class="note"><i class="icon-line2-info"></i> جميع الوجبات تشمل السلطات البيتية,
+										<br/>صلصات حسب الطلب: كريمة بالفقع, كريمة بالفلفل, تشيميتشوري, صلصة الرمان</p>
+									<% } %>
+									<% if(lang == 'he') { %>
+										<p class="note"><i class="icon-line2-info"></i> כל הארוחות כוללות סלטים ביתיים,
+										<br/>רוטבים לפי בחירה: שמנת עם פטריות, שמנת עם פלפל, צ'ימיצ'ורי, רוטב רימונים</p>
+									<% } %>
+								<% } %>
+								<% if(id == 4 && food.category == 4) { %>
+									<% if(lang == 'ar') { %>
+										<p class="note"><i class="icon-line2-info"></i> جميع الوجبات تشمل السلطات البيتية,
+										<br/>صلصات حسب الطلب: ثوم وليمون, ليمون نعنع, كريمة بالليمون, زعفران</p>
+									<% } %>
+									<% if(lang == 'he') { %>
+										<p class="note"><i class="icon-line2-info"></i> כל הארוחות כוללות סלטים ביתיים,
+										<br/>רוטבים לפי בחירה: שום-לימון, לימונענע, רוטב לימון, זעפרן</p>
+									<% } %>
+								<% } %>
+								<div class="col-12 d-flex justify-content-end p-4"><form method="POST" action="/menu/show/<%= lang %>/<%= id %>">
+									<button href="/menu/show/<%= lang %>/<%= id %>" class="button button-circle m-0 tright" name="backtomenu"><i class="icon-angle-left"></i></button></form>
 								</div>
 							</div>
 						<% } %>
@@ -179,21 +213,14 @@
 										<td class="td-title"> <% if(lang == 'ar') { %> كبير <% } if(lang == 'he') { %> גדול <% } %> </td>
 										<td class="td-title"> <% if(lang == 'ar') { %> مشروبات غازية <% } if(lang == 'he') { %> משקאות מוגזים <% } %> </td></tr>
 										<% } %>
-
 										<tr style="width:100%; border-bottom:solid;">
-										<td><span class="badge badge-primary bgcolor">₪ <%= food.price.small %></span>
-											<div style="direction: rtl; text-align: center;"><form style="margin-bottom: 0;" action="/menu/cart/add" method="POST">
-												<input name="cartitem" type="text" value="<% if(lang == 'ar') { %> <%= food.title.ar %> صغير <% } if(lang == 'he') { %> <%= food.title.he %> קטן <% } %>" hidden>
-												<input style="margin-right: 1rem; font-size: 12pt; font-weight: bold; border-color: #009de0; background-color: #009de0; border-radius: 30%;" type="submit" value="إضافة"></form></div></td>
-										<td><span class="badge badge-primary bgcolor">₪ <%= food.price.large %></span>
-											<div style="direction: rtl; text-align: center;"><form style="margin-bottom: 0;" action="/menu/cart/add" method="POST">
-												<input name="cartitem" type="text" value="<% if(lang == 'ar') { %> <%= food.title.ar %> كبير <% } if(lang == 'he') { %> <%= food.title.he %> גדול <% } %>" hidden>
-												<input style="margin-right: 1rem; font-size: 12pt; font-weight: bold; border-color: #009de0; background-color: #009de0; border-radius: 30%;" type="submit" value="إضافة"></form></div></td>
+										<td><span class="badge badge-primary bgcolor">₪ <%= food.price.small %></span></td>
+										<td><span class="badge badge-primary bgcolor">₪ <%= food.price.large %></span></td>
 										<td>
 										<% if(lang == 'ar') { %>
-										<h3 style="font-size: 12pt !important; width:auto; display:flex; margin-bottom: 0; text-align: right; direction: rtl;" <% if(darkmode == 'true') { %>  id="darktheme-text" <% } %>><%= food.title.ar %></h3>
+										<h3 style="font-size: 12pt !important; width:auto; display:flex; margin-bottom: 0; text-align: right; direction: rtl;" <% if(id == 1) { %>  id="darktheme-text" <% } %>><%= food.title.ar %></h3>
 										<% } if(lang == 'he') { %>
-										<h3 style="font-size: 12pt !important; width:auto; display:flex; margin-bottom: 0; text-align: right; direction: rtl;" <% if(darkmode == 'true') { %>  id="darktheme-text" <% } %>><%= food.title.he %></h3>
+										<h3 style="font-size: 12pt !important; width:auto; display:flex; margin-bottom: 0; text-align: right; direction: rtl;" <% if(id == 1) { %>  id="darktheme-text" <% } %>><%= food.title.he %></h3>
 										<% } %>
 										</td>
 										</tr>
@@ -211,7 +238,6 @@
 					</div>
 				</div>
 			</div>
-
 		</section><!-- #content end -->
 
 	</div><!-- #wrapper end -->

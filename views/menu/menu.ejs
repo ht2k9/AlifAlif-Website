@@ -126,8 +126,7 @@ a {
     font-size: 16px;
     margin: 10px 0px;
     cursor: pointer;
-	border-radius: 10px 0px 0px 10px;
-	float:right;
+    border-radius: 10px 0px 0px 10px;
 }
  #inspired {
 	 position: fixed;
@@ -152,41 +151,13 @@ a {
 }
 
 .category {
-	color: #FFF;
-    padding-left: 10px;
-    font-size: 18px;
+	color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 22px;
+	font-weight: bold;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-.link{
-	position: absolute;
-	top: 0;
-	z-index: 1;	
-	height: wrap;
-	width: wrap;	
-	align-items: center;
-	border-radius: 10pt;
-}
-#link-3{
-	background-image: linear-gradient(to bottom, #382f00 40%, #085f1e)
-}
-#link-4{
-	background-image: linear-gradient(to bottom, #085f1e, #382f00)
-}
-.b_link{
-	background-color: inherit;
-	padding: 3pt 8pt 3pt 8pt;
-	color: white;
-	font-size: 14pt;
-	font-weight: bold;
-	border-radius: 10pt;
-	padding-left: 8pt;
-	padding-bottom: 20pt;
-	padding-right: 8pt;
-	text-align: center;
-	line-height: 30pt;
-	display: inline-block;
-}
- 
     </style>
     <title><%= menu.colors.business %></title>
 </head>
@@ -200,20 +171,21 @@ a {
 				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
 					<% for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
 						<% if(lang == 'ar') { %> 
-							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
-								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.ar %>"></div>
-								<div class="category"><%= cat.title.ar %></div>
+							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="<% if(id == '1') { %> border-color: #ffbe42; <% } %> background-image: url('/restaurants/<%= cat.image %>');">
+								<div style="<% if(id == '1') { %>     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+									radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%); <% } %>"  class="icon" ><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.ar %>"></div>
+								<div class="category" style="<% if(id == '1') { %> color: #ffcd6e <% } %>"><%= cat.title.ar %></div>
 							</a>
 						<% } %>
 						<% if(lang == 'he') { %>
-							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="background-image: url('/restaurants/<%= cat.image %>');">
-								<div class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.he %>"></div>
-								<div class="category"><%= cat.title.he %></div>
+							<a href="/menu/show/he/<%= id %>/<%= i %>" class="selection" style="<% if(id == '1') { %> border-color: #ffbe42; <% } %> background-image: url('/restaurants/<%= cat.image %>');">
+								<div style="<% if(id == '1') { %>     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+									radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%); <% } %>"  class="icon"><img src="/demos/recipes/images/icons/<%= cat.icon %>.svg" alt="<%= cat.title.he %>"></div>
+								<div class="category" style="<% if(id == '1') { %> color: #ffcd6e <% } %>"><%= cat.title.he %></div>
 							</a>
 						<% } %>
 					<% } %>
 				</div>
-				<div class="btn__submit"></div>
 			</div>
 		</div>
 
@@ -221,15 +193,13 @@ a {
 	
 	
 	<div class="btn__submit">
-        <% if(lang == 'ar') { %>
-        <a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %> <%= menu.colors.primary %>; <% if(id != '1') { %> border-color: <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
-        <% } %>
-        <% if(lang == 'he') { %>
-        <a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %> <% if(id != '1') { %> border-color: <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
+		<% if(lang == 'ar') { %>
+		<a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %> <%= menu.colors.primary %>; <% if(id != '1') { %> border-color: <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/he/<%= id %>">עברית</a><br/>
 		<% } %>
-		<%- include cart %>
-    </div>
-
+		<% if(lang == 'he') { %>
+		<a style="background: <%= menu.colors.primary %>; <% if(id == '1') { %> color: #ffe2ae; <% } %> <% if(id != '1') { %> border-color: <%= menu.colors.secondary %> <% } %>" class="btn" href="/menu/show/ar/<%= id %>">عربي</a>
+		<% } %>
+	</div>
 	<script>
 
 window.addEventListener("load",function() {
@@ -250,5 +220,6 @@ window.addEventListener("load",function() {
 			isHidden = !isHidden;
 		}
 	</script>
+	<% if(isVisible) { %> <script>setTimeout(showMenu, 150);</script> <% isVisible = false; } %>
 </body>
 </html>
