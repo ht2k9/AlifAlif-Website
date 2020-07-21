@@ -74,6 +74,9 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 		}
+		.nott {
+			text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+		}
 	</style>
 
 	<!-- Document Title
@@ -98,8 +101,19 @@
 			<div class="container clearfix">
 				<div class="row">
 					<div class="col-md-7">
-						<% if(lang == 'ar') {%> <h1 class="nott mb-5" data-animate="zoomIn"><%= category.title.ar %></h1> <% } %>
-						<% if(lang == 'he') {%> <h1 class="nott mb-5" data-animate="zoomIn"><%= category.title.he %></h1> <% } %>
+						<% if(lang == 'ar') { %> 
+							<h1 class="nott mb-5" data-animate="zoomIn"><%= category.title.ar %></h1>
+							<% if(typeof category.discription !== 'undefined') { %>
+								<p href="" class="button button-large button-light button-white button-circle m-0 px-5"><%= category.discription.ar %></p>
+							<% } %>
+						<% } %>
+						<% if(lang == 'he') { %> 
+							<h1 class="nott mb-5" data-animate="zoomIn"><%= category.title.he %></h1>
+							<% if(typeof category.discription !== 'undefined') { %>
+								<p href="" class="button button-large button-light button-white button-circle m-0 px-5"><%= category.discription.he %></p>
+							<% } %>
+						<% } %>
+						
 					</div>
 				</div>
 			</div>
