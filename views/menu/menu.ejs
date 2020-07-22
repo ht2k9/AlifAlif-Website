@@ -159,14 +159,25 @@ a {
     </style>
     <title><%= menu.colors.business %></title>
 </head>
-<body  style="background: <%= menu.colors.secondary %>">
+<body  
+	<% if(id == 1) { %> 
+		style="background: radial-gradient(ellipse farthest-corner at right bottom, #7e662e 0%, #97752b 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+		radial-gradient(ellipse farthest-corner at left top, #765e28 0%, #b29851 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);"
+	<% } %>
+	style="<% if(id != 1) { %> background: <%= menu.colors.secondary %><% } %>">
 	<div id="app" style="background-image: linear-gradient(<%= menu.colors.primary %> 0%, <%= menu.colors.secondary %> 100%)"  id="logo">
 		<div class="app__top_block"  onclick="showMenu()">
 			<img src="/restaurants/<%= menu.logo %>" style="max-width: 200px;"/>
+			<img id="click_gify" src="/restaurants/click.gif" style="width: 200px; top:45%;">
 		</div>
 		<div class="app__bottom_block" id="buttom">
 			<div class="bottom_block__form">
-				<div class="from__selection" style="background: <%= menu.colors.secondary %>;">
+				<div class="from__selection" 
+				<% if(id == 1) { %> 
+					style="background: radial-gradient(ellipse farthest-corner at right bottom, #7e662e 0%, #97752b 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+					radial-gradient(ellipse farthest-corner at left top, #765e28 0%, #b29851 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);"
+				<% } %>
+				style="background: <%= menu.colors.secondary %>;">
 					<% for(let i=0; i<menu.categories.length; i++){ let cat = menu.categories[i] %>
 						<% if(lang == 'ar') { %> 
 							<a href="/menu/show/ar/<%= id %>/<%= i %>" class="selection" style="<% if(id == '1') { %> border-color: #ffbe42; <% } %> background-image: url('/restaurants/<%= cat.image %>');">
@@ -201,11 +212,14 @@ a {
 		let isHidden = true;
 
 		function showMenu(){
-			if(isHidden){
+			if(isHidden) {
 				document.getElementsByClassName('app__bottom_block')[0].style.marginBottom = '0';
+				document.getElementById('click_gify').style.display = 'none';
 			}
-			else
+			else {
 				document.getElementsByClassName("app__bottom_block")[0].style.marginBottom = '-70vh';
+				document.getElementById('click_gify').style.display= 'block';
+			}
 			isHidden = !isHidden;
 		}
 	</script>
