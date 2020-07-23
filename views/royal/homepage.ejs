@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/navmenu.css">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/home.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+<body>
+<header>
+  <h1> מאפיית רויאל </h1>
+</header>
+<hr>
+<!-- Menu -->
+<div id="mySidenav" class="sidenav">
+    test
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <button type="button" class="collapsible"> לקוחות </button>
+    <div class="content">
+    <a target="mainview" href="clients" onclick="closeNav()"> הצג לקוחות </a>
+    <a target="mainview" href="forms/#add_client" onclick="closeNav()"> הוסף לקוח חדש </a>
+    </div>
+
+    <a target="mainview" href="forms/#report" onclick="closeNav()"> דוחות </a>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; תפריט ראשי </span>
+
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  let cont = document.getElementsByClassName("content");
+  for(let i = 0; i < cont.length; i++){
+      cont[i].style.maxHeight = null;
+  }
+}
+
+
+let coll = document.getElementsByClassName("collapsible");
+let i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<!-- iframe -->
+<section class="main">
+    <iframe name="mainview" src="/royal/clients"></iframe>
+</section>
+
+</body>
+</html> 

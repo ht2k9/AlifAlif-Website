@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/forms.css">
+</head>
+<body>
+
+<!-- Client form -->
+<div id="add_client">
+<header>
+    <h1> לקוח חדש </h1>
+</header>
+<form action="" method="POST">
+    <label> שם: </label> <input type="text" name="client_name"><br/><br/>
+    <label> מס' זהות: </label> <input type="text" name="client_id"><br/><br/>
+    <label> כתובת: </label> <input type="text" name="client_address"><br/><br/>
+    <label> מספר טלפון: </label> <input type="text" name="client_phone"><br/><br/><br/>
+    <input type="reset" value="מחק הכל"> <input type="submit" value="אישור">
+</form>
+</div>
+
+
+<!-- Order form -->
+<!-- Missing products -->
+<div id="add_order">
+<header>
+    <h1> הזמנה חדשה </h1>
+</header>
+<form action="" method="POST">
+    <label> מס' זהות הזמנה: </label> <input type="text" name="order_id"><br/><br/>
+    <label> מס' זהות מזמין: </label> <input type="text" name="order_client_id"><br/><br/>
+    <label> תאריך הזמנה: </label> <input type="date" name="order_date"><br/><br/>
+    <label> תאריך אספקה: </label> <input type="date" name="order_provide_date"><br/><br/>
+
+    <label> סה"כ: </label> <input type="text" name="order_total"><br/><br/><br/>
+    <input type="reset" value="מחק הכל"> <input type="submit" value="אישור">
+</form>
+</div>
+
+
+<!-- Report form -->
+<!-- Missing clients -->
+<div id="report">
+<header>
+    <h1> דוח </h1>
+</header>
+<form action="" method="POST">
+    <label> מתאריך </label> <input type="date" name="report_from"> 
+    <label> על לתאריך </label> <input type="date" name="report_to"><br/><br/>
+    <input type="checkbox" name="report_order"><label> חפש לפי תאריך הזמנה </label><br/><br/>
+    <input type="checkbox" name="report_provide"><label> חפש לפי תאריך אספקה </label><br/><br/><br/>
+    <input type="reset" value="מחק הכל"> <input type="submit" value="אישור">
+</form>
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/orders.css">
+</head>
+<body>
+<header>
+  <h1> הזמנה מס' <%= order.id %> </h1>
+</header>
+<hr>
+<table>
+  <tr><td> מס' </td><td> מוצר </td><td> כמות </td><td> מחיר ליחידה </td><td> סה"כ </td></tr>
+  <% for(let i = orders.length - 1; i >= 0; i--) { %>
+    <tr>
+      <td class="num"> <%= orders.length - i %> </td>
+      <td class="tdataname">
+    <button type="button" class="collapsible"> <%= orders[i].id %> </button>
+    <div class="content">
+    <a target="mainview" href=""> הצג מוצרים עבור הזמנה </a><br>
+    <a target="mainview" href=""> תיקון הזמנה </a>
+    </div>   
+      </td>
+      <td class="tdata"> <%= orders[i].orderdate %> </td>
+      <td class="tdata"> <%= orders[i].providedate %> </td>
+      <td class="tdata"> <%= orders[i].total %> </td>
+    </tr>
+    <% } %>
+</table>
+<script>
+
+let coll = document.getElementsByClassName("collapsible");
+let i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      content.style.border = "none";
+    } else {
+      let cont = document.getElementsByClassName("content");
+      for(let j = 0; j < cont.length; j++){
+        cont[j].style.maxHeight = null;
+        cont[j].style.border = "none";
+      }
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.style.border = "2px solid #0000FF";
+    } 
+  });
+}
+</script>
+</body>
+</html>

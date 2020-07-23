@@ -9,6 +9,7 @@ const fs = require('fs');
 const digitalcard = require('./routes/digitalcard.js');
 const menu = require('./routes/menu.js');
 const quiz = require('./routes/quiz.js');
+const royal = require('./routes/royal.js');
 
 const app = express();
 
@@ -61,6 +62,7 @@ app.get('/newgrid', (req, res) => {
     res.render('newgrid');
 });
 
+
 // ************************************** Digital Card **************************************/
 app.use('/digitalcard', digitalcard);
 
@@ -69,6 +71,9 @@ app.use('/menu', menu);
 
 // ***************************************************** QUIZ ****************************************/
 app.use('/quiz', quiz);
+
+// ***************************************************** Royal ****************************************/
+app.use('/royal', royal);
 
 app.get('/keyadakadera', (req, res) => {
     fs.readFile('localbase/questions.json', (err, dataQ) => {

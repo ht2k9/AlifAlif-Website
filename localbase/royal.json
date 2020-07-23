@@ -1,0 +1,88 @@
+[
+    {
+        "clients": [
+            {
+                "name": "t",
+                "id": "t",
+                "phone": "t",
+                "address": "t"
+            },
+            {
+                "name": "s",
+                "id": "s",
+                "phone": "s",
+                "address": "s"
+            }
+        ]
+    },
+    {
+        "products": [
+            {
+                "description":"bread"
+            },
+            {
+                "description":"bun"
+            }
+        ]
+    },
+    {
+        "orders": [
+            {
+                "id": "878",
+                "clientid": "s",
+                "orderdate": "10/10/2010",
+                "providedate": "-",
+                "orderproducts": [
+                    {
+                        "description":"",
+                        "quantity":"",
+                        "price":""
+                    }
+                ],
+                "total": "800"
+            },
+            {
+                "id": "325",
+                "clientid": "t",
+                "orderdate": "20/5/2022",
+                "providedate": "",
+                "orderproducts": [
+                    {
+                        "description":"",
+                        "quantity":"",
+                        "price":""
+                    }
+                ],
+                "total": "989"
+            },
+            {
+                "id": "LK99",
+                "clientid": "t",
+                "orderdate": "4/4/2004",
+                "providedate": "22/2/2222",
+                "orderproducts": [
+                    {
+                        "description":"",
+                        "quantity":"",
+                        "price":""
+                    }
+                ],
+                "total": "23"
+            },
+            {
+                "id": "kgy",
+                "clientid": "s",
+                "orderdate": "1/1/2020",
+                "providedate": "31/12/2020",
+                "orderproducts": [
+                    {
+                        "description":"",
+                        "quantity":"",
+                        "price":""
+                    }
+                ],
+                "total": "666"
+            }
+        ]
+    }
+]

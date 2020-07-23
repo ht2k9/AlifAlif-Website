@@ -1805,8 +1805,8 @@
          },
          {
             "title":{
-               "ar":"اضافات",
-               "he":"תוספות"
+               "ar":"اضافات على الجانب",
+               "he":"תוספות בצד"
             },
             "icon":"vegan",
             "image":"cb6eb1cba892e1e20075a20a842e53e0.png"
@@ -2084,7 +2084,7 @@
            },
            "category":"3",
            "price":"38",
-           "image":""
+           "image":"bcbd2b25e2af47539151d696b3b74259.png"
         },
          {
             "title":{
@@ -2231,8 +2231,8 @@
          },
          {
             "title":{
-               "ar":"برجر اولاد",
-               "he":"בורגר ילדים"
+               "ar":"برجر للاولاد",
+               "he":"בורגר לילדים"
             },
             "description":{
                "ar":"",
@@ -2241,6 +2241,19 @@
             "category":"5",
             "price":"25",
             "image":"949d4d8093b77784e7eff20f8cf8b849.png"
+         },
+         {
+            "title":{
+               "ar":"شنيتسل للاولاد",
+               "he":"שניצל לילדים'"
+            },
+            "description":{
+               "ar":"يشمل تشيبس",
+               "he":"כולל צ'יפס"
+            },
+            "category":"5",
+            "price":"25",
+            "image":"bcbd2b25e2af47539151d696b3b74259.png"
          },
          {
             "title":{
@@ -2344,7 +2357,7 @@
            },
            "category":"7",
            "price":"5",
-           "image":""
+           "image":"03381b1df75d475e82ebb06e2c72250b.png"
         },
          {
             "title":{
@@ -2422,7 +2435,7 @@
             },
             "category":"7",
             "price":"8",
-            "image":"8eb54cc9ba6eb2a61bf3f2a097005656.png"
+            "image":".png"
          },
          {
             "title":{
@@ -2448,7 +2461,7 @@
             },
             "category":"7",
             "price":"10",
-            "image":"1af35b630775356a4fc859e49ee98e44.png"
+            "image":".png"
          },
          {
             "title":{
@@ -2565,7 +2578,7 @@
             },
             "category":"8",
             "price":"16",
-            "image":"dc100436fd84f84a45a4a596076b8f6f.png"
+            "image":"18e83a9fee5f14764dc504a1d9643a87.png"
          },
          {
             "title":{
@@ -2578,7 +2591,7 @@
             },
             "category":"8",
             "price":"9",
-            "image":"a4480a0214abe95030fd310622ffca7a.png"
+            "image":"885340e75f74f4d5228dc67df893f911.png"
          },
          {
             "title":{
@@ -2591,7 +2604,7 @@
             },
             "category":"8",
             "price":"18",
-            "image":"a322dcb13dfb2e02b4f411c655134d14.png"
+            "image":"dc100436fd84f84a45a4a596076b8f6f.png"
          },
          {
             "title":{
@@ -2604,7 +2617,7 @@
             },
             "category":"8",
             "price":"8",
-            "image":"885340e75f74f4d5228dc67df893f911.png"
+            "image":"1af35b630775356a4fc859e49ee98e44.png"
          }
       ],
       "logo":"78f80ad5d2999cee9368f7d43c7c3c47.png"

@@ -1,0 +1,20 @@
+html{
+    direction: rtl;
+    height: 100%;
+}
+body{
+    background: linear-gradient(to bottom left, lightblue, lightgrey, white);
+    height: fit-content;
+}
+h1{
+    text-align: center;
+}
+#add_client{
+    display: none;
+}
+#add_order{
+    display: none;
+}
+#report{
+    display: none;
+}

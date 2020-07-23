@@ -1,0 +1,49 @@
+html{
+    direction: rtl;
+    height: 100%;
+}
+body{
+    background: linear-gradient(to bottom left, lightblue, lightgrey, white);
+    height: fit-content;
+}
+h1{
+    text-align: center;
+}
+table{
+    text-align: center;
+    margin: auto;
+    border-collapse: collapse;
+    width: 90%;
+}
+tr{
+    border: solid;
+    border-width: 1px 0;
+}
+td{
+    padding: 3pt 5pt 3pt 5pt;
+}
+/* menu item expand */
+.collapsible {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 8px 8px 8px 32px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14pt;
+    color: blue;
+    margin-right: 10pt;
+    text-align: right;
+  }
+
+.content {
+    position: absolute;
+    z-index: 1;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: white;
+    border-radius: 20%;
+  }
