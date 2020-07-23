@@ -1,0 +1,93 @@
+<!Doctype html>
+<html>
+<style>
+.btn-group .question {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.delete {
+  background-color: red; /* Green background */
+  border: 1px solid rgb(179, 0, 0); /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50px; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+  text-align: center;
+}
+
+.number {
+  background-color: blue; /* Green background */
+  border: 1px solid rgb(69, 0, 179); /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 20px; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+  text-align: center;
+}
+
+.btn-group .question:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+.pan {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Add a background color on hover */
+.btn-group .question:hover {
+  background-color: #3e8e41;
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+<body dir="rtl">
+
+<h1>اسئلة المسابقة</h1>
+<h2 style="color: royalblue;">اضغط السؤال للتعديل</h2>
+
+<div class="btn-group">
+  <% for(let i=0; i< questions.length; i++) { let q = questions[i]; %>
+    <div >
+      <div class="pan">
+        <a class="delete" style="background-color: blue; width: 30px;"><%= i+1 %></a> <a href="/quiz/show/<%= i %>" class="question"><%= q.question %></a> <a href="/quiz/delete/<%= i %>" class="delete">X</a> 
+      </div>
+<% } %>
+  <a href="/quiz/add">+</a>
+</div>
+  <h2>المسجلين</h2>
+  <div style="display: flex; flex-direction: row;">
+    <ol class="btn-group" style="flex: 1;">
+      <% for(let j=0; j< users.length; j++){ let user = users[j]; %>
+        <li> <%= user.phone %> - <%= user.username %> - <%= user.score %> </li>
+      <% } %>
+      </ol>
+  
+      <ol class="btn-group" style="flex: 1;">
+        <h2>اعلى نتيجة</h2>
+        <% for(let j=0; j< winners.length; j++){ let user = winners[j]; %>
+          <li> <%= user.phone %> - <%= user.username %> - <%= user.score %> </li>
+        <% } %>
+        </ol>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+
+<div dir="rtl">
+    <form action="/quiz/update/<%= id %>" method="post">
+        <label for="question">السؤال</label>
+        <input type="text" id="question" name="question" value="<%= question.question %>">
+
+        <label for="answer1">الجواب الأول</label>
+        <input type="text" id="answer1" name="answer1" value="<%= question.choiceA %>">
+
+        <label for="answer2">الجواب الثاني</label>
+        <input type="text" id="answer2" name="answer2" value="<%= question.choiceB %>">
+
+        <label for="answer3">الجواب الثالث</label>
+        <input type="text" id="answer3" name="answer3" value="<%= question.choiceC %>">
+
+        <label for="answer4">الجواب الرابع</label>
+        <input type="text" id="answer4" name="answer4" value="<%= question.choiceD %>">
+
+        <label for="Canswer">الاجابة الصحيحة</label>
+        <select id="Canswer" name="Canswer">
+        <option value="A" <% if(question.correct == "A") { %> selected <% } %>>الجواب الأول</option>
+        <option value="B" <% if(question.correct == "B") { %> selected <% } %>>الجواب الثاني</option>
+        <option value="C" <% if(question.correct == "C") { %> selected <% } %>>الجواب الثالث</option>
+        <option value="D" <% if(question.correct == "D") { %> selected <% } %>>الجواب الرابع</option>
+        </select>
+    
+        <input type="submit" value="اضف السؤال">
+    </form>
+</div>
+
+</body>
+</html>

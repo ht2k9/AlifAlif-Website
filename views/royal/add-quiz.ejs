@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+
+<div dir="rtl">
+    <form action="/quiz/admin/questions" method="post">
+        <label for="question">السؤال</label>
+        <input type="text" id="question" name="question" required>
+
+        <label for="answer1">الجواب الأول</label>
+        <input type="text" id="answer1" name="answer1" required>
+
+        <label for="answer2">الجواب الثاني</label>
+        <input type="text" id="answer2" name="answer2" required>
+
+        <label for="answer3">الجواب الثالث</label>
+        <input type="text" id="answer3" name="answer3">
+
+        <label for="answer4">الجواب الرابع</label>
+        <input type="text" id="answer4" name="answer4">
+
+        <label for="Canswer">الاجابة الصحيحة</label>
+        <select id="Canswer" name="Canswer">
+        <option value="A">الجواب الأول</option>
+        <option value="B">الجواب الثاني</option>
+        <option value="C">الجواب الثالث</option>
+        <option value="D">الجواب الرابع</option>
+        </select>
+    
+        <input type="submit" value="اضف السؤال">
+    </form>
+</div>
+
+</body>
+</html>
