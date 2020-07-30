@@ -1,32 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="he">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-<script src="/js/jquery.js"></script>
-
 <link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/js2pdf.js"></script>
 </head>
-<body>
+<body style="direction: rtl; text-align: right;">
   
 <div class="title">
   <h1> דוחות </h1>
-  <i id="downloadpdf" class="fa fa-file-pdf-o" style="float: left; font-size:20pt; color:red; background-color: white;"></i>
   <a clas="btn" href="/royal/reports/<%= R_id %>"> חזרה </a>
-  <br/>
 </div>
-
-  <div id='pdf_content'>
+<button onclick="generatePDF()" class="btn">יצוא pdf</button>
+  <div id="pdf_content" style="padding: 0 10px;">
     <div>
-    <p><% if(R_id == '1') { %>
-       תוצאות עבור הזמות ללקוח <%= client %>
-      <% } %>
-      <% if(R_id == '0') { %>
-        תוצאות עבור כל הלקוחות
-      <% } %>
-      <br/>
-    מתאריך <%= date_from %> עד לתאריך <%= date_to %> </p>
+    <% if(R_id == '1') { %><p>תוצאות עבור הזמות ללקוח<%= client %> </p><% } %>
+      <% if(R_id == '0') { %><p>תוצאות עבור כל הלקוחות ...</p><% } %>
+      <p>מתאריך <%= date_from %></p>
+        <p>עד תאריך <%= date_to %> </p>
   </div>
   <div>
     <% if(result.length) { let total = 0; let i = 1; %>
@@ -51,43 +43,21 @@
         </table>
       </div>
 
-      <p style="text-align: left; margin-left: 20pt;"> סה"כ <br/> <%= total %> </p>
+      <p> סה"כ <br/> <%= total %> </p>
       <% } else { %>
         <p class="no_result"> אין תוצאות </p>
 <% } %>
   </div>
 </div>
-
 <script>
-  $(document).ready(function () {
-  
-    $(document).on("click", "#downloadpdf", function(e) {
-    e.preventDefault();
-
-    var HTML_Width = $("#pdf_content").width();
-    var HTML_Height = $("#pdf_content").height();
-    var top_left_margin = 15;
-    var PDF_Width = HTML_Width + (top_left_margin * 2);
-    var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
-    var canvas_image_width = HTML_Width;
-    var canvas_image_height = HTML_Height;
-
-    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
-
-    html2canvas($("#pdf_content")[0]).then(function (canvas) {
-        var imgData = canvas.toDataURL("image/jpeg", 1.0);
-        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
-        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
-        for (var i = 1; i <= totalPDFPages; i++) {
-            pdf.addPage(PDF_Width, PDF_Height);
-            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
-        }
-        pdf.save("Report.pdf");
-    });
-    });
-
-});
-
+  function generatePDF() {
+    // Choose the element that our invoice is rendered in.
+    const element = document.getElementById("pdf_content");
+    // Choose the element and save the PDF for our user.
+    html2pdf()
+      .from(element)
+      .save();
+  }
 </script>
 </body>
 </html>

@@ -9,24 +9,28 @@
             <% }); %>
           </datalist>
           <div class="form-group">
-            <label> מזמין: </label> <input type="text" name="client_data" value="<%= clientname %> (<%= clientid %>)" disabled>
-            <input placeholder="" type="hidden" name="order_client_id" value="<%= clientid %>">
-            <input placeholder="" type="hidden" name="order_client_name" value="<%= clientname %>">
+            <label> מזמין: </label> 
+            <input type="text" name="client_data" value="<%= clientname %> (<%= clientid %>)" disabled>
+            <input type="hidden" name="order_client_id" value="<%= clientid %>">
+            <input type="hidden" name="order_client_name" value="<%= clientname %>">
           </div>
             <div class="form-group">
-              <input placeholder="מזהה הזמנה:" type="text" name="order_id" id="order_id" readonly>            
+              <label> מזהה הזמנה: </label> 
+              <input type="text" name="order_id" id="order_id" readonly style="width: 150px;">            
             </div>
             <div class="form-group">
-              <input placeholder="תאריך הזמנה:" class="leftinput" type="date" name="order_date" id="order_date">
+              <label> תאריך הזמנה:</label> 
+              <input placeholder="" class="leftinput" type="date" name="order_date" id="order_date">
             </div>
             <div class="form-group">
+              <label> תאריך אספקה: </label> 
               <input placeholder="תאריך אספקה:" class="leftinput" type="date" name="order_provide_date" id="order_provide_date">
             </div>
             <div class="table" style="width: inherit;">
               <table class="container1">
                 <tr><td> פריט </td><td> כמות </td><td> מחיר ליח' </td></tr>
                 <tr><td><input type="text" list="productslist" name="products[]" class="product" value=""></td>
-                <td><input type="number" name="quantities[]" class="quantity" value=""></td>
+                <td><input type="number" name="quantities[]" class="quantity" value="1"></td>
                 <td><input type="number" name="prices[]" class="price" value=""></td>
                 <td><input type="number" class="rowprice" readonly></td>
               </tr>

@@ -18,7 +18,7 @@
       <tr>
         <td class="tnum"> מס' </td>
         <td class="tdataname"> לקוח </td>
-        <td class="tdata"> מס' זהות </td>
+        <td class="tdata"> ת.זהות </td>
         <td class="tdata"> מס' טלפון </td>
         <td class="tdata"> כתובת </td>
         <td class="tdata"> פעולות </td>
@@ -27,7 +27,7 @@
       <tr>
         <td class="tnum"> <%= clientsarray.length - i %> </td>
         <td class="tdataname">
-          <a target="mainview" href="/royal/orders/<%= admin.username %>/<%= clientsarray[i].id %>/<%= clientsarray[i].name %>"> <%= clientsarray[i].name %> </a>
+          <a class="btn" target="mainview" href="/royal/orders/<%= admin.username %>/<%= clientsarray[i].id %>/<%= clientsarray[i].name %>"> <%= clientsarray[i].name %> </a>
         </td>
         <td class="tdata"> <%= clientsarray[i].id %> </td>
         <td class="tdata"> <%= clientsarray[i].phone %> </td>

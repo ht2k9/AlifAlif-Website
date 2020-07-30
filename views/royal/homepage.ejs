@@ -16,12 +16,11 @@
   <h3> ברוך הבא <%= admin.name %> </h3>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 </header>
-<hr class="mainHR">
 <!-- Menu -->
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="logo"><img src="/images/royal_bakery_logo.jpg" alt="royal_bakery_logo"></div>
-    <h2>מאפיית רויאל</h2>
+    <h2>מאפית רויאל</h2>
     <a target="mainview" href="/royal/clients/<%= admin.username %>" onclick="closeNav()"> לקוחות </a>
     <a target="mainview" href="/royal/products" onclick="closeNav()"> מוצרים </a>
     <button type="button" class="collapsible">  דוחות - </button>
@@ -33,7 +32,7 @@
     <div class="content">
       <a target="mainview" href="/royal/users/<%= admin.username %>" onclick="closeNav()"> הצג משתמשים </a>
       <a target="mainview" href="/royal/changeadminpass/<%= admin.username %>" onclick="closeNav()"> שינוי סיסמת כניסה </a>
-      <a href="/royal"> יציאה </a>
+      <a href="/royal/logout"> יציאה </a>
     </div>
 </div>
 

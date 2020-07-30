@@ -7,12 +7,23 @@ const upload = multer({
     dest: "public/royal/"
 });
 
+
 router.get('/', (req, res) => {
-    fs.readFile('localbase/royal.json', (err, data) => {
-        if (err) throw err;
-        let royal = JSON.parse(data);
-        res.render('royal/login', {admins: royal[3].admins});
-    });
+    if(req.app.locals.isLogged) {
+        res.redirect('/royal/home');
+    }else {
+        fs.readFile('localbase/royal.json', (err, data) => {
+            if (err) throw err;
+            let royal = JSON.parse(data);
+            res.render('royal/login', {admins: royal[3].admins});
+        });
+    }
+});
+
+router.get('/logout', (req, res) => {
+    req.app.locals.isLogged = false;
+    req.app.locals.username = '';
+    res.redirect('/royal');
 });
 
 router.get('/users/:username', (req, res) => {
@@ -28,14 +39,36 @@ router.get('/users/:username', (req, res) => {
     });
 });
 
+router.get('/home', (req, res) => {
+    fs.readFile('localbase/royal.json', (err, data) => {
+        if (err) throw err;
+        let royal = JSON.parse(data);
+        let admin;
+        let isLogged = req.app.locals.isLogged;
+        let username = req.app.locals.username;
+        royal[3].admins.forEach(r_admin => {
+            if(r_admin.username == username)
+                admin = r_admin;
+        });
+        if(isLogged)
+            res.render('royal/homepage', {admin: admin});
+        else
+            res.redirect('/royal');
+    });
+});
+
+
 router.post('/home', (req, res) => {
     fs.readFile('localbase/royal.json', (err, data) => {
         if (err) throw err;
         let royal = JSON.parse(data);
         let admin;
         royal[3].admins.forEach(r_admin =>{
-            if(r_admin.username == req.body.username)
+            if(r_admin.username == req.body.username){
+                req.app.locals.isLogged = true;
+                req.app.locals.username = req.body.username;
                 admin = r_admin;
+            }
         });
         res.render('royal/homepage', {admin: admin});
     });
