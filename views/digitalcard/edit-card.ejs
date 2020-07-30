@@ -174,20 +174,23 @@ div {
           <input type="color" name="primary" <% if(vcard != null){ %> value="<%= vcard.colors.primary %>" <% } %>>
           <input type="color" name="secondary" <% if(vcard != null){ %> value="<%= vcard.colors.secondary %>" <% } %>>
         </div>
+        <br>
 
         <label>رابط الخلفية</label>
+        
         <div class="group">
           <select id="select1" name="bgtype" onchange="selectChanged()" style="max-width: 200px;">
-            <option <% if(vcard.bg != null && vcard.bg.type == "photo") {%> selected <%}%> value="photo">صورة</option>
-            <option <% if(vcard.bg != null && vcard.bg.type == "video") {%> selected <%}%> value="video">فيديو</option>
-            <option <% if(vcard.bg != null && vcard.bg.type == "fb") {%> selected <%}%> value="fb">من فيسبوك</option>
+            <option value="photo">صورة</option>
+            <option value="video">فيديو</option>
+            <option value="fb">من فيسبوك</option>
           </select>
-          <input type="text" id="bglink" name="bglink" style="display: inline-block;" <% if(vcard.bg != null) {%> value="<%= vcard.bg.link %>" <%}%>>
-          <div id="in_file" class="group" style="display: none;">
-            <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_bgimage"  onchange="preview_image(event)" accept="image/*" required>
-            <p><img id="output_bgimage" width="200" /></p>
-          </div>
         </div>
+
+        <input type="text" id="bglink" name="bglink" style="display: none;">
+        <div id="in_file" class="group" style="display: inline-block;">
+            <input type="file" id="background" name="background" placeholder="الرايط" data-output="output_bgimage"  onchange="preview_image(event)" accept="image/*" required>
+            <p><img id="output_bgimage" width="200" /></p>
+        </div><br>
 
         <label>فيسبوك</label>
         <div class="group">
