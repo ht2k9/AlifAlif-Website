@@ -60,10 +60,6 @@
     margin: 20px 0;
   }
 
-  .mainHR {
-    margin: 0;
-  }
-
   input[type=text], input[type=password], input[type=number], select {
     padding: 8px 20px;
     margin: 8px 0;

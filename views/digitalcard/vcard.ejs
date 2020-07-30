@@ -180,7 +180,7 @@
                 <% } %>
                 <% if(vcard.whatsapp != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="https://wa.me/<%= vcard.whatsapp.link %>" data-url="" data-type="<%= vcard.whatsapp.title %>" data-title="About"><i class="icon-whatsapp"></i></a>
+                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="https://wa.me/<%= vcard.whatsapp.link %>" data-url="" data-type="page" data-title="<%= vcard.whatsapp.title %>"><i class="icon-whatsapp"></i></a>
                     </li>
                 <% } %>
                 <% if(vcard.facebook != null) { %>
