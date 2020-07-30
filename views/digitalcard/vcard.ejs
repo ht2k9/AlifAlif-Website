@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/font-icons.css">
     <link href="/vcard.css" rel="stylesheet" type="text/css"/>
     <title><%= vcard.business %></title>
     <style>
@@ -57,32 +58,32 @@
                 <% if(vcard.phones.length != 0) { %>
                     <% for(let i=1; i<=vcard.phones.length; i++){ let phone = vcard.phones[i-1]; %>
                         <li class="trigger-item">
-                            <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="tel:<%= phone.number %>" data-url="" data-type="page" data-title="<%= vcard.waze.link %>"><i class="icon-user"></i></a>
+                            <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="tel:<%= phone.number %>" data-url="" data-type="page" data-title="<%= vcard.waze.link %>"><i class="icon-phone"></i></a>
                         </li>
                     <% } %>
                 <% } %>
                 <% if(vcard.whatsapp != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="https://wa.me/<%= vcard.whatsapp.link %>" data-url="" data-type="<%= vcard.waze.link %>" data-title="About"><i class="icon-user"></i></a>
+                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="https://wa.me/<%= vcard.whatsapp.link %>" data-url="" data-type="<%= vcard.waze.link %>" data-title="About"><i class="icon-whatsapp"></i></a>
                     </li>
                 <% } %>
                 <% if(vcard.facebook != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.facebook.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.link %>"><i class="icon-user"></i></a>
+                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.facebook.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.link %>"><i class="icon-facebook"></i></a>
                     </li>
                 <% } %>
                 <% if(vcard.instagram != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.instagram.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.link %>"><i class="icon-user"></i></a>
+                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.instagram.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.link %>"><i class="icon-instagram"></i></a>
                     </li>
                 <% } %>
                 <% if(vcard.waze != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.waze.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.title %>"><i class="icon-user"></i></a>
+                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.waze.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.title %>"><i class="icon-map-marker-alt"></i></a>
                     </li>
                 <% } %>
                 <li class="trigger-item">
-                    <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" id="myBtn" href="<%= vcard.waze.link %>" data-url="" data-type="page" data-title="שעות עבודה"><i class="icon-user"></i></a>
+                    <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" id="myBtn" href="<%= vcard.waze.link %>" data-url="" data-type="page" data-title="שעות עבודה"><i class="icon-clock2"></i></a>
                 </li>
             </ul>
         </div>

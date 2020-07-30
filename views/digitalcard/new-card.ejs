@@ -167,7 +167,13 @@ div {
           <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_image"  onchange="preview_image(event)" accept="image/*" required>
           <p><img id="output_image" width="200" /></p>
         </div>
-        
+
+        <label>الألوان</label>
+        <div class="group">
+          <input type="color" name="primary">
+          <input type="color" name="secondary">
+        </div>
+
         <label>رابط الخلفية</label>
         
         <div class="group">
@@ -176,14 +182,14 @@ div {
             <option value="video">فيديو</option>
             <option value="fb">من فيسبوك</option>
           </select>
-            </div>    
-          <input type="text" id="bglink" name="bglink" style="display: none;">
-          <div id="in_file" class="group" style="display: inline-block;">
+        </div>
+        <input type="text" id="bglink" name="bglink" style="display: none;">
+        <div id="in_file" class="group" style="display: inline-block;">
             <input type="file" id="logo" name="logo" placeholder="الرايط" data-output="output_bgimage"  onchange="preview_image(event)" accept="image/*" required>
             <p><img id="output_bgimage" width="200" /></p>
-          </div>
+        </div>
   
-
+        <br>
         <label>فيسبوك</label>
         <div class="group">
           <input type="text" id="facebook" name="facebook1" placeholder="العنوان" value="@" style="max-width: 200px;">

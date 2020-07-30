@@ -169,6 +169,12 @@ div {
           <p><img <% if(vcard.logo != null) {%> src="/vcards/<%= vcard.logo %>" <%}%> id="output_image" width="200" /></p>
         </div>
 
+        <label>الألوان</label>
+        <div class="group">
+          <input type="color" name="primary" <% if(vcard != null){ %> value="<%= vcard.colors.primary %>" <% } %>>
+          <input type="color" name="secondary" <% if(vcard != null){ %> value="<%= vcard.colors.secondary %>" <% } %>>
+        </div>
+
         <label>رابط الخلفية</label>
         <div class="group">
           <select id="select1" name="bgtype" onchange="selectChanged()" style="max-width: 200px;">

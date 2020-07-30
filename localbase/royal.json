@@ -1,1 +1,1 @@
-[{"clients":[]},{"products":[]},{"orders":[]},{"admins":[]}]
+[{"clients":[]},{"products":[]},{"orders":[]},{"admins":[{"username":"admin","password":"admin","name":"testname","role":"1"}]}]

@@ -53,7 +53,8 @@ router.post('/add', upload.single('logo'), (req, res) => {
             phoneList.push(
                 {
                     title: req.body['title'+i],
-                    number: req.body['phone'+i]
+                    number: req.body['phone'+i],
+                    colors: {primary: req.body.primary, secondary: req.body.secondary}
                 }
             );
         }
