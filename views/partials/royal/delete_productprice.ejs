@@ -1,0 +1,19 @@
+<div class="popup-wrapper">
+  <div id="popup-container">
+      <h2> הסרת מוצר </h2>
+      <form action="/royal/delproductprice" method="POST">
+        <input type="hidden" name="username" value="<%= admin.username %>">
+
+        <input type="hidden" name="clientid" value="<%= clientid %>">
+        <input type="hidden" name="clientname" value="<%= clientname %>">
+        <div class="form-group">
+          <p>
+          האם ברצונך להסיר את המוצר &nbsp; <input type="text" id="del_product" name="del_product" value="" readonly> &nbsp; מרשימת המחירים המיוחדים עבור הלקוח? <br/>
+          </p>
+          </div><br/>
+      <div class="modal-footer">
+        <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openDeleteProductPriceForm()"> <input class="formsubmit" type="submit" value="אישור">
+      </div>
+    </form>
+  </div>
+</div>

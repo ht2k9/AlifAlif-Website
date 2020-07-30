@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/navmenu.css">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+<link rel="stylesheet" href="/include/rs-plugin/fonts/font-awesome/css">
+<script src="/js/jquery.js"></script>
+</head>
+<body>
+  <script> let admins = []; </script>
+  <% admins.forEach(admin => { %>
+    <script> admins.push(['<%= admin.username %>', '<%= admin.password %>', '<%= admin.name %>', '<%= admin.role %>']); </script>
+  <% }); %>
+<div class="title">
+  <h1> מאפיית רויאל </h1>
+  <h3> דף כניסה </h3>
+</div>
+<hr>
+
+<div>
+  <form action="/royal/home" method="POST" onsubmit="return validateLogin()">
+    <label> שם משתמש: </label> <input type="text" name="username" id="username"><br/><br/>
+    <label> סיסמה: </label> <input type="password" name="password"id="password"><br/><br/><br/>
+    <input class="btn" type="submit" value="כניסה">
+  </form>
+</div>
+
+<script>
+
+function validateLogin(){
+  let username = document.getElementById("username");
+  let password = document.getElementById("password");
+  if(!(username.value && password.value)){
+    alert('נא למלא את כל השדות');
+    return false;
+  }
+  for(let i = 0; i < admins.length; i++){
+    if(username.value == admins[i][0]){
+      if(password.value == admins[i][1])
+        return true;
+      else{
+        alert('סיסמה שגויה');
+        return false;
+      }
+    }
+  }
+  alert('לא נמצא משתמש בשם:' + username.value);
+  return false;
+}
+
+</script>
+
+</body>
+</html> 

@@ -2,32 +2,45 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
 <link rel="stylesheet" type="text/css" href="/css/royalcss/navmenu.css">
-<link rel="stylesheet" type="text/css" href="/css/royalcss/home.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+<script src="/js/jquery.js"></script>
+<link rel="stylesheet" href="/include/rs-plugin/fonts/font-awesome/css">
 </head>
 <body>
 <header>
-  <h1> מאפיית רויאל </h1>
+  <a id="homebutton" style="color:black" target="mainview" href="/royal/clients/<%= admin.username %>" onclick="closeNav()">
+    <i class="fa fa-home" style="font-size: 28pt; float:left;"></i>
+  </a>
+  <h3> ברוך הבא <%= admin.name %> </h3>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 </header>
-<hr>
+<hr class="mainHR">
 <!-- Menu -->
 <div id="mySidenav" class="sidenav">
-    test
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <button type="button" class="collapsible"> לקוחות </button>
+    <div class="logo"><img src="/images/royal_bakery_logo.jpg" alt="royal_bakery_logo"></div>
+    <h2>מאפיית רויאל</h2>
+    <a target="mainview" href="/royal/clients/<%= admin.username %>" onclick="closeNav()"> לקוחות </a>
+    <a target="mainview" href="/royal/products" onclick="closeNav()"> מוצרים </a>
+    <button type="button" class="collapsible">  דוחות - </button>
     <div class="content">
-    <a target="mainview" href="clients" onclick="closeNav()"> הצג לקוחות </a>
-    <a target="mainview" href="forms/#add_client" onclick="closeNav()"> הוסף לקוח חדש </a>
+      <a target="mainview" href="/royal/reports/0" onclick="closeNav()"> כללי </a>
+      <a target="mainview" href="/royal/reports/1" onclick="closeNav()"> עבור לקוח אחד </a>
     </div>
-
-    <a target="mainview" href="forms/#report" onclick="closeNav()"> דוחות </a>
+    <button type="button" class="collapsible"> משתמשים - </button>
+    <div class="content">
+      <a target="mainview" href="/royal/users/<%= admin.username %>" onclick="closeNav()"> הצג משתמשים </a>
+      <a target="mainview" href="/royal/changeadminpass/<%= admin.username %>" onclick="closeNav()"> שינוי סיסמת כניסה </a>
+      <a href="/royal"> יציאה </a>
+    </div>
 </div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; תפריט ראשי </span>
+
+<!-- Home icon -->
 
 <script>
-    function openNav() {
+function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
 function closeNav() {
@@ -56,8 +69,10 @@ for (i = 0; i < coll.length; i++) {
 
 <!-- iframe -->
 <section class="main">
-    <iframe name="mainview" src="/royal/clients"></iframe>
+    <iframe name="mainview"></iframe>
 </section>
-
+<script>
+  document.getElementById("homebutton").click();
+</script>
 </body>
 </html> 

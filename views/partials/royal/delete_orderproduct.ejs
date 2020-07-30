@@ -1,0 +1,18 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> הסרת פריט מהזמנה <br/> <%= orderid %> </h2>
+        <form action="/royal/delorderproduct" method="POST">
+          <input type="hidden" name="username" value="<%= admin.username %>">
+
+          <input type="hidden" name="orderid" value="<%= orderid %>">
+          <input type="hidden" name="clientid" value="<%= clientid %>">
+          <input type="hidden" name="clientname" value="<%= clientname %>">
+          <div class="form-group">
+            <p> האם להסיר <input type="text" id="del_orderproduct" name="del_orderproduct" value="" readonly> מהרשימה? </p>
+          </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openDeleteOrderproductForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

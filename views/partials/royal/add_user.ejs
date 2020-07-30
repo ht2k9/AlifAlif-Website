@@ -1,0 +1,31 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> משתמש חדש </h2>
+        <form action="/royal/adduser" method="POST" onsubmit="return validateAddUser()">
+          <input type="hidden" name="admin_username" value="<%= admin.username %>">
+          <div class="form-group">
+              <input placeholder="שם:" class="leftinput" type="text" name="user_name" id="user_name">
+            </div>
+            <div class="form-group">
+              <input placeholder="שם משתמש:" class="leftinput" type="text" name="user_username" id="user_username">
+            </div>
+            <div class="form-group">
+              <input placeholder="סיסמה:" class="leftinput" type="password" name="user_password" id="user_password">
+            </div>
+            <div class="form-group">
+              <input placeholder="אימות סיסמה:" class="leftinput" type="password" name="user_re_password" id="user_re_password">
+            </div>
+            <div class="form-group">
+            <label> דרגה: </label> 
+            <br>
+            <select id="user_role" name="user_role">
+              <option value="1" id="1"> 1 </option>
+              <option value="2" id="2" selected> 2 </option>
+            </select>
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openAddUserForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

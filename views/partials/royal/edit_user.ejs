@@ -1,0 +1,27 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> עדכון פרטי משתמש </h2>
+        <form action="/royal/edituser" method="POST" onsubmit="return validateEditUser()">
+          <input type="hidden" name="admin_username" value="<%= admin.username %>">
+            <div class="form-group">
+              <label> שם: </label> <input class="leftinput" id="user_editname" type="text" name="user_name" >
+              <input id="default_name" type="hidden" name="default_name" value="">
+            </div>
+            <div class="form-group">
+              <label> שם משתמש: </label> <input class="leftinput" id="user_editusername" type="text" name="user_username">
+              <input id="default_username" type="hidden" name="default_username" value="">
+            </div>
+            <div class="form-group">
+              <label> דרגה: </label> <select id="user_editrole" name="user_role">
+                <option value="1" id="1"> 1 </option>
+                <option value="2" id="2"> 2 </option>
+              </select>
+              <input id="default_role" type="hidden" name="default_role" value="">
+            </div>
+            <br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openEditUserForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

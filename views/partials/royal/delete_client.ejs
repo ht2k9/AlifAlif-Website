@@ -1,0 +1,24 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> הסרת לקוח </h2>
+        <form action="/royal/delclient" method="POST" onsubmit="return validateDeleteClient()">
+          <input type="hidden" name="username" value="<%= admin.username %>"> 
+          <div class="form-group">
+            <p>
+            האם ברצונך להסיר את הלקוח בעל הנתונים הבאים? <br/>
+            שם: <input type="text" name="del_client_name" id="del_client_name" value="" readonly><br/><br/>
+            מספר זהות: <input type="text" name="del_client_id" id="del_client_id" value="" readonly><br/><br/>
+            כתובת: <input type="text" name="del_client_address" id="del_client_address" value="" readonly><br/><br/>
+            מספר טלפון: <input type="text" name="del_client_phone" id="del_client_phone" value="" readonly><br/><br/>
+            </p>
+            <p>
+              <br/></br>
+              יש להזין את הסיסמה כדי להסיר: <input type="password" id="del_pass" name="del_pass">
+            </p>
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openDeleteClientForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

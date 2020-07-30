@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+</head>
+
+<body>
+  <div class="title">
+    <h1> משתמשים </h1>
+  </div>
+  <div class="table">
+    <table>
+      <script> let admins = []; </script>
+      <tr>
+        <td class="tnum"> מס' </td>
+        <td class="tdataname"> שם משתמש </td>
+        <td class="tdata"> שם </td>
+        <td class="tdata"> דרגה </td>
+  <% if(admin.role == '1') { %>
+        <td class="tdata"> פעולות </td>
+        <% } %>
+      </tr>
+      <% for(let i = users.length - 1; i >= 0; i--) { %>
+      <tr>
+        <td class="tnum"> <%= users.length - i %> </td>
+        <td class="tdataname">
+           <%= users[i].username %> 
+        </td>
+        <td class="tdata"> <%= users[i].name %> </td>
+        <td class="tdata"> <%= users[i].role %> </td>
+        <% if(admin.role == '1') { %>
+        <td class="tdata"> 
+          <span class="btn tedit" onclick="openEditUserForm('<%= i %>')"> &#9998; </span>
+          <% if(admin.username != users[i].username) { %>
+            <span class="btn tdelete" onclick="openDeleteUserForm('<%= i %>')"> &#10006; </span> 
+          <% } %> 
+        </td>
+        <% } %>
+        </tr>
+      <script> admins.splice(0, 0, ['<%= users[i].name; %>', '<%= users[i].username; %>', '<%= users[i].role; %>']); </script>
+      <% } %>
+    </table>
+  </div>
+
+  <% if(admin.role == '1') { %>
+  <!-- add user modal -->
+  <div class="popup-position" id="add_user_form">
+    <% include ../partials/royal/add_user %>
+  </div>
+  <button class="addnew" onclick="openAddUserForm()"> + </button>
+
+  <!-- Edit user modal -->
+  <div class="popup-position" id="edit_user_form">
+    <% include ../partials/royal/edit_user %>
+  </div>
+
+  <!-- delete user modal -->
+  <div class="popup-position" id="delete_user_form">
+    <% include ../partials/royal/delete_user %>
+  </div>
+  <% } %>
+  <script>
+
+    function openAddUserForm() {
+      let e = document.getElementById("add_user_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else
+        e.style.display = 'block';
+    }
+
+    function openEditUserForm(i) {
+      let e = document.getElementById("edit_user_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else
+      {
+        e.style.display = 'block';
+        document.getElementById("user_editname").placeholder = admins[i][0];
+        document.getElementById("default_name").value = admins[i][0];
+        document.getElementById("user_editusername").placeholder = admins[i][1];
+        document.getElementById("default_username").value = admins[i][1];
+        document.getElementById("default_role").value = admins[i][2];
+        let roleselect = document.getElementById("user_editrole");
+        for(let j = 0; j < roleselect.options.length; j++){
+          if(roleselect.options[j].value == admins[i][2]){
+            roleselect.selectedIndex = j;
+            break;
+          }
+        }
+      }
+    }
+
+    function openDeleteUserForm(i) {
+      let e = document.getElementById("delete_user_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else{
+        e.style.display = 'block';
+        document.getElementById("del_user_name").value = admins[i][0];
+        document.getElementById("del_user_username").value = admins[i][1];
+        document.getElementById("del_user_role").value = admins[i][2];
+      }
+    }
+
+    function validateAddUser(){
+      let user_name = document.getElementById('user_name');
+      let user_username = document.getElementById('user_username');
+      let user_password = document.getElementById('user_password');
+      let user_re_password = document.getElementById('user_re_password');
+      if(!(user_name.value && user_username.value && user_password.value && user_re_password.value)){
+        alert('נא למלא את כל השדות');
+        return false;
+      }
+      if(user_password.value != user_re_password.value){
+        alert('סיסמאות אינן תואמות');
+        return false;
+      }
+      for(let i = 0; i < admins.length; i++){
+        if(admins[i][1] === user_username.value){
+          alert('שם משתמש קיים במערכת');
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function validateEditUser(){
+      let user_editusername = document.getElementById('user_editusername');
+      let default_username = document.getElementById('default_username');
+      if(user_editusername.value && user_editusername.value != default_username.value){
+        for(let i = 0; i < admins.length; i++){
+          if(admins[i][1] == user_editusername.value){
+            alert('נא לוודא ששם המשתמש החדש לא קיים במערכת');
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    function validateDeleteUser(){
+      let pass = document.getElementById('del_pass');
+      if(pass.value != "<%= admin.password %>"){
+        alert('סיסמה שגויה');
+        return false;
+      }
+      return true;
+    }
+
+  </script>
+</body>
+
+</html>

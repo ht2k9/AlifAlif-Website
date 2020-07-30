@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+</head>
+
+<body>
+  <div class="title">
+    <h1> מוצרים </h1>
+  </div>
+  <div class="table">
+    <table>
+      <script> let products = []; </script>
+      <tr>
+        <td class="tnum"> מס' </td>
+        <td class="tdataname"> מוצר </td>
+        <td class="tdata"> פעולות </td>
+      </tr>
+      <% for(let i = productsarray.length - 1; i >= 0; i--) { %>
+      <tr>
+        <td class="tnum"> <%= productsarray.length - i %> </td>
+        <td class="tdataname">
+          <a target="mainview" href="#"> <%= productsarray[i].description %> </a>
+        </td>
+        <td class="tdata actions"> 
+          <span class="btn tedit" onclick="openEditProductForm('<%= i %>')"> &#9998; </span>
+          <span class="btn tdelete" onclick="openDeleteProductForm('<%= i %>')"> &#10006; </span>
+        </td>
+      </tr>
+      <script> products.splice(0, 0, '<%= productsarray[i].description; %>'); </script>
+      <% } %>
+    </table>
+  </div>
+
+
+  <!-- add product modal -->
+  <div class="popup-position" id="add_product_form">
+    <% include ../partials/royal/add_product %>
+  </div>
+  <button class="addnew" onclick="openAddProductForm()"> + </button>
+
+  <!-- Edit product modal -->
+  <div class="popup-position" id="edit_product_form">
+    <% include ../partials/royal/edit_product %>
+  </div>
+
+  <!-- delete product modal -->
+  <div class="popup-position" id="delete_product_form">
+    <% include ../partials/royal/delete_product %>
+  </div>
+  
+  <script>
+
+function openAddProductForm() {
+      let e = document.getElementById("add_product_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else
+        e.style.display = 'block';
+    }
+
+    function openEditProductForm(i) {
+      let e = document.getElementById("edit_product_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else{
+        e.style.display = 'block';
+        document.getElementById("product_editname").placeholder = products[i];
+        document.getElementById("default_description").value = products[i];
+      }
+    }
+
+    function openDeleteProductForm(i) {
+      let e = document.getElementById("delete_product_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else{
+        e.style.display = 'block';
+        document.getElementById("del_product").value = products[i];
+      }
+    }
+
+function validateAddProduct(){
+    let desc = document.getElementById('product_description');
+    for(let i = 0; i < products.length; i++){
+        if(products[i] === desc.value){
+            alert('המוצר קיים במערכת');
+            return false;
+        }
+    }
+    return true;
+}
+
+function validateEditProduct(){
+    let newdesc = document.getElementById("product_editname");
+    let defdesc = document.getElementById("default_description");
+    if(!newdesc.value || newdesc.value === defdesc.value){
+        alert('לא בוצע שינוי');
+        return false;
+    }
+    for(let i = 0; i < products.length; i++){
+        if(newdesc.value === products[i]){
+        alert('יש מוצר באותו תיאור');
+        return false;
+        }
+    }
+    return true;
+}
+
+  </script>
+</body>
+
+</html>

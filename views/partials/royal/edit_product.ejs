@@ -1,0 +1,14 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> עדכון מוצר </h2>
+        <form action="/royal/editproduct" method="POST" onsubmit="return validateEditProduct()">
+            <div class="form-group">
+              <label> עדכן מוצר ל- </label> <input class="leftinput" id="product_editname" type="text" name="product_editname" value="">
+              <input id="default_description" type="hidden" name="default_description" value="">
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openEditProductForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

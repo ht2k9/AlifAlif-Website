@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/royalcss/navmenu.css">
+  <link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+  <link rel="stylesheet" href="/include/rs-plugin/fonts/font-awesome/css">
+  <script src="/js/jquery.js"></script>
+</head>
+<body>
+<div class="title">
+  <h1> עדכון סיסמת כניסה </h1>
+</div>
+
+<div>
+  <form action="/royal/changepass" method="POST" onsubmit="return validateChangePass()">
+    <input type="hidden" name="username" value="<%= admin.username %>">
+    <label> סיסמה נוכחית: </label> <input type="password" name="cur_pass" id="cur_pass"><br/><br/>
+    <label> סיסמה חדשה: </label> <input type="password" name="new_pass"id="new_pass"><br/><br/><br/>
+    <label> אימות סיסמה חדשה: </label> <input type="password" name="re_new_pass"id="re_new_pass"><br/><br/><br/>
+    <input class="btn" type="reset" value="אתחול"> <input class="btn" type="submit" value="אישור">
+  </form>
+</div>
+
+<script>
+
+function validateChangePass(){
+  let cur_pass = document.getElementById("cur_pass");
+  let new_pass = document.getElementById("new_pass");
+  let re_new_pass = document.getElementById("re_new_pass");
+  if(!(cur_pass.value && new_pass.value && re_new_pass.value)){
+    alert('נא למלא את כל השדות');
+    return false;
+  }
+  if(new_pass.value != re_new_pass.value){
+    alert('סיסמאות אינן תואמות');
+    return false;
+  }
+  if(cur_pass.value != "<%= admin.password %>"){
+    alert('סיסמה נוכחית שגויה');
+    return false;
+  }
+  return true;
+}
+
+</script>
+
+</body>
+</html> 

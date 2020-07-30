@@ -1,0 +1,28 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> עדכון פרטי לקוח </h2>
+        <form action="/royal/editclient" method="POST" onsubmit="return validateEditClient()">
+          <input type="hidden" name="username" value="<%= admin.username %>">
+  
+          <div class="form-group">
+              <label> שם: </label> <input class="leftinput" id="client_editname" type="text" name="client_name" >
+              <input id="default_name" type="hidden" name="default_name" value="">
+            </div>
+            <div class="form-group">
+              <label> מס' זהות: </label> <input class="leftinput" id="client_editid" type="text" name="client_id">
+              <input id="default_id" type="hidden" name="default_id" value="">
+            </div>
+            <div class="form-group">
+              <label> כתובת: </label> <input class="leftinput" id="client_editaddress" type="text" name="client_address">
+              <input id="default_address" type="hidden" name="default_address" value="">
+            </div>
+            <div class="form-group">
+            <label> מספר טלפון: </label> <input class="leftinput" id="client_editphone" type="text" name="client_phone">
+            <input id="default_phone" type="hidden" name="default_phone" value="">  
+          </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openEditClientForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

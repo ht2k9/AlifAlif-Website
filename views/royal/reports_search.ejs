@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+</head>
+<body>
+<div class="title">
+  <h1> דוחות </h1>
+</div>
+
+<% if(R_id == '0') { %>
+  <div>
+    <form action="/royal/reports_result" method="POST" onsubmit="return validateReport0()">
+      <input type="hidden" name="R_id" value="<%= R_id %>">
+      <label style="margin-left: 5pt;"> מתאריך: </label> &nbsp; <input style="margin-right: 10pt;" type="date" name="date_from" id="date_from0"> <br/>
+      <br/><label> עד לתאריך: </label> &nbsp; <input type="date" name="date_to" id="date_to0"> <br/><br/>
+      <div>
+        <label class="containerRadio">חיפוש לפי תאריך הזמנה
+          <input type="radio" checked="checked" name="order_provide0" id="order_provide0">
+          <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">חיפוש לפי תאריך אספקה
+          <input type="radio" checked="checked" name="order_provide0" id="order_provide1">
+          <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">חיפוש לפי תאריך הזמנה ותאריך אספקה
+          <input type="radio" checked="checked" name="order_provide0" id="order_provide2">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <label> תשלום: </label> <select id="order_paid0" name="order_paid0">
+        <option value="all" id="0">  </option>
+        <option value="לא" id="1"> לא </option>
+        <option value="מזומן" id="2"> מזומן </option>
+        <option value="אשראי" id="3"> אשראי </option>
+        <option value="שיק" id="4"> שיק </option>
+      </select>
+      <br/> <input class="btn" type="reset" value="חיפוש חדש"> <input class="btn" type="submit" value="אישור">
+    </form>
+  </div>
+<% } %>
+<% if(R_id == '1') { %>
+  <div>
+    <form action="/royal/reports_result" method="POST" onsubmit="return validateReport1()">
+      <datalist id="clientslist">
+        <% clients.forEach(client => { %>
+          <option value="<%= client.id %> (<%= client.name %>)">
+        <% }); %>
+      </datalist>
+      <input type="hidden" name="R_id" value="<%= R_id %>">
+      <label> עבור לקוח: </label> &nbsp; &nbsp; <input type="text" name="client" id="client" list="clientslist" onchange="setHiddenValue()"><input type="hidden" name="clientid" id="clientid" value=""> <br/><br/>
+      <label style="margin-left: 5pt;"> מתאריך: </label> &nbsp; <input style="margin-right: 10pt;" type="date" name="date_from" id="date_from"> <br/>
+      <br/><label> עד לתאריך: </label> &nbsp; <input type="date" name="date_to" id="date_to"> <br/><br/>
+      <div>
+        <label class="containerRadio">חיפוש לפי תאריך הזמנה
+          <input type="radio" checked="checked" name="order_provide" id="order_provide0">
+          <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">חיפוש לפי תאריך אספקה
+          <input type="radio" checked="checked" name="order_provide" id="order_provide1">
+          <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">חיפוש לפי תאריך הזמנה ותאריך אספקה
+          <input type="radio" checked="checked" name="order_provide" id="order_provide2">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <label> תשלום: </label> <select id="order_paid" name="order_paid">
+        <option value="all" id="10">  </option>
+        <option value="לא" id="11"> לא </option>
+        <option value="מזומן" id="12"> מזומן </option>
+        <option value="אשראי" id="13"> אשראי </option>
+        <option value="שיק" id="14"> שיק </option>
+      </select>
+      <br/>
+      <input class="btn" type="reset" value="חיפוש חדש"> <input class="btn" type="submit" value="אישור">
+    </form>
+  </div>
+<% } %>
+
+<script>
+
+function setHiddenValue(){
+  let client = document.getElementById("client");
+  let clientid = (client.value.toString().split(" "))[0];
+  document.getElementById("clientid").value = clientid;
+}
+
+function validateReport0(){
+  let datefrom = document.getElementById("date_from0");
+  let dateto = document.getElementById("date_to0");
+  let rbs = document.getElementsByName("order_provide0");
+
+  if(!(datefrom.value && dateto.value)){
+    alert('נא למלא את כל השדות');
+    return false
+  }
+  if(dateto.value < datefrom.value){
+    alert('תאריך #2 חייב להיות אחרי תאריך #1');
+    return false
+  }
+  if(!rbs[0].checked && !rbs[1].checked && !rbs[2].checked){
+    alert('נא לבחור סוג חיפוש');
+    return false;
+  }
+  return true;
+}
+
+function validateReport1(){
+  let client = document.getElementById("client");
+  let datefrom = document.getElementById("date_from");
+  let dateto = document.getElementById("date_to");
+  let rbs = document.getElementsByName("order_provide");
+
+  if(!(client.value && datefrom.value && dateto.value)){
+    alert('נא למלא את כל השדות');
+    return false
+  }
+  if(dateto.value < datefrom.value){
+    alert('תאריך #2 חייב להיות אחרי תאריך #1');
+    return false
+  }
+  if(!rbs[0].checked && !rbs[1].checked && !rbs[2].checked){
+    alert('נא לבחור סוג חיפוש');
+    return false;
+  }
+  return true;
+}
+
+</script>
+</body>
+</html>

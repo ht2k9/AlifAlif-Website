@@ -1,0 +1,23 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> הסרת משתמש </h2>
+        <form action="/royal/deluser" method="POST" onsubmit="return validateDeleteUser()">
+          <input type="hidden" name="admin_username" value="<%= admin.username %>">
+            <div class="form-group">
+            <p>
+            האם ברצונך להסיר את המשתמש בעל הנתונים הבאים? <br/>
+            שם: <input type="text" name="del_user_name" id="del_user_name" value="" readonly><br/><br/>
+            שם משתמש: <input type="text" name="del_user_username" id="del_user_username" value="" readonly><br/><br/>
+            דרגה: <input type="text" name="del_user_role" id="del_user_role" value="" readonly><br/><br/>
+            </p>
+            <p>
+              <br/></br>
+              יש להזין את הסיסמה כדי להסיר: <input type="password" id="del_pass" name="del_pass">
+            </p>
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openDeleteUserForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

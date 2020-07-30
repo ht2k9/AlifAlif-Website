@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+</head>
+<body>
+<div class="title">
+  <h1> מחירים שמורים עבור <%= clientid %> <br/> (<%= clientname %>) </h1>
+<!-- Back icon -->
+<a href="/royal/orders/<%= admin.username %>/<%= clientid %>/<%= clientname %>" class="btn"> חזרה </a>
+
+</div>
+
+<div class="table">
+  <table class="orderstable">
+    <script> let productprices = []; </script>
+    <tr>
+      <td> מס' </td>
+      <td> מוצר </td>
+      <td> מחיר עבורו </td>
+      <td class="tdata"> פעולות </td>
+    </tr>
+   <% if(productprices.length) { %>
+    <% for(let i = productprices.length - 1; i >= 0; i--) { %>
+      <tr>
+        <td class="num"> <%= productprices.length - i %> </td>
+        <td class="tdataname">
+          <%= productprices[i].description %> 
+        </td>
+        <td style="direction: ltr;" class="tdata"> <%= productprices[i].price %> </td>
+        <td class="tdata actions"> 
+          <span class="btn tedit" onclick="openEditProductPriceForm('<%= i %>')"> &#9998; </span>
+          <span class="btn tdelete" onclick="openDeleteProductPriceForm('<%= i %>')"> &#10006; </span> 
+        </td>
+      </tr>
+      <script> productprices.splice(0, 0, ['<%= productprices[i].description; %>', '<%= productprices[i].price; %>']); </script>
+      <% } %>
+  </table>
+</div>
+
+<% } else { %>
+</table>
+  <p class="no_productprices" style="padding: 0 20px"> אין מחירים מיוחדים עבור לקוח </p>
+  <% } %>
+
+<!-- add productprice modal -->
+<div class="popup-position" id="add_productprice_form">
+  <% include ../partials/royal/add_productprice %>
+</div>
+<button class="addnew" onclick="openAddProductPriceForm()"> + </button>
+
+<!-- edit productprice modal -->
+<div class="popup-position" id="edit_productprice_form">
+  <% include ../partials/royal/edit_productprice %>
+</div>
+
+<!-- delete productprice modal -->
+<div class="popup-position" id="delete_productprice_form">
+  <% include ../partials/royal/delete_productprice %>
+</div>
+
+<script>
+
+function openAddProductPriceForm() {
+      let e = document.getElementById("add_productprice_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else
+        e.style.display = 'block';
+    }
+
+    function openEditProductPriceForm(i) {
+      let e = document.getElementById("edit_productprice_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else
+      {
+        e.style.display = 'block';
+        document.getElementById("edit_product_description").value = productprices[i][0];
+        document.getElementById("edit_product_price").placeholder = productprices[i][1];
+        document.getElementById("edit_default_price").value = productprices[i][1];
+      }
+    }
+
+    function openDeleteProductPriceForm(i) {
+      let e = document.getElementById("delete_productprice_form");
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else
+      {
+        e.style.display = 'block';
+        document.getElementById("del_product").value = productprices[i][0];
+      }
+    }
+
+    function validateAddProductPrice(){
+      let product = document.getElementById('product_description');
+      let price = document.getElementById('product_price');
+      if(!(product.value && price.value)){
+        alert('נא למלא את כל השדות');
+        return false;
+      }
+      if(price.value < 0){
+        alert('נא להשתמש במספרים הגיוניים');
+        return false;
+      }
+      for(let i = 0; i < productprices.length; i++){
+        if(product.value === productprices[i][0]){
+          alert('יש מחיר מוגדר עבור הלקוח במערכת');
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function validateEditProductPrice(){
+      let new_price = document.getElementById('edit_product_price');
+      let def_price = document.getElementById('edit_default_price');
+      if(!new_price.value || new_price.value == def_price.value){
+        alert('לא בוצע שינוי');
+        return false;
+      }
+      if(new_price.value < 0){
+        alert('נא להשתמש במספרים הגיוניים');
+        return false;
+      }
+      return true;
+    }
+
+</script>
+</body>
+</html>

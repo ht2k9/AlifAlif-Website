@@ -1,0 +1,23 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> לקוח חדש </h2>
+        <form action="/royal/addclient" method="POST" onsubmit="return validateAddClient()">
+            <input type="hidden" name="username" value="<%= admin.username %>">
+          <div class="form-group">
+              <input placeholder="שם:" class="leftinput" type="text" name="client_name" id="client_name">
+            </div>
+            <div class="form-group">
+              <input placeholder="מס' זהות:" class="leftinput" type="text" name="client_id" id="client_id">
+            </div>
+            <div class="form-group">
+              <input placeholder="כתובת:" class="leftinput" type="text" name="client_address" id="client_address">
+            </div>
+            <div class="form-group">
+              <input placeholder="מספר טלפון" class="leftinput" type="text" name="client_phone" id="client_phone">
+            </div><br/>
+        <div class="modal-footer">
+            <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openAddClientForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

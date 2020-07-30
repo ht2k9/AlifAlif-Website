@@ -1,0 +1,33 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> הסרת הזמנה </h2>
+        <form action="/royal/delorder" method="POST" onsubmit="return validateDeleteOrder()">
+          <input type="hidden" name="username" value="<%= admin.username %>">
+          <div class="form-group">
+            <label> מזמין: </label> <input class="leftinput" type="text" name="client_data" value="<%= clientname %> (<%= clientid %>)" disabled>
+            <input type="text" name="order_client_id" value="<%= clientid %>" hidden>
+            <input type="text" name="order_client_name" value="<%= clientname %>" hidden>
+          </div>
+          <div class="form-group"> 
+            <label> מזהה הזמנה: </label> <input id="del_order_id" class="leftinput" type="text" name="del_order_id" readonly>
+           </div> 
+           <div class="form-group">
+              <label> תאריך הזמנה: </label> <input id="del_order_date" class="leftinput" type="text" name="del_order_date" value="" readonly><br/><br/>
+            </div> 
+            <div class="form-group">
+               <label> תאריך אספקה: </label> <input id="del_order_provide_date" class="leftinput" type="text" name="del_order_provide_date" value="" readonly><br/><br/>
+              </div>
+              <div class="form-group">
+              <label> סה"כ: </label> <input id="del_order_total" class="leftinput" type="text" name="del_order_total" value="" readonly>
+              </div>
+              <br/>
+              <div class="form-group">
+               <label> יש להזין את הסיסמה כדי להסיר: </label><input type="password" id="del_pass" name="del_pass">
+              </div>
+          <br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openDeleteOrderForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

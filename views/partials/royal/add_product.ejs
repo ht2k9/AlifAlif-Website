@@ -1,0 +1,13 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> מוצר חדש </h2>
+        <form action="/royal/addproduct" method="POST" onsubmit="return validateAddProduct()">
+            <div class="form-group">
+              <input placeholder="מוצר:" class="leftinput" type="text" name="product_description" id="product_description">
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openAddProductForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

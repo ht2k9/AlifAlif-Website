@@ -1,0 +1,43 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> עדכון הזמנה </h2>
+        <form action="/royal/editorder" method="POST" onsubmit="return validateEditOrder()">
+          <input type="hidden" name="username" value="<%= admin.username %>">
+
+          <div class="form-group">
+            <label> מזמין: </label> <input class="leftinput" type="text" name="client_data" value="<%= clientname %> (<%= clientid %>)" disabled>
+            <input type="text" name="order_client_id" value="<%= clientid %>" hidden>
+            <input type="text" name="order_client_name" value="<%= clientname %>" hidden>
+          </div>
+            <div class="form-group">
+              <label> מזהה הזמנה: </label> <input id="edit_order_id" class="leftinput" type="text" name="order_id" readonly>
+              <input id="default_id" type="hidden" name="default_id" value="">
+            </div>
+            <div class="form-group">
+              <label> תאריך הזמנה: </label> <input id="edit_order_date" class="leftinput" type="date" name="order_date" value="1999-04-02"><br/><br/>
+              <input id="default_order_date" type="hidden" name="default_order_date" value="">
+            </div>
+            <div class="form-group">
+              <label> תאריך אספקה: </label> <input id="edit_order_provide_date" class="leftinput" type="date" name="order_provide_date" value=""><br/><br/>
+              <input id="default_provide_date" type="hidden" name="default_provide_date" value="">
+            </div>
+            <div class="form-group">
+              <label> סה"כ: </label> <input id="edit_order_total" class="leftinput" type="text" name="order_total" value="">
+              <input id="default_order_total" type="hidden" name="default_total" value="">
+            </div>
+            <div class="form-group">
+              <label> שולם: </label> <select id="edit_order_paid" name="order_paid">
+                <option value="לא" id="1"> לא </option>
+                <option value="מזומן" id="2"> מזומן </option>
+                <option value="אשראי" id="3"> אשראי </option>
+                <option value="שיק" id="4"> שיק </option>
+              </select>
+              <input id="default_order_paid" type="hidden" name="default_paid" value="">
+              <br/><br/><br/>
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openEditOrderForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>
