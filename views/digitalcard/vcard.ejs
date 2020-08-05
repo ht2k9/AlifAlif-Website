@@ -174,7 +174,7 @@
                 <% if(vcard.phones.length != 0) { %>
                     <% for(let i=1; i<=vcard.phones.length; i++){ let phone = vcard.phones[i-1]; %>
                         <li class="trigger-item">
-                            <a style="phone background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="tel:<%= phone.number %>" data-url="tel:<%= phone.number %>" data-type="address" data-title="<%= phone.title %>"><i class="icon-phone"></i></a>
+                            <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="tel:<%= phone.number %>" data-url="tel:<%= phone.number %>" data-type="address" data-title="<%= phone.title %>"><i class="icon-phone"></i></a>
                         </li>
                     <% } %>
                 <% } %>
