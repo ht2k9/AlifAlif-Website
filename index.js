@@ -22,6 +22,13 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/get/all/:data', (req, res) => {
+    fs.readFile('localbase/'+req.params.data+'.json', (err, data) => {
+        if (err) throw err;
+        res.send(data.toString());
+    });
+});
+
 app.get('/flipbook/carpentryforeverything', (req, res) => {
     res.render('carpentryforeverything');
 });
