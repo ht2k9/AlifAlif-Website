@@ -20,11 +20,7 @@
             </div>
             <div class="form-group">
               <label> תאריך הזמנה:</label> 
-              <input placeholder="" class="leftinput" type="date" name="order_date" id="order_date">
-            </div>
-            <div class="form-group">
-              <label> תאריך אספקה: </label> 
-              <input placeholder="תאריך אספקה:" class="leftinput" type="date" name="order_provide_date" id="order_provide_date">
+              <input placeholder="" type="date" name="order_date" id="order_date">
             </div>
             <div class="table" style="width: inherit;">
               <table class="container1">
@@ -39,7 +35,12 @@
             <button class="btn add_form_field" style="margin-top: 5pt;"> הוסף פריט &nbsp; 
                 <span style="font-size:16px; font-weight:bold;"> + </span>
             </button>
-          <input placeholder="סה'כ:" style="width:60pt; float: left; text-align: center;" id="total" type="number" name="order_total" value="0" readonly>
+            <input style="width:60pt; float: left; text-align: center;" id="total" type="number" name="order_total" value="0" readonly>
+            <label style="float: left; padding: 12px;" for="total">ס"כ</label>
+            <div class="form-group">
+              <label> הערות </label> 
+              <textarea placeholder="כמה תשלומים/איזהו כתיבה/אחר.." style="width: 100%;" type="textarea" name="notice"></textarea>
+            </div>
         <div class="modal-footer">
           <input class="btn formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openAddOrderForm()"> <input class="btn formsubmit" type="submit" value="אישור">
         </div>

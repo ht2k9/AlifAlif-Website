@@ -56,18 +56,27 @@
 
 function openAddProductForm() {
       let e = document.getElementById("add_product_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
+        btn.style.display = 'block';
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
+      }
     }
 
     function openEditProductForm(i) {
       let e = document.getElementById("edit_product_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
+        btn.style.display = 'block';
+      }
       else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("product_editname").placeholder = products[i];
         document.getElementById("default_description").value = products[i];
       }
@@ -75,10 +84,14 @@ function openAddProductForm() {
 
     function openDeleteProductForm(i) {
       let e = document.getElementById("delete_product_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
+        btn.style.display = 'block';
+      }
       else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("del_product").value = products[i];
       }
     }

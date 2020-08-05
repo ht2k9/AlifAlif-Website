@@ -65,19 +65,27 @@
 
 function openAddProductPriceForm() {
       let e = document.getElementById("add_productprice_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
+        btn.style.display = 'block';
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
+      }
     }
 
     function openEditProductPriceForm(i) {
       let e = document.getElementById("edit_productprice_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
-      {
+        btn.style.display = 'block';
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("edit_product_description").value = productprices[i][0];
         document.getElementById("edit_product_price").placeholder = productprices[i][1];
         document.getElementById("edit_default_price").value = productprices[i][1];
@@ -86,11 +94,14 @@ function openAddProductPriceForm() {
 
     function openDeleteProductPriceForm(i) {
       let e = document.getElementById("delete_productprice_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
-      {
+        btn.style.display = 'block';
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("del_product").value = productprices[i][0];
       }
     }
