@@ -60,13 +60,17 @@
     margin: 20px 0;
   }
 
-  input[type=text], input[type=password], input[type=number], select {
-    padding: 8px 20px;
-    margin: 8px 0;
+  input[type=text], input[type=password], input[type=number], select, textarea, input[type=date] {
+    padding: 8px;
+    margin: 6px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+  }
+
+  input[type=date] {
+    padding: 6px;
   }
 
   input[type=number] {
@@ -272,7 +276,11 @@
     text-align: center;
 }
 .form-group{
-    margin: 0 12pt 12pt 12pt;
+    margin: 5px;
+}
+.form-group label {
+  float: right;
+  padding: 12px 5px;
 }
 h2{
     text-align: center;

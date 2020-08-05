@@ -26,6 +26,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/royal');
 });
 
+
 router.get('/users/:username', (req, res) => {
     fs.readFile('localbase/royal.json', (err, data) => {
         if (err) throw err;
@@ -394,6 +395,7 @@ router.post('/addorder', (req, res) => {
                 providedate: req.body.order_provide_date,
                 products: orderproducts,
                 total: req.body.order_total,
+                notice: req.body.notice,
                 paid: "לא",
             }
         );
@@ -575,8 +577,9 @@ router.post('/editproductprice', (req, res) => {
 router.post('/editorder', (req, res) => {
     fs.readFile('localbase/royal.json', (err, data) => {
 
-        let eid, eorderdate, eprovidedate, etotal;
+        let eid, eorderdate, eprovidedate, etotal, enotice;
         eid = (req.body.order_id)? req.body.order_id : req.body.default_id;
+        enotice = (req.body.notice)? req.body.notice : req.body.notice;
         eorderdate = (req.body.order_date && req.body.order_date != req.body.default_order_date)? req.body.order_date : req.body.default_order_date;
         eprovidedate = (req.body.order_provide_date && req.body.order_provide_date != req.body.default_provide_date)? req.body.order_provide_date : req.body.default_provide_date;
         etotal = (req.body.order_total && req.body.order_total != req.body.default_total)? req.body.order_total : req.body.default_total;
@@ -589,6 +592,7 @@ router.post('/editorder', (req, res) => {
                 order.orderdate = eorderdate;
                 order.providedate = eprovidedate;
                 order.total = etotal;
+                order.notice = enotice;
                 order.paid = epaid;
             }
         });

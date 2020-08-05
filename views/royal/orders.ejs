@@ -41,7 +41,7 @@
           <span class="btn tdelete" onclick="openDeleteOrderForm('<%= i %>')"> &#10006; </span>
         </td>
       </tr>
-      <script> orders.splice(0, 0, ['<%= orders[i].id; %>', '<%= orders[i].orderdate; %>', '<%= orders[i].providedate; %>', '<%= orders[i].total; %>', '<%= orders[i].paid; %>']); </script>
+      <script> orders.splice(0, 0, ['<%= orders[i].id; %>', '<%= orders[i].orderdate; %>', '<%= orders[i].providedate; %>', '<%= orders[i].total; %>', '<%= orders[i].paid; %>', '<%= orders[i].notice; %>']); </script>
       <% } %>
   </table>
 </div>
@@ -154,30 +154,40 @@ $(document).ready(function() {
 
 function openAddOrderForm() {
       let e = document.getElementById("add_order_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
+        btn.style.display = 'block';
+        
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         let cd = new Date();
         document.getElementById("order_id").value = (cd.getFullYear().toString() + (cd.getMonth()+1).toString() + cd.getDate().toString() + orders_ids.length.toString());
+      }
     }
 
     function openEditOrderForm(i) {
       let e = document.getElementById("edit_order_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
-      {
+        btn.style.display = 'block';
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("edit_order_id").placeholder = orders[i][0];
         document.getElementById("default_id").value = orders[i][0];
         document.getElementById("edit_order_date").value = orders[i][1];
         document.getElementById("default_order_date").value = orders[i][1];
         document.getElementById("edit_order_provide_date").value = orders[i][2];
         document.getElementById("default_provide_date").value = orders[i][2];
-        document.getElementById("edit_order_total").placeholder = orders[i][3];
+        document.getElementById("edit_order_total").value = orders[i][3];
         document.getElementById("default_order_total").value = orders[i][3];
         document.getElementById("default_order_paid").value = orders[i][4];
+        document.getElementById("edit_order_notice").value = orders[i][5];
         let paidselect = document.getElementById("edit_order_paid");
         for(let j = 0; j < paidselect.options.length; j++){
           if(paidselect.options[j].value == orders[i][4]){
@@ -190,11 +200,14 @@ function openAddOrderForm() {
 
     function openDeleteOrderForm(i) {
       let e = document.getElementById("delete_order_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
-      {
+        btn.style.display = 'block';
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("del_order_id").value = orders[i][0];
         document.getElementById("del_order_date").value = orders[i][1];
         document.getElementById("del_order_provide_date").value = orders[i][2];

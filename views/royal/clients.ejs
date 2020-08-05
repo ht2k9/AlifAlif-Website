@@ -61,19 +61,29 @@
   <script>
     function openAddClientForm() {
       let e = document.getElementById("add_client_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
+        btn.style.display = 'block';
+        
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
+      }
     }
 
     function openEditClientForm(i) {
       let e = document.getElementById("edit_client_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
-      else
-      {
+        btn.style.display = 'block';
+        
+      }
+      else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("client_editname").placeholder = clients[i][0];
         document.getElementById("default_name").value = clients[i][0];
         document.getElementById("client_editid").placeholder = clients[i][1];
@@ -87,10 +97,15 @@
 
     function openDeleteClientForm(i) {
       let e = document.getElementById("delete_client_form");
-      if (e.style.display == 'block')
+      let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
         e.style.display = 'none';
+        btn.style.display = 'block';
+        
+      }
       else{
         e.style.display = 'block';
+        btn.style.display = 'none';
         document.getElementById("del_client_name").value = clients[i][0];
         document.getElementById("del_client_id").value = clients[i][1];
         document.getElementById("del_client_address").value = clients[i][3];

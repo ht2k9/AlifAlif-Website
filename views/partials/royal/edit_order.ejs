@@ -6,8 +6,8 @@
 
           <div class="form-group">
             <label> מזמין: </label> <input class="leftinput" type="text" name="client_data" value="<%= clientname %> (<%= clientid %>)" disabled>
-            <input type="text" name="order_client_id" value="<%= clientid %>" hidden>
-            <input type="text" name="order_client_name" value="<%= clientname %>" hidden>
+            <input type="hidden" name="order_client_id" value="<%= clientid %>">
+            <input type="hidden" name="order_client_name" value="<%= clientname %>">
           </div>
             <div class="form-group">
               <label> מזהה הזמנה: </label> <input id="edit_order_id" class="leftinput" type="text" name="order_id" readonly>
@@ -33,8 +33,11 @@
                 <option value="שיק" id="4"> שיק </option>
               </select>
               <input id="default_order_paid" type="hidden" name="default_paid" value="">
-              <br/><br/><br/>
-            </div><br/>
+            </div>
+            <div class="form-group">
+              <label> הערות </label> 
+              <textarea id="edit_order_notice" placeholder="כמה תשלומים/איזהו כתיבה/אחר.." style="width: 100%;" type="textarea" name="notice"></textarea>
+            </div>
         <div class="modal-footer">
           <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openEditOrderForm()"> <input class="formsubmit" type="submit" value="אישור">
         </div>
