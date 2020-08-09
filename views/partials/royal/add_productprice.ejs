@@ -1,0 +1,25 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> מוצר חדש ללקוח: <%= clientname %> </h2>
+        <form action="/royal/addproductprice" method="POST" onsubmit="return validateAddProductPrice()">
+          <input type="hidden" name="clientid" value="<%= clientid %>">
+          <input type="hidden" name="clientname" value="<%= clientname %>">
+          <input type="hidden" name="username" value="<%= admin.username %>">
+
+          <datalist id="productslist">
+            <% products.forEach(product => { %>
+              <option value="<%= product.description %>">
+            <% }); %>
+          </datalist>
+          <div class="form-group">
+              <input placeholder="מוצר:" class="leftinput" type="text"  list="productslist" name="product_description" id="product_description">
+            </div>
+            <div class="form-group">
+              <input placeholder="מחיר ללקוח:" class="leftinput" type="number" step="0.01" name="product_price" id="product_price">
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openAddProductPriceForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

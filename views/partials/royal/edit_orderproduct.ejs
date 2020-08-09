@@ -1,0 +1,30 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> עדכון פריט בהזמנה <br/> <%= orderid %> </h2>
+        <form action="/royal/editorderproduct" method="POST" onsubmit="return validateEditOrderProduct();">
+          <input type="hidden" name="orderid" value="<%= orderid %>">
+          <input type="hidden" name="clientid" value="<%= clientid %>">
+          <input type="hidden" name="clientname" value="<%= clientname %>">
+          <input type="hidden" name="username" value="<%= admin.username %>">
+
+          <div class="form-group">
+            <label> פריט: </label><input class="leftinput" type="text" id="edit_orderproduct" name="edit_orderproduct" value="" readonly>
+          </div>
+            <div class="form-group">
+              <label> מחיר ליחידה: </label> <input class="leftinput" type="number" step="0.01" name="edit_orderproduct_price" id="edit_orderproduct_price" value="" oninput="calcEditedOrderproductTotal()">
+              <input type="hidden" name="default_price" id="default_price" value="">
+            </div>
+            <div class="form-group">
+              <label> כמות: </label> <input class="leftinput" type="number" name="edit_orderproduct_quantity" id="edit_orderproduct_quantity" value="" oninput="calcEditedOrderproductTotal()"><br/><br/>
+              <input type="hidden" name="default_quantity" id="default_quantity" value="">
+            </div>
+            <div class="form-group">
+              <label> סה"כ: </label> <input class="leftinput" id="edit_orderproduct_total" type="number" step="0.01" name="edit_orderproduct_total" value="" readonly><br/><br/>
+            </div>
+            <br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openEditOrderproductForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>

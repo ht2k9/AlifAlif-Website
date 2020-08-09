@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/navmenu.css">
+
+<script src="/js/jquery.js"></script>
+<link rel="stylesheet" href="/include/rs-plugin/fonts/font-awesome/css">
+</head>
+<body>
+<header>
+  <a id="homebutton" style="color:black" target="mainview" href="/royal/clients/<%= admin.username %>" onclick="closeNav()">
+    <i class="fa fa-home" style="font-size: 28pt; float:left;"></i>
+  </a>
+  <h3> ברוך הבא <%= admin.name %> </h3>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</header>
+<!-- Menu -->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="logo"><img src="/images/royal_bakery_logo.jpg" alt="royal_bakery_logo"></div>
+    <h2>מאפית רויאל</h2>
+    <a target="mainview" href="/royal/clients/<%= admin.username %>" onclick="closeNav()"> לקוחות </a>
+    <a target="mainview" href="/royal/products" onclick="closeNav()"> מוצרים </a>
+    <button type="button" class="collapsible">  דוחות - </button>
+    <div class="content">
+      <a target="mainview" href="/royal/reports/0" onclick="closeNav()"> כללי </a>
+      <a target="mainview" href="/royal/reports/1" onclick="closeNav()"> עבור לקוח אחד </a>
+    </div>
+    <button type="button" class="collapsible"> משתמשים - </button>
+    <div class="content">
+      <a target="mainview" href="/royal/users/<%= admin.username %>" onclick="closeNav()"> הצג משתמשים </a>
+      <% if(admin.role == '1'){ %>
+        <a target="mainview" href="/royal/logs" onclick="closeNav()"> Log </a>
+      <% } %>
+      <a target="mainview" href="/royal/changeadminpass/<%= admin.username %>" onclick="closeNav()"> שינוי סיסמת כניסה </a>
+      <a href="/royal/logout"> יציאה </a>
+    </div>
+</div>
+
+<!-- Home icon -->
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  let cont = document.getElementsByClassName("content");
+  for(let i = 0; i < cont.length; i++){
+      cont[i].style.maxHeight = null;
+  }
+}
+
+
+let coll = document.getElementsByClassName("collapsible");
+let i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<!-- iframe -->
+<section class="main">
+    <iframe name="mainview"></iframe>
+</section>
+<script>
+  document.getElementById("homebutton").click();
+</script>
+</body>
+</html> 

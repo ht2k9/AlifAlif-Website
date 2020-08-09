@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/royalcss/orderproducts.css">
+  <link rel="stylesheet" type="text/css" href="/css/royalcss/royal.css">
+</head>
+<body>
+<div class="title">
+  <h1> הזמנה מס' <%= orderid %> </h1>
+  <a href="/royal/orders/<%= admin.username %>/<%= clientid %>/<%= clientname %>" class="btn"> חזרה </a>
+</div>
+<div class="table">
+  <table>
+    <script> let orderproducts = []; </script>
+    <tr><td> מס' </td><td> מוצר </td><td> כמות </td><td> מחיר ליחידה </td><td> סה"כ </td></tr>
+    <% if(orderproducts.length) { let total = 0; %>
+    <% for(let i = 0; i< orderproducts.length; i++) { %>
+      <tr>
+        <td class="num"> <%= i+1 %> </td>
+        <td class="tdataname"> <%= orderproducts[i].description %> </td>
+        <td class="tdata"> <%= orderproducts[i].quantity %> </td>
+        <td class="tdata"> <%= orderproducts[i].price %> </td>
+        <td class="tdata"> <%= orderproducts[i].quantity * orderproducts[i].price %> </td>
+        <td class="actions tdata"> 
+          <span class="btn tedit" onclick="openEditOrderproductForm('<%= i %>')"> &#9998; </span>
+          <span class="btn tdelete" onclick="openDeleteOrderproductForm('<%= i %>')"> &#10006; </span>
+        </td>
+        <% total += (orderproducts[i].quantity * orderproducts[i].price); %>
+      </tr>
+      <script> orderproducts.push(['<%= orderproducts[i].description; %>', '<%= orderproducts[i].quantity; %>', '<%= orderproducts[i].price; %>']); </script>
+      <% } %>
+  </table>
+</div>
+
+<p style="text-align: left; margin-left: 20pt;"> סה"כ:  <%= total %> </p>
+<% } else { %>
+</table>
+<p class="no_products" style="padding: 0 20px"> אין מוצרים עבור הזמנה </p>
+<% } %>
+
+<script> let savedproducts = []; </script>
+<% savedproducts.forEach(product => { %>
+  <script> savedproducts.push(['<%= product.description %>', '<%= product.price %>']); </script>  
+<% }); %>
+
+<!-- add orderproduct modal -->
+<div class="popup-position" id="add_orderproduct_form">
+  <% include ../partials/royal/add_orderproduct %>
+</div>
+<button class="addnew" onclick="openAddOrderproductForm()"> + </button>
+
+<!-- edit orderproduct modal -->
+<div class="popup-position" id="edit_orderproduct_form">
+  <% include ../partials/royal/edit_orderproduct %>
+</div>
+
+<!-- delete orderproduct modal -->
+<div class="popup-position" id="delete_orderproduct_form">
+  <% include ../partials/royal/delete_orderproduct %>
+</div>
+
+<script>
+
+    function openAddOrderproductForm() {
+    let e = document.getElementById("add_orderproduct_form");
+    let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
+        e.style.display = 'none';
+        btn.style.display = 'block';
+        
+      }
+      else{
+        e.style.display = 'block';
+        btn.style.display = 'none';
+      }
+    }
+
+  function openEditOrderproductForm(i) {
+    let e = document.getElementById("edit_orderproduct_form");
+    let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
+        e.style.display = 'none';
+        btn.style.display = 'block';
+        
+      }
+      else{
+        e.style.display = 'block';
+        btn.style.display = 'none';
+        document.getElementById("edit_orderproduct").value = orderproducts[i][0];
+        document.getElementById("edit_orderproduct_price").value = orderproducts[i][2];
+        document.getElementById("edit_orderproduct_price").placeholder = orderproducts[i][2];
+        document.getElementById("default_price").value = orderproducts[i][2];
+        document.getElementById("edit_orderproduct_quantity").value = orderproducts[i][1];
+        document.getElementById("edit_orderproduct_quantity").placeholder = orderproducts[i][1];
+        document.getElementById("default_quantity").value = orderproducts[i][1];
+        document.getElementById("edit_orderproduct_total").value = Number(orderproducts[i][1] * orderproducts[i][2]);
+    }
+  }
+
+  function openDeleteOrderproductForm(i) {
+    let e = document.getElementById("delete_orderproduct_form");
+    let btn = document.getElementsByClassName("addnew")[0];
+      if (e.style.display == 'block'){
+        e.style.display = 'none';
+        btn.style.display = 'block';
+        
+      }
+      else{
+        e.style.display = 'block';
+        btn.style.display = 'none';
+      e.style.display = 'block';
+      document.getElementById("del_orderproduct").value = orderproducts[i][0];
+    }
+  }
+
+
+function calcOrderproductTotal() {
+  let p = document.getElementById('orderproduct_price').value;
+  let q = document.getElementById('orderproduct_quantity').value;
+  document.getElementById('orderproduct_total').value = p * q;
+}
+
+function calcEditedOrderproductTotal() {
+  let p = document.getElementById('edit_orderproduct_price').value;
+  let q = document.getElementById('edit_orderproduct_quantity').value;
+  document.getElementById('edit_orderproduct_total').value = p * q;
+}
+
+function validateAddOrderProduct(){
+  let orderproduct_name = document.getElementById('orderproduct');
+  let orderproduct_price = document.getElementById('orderproduct_price');
+  let orderproduct_quantity = document.getElementById('orderproduct_quantity');
+  if(!(orderproduct_name.value && orderproduct_price.value && orderproduct_quantity.value)){
+    alert('נא למלא את כל השדות');
+    return false;
+  }
+  if(orderproduct_quantity.value < 1 || orderproduct_price.value < 0){
+    alert('נא להשתמש במספרים הגיוניים');
+    return false;
+  }
+  for(let i = 0; i < orderproducts.length; i++){
+    if(orderproduct_name.value === orderproducts[i][0]){
+      alert('פריט קיים, נא לעדכן / להסיר אותו');
+      return false;
+    }
+  }
+  return true;
+}
+
+function validateEditOrderProduct(){
+  let newquantity = document.getElementById('edit_orderproduct_quantity');
+  let def_quantity = document.getElementById('default_quantity');
+  let newprice = document.getElementById('edit_orderproduct_price');
+  let def_price = document.getElementById('default_price');
+  if(!(newquantity.value && newprice.value)){
+    alert('נא למלא את כל השדות');
+    return false;
+  }
+  if(newprice.value < 0 || newquantity < 1){
+    alert('נא להשתמש במספרים הגיוניים');
+    return false;
+  }
+  return true;
+}
+
+function checkSavedPrices(){
+  let product = document.getElementById("orderproduct");
+  let found = false;
+  for(let i = 0; i < savedproducts.length; i++){
+    if(product.value == savedproducts[i][0]){
+      document.getElementById("orderproduct_price").value = Number(savedproducts[i][1]);
+      found = true;
+    }
+  }
+  if(!found){
+    document.getElementById("orderproduct_price").value = "";
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="popup-wrapper">
+    <div id="popup-container">
+        <h2> עדכון מוצר </h2>
+        <form action="/royal/editproductprice" method="POST" onsubmit="return validateEditProductPrice()">
+           <input type="hidden" name="clientid" value="<%= clientid %>">
+           <input type="hidden" name="clientname" value="<%= clientname %>">
+           <input type="hidden" name="username" value="<%= admin.username %>">
+
+           <div class="form-group">
+              <label> מוצר: </label> <input class="leftinput" id="edit_product_description" type="text" name="edit_product_description" value="" readonly>
+            </div>
+            <div class="form-group">
+              <label> עדכן מחיר ל- </label> <input class="leftinput" type="number" step="0.01" name="edit_product_price" id="edit_product_price" value="" placeholder="">
+              <input id="edit_default_price" type="hidden" name="default_price" value="">
+            </div><br/>
+        <div class="modal-footer">
+          <input class="formcancel" type="reset" value="ביטול" herf="javascript:void(0)" onclick="openEditProductPriceForm()"> <input class="formsubmit" type="submit" value="אישור">
+        </div>
+      </form>
+    </div>
+</div>
