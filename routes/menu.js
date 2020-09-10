@@ -164,12 +164,13 @@ router.post('/food/add', upload.single('foodImg'), (req, res) => {
     });
 });
 
+// UPDATE
 router.get('/update/:id', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
         let menus = JSON.parse(data);
         
-        res.render('menu/new-menu', {menu: menus[req.params.id], id: req.params.id, categories: menus[req.params.id].categories});
+        res.render('menu/edit-menu', {menu: menus[req.params.id], id: req.params.id, categories: menus[req.params.id].categories});
     });
 });
 
