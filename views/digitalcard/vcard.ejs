@@ -174,37 +174,38 @@
                 <% if(vcard.phones.length != 0) { %>
                     <% for(let i=1; i<=vcard.phones.length; i++){ let phone = vcard.phones[i-1]; %>
                         <li class="trigger-item">
-                            <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="tel:<%= phone.number %>" data-url="tel:<%= phone.number %>" data-type="address" data-title="<%= phone.title %>"><i class="icon-phone"></i></a>
+                            <a style=" <% if(vcard.business == 'Embassy English Tours') { %> background-color: #008700; <% } else {%> background-color: <%= vcard.colors.primary %>; <% } %> border-color: <%= vcard.colors.secondary %>" href="tel:<%= phone.number %>" data-url="tel:<%= phone.number %>" data-type="address" data-title="<%= phone.title %>"><i class="icon-phone"></i></a>
                         </li>
                     <% } %>
                 <% } %>
                 <% if(vcard.whatsapp != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="https://wa.me/<%= vcard.whatsapp.link %>" data-url="" data-type="page" data-title="<%= vcard.whatsapp.title %>"><i class="icon-whatsapp"></i></a>
+                        <a style="<% if(vcard.business == 'Embassy English Tours') { %> background-color: #6ce800; <% } else {%> background-color: <%= vcard.colors.primary %>; <% } %> border-color: <%= vcard.colors.secondary %>" href="https://wa.me/<%= vcard.whatsapp.link %>" data-url="" data-type="page" data-title="<%= vcard.whatsapp.title %>"><i class="icon-whatsapp"></i></a>
                     </li>
                 <% } %>
                 <% if(vcard.facebook != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.facebook.link %>" data-url="" data-type="page" data-title="<%= vcard.facebook.title %>"><i class="icon-facebook"></i></a>
+                        <a style="<% if(vcard.business == 'Embassy English Tours') { %> background-color: #3e4aff; <% } else {%> background-color: <%= vcard.colors.primary %>; <% } %> border-color: <%= vcard.colors.secondary %>" href="<%= vcard.facebook.link %>" data-url="" data-type="page" data-title="<%= vcard.facebook.title %>"><i class="icon-facebook"></i></a>
                     </li>
                 <% } %>
                 <% if(vcard.instagram != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.instagram.link %>" data-url="" data-type="page" data-title="<%= vcard.instagram.title %>"><i class="icon-instagram"></i></a>
+                        <a style="<% if(vcard.business == 'Embassy English Tours') { %> background-color: #f06639; <% } else {%> background-color: <%= vcard.colors.primary %>; <% } %> border-color: <%= vcard.colors.secondary %>" href="<%= vcard.instagram.link %>" data-url="" data-type="page" data-title="<%= vcard.instagram.title %>"><i class="icon-instagram"></i></a>
                     </li>
                 <% } %>
                 <% if(vcard.waze != null) { %>
                     <li class="trigger-item">
-                        <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" href="<%= vcard.waze.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.title %>"><i class="icon-map-marker-alt"></i></a>
+                        <a style="<% if(vcard.business == 'Embassy English Tours') { %> background-color: #1a3dff; <% } else {%> background-color: <%= vcard.colors.primary %>; <% } %> border-color: <%= vcard.colors.secondary %>" href="<%= vcard.waze.link %>" data-url="" data-type="page" data-title="<%= vcard.waze.title %>"><i class="icon-map-marker-alt"></i></a>
                     </li>
                 <% } %>
                 <li class="trigger-item">
-                    <a style="background-color: <%= vcard.colors.primary %>; border-color: <%= vcard.colors.secondary %>" id="myBtn" data-url="" data-type="page" data-title="שעות עבודה"><i class="icon-clock2"></i></a>
+                    <a style="<% if(vcard.business == 'Embassy English Tours') { %> background-color: #f62929; <% } else {%> background-color: <%= vcard.colors.primary %>; <% } %>border-color: <%= vcard.colors.secondary %>" id="myBtn" data-url="" data-type="page" data-title="שעות עבודה"><i class="icon-clock2"></i></a>
                 </li>
             </ul>
         </div>
-        <div class="main_info">
+        <div class="main_info"<% if(vcard.business == 'Embassy English Tours') { %> style="text-shadow: 2px 2px;color: #0217b3; font-family: fantasy;" <% } %> >
             <h1><%= vcard.business %></h1>
+            <% if(vcard.business == 'Embassy English Tours') { %> <h1 style="font-size: 1.5em; color:black;">By Dr. Ali Assadi</h1> <% } %>
 
         </div>
     </div>
