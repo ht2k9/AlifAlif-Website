@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/barcode/saltburger' ,(req, res) => {
+res.redirect('http://www.saltburger.alifalif.work');
+});
+
 app.get('/get/all/:data', (req, res) => {
     fs.readFile('localbase/'+req.params.data+'.json', (err, data) => {
         if (err) throw err;
