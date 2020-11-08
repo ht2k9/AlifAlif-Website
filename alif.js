@@ -86,7 +86,7 @@ app.use('/quiz', quiz);
 // ***************************************************** Royal ****************************************/
 app.use('/royal', royal);
 
-app.get('/keyadakadera', (req, res) => {
+app.get('/contest', (req, res) => {
     fs.readFile('localbase/questions.json', (err, dataQ) => {
         if (err) throw err;
         let questions = JSON.parse(dataQ);
