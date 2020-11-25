@@ -24,7 +24,7 @@ router.get('/show/:id', (req, res) => {
 router.get('/show/:lang/:id', (req, res) => {
     fs.readFile('localbase/menus.json', (err, data) => {
         if (err) throw err;
-	if(req.params.id == 2)  res.redirect('http://bbeep.co.il/menu/1');
+	if(req.params.id == 2)  res.redirect('https://www.saltburger.alifalif.work');
         let isVisible = false;
         let menus = JSON.parse(data);
         res.render('menu/menu', {menu: menus[req.params.id], id: req.params.id, lang: req.params.lang, isVisible: isVisible});
