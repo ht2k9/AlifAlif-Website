@@ -63,68 +63,6 @@
         }
     },
     {
-        "business": "Embassy English Tours",
-        "logo": "d23a8d51988a1d59c1c7f6b9a309531a.png",
-        "bg": {
-            "link": "055fa8b25d8bbecf51adc7d14d842b60.png",
-            "type": "photo"
-        },
-        "colors": {
-            "primary": "#bd0000",
-            "secondary": "#0015b3"
-        },
-        "facebook": {
-            "title": "@embassyenglishtours",
-            "link": "https://www.facebook.com/embassyenglishtours/"
-        },
-        "waze": {
-            "title": "waze",
-            "link": "https://www.waze.com/ul?ll=32.937047%2C35.272766&navigate=yes"
-        },
-        "instagram": {
-            "title": "@embassy_english_tours",
-            "link": "https://www.instagram.com/embassy_english_tours/"
-        },
-        "whatsapp": {
-            "title": "whatsapp",
-            "link": "+972526994190"
-        },
-        "phones": [
-            {
-                "title": "עלי אסדי",
-                "number": "0526994190"
-            }
-        ],
-        "day1": {
-            "start": "9:00",
-            "end": "17:00"
-        },
-        "day2": {
-            "start": "9:00",
-            "end": "17:00"
-        },
-        "day3": {
-            "start": "9:00",
-            "end": "17:00"
-        },
-        "day4": {
-            "start": "9:00",
-            "end": "17:00"
-        },
-        "day5": {
-            "start": "9:00",
-            "end": "17:00"
-        },
-        "day6": {
-            "start": "9:00",
-            "end": "17:00"
-        },
-        "day7": {
-            "start": "9:00",
-            "end": "17:00"
-        }
-    },
-    {
         "business": "אבתיהאל אסדי - עורכת דין",
         "logo": "11fffd64f7e5a085fd9a301b840c4321.png",
         "bg": {
@@ -184,6 +122,68 @@
         "day7": {
             "start": "-",
             "end": "-"
+        }
+    },
+    {
+        "business": "Embassy English Tours",
+        "logo": "d23a8d51988a1d59c1c7f6b9a309531a.png",
+        "bg": {
+            "link": "055fa8b25d8bbecf51adc7d14d842b60.png",
+            "type": "photo"
+        },
+        "colors": {
+            "primary": "#bd0000",
+            "secondary": "#0015b3"
+        },
+        "facebook": {
+            "title": "@embassyenglishtours",
+            "link": "https://www.facebook.com/embassyenglishtours/"
+        },
+        "waze": {
+            "title": "waze",
+            "link": "https://www.waze.com/ul?ll=32.937047%2C35.272766&navigate=yes"
+        },
+        "instagram": {
+            "title": "@embassy_english_tours",
+            "link": "https://www.instagram.com/embassy_english_tours/"
+        },
+        "whatsapp": {
+            "title": "whatsapp",
+            "link": "+972526994190"
+        },
+        "phones": [
+            {
+                "title": "עלי אסדי",
+                "number": "0526994190"
+            }
+        ],
+        "day1": {
+            "start": "9:00",
+            "end": "17:00"
+        },
+        "day2": {
+            "start": "9:00",
+            "end": "17:00"
+        },
+        "day3": {
+            "start": "9:00",
+            "end": "17:00"
+        },
+        "day4": {
+            "start": "9:00",
+            "end": "17:00"
+        },
+        "day5": {
+            "start": "9:00",
+            "end": "17:00"
+        },
+        "day6": {
+            "start": "9:00",
+            "end": "17:00"
+        },
+        "day7": {
+            "start": "9:00",
+            "end": "17:00"
         }
     },
     {
