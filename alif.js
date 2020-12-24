@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/barcode/saltburger' ,(req, res) => {
-res.redirect('http://www.saltburger.alifalif.work');
+    res.redirect('http://www.saltburger.alifalif.work');
 });
 
 app.get('/get/all/:data', (req, res) => {
@@ -147,6 +147,28 @@ app.get('/brbmyfriend', (req, res) => {
         res.render('data', {data: data});
     });
 });
+
+
+app.get('/research/admin', (req, res) => {
+    res.render('research/index');
+});
+
+app.post('/research/admin', (req, res) => {
+    fs.readFile('localbase/research.json', (err, data) => {
+        if (err) throw err;
+
+        const research = JSON.parse(data);
+        
+        research.push(req.body);
+
+        fs.writeFile('localbase/research.json', JSON.stringify(research) , function (err) {
+            if (err) throw err;
+                
+            res.send(true);
+        });
+    });
+});
+
 
 app.get('/*', (req, res) => {
     res.render('error');
