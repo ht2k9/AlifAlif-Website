@@ -37,20 +37,24 @@ body{direction:rtl;margin:0;padding:0;background:#bbd9ee;color:#000;font-family:
             <th class="first" width="177">משתתף</th>
             <th>שעה</th>
             <th>קצב לב</th>
-            <th>רעש</th>
-            <th>אור</th>
+            <th>light sleep</th>
+            <th>deep sleep</th>
             <th class="last">פעיל</th>
           </tr>
-          <tr>
-            <td class="first style2">- Lorem Ipsum </td>
-            <td><img src="/img/add-icon.gif" width="16" height="16" alt="" /></td>
-            <td><img src="/img/hr.gif" width="16" height="16" alt="" /></td>
-            <td><img src="/img/save-icon.gif" width="16" height="16" alt="" /></td>
-            <td><img src="/img/edit-icon.gif" width="16" height="16" alt="" /></td>
-            <td class="last"><img src="/img/add-icon.gif" width="16" height="16" alt="add" /></td>
-          </tr>
+         
+            <% for(let i=0; i<research.length; i++) { const r = research[i]; %>
+              <tr>
+              <td class="first style2"><%= r.user %></td>
+              <td><%= r.date %> </td>
+              <td><%= r.heart %> </td>
+              <td><%= r.lightSleep %> </td>
+              <td><%= r.deepSleep %> </td>
+              <td><%= r.active %> </td>
+            </tr>
+            <% } %>
+          
         </table>
-        <div class="select"> <strong>Other Pages: </strong>
+        <div class="select"> <strong>עוד: </strong>
           <select>
             <option>1</option>
           </select>
@@ -59,14 +63,11 @@ body{direction:rtl;margin:0;padding:0;background:#bbd9ee;color:#000;font-family:
     </div>
 
     <div id="left-column">
-      <h3>Header</h3>
+      <h3>משתתפים</h3>
       <ul class="nav">
-        <li><a href="#">Lorem Ipsum dollar</a></li>
-        <li><a href="#">Dollar</a></li>
-        <li><a href="#">Lorem dollar</a></li>
-        <li><a href="#">Ipsum dollar</a></li>
-        <li><a href="#">Lorem Ipsum dollar</a></li>
-        <li class="last"><a href="#">Dollar Lorem Ipsum</a></li>
+        <% for(let i=0; i<research.length; i++) { const r = research[i]; %>
+          <li><a href="#"><%= r.user %></a></li>
+        <% } %>
       </ul>
       <a href="#" class="link">Link here</a> <a href="#" class="link">Link here</a> </div>
 

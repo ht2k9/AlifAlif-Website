@@ -1,1 +1,18 @@
-[{}]
+[
+    {
+        "user":"31547874",
+        "date": "24/12/2020",
+        "heart": "10",
+        "deepSleep": "1",
+        "lightSleep": "2",
+        "active": "פעיל"
+    },
+    {
+        "user":"31547874",
+        "date": "24/12/2020",
+        "heart": "10",
+        "deepSleep": "2",
+        "lightSleep": "2",
+        "active": "פעיל"
+    }
+]

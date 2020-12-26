@@ -10,6 +10,7 @@ const digitalcard = require('./routes/digitalcard.js');
 const menu = require('./routes/menu.js');
 const quiz = require('./routes/quiz.js');
 const royal = require('./routes/royal.js');
+const research = require('./routes/research.js');
 
 const app = express();
 
@@ -86,6 +87,10 @@ app.use('/quiz', quiz);
 // ***************************************************** Royal ****************************************/
 app.use('/royal', royal);
 
+// ***************************************************** RESEARCH ****************************************/
+app.use('/research', research);
+
+
 app.get('/contest', (req, res) => {
     fs.readFile('localbase/questions.json', (err, dataQ) => {
         if (err) throw err;
@@ -147,28 +152,6 @@ app.get('/brbmyfriend', (req, res) => {
         res.render('data', {data: data});
     });
 });
-
-
-app.get('/research/admin', (req, res) => {
-    res.render('research/index');
-});
-
-app.post('/research/admin', (req, res) => {
-    fs.readFile('localbase/research.json', (err, data) => {
-        if (err) throw err;
-
-        const research = JSON.parse(data);
-        
-        research.push(req.body);
-
-        fs.writeFile('localbase/research.json', JSON.stringify(research) , function (err) {
-            if (err) throw err;
-                
-            res.send(true);
-        });
-    });
-});
-
 
 app.get('/*', (req, res) => {
     res.render('error');
