@@ -36,9 +36,11 @@ body{direction:rtl;margin:0;padding:0;background:#bbd9ee;color:#000;font-family:
           <tr>
             <th class="first" width="177">משתתף</th>
             <th>שעה</th>
-            <th>קצב לב</th>
+            <th>רעש</th>
             <th>light sleep</th>
             <th>deep sleep</th>
+            <th>light</th>
+            <th>noise</th>
             <th class="last">פעיל</th>
           </tr>
          
@@ -46,9 +48,10 @@ body{direction:rtl;margin:0;padding:0;background:#bbd9ee;color:#000;font-family:
               <tr>
               <td class="first style2"><%= r.user %></td>
               <td><%= r.date %> </td>
-              <td><%= r.heart %> </td>
+              <td><%= r.noise %> </td>
               <td><%= r.lightSleep %> </td>
               <td><%= r.deepSleep %> </td>
+              <td><%= r.light %> </td>
               <td><%= r.active %> </td>
             </tr>
             <% } %>
