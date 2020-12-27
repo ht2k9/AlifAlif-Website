@@ -1,7 +1,9 @@
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
+const bodyParser = require('body-parser');
 
+router.use(bodyParser.json());
 
 router.get('/', (req, res) => {
     fs.readFile('localbase/research.json', (err, data) => {
@@ -19,6 +21,8 @@ router.post('/', (req, res) => {
         if (err) throw err;
 
         const research = JSON.parse(data);
+
+        console.log(req.body);
         
         research.push(req.body);
 

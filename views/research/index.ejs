@@ -35,16 +35,16 @@ body{direction:rtl;margin:0;padding:0;background:#bbd9ee;color:#000;font-family:
         <table class="listing" cellpadding="0" cellspacing="0">
           <tr>
             <th class="first" width="177">משתתף</th>
-            <th>שעה</th>
+            <th>תאריך</th>
             <th>רעש</th>
+            <th>אור</th>
             <th>light sleep</th>
             <th>deep sleep</th>
-            <th>light</th>
-            <th class="last">פעיל</th>
+            <th>מתחבר</th>
           </tr>
          
             <% for(let i=0; i<research.length; i++) { const r = research[i]; %>
-              <tr>
+            <tr>
               <td class="first style2"><%= r.user %></td>
               <td><%= r.date %> </td>
               <td><%= r.noise %> </td>
