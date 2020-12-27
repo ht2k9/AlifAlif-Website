@@ -18,6 +18,8 @@ app.set('view engine' , 'ejs');
 app.use(compression());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 
 app.get('/', (req, res) => {
     res.render('home');
@@ -77,6 +79,7 @@ app.get('/newgrid', (req, res) => {
 
 // ***************************************************** RESEARCH ****************************************/
 app.use('/research', research);
+
 // ************************************** Digital Card **************************************/
 app.use('/digitalcard', digitalcard);
 

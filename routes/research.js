@@ -1,19 +1,44 @@
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
-const bodyParser = require('body-parser');
-
-router.use(bodyParser.json());
 
 router.get('/', (req, res) => {
     fs.readFile('localbase/research.json', (err, data) => {
         if (err) throw err;
 
         const research = JSON.parse(data);
-        
-        res.render('research/index', {research});
-    });
+
+        fs.readFile('localbase/research_users.json', (err, data) => {
+            if (err) throw err;
     
+            const users = JSON.parse(data);
+            
+            res.render('research/index', {research, users});
+        });
+    }); 
+});
+
+router.get('/:id', (req, res) => {
+    fs.readFile('localbase/research.json', (err, data) => {
+        if (err) throw err;
+
+        const allResearch = JSON.parse(data);
+        let research = [];
+
+        allResearch.forEach(ree => {
+            if(ree.user == req.params.id) {
+                research.push(ree);
+            }
+        });
+
+        fs.readFile('localbase/research_users.json', (err, data) => {
+            if (err) throw err;
+    
+            const users = JSON.parse(data);
+            
+            res.render('research/index', {research, users});
+        });
+    });
 });
 
 router.post('/', (req, res) => {
