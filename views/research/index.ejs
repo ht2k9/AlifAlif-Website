@@ -40,7 +40,7 @@ body{direction:rtl;margin:0;padding:0;background:#bbd9ee;color:#000;font-family:
             <th>אור</th>
             <th>light sleep</th>
             <th>deep sleep</th>
-            <th>מתחבר</th>
+            <th>total sleep</th>
           </tr>
          
             <% for(let i=0; i<research.length; i++) { const r = research[i]; %>
@@ -48,10 +48,10 @@ body{direction:rtl;margin:0;padding:0;background:#bbd9ee;color:#000;font-family:
               <td class="first style2"><%= r.user %></td>
               <td><%= r.date %> </td>
               <td><%= r.noise %> </td>
+              <td><%= r.light %> </td>
               <td><%= r.lightSleep %> </td>
               <td><%= r.deepSleep %> </td>
-              <td><%= r.light %> </td>
-              <td><%= r.active %> </td>
+              <td><%= r.totalSleep %> </td>
             </tr>
             <% } %>
           
