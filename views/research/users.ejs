@@ -11,8 +11,8 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
 <div id="main">
   <div id="header"> <a href="#" class="logo"><img src="/img/logo.png" width="176" height="51" alt=""/></a>
     <ul id="top-navigation">
-      <li class="active"><span><span>Research Results</span></span></li>
-      <li><span><span><a href="/research/users">Participants</a></span></span></li>
+      <li><span><span><a href="/research/">Research Results</a></span></span></li>
+      <li class="active"><span><span>Participants</span></span></li>
     </ul>
   </div>
   <div id="middle">
@@ -38,25 +38,30 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
         <table id="headerTable" class="listing" cellpadding="0" cellspacing="0">
           <tr>
             <th class="first" width="177">Participant ID</th>
-            <th>Date</th>
-            <th>Noise (db)</th>
-            <th>Light (lux)</th>
-            <th>Light Sleep</th>
-            <th>Deep Sleep</th>
-            <th>Total Sleep</th>
+            <th>Full Name</th>
+            <th>Password</th>
+            <th>Active</th>
           </tr>
          
-            <% for(let i=0; i<research.length; i++) { const ree = research[i]; %>
-              <tr>
-                <td class="first style2"><%= ree.user %></td>
-                <td><%= ree.date %> </td>
-                <td><%= ree.noise %>db</td>
-                <td><%= ree.light %>lux</td>
-                <td><%= ree.lightSleep %> </td>
-                <td><%= ree.deepSleep %> </td>
-                <td><%= ree.totalSleep %> </td>
-              </tr>
-            <% } %>
+          <% for(let i=0; i<users.length; i++) { const user = users[i]; %>
+            <tr>
+              <td class="first style2"><%= user.id %></td>
+              <td><%= user.username %> </td>
+              <td><%= user.password %></td>
+              <td>
+                <form action="<%= user.id %>" method="POST">
+                    <% if(!user.active){ %>
+                        <button type="submit"><img src="/img/hr.gif" width="16" height="16" alt=""></button>
+                        <input type="hidden" name="isActive" value="true">
+                    <% } %>
+                    <% if(user.active){ %>
+                        <button type="submit"><img src="/img/add-icon.gif" width="16" height="16" alt=""></button>
+                        <input type="hidden" name="isActive" value="false">
+                    <% } %>
+                </form>
+              </td>
+            </tr>
+          <% } %>
           
         </table>
         <div class="select"> <strong>Page: </strong>
