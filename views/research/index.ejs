@@ -22,7 +22,7 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
     <div id="center-column">
       <div class="top-bar"> <a href="#" class="button" onclick="fnExcelReport();">Export</a>
         <h1>Research results</h1>
-        <div class="breadcrumbs"><a href="#">Home</a> / <a href="#">research results</a></div>
+        <div class="breadcrumbs">Total: <%= research.length %></div>
       </div>
       <br />
       <div class="select-bar">
@@ -30,7 +30,6 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
           <% if(userID == user.id) { %>
                 <label><%= user.id %></label>
                 <label><%= user.username %></label>
-                <button><%= user.active %></button>      
           <% } %>  
       <% } %>
       </div>

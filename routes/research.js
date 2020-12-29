@@ -4,7 +4,6 @@ const router = express.Router();
 
 
 // DATA
-
 router.get('/', (req, res) => {
     fs.readFile('localbase/research.json', (err, data) => {
         if (err) throw err;
@@ -76,8 +75,8 @@ router.post('/login', (req, res) => {
                 password,
                 active: false
             });
-	    correctPass = true;
-	}
+	        correctPass = true;
+	    }
 
         fs.writeFile('localbase/research_users.json', JSON.stringify(users) , function (err) {
             if (err) throw err;
@@ -110,6 +109,23 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.post('/user_active', (req, res) => {
+    fs.readFile('localbase/research_users.json', (err, data) => {
+        if (err) throw err;
+
+        const allResearch = JSON.parse(data);
+        let isActive = false;
+
+        allResearch.forEach(user => {
+            if(user.id == req.body.id) {
+                isActive = user.active;
+            }
+        });
+
+        res.send({success: isActive});
+    });
+});
+
 router.post('/:id', (req, res) => {
     fs.readFile('localbase/research_users.json', (err, data) => {
         if (err) throw err;
@@ -121,6 +137,8 @@ router.post('/:id', (req, res) => {
                 user.active = req.body.isActive;
             }
         });
+
+        console.log(req.body);
 
         fs.writeFile('localbase/research_users.json', JSON.stringify(users) , function (err) {
             if (err) throw err;

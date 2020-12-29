@@ -17,22 +17,15 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
   </div>
   <div id="middle">
     <div id="left-column"> <strong class="h"></strong>
-      <div class="box">Real-time user tracking - updates every 5 minutes </div>
+      <div class="box">Check Participants and confirm / deny research entery requests </div>
     </div>
     <div id="center-column">
       <div class="top-bar"> <a href="#" class="button" onclick="fnExcelReport();">Export</a>
         <h1>Research results</h1>
-        <div class="breadcrumbs"><a href="#">Home</a> / <a href="#">research results</a></div>
+        <div class="breadcrumbs">Total: <%= users.length %></div>
       </div>
       <br />
       <div class="select-bar">
-      <% for(let i=0; i<users.length; i++) { const user = users[i]; %>
-          <% if(userID == user.id) { %>
-                <label><%= user.id %></label>
-                <label><%= user.username %></label>
-                <button><%= user.active %></button>      
-          <% } %>  
-      <% } %>
       </div>
       <div class="table"> <img src="/img/bg-th-left.gif" width="8" height="7" alt="" class="left" /> <img src="/img/bg-th-right.gif" width="7" height="7" alt="" class="right" />
         <table id="headerTable" class="listing" cellpadding="0" cellspacing="0">
@@ -50,11 +43,11 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
               <td><%= user.password %></td>
               <td>
                 <form action="<%= user.id %>" method="POST">
-                    <% if(!user.active){ %>
+                    <% if(user.active == 'false'){ %>
                         <button type="submit"><img src="/img/hr.gif" width="16" height="16" alt=""></button>
                         <input type="hidden" name="isActive" value="true">
                     <% } %>
-                    <% if(user.active){ %>
+                    <% if(user.active == 'true'){ %>
                         <button type="submit"><img src="/img/add-icon.gif" width="16" height="16" alt=""></button>
                         <input type="hidden" name="isActive" value="false">
                     <% } %>
