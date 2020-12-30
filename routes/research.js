@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         if (err) throw err;
 
         const research = JSON.parse(data);
-
+        
         fs.readFile('localbase/research_users.json', (err, data) => {
             if (err) throw err;
     
@@ -39,7 +39,6 @@ router.post('/', (req, res) => {
 });
 
 // USER LOGIN / REGISTER
-
 router.get('/users', (req, res) => {
     fs.readFile('localbase/research_users.json', (err, data) => {
         if (err) throw err;
