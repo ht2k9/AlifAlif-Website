@@ -56,9 +56,10 @@ router.post('/', (req, res) => {
     let today = new Date().toISOString().slice(0, 10);
 
     fs.readFile(`localbase/research${today}.json`, (err, data) => {
-        if (err) throw err;
+        let research;
 
-        const research = JSON.parse(data);
+        if (err) research = [];
+        else research = JSON.parse(data);
 
         console.log(req.body);
         
