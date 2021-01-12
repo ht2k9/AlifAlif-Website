@@ -39,7 +39,7 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
         <table id="headerTable" class="listing" cellpadding="0" cellspacing="0">
           <tr>
             <th class="first" width="177">Participant ID</th>
-            <th>Date</th>
+            <th>Hour</th>
             <th>Noise (dB)</th>
             <th>Light (lux)</th>
             <th>Light Sleep</th>
@@ -50,7 +50,7 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
             <% for(let i=research.length-1; i>=0; i--) { const ree = research[i]; %>
               <tr onclick="showData('<%= ree.hour %>')">
                 <td class="first style2"><%= ree.user %></td>
-                <td><%= ree.date %> </td>
+                <td><%= ree.time %> </td>
                 <td><%= ree.noise %>dB</td>
                 <td><%= ree.light %>lux</td>
                 <td><%= ree.lightSleep %> </td>

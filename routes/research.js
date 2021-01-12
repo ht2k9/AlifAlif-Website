@@ -57,15 +57,26 @@ router.post('/', (req, res) => {
 
     fs.readFile(`localbase/research${today}.json`, (err, data) => {
         let research;
+        const date = new Date();
 
         if (err) research = [];
         else research = JSON.parse(data);
 
-        console.log(req.body);
-        
-        research.push(req.body);
+        const{noise, light, deepSleep, lightSleep, totalSleep} = req.body;
 
-        fs.writeFile('localbase/research.json', JSON.stringify(research) , function (err) {
+        research.push(
+            {
+                noise,
+                light,
+                deepSleep,
+                lightSleep,
+                totalSleep,
+                date: today,
+                time: date.getHours(),
+            }
+        );
+
+        fs.writeFile(`localbase/research${today}.json`, JSON.stringify(research) , function (err) {
             if (err) throw err;
                 
             res.send({success: true});
