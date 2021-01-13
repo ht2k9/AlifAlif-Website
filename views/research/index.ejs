@@ -28,9 +28,9 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
       </div>
       <br />
       <div class="select-bar">
-        <h5 style="display: inline;">Total Sleep: <%= totalSleep %></h5>
-        <h5 style="display: inline; margin-left: 30px;">Light Sleep: <%= lightSleep %></h5>
-        <h5 style="display: inline; margin-left: 30px;">Deep Sleep: <%= deepSleep %></h5>
+        <h5 style="display: inline;">Total Sleep: <%= totalSleep.toFixed(2) %>min</h5>
+        <h5 style="display: inline; margin-left: 30px;">Light Sleep: <%= lightSleep.toFixed(2) %>min</h5>
+        <h5 style="display: inline; margin-left: 30px;">Deep Sleep: <%= deepSleep.toFixed(2) %>min</h5>
         <br>
         <h5 style="display: inline;">Noise: <%= noiseAvg %>dB</h5>
         <h5 style="display: inline; margin-left: 30px;">Light: <%= lightAvg %>lux</h5>
@@ -47,15 +47,15 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
             <th>Total Sleep</th>
           </tr>
          
-            <% for(let i=research.length-1; i>=0; i--) { const ree = research[i]; %>
-              <tr onclick="showData('<%= ree.hour %>')">
+            <% for(let i=sortedResearch.length-1; i>=0; i--) { const ree = sortedResearch[i]; %>
+              <tr onclick="showData('<%= ree.time %>')">
                 <td class="first style2"><%= ree.user %></td>
                 <td><%= ree.time %> </td>
-                <td><%= ree.noise %>dB</td>
-                <td><%= ree.light %>lux</td>
-                <td><%= ree.lightSleep %> </td>
-                <td><%= ree.deepSleep %> </td>
-                <td><%= ree.totalSleep %> </td>
+                <td><%= ree.noise.toFixed(2) %>dB</td>
+                <td><%= ree.light.toFixed(2) %>lux</td>
+                <td><%= ree.lightSleep.toFixed(2) %>min </td>
+                <td><%= ree.deepSleep.toFixed(2) %>min </td>
+                <td><%= ree.totalSleep.toFixed(2) %>min </td>
               </tr>
             <% } %>
           
@@ -88,15 +88,15 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
       <table id="headerTable" class="listing" cellpadding="0" cellspacing="0">
         <tr>
           <th class="first" width="177">Participant ID</th>
-          <th>Date</th>
+          <th>Time</th>
           <th>Noise (dB)</th>
           <th>Light (lux)</th>
         </tr>
        
           <% for(let i=research.length-1; i>=0; i--) { const ree = research[i]; %>
-            <tr onclick="showData('<%= ree.hour %>')">
+            <tr class="row<%= Number.parseInt(research[i].time.charAt(0)) %>" style="display: none;">
               <td class="first style2"><%= ree.user %></td>
-              <td><%= ree.date %> </td>
+              <td><%= ree.time %> </td>
               <td><%= ree.noise %>dB</td>
               <td><%= ree.light %>lux</td>
             </tr>
@@ -110,8 +110,17 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
 </body>
 <script>
 
+  let currentId = 0;
+
   function showData(id){
     modal.style.display = "block";
+    currentId = id;
+
+    var appBanners = document.getElementsByClassName('row'+id);
+
+    for (var i = 0; i < appBanners.length; i ++) {
+        appBanners[i].style.display = 'block';
+    }
   }
 
   var modal = document.getElementById("myModal");
@@ -119,11 +128,21 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
 
   span.onclick = function() {
     modal.style.display = "none";
+    var appBanners = document.getElementsByClassName('row'+currentId);
+
+    for (var i = 0; i < appBanners.length; i ++) {
+        appBanners[i].style.display = 'none';
+    }
   }
 
   window.onclick = function(event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+        modal.style.display = "none";
+        var appBanners = document.getElementsByClassName('row'+currentId);
+
+      for (var i = 0; i < appBanners.length; i ++) {
+          appBanners[i].style.display = 'none';
+      }
     }
   }
 
