@@ -20,8 +20,8 @@ router.get('/', (req, res) => {
         totalSleep = 0;
 
         research.forEach(res => {
-            lightSleep += res.lightSleep;
-            deepSleep += res.deepSleep;
+            lightSleep += Number.parseFloat(res.lightSleep);
+            deepSleep += Number.parseFloat(res.deepSleep);
 
             const noise = Number.parseFloat(res.noise);
             const light = Number.parseFloat(res.light);
@@ -62,17 +62,19 @@ router.post('/', (req, res) => {
         if (err) research = [];
         else research = JSON.parse(data);
 
-        const{noise, light, deepSleep, lightSleep, totalSleep} = req.body;
+        const{awake, user, noise, light, deepSleep, lightSleep, totalSleep} = req.body;
 
         research.push(
             {
                 noise,
                 light,
+		awake,
                 deepSleep,
+                user,
                 lightSleep,
                 totalSleep,
                 date: today,
-                time: date.getHours(),
+                time: `${date.getHours()+2}:${date.getMinutes()}`,
             }
         );
 
@@ -152,8 +154,8 @@ router.get('/:id', (req, res) => {
             if(res.user == req.params.id) {
                 research.push(res);
                 
-                lightSleep += res.lightSleep;
-                deepSleep += res.deepSleep;
+                lightSleep += Number.parseFloat( res.lightSleep);
+                deepSleep += Number.parseFloat(res.deepSleep);
     
                 const noise = Number.parseFloat(res.noise);
                 const light = Number.parseFloat(res.light);
