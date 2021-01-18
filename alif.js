@@ -36,8 +36,8 @@ app.get('/get/all/:data', (req, res) => {
     });
 });
 
-app.get('/flipbook/carpentryforeverything', (req, res) => {
-    res.render('carpentryforeverything');
+app.get('/flipbook/norseen', (req, res) => {
+    res.render('flipbook/index');
 });
 
 app.get('/example/ecommerce/:page', (req, res) => {

@@ -93,14 +93,14 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
           <th>Light (lux)</th>
         </tr>
        
-          <% for(let i=research.length-1; i>=0; i--) { const ree = research[i]; %>
-            <tr class="row<%= Number.parseInt(research[i].time.charAt(0)) %>" style="display: none;">
-              <td class="first style2"><%= ree.user %></td>
-              <td><%= ree.time %> </td>
-              <td><%= ree.noise %>dB</td>
-              <td><%= ree.light %>lux</td>
-            </tr>
-          <% } %>
+        <% for(let i=research.length-1; i>=0; i--) { const ree = research[i]; %>
+          <tr class="row<%= Number.parseInt(research[i].time.split(':')[0]); %>" style="display: none;">
+            <td class="first style2"><%= ree.user %></td>
+            <td><%= ree.time %> </td>
+            <td><%= ree.noise %>dB</td>
+            <td><%= ree.light %>lux</td>
+          </tr>
+        <% } %>
         
       </table>
     </div>
@@ -113,7 +113,7 @@ body{margin:0;padding:0;background:#bbd9ee;color:#000;font-family:tahoma,arial,s
   let currentId = 0;
 
   function showData(id){
-    modal.style.display = "block";
+    modal.style.display = "table-row";
     currentId = id;
 
     var appBanners = document.getElementsByClassName('row'+id);
