@@ -11,10 +11,11 @@ router.get('/', (req, res) => {
     fs.readFile(`localbase/research${today}.json`, (err, data) => {
         let research;
 
+
         if (err) research = [];
         else research = JSON.parse(data);
-        
-        let avgCounter = 0.0,
+	
+	let avgCounter = 0.0,
         lightSleep = 0,
         deepSleep = 0,
         noiseAvg = 0,
@@ -184,7 +185,7 @@ router.get('/:id', (req, res) => {
 
         for (let i = 0; i < allResearch.length; i++) {
             if(allResearch[i].user == req.params.id) {
-                let resHour = Number.parseInt(research[i].time.split(':')[0]);
+                let resHour = Number.parseInt(allResearch[i].time.split(':')[0]);
 
                 sortedResearch[resHour].lightSleep = Number.parseInt(allResearch[i].lightSleep);
                 sortedResearch[resHour].deepSleep = Number.parseInt(allResearch[i].deepSleep);
