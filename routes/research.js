@@ -137,6 +137,7 @@ router.post('/sleep', upload.single('image'),  (req, res) => {
         research.push(req.body);
 
         if(filePath != null) {
+		console.log(filePath);
             fs.rename(filePath, filePath+'.png', () => {
                 research[research.length-1].photo = req.file.filename+'.png';
                 
