@@ -29,6 +29,8 @@ router.get('/', (req, res) => {
         for (let i = 0; i < research.length; i++) {
             let resHour = Number.parseInt(research[i].time.split(':')[0]);
 
+            if(resHour >= 24) resHour -= 24;
+
             sortedResearch[resHour].user = research[i].user;
 
             sortedResearch[resHour].lightSleep = Number.parseInt(research[i].lightSleep);
@@ -228,6 +230,8 @@ router.get('/:id', (req, res) => {
                 research.push(allResearch[i]);
 
                 let resHour = Number.parseInt(allResearch[i].time.split(':')[0]);
+
+                if(resHour >= 24) resHour -= 24;
 
                 sortedResearch[resHour].lightSleep = Number.parseInt(allResearch[i].lightSleep);
                 sortedResearch[resHour].deepSleep = Number.parseInt(allResearch[i].deepSleep);
