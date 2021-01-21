@@ -12,19 +12,25 @@ router.get('/', (req, res) => {
     let today = new Date().toISOString().slice(0, 10);
 
     fs.readFile(`localbase/research_${today}.json`, (err, data) => {
+    
         let research;
-
 
         if (err) research = [];
         else research = JSON.parse(data);
 	
-	let 
-        lightSleep = 0,
-        deepSleep = 0,
+	    let 
+        lightSleep = '',
+        deepSleep = '',
+        totalSleep = '',
+        lightSleepMinutes = 0,
+        deepSleepMinutes = 0,
+        totalSleepMinutes = 0,
+        lightSleepHours = 0,
+        deepSleepHours = 0,
+        totalSleepHours = 0,
         noiseAvg = 0,
         lightAvg = 0,
-        totalSleep = 0,
-        sortedResearch = new Array(24).fill().map(u => ({time:0, light:0, noise:0, lightSleep:0, deepSleep:0, totalSleep:0, noiseCount:0, lightCount:0 }));
+        sortedResearch = new Array(24).fill().map(u => ({time:0, light:0, noise:0, noiseCount:0, lightCount:0 }));
 
         for (let i = 0; i < research.length; i++) {
             let resHour = Number.parseInt(research[i].time.split(':')[0]);
@@ -32,10 +38,6 @@ router.get('/', (req, res) => {
             if(resHour >= 24) resHour -= 24;
 
             sortedResearch[resHour].user = research[i].user;
-
-            sortedResearch[resHour].lightSleep = Number.parseInt(research[i].lightSleep);
-            sortedResearch[resHour].deepSleep = Number.parseInt(research[i].deepSleep);
-            sortedResearch[resHour].totalSleep = Number.parseInt(research[i].totalSleep);
 
             sortedResearch[resHour].time = resHour;
 
@@ -55,20 +57,12 @@ router.get('/', (req, res) => {
         }
 
         sortedResearch.forEach(sorted => {
-            lightSleep += sorted.lightSleep;
-            deepSleep += sorted.deepSleep;
-            totalSleep += sorted.totalSleep;
-
             if(sorted.noiseCount > 0) sorted.noise /= sorted.noiseCount;
             if(sorted.lightCount > 0) sorted.light /= sorted.lightCount;
 
             noiseAvg += sorted.noise;
             lightAvg += sorted.light;
         });
-
-        lightSleep /= 60;
-        deepSleep /= 60;
-        totalSleep /= 60;
             
         noiseAvg /= sortedResearch.length;
         lightAvg /= sortedResearch.length;
@@ -76,12 +70,32 @@ router.get('/', (req, res) => {
         noiseAvg = noiseAvg.toFixed(2);
         lightAvg = lightAvg.toFixed(2);
 
-        fs.readFile('localbase/research_users.json', (err, data) => {
+        fs.readFile(`localbase/research_sleep_${today}.json`, (err, data) => {
             if (err) throw err;
     
-            const users = JSON.parse(data);
+            const sleep = JSON.parse(data);
 
-            res.render('research/index', {research, users, userID: 0, lightSleep, deepSleep, noiseAvg, lightAvg, totalSleep, sortedResearch});
+            sleep.forEach(sl => {
+                lightSleepHours += Number.parseInt(sl.lightSleep.split(':')[0]);
+                deepSleepHours += Number.parseInt(sl.deepSleep.split(':')[0]);
+                totalSleepHours += Number.parseInt(sl.totalSleep.split(':')[0]);
+
+                lightSleepMinutes += Number.parseInt(sl.lightSleep.split(':')[1]);
+                deepSleepMinutes += Number.parseInt(sl.deepSleep.split(':')[1]);
+                totalSleepMinutes += Number.parseInt(sl.totalSleep.split(':')[1]);
+            });
+
+            lightSleep = `${lightSleepHours}:${lightSleepMinutes}`;
+            deepSleep = `${deepSleepHours}:${deepSleepMinutes}`;
+            totalSleep = `${totalSleepHours}:${totalSleepMinutes}`;
+
+            fs.readFile('localbase/research_users.json', (err, data) => {
+                if (err) throw err;
+        
+                const users = JSON.parse(data);
+    
+                res.render('research/index', {research, users, userID: 0, lightSleep, deepSleep, totalSleep, noiseAvg, lightAvg, sortedResearch});
+            });
         });
     }); 
 });
@@ -154,10 +168,6 @@ router.post('/sleep', upload.single('image'),  (req, res) => {
                 res.send({success: true});
             });
         }
-
-        
-
-        
     });
 });
 
@@ -217,13 +227,20 @@ router.get('/:id', (req, res) => {
         if (err) allResearch = [];
         else allResearch = JSON.parse(data);
         
-        let 
-        lightSleep = 0,
-        deepSleep = 0,
+        let
+        lightSleep = '',
+        deepSleep = '',
+        totalSleep = '',
+        lightSleepMinutes = 0,
+        deepSleepMinutes = 0,
+        totalSleepMinutes = 0,
+        lightSleepHours = 0,
+        deepSleepHours = 0,
+        totalSleepHours = 0,
         noiseAvg = 0,
         lightAvg = 0,
-        totalSleep = 0,
         research = [],
+        photos = [],
         sortedResearch = new Array(24).fill().map(u => ({time:0, light:0, noise:0, lightSleep:0, deepSleep:0, totalSleep:0, noiseCount:0, lightCount:0, user: req.params.id }));
 
         for (let i = 0; i < allResearch.length; i++) {
@@ -233,10 +250,6 @@ router.get('/:id', (req, res) => {
                 let resHour = Number.parseInt(allResearch[i].time.split(':')[0]);
 
                 if(resHour >= 24) resHour -= 24;
-
-                sortedResearch[resHour].lightSleep = Number.parseInt(allResearch[i].lightSleep);
-                sortedResearch[resHour].deepSleep = Number.parseInt(allResearch[i].deepSleep);
-                sortedResearch[resHour].totalSleep = Number.parseInt(allResearch[i].totalSleep);
     
                 sortedResearch[resHour].time = resHour;
     
@@ -257,22 +270,12 @@ router.get('/:id', (req, res) => {
         }
 
         sortedResearch.forEach(sorted => {
-            if(sorted.lightSleep.length > 0) {
-                lightSleep += sorted.lightSleep;
-                deepSleep += sorted.deepSleep;
-                totalSleep += sorted.totalSleep;
-            }
-    
             if(sorted.noiseCount > 0) sorted.noise /= sorted.noiseCount;
             if(sorted.lightCount > 0) sorted.light /= sorted.lightCount;
 
             noiseAvg += sorted.noise;
             lightAvg += sorted.light;
         });
-
-        lightSleep /= 60;
-        deepSleep /= 60;
-        totalSleep /= 60;
             
         noiseAvg /= sortedResearch.length;
         lightAvg /= sortedResearch.length;
@@ -280,12 +283,37 @@ router.get('/:id', (req, res) => {
         noiseAvg = noiseAvg.toFixed(2);
         lightAvg = lightAvg.toFixed(2);
 
-        fs.readFile('localbase/research_users.json', (err, data) => {
+        fs.readFile(`localbase/research_sleep_${today}.json`, (err, data) => {
             if (err) throw err;
     
-            const users = JSON.parse(data);
-            
-            res.render('research/index', {research, users, userID: req.params.id, lightSleep, deepSleep, noiseAvg, lightAvg, totalSleep, sortedResearch});
+            const sleep = JSON.parse(data);
+
+            sleep.forEach(sl => {
+                if(sl.user == req.params.id){
+                    lightSleepHours += Number.parseInt(sl.lightSleep.split(':')[0]);
+                    deepSleepHours += Number.parseInt(sl.deepSleep.split(':')[0]);
+                    totalSleepHours += Number.parseInt(sl.totalSleep.split(':')[0]);
+    
+                    lightSleepMinutes += Number.parseInt(sl.lightSleep.split(':')[1]);
+                    deepSleepMinutes += Number.parseInt(sl.deepSleep.split(':')[1]);
+                    totalSleepMinutes += Number.parseInt(sl.totalSleep.split(':')[1]);
+
+                    if(sl.photo != null)
+                        photos.push(sl.photo);
+                }
+            });
+
+            lightSleep = `${lightSleepHours}:${lightSleepMinutes}`;
+            deepSleep = `${deepSleepHours}:${deepSleepMinutes}`;
+            totalSleep = `${totalSleepHours}:${totalSleepMinutes}`;
+
+            fs.readFile('localbase/research_users.json', (err, data) => {
+                if (err) throw err;
+        
+                const users = JSON.parse(data);
+    
+                res.render('research/index', {photos, research, users, userID: 0, lightSleep, deepSleep, totalSleep, noiseAvg, lightAvg, sortedResearch});
+            });
         });
     });
 });
@@ -298,12 +326,18 @@ router.get('/filter/:date', (req, res) => {
         if (err) research = [];
         else research = JSON.parse(data);
 	
-	    let
-        lightSleep = 0,
-        deepSleep = 0,
+        let
+        lightSleep = '',
+        deepSleep = '',
+        totalSleep = '',
+        lightSleepMinutes = 0,
+        deepSleepMinutes = 0,
+        totalSleepMinutes = 0,
+        lightSleepHours = 0,
+        deepSleepHours = 0,
+        totalSleepHours = 0,
         noiseAvg = 0,
         lightAvg = 0,
-        totalSleep = 0,
         sortedResearch = new Array(24).fill().map(u => ({time:0, light:0, noise:0, lightSleep:0, deepSleep:0, totalSleep:0, noiseCount:0, lightCount:0 }));
 
         for (let i = 0; i < research.length; i++) {
@@ -312,10 +346,6 @@ router.get('/filter/:date', (req, res) => {
             if(resHour >= 24) resHour -= 24;
 
             sortedResearch[resHour].user = research[i].user;
-
-            sortedResearch[resHour].lightSleep = Number.parseInt(research[i].lightSleep);
-            sortedResearch[resHour].deepSleep = Number.parseInt(research[i].deepSleep);
-            sortedResearch[resHour].totalSleep = Number.parseInt(research[i].totalSleep);
 
             sortedResearch[resHour].time = resHour;
 
@@ -335,9 +365,6 @@ router.get('/filter/:date', (req, res) => {
         }
 
         sortedResearch.forEach(sorted => {
-            lightSleep += sorted.lightSleep;
-            deepSleep += sorted.deepSleep;
-            totalSleep += sorted.totalSleep;
 
             if(sorted.noiseCount > 0) sorted.noise /= sorted.noiseCount;
             if(sorted.lightCount > 0) sorted.light /= sorted.lightCount;
@@ -345,10 +372,6 @@ router.get('/filter/:date', (req, res) => {
             noiseAvg += sorted.noise;
             lightAvg += sorted.light;
         });
-
-        lightSleep /= 60;
-        deepSleep /= 60;
-        totalSleep /= 60;
             
         noiseAvg /= sortedResearch.length;
         lightAvg /= sortedResearch.length;
@@ -356,12 +379,34 @@ router.get('/filter/:date', (req, res) => {
         noiseAvg = noiseAvg.toFixed(2);
         lightAvg = lightAvg.toFixed(2);
 
-        fs.readFile('localbase/research_users.json', (err, data) => {
-            if (err) throw err;
-    
-            const users = JSON.parse(data);
+        fs.readFile(`localbase/research_sleep_${req.params.date}.json`, (err, data) => {
+            let sleep;
 
-            res.render('research/index', {research, users, userID: 0, lightSleep, deepSleep, noiseAvg, lightAvg, totalSleep, sortedResearch});
+            if (err) sleep = [];
+            else sleep = JSON.parse(data);
+    
+
+            sleep.forEach(sl => {
+                lightSleepHours += Number.parseInt(sl.lightSleep.split(':')[0]);
+                deepSleepHours += Number.parseInt(sl.deepSleep.split(':')[0]);
+                totalSleepHours += Number.parseInt(sl.totalSleep.split(':')[0]);
+
+                lightSleepMinutes += Number.parseInt(sl.lightSleep.split(':')[1]);
+                deepSleepMinutes += Number.parseInt(sl.deepSleep.split(':')[1]);
+                totalSleepMinutes += Number.parseInt(sl.totalSleep.split(':')[1]);
+            });
+
+            lightSleep = `${lightSleepHours}:${lightSleepMinutes}`;
+            deepSleep = `${deepSleepHours}:${deepSleepMinutes}`;
+            totalSleep = `${totalSleepHours}:${totalSleepMinutes}`;
+
+            fs.readFile('localbase/research_users.json', (err, data) => {
+                if (err) throw err;
+        
+                const users = JSON.parse(data);
+    
+                res.render('research/index', {research, users, userID: 0, lightSleep, deepSleep, totalSleep, noiseAvg, lightAvg, sortedResearch});
+            });
         });
     }); 
 });
