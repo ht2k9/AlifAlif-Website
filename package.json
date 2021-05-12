@@ -23,6 +23,6 @@
     "express": "^4.16.4",
     "flip-book": "^1.9.7",
     "multer": "^1.4.2",
-    "nodemailer": "^6.1.1"
+    "nodemailer": "^6.4.16"
   }
 }
